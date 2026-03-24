@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://cyoseu6blxe8v"]
-
-[ext_resource type="Script" uid="uid://dei0lfyqd6oyg" path="res://3d/scenes/auto_hide_3d.gd" id="1_t683t"]
-
-[node name="AutoHide3D" type="Node" unique_id=2125260579]
-script = ExtResource("1_t683t")

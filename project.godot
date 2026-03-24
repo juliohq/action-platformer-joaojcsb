@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="godot-library"
+config/name="Action Platformer"
 config/version="1.0.0"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -34,18 +34,21 @@ window/size/resizable=false
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/content_manager/plugin.cfg", "res://addons/finite_state_machine/plugin.cfg", "res://addons/layout_helper/plugin.cfg")
+enabled=PackedStringArray("res://addons/finite_state_machine/plugin.cfg")
 
 [file_customization]
 
 folder_colors={
 "res://addons/": "red",
-"res://assets/": "yellow",
-"res://autoloads/": "green",
-"res://locales/": "teal",
-"res://scripts/": "blue",
-"res://shaders/": "purple",
-"res://ui/": "pink"
+"res://assets/": "orange",
+"res://autoloads/": "yellow",
+"res://characters/": "green",
+"res://levels/": "teal",
+"res://locales/": "blue",
+"res://scenes/": "purple",
+"res://scripts/": "pink",
+"res://shaders/": "red",
+"res://ui/": "orange"
 }
 
 [importer_defaults]

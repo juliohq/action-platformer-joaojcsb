@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://dtkrqb0i6veil"]
-
-[ext_resource type="Script" uid="uid://ccv8frep14q4t" path="res://3d/scenes/velocity.gd" id="1_xsufw"]
-
-[node name="Velocity" type="Node" unique_id=1756828531]
-script = ExtResource("1_xsufw")

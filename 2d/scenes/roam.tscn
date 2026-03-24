@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://bpcsg6lmvexsl"]
-
-[ext_resource type="Script" uid="uid://oe4vnb1bvcqn" path="res://2d/scenes/roam.gd" id="1_t73mm"]
-
-[node name="Roam" type="Node" unique_id=312406824]
-script = ExtResource("1_t73mm")

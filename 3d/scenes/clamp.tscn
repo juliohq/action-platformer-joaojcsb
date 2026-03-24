@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://wusbowtn5slg"]
-
-[ext_resource type="Script" uid="uid://c56v05cnlh31r" path="res://3d/scenes/clamp.gd" id="1_mfsc4"]
-
-[node name="Clamp" type="Node" unique_id=386343104]
-script = ExtResource("1_mfsc4")

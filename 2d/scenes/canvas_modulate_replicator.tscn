@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://75tg01kdn2qk"]
-
-[ext_resource type="Script" uid="uid://6n26unkdji4j" path="res://2d/scenes/canvas_modulate_replicator.gd" id="1_omjvv"]
-
-[node name="CanvasModulateReplicator" type="CanvasModulate" unique_id=727918270]
-script = ExtResource("1_omjvv")

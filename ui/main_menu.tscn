@@ -69,10 +69,6 @@ text = "NEW_GAME"
 layout_mode = 2
 text = "LOAD_GAME"
 
-[node name="HowToPlay" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=76835054]
-layout_mode = 2
-text = "HOW_TO_PLAY"
-
 [node name="Options" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=2121327632]
 unique_name_in_owner = true
 layout_mode = 2
@@ -98,7 +94,6 @@ text = "v0.0.0"
 
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/NewGame" to="." method="_new_game"]
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/LoadGame" to="." method="_load_game"]
-[connection signal="pressed" from="UI/Root/Margin/VBox/VBox/HowToPlay" to="." method="_how_to_play"]
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/Options" to="." method="_options"]
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/Credits" to="." method="_credits"]
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/Quit" to="." method="_quit"]

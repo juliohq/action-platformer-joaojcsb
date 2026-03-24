@@ -1,6 +1,0 @@
-[gd_scene format=3 uid="uid://pn5l7yvwawve"]
-
-[ext_resource type="Script" uid="uid://lur33kr4p1ml" path="res://common/event_spawner.gd" id="1_dux68"]
-
-[node name="EventSpawner" type="Node" unique_id=1858329993]
-script = ExtResource("1_dux68")

@@ -1,7 +1,0 @@
-[gd_scene format=3 uid="uid://bll28k40uoiju"]
-
-[ext_resource type="Script" uid="uid://drol7x2goscjx" path="res://2d/scenes/scrolling_camera.gd" id="1_40vvo"]
-
-[node name="ScrollingCamera" type="Camera2D" unique_id=429432579]
-limit_enabled = false
-script = ExtResource("1_40vvo")
