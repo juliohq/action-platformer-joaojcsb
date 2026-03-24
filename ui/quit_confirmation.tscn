@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://b8y36rdmeyru5"]
+
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_f50sj"]
+[ext_resource type="Script" uid="uid://dh186u0f8poan" path="res://ui/quit_confirmation.gd" id="1_r2prd"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_x4orh"]
+
+[node name="QuitConfirmation" type="Control" unique_id=1934372341 node_paths=PackedStringArray("focus_control")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_x4orh")
+script = ExtResource("1_r2prd")
+focus_control = NodePath("Center/Base/Margin/VBox/HBox/Ok")
+
+[node name="Background" parent="." unique_id=61524528 instance=ExtResource("1_f50sj")]
+layout_mode = 1
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1312836678]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Base" type="PanelContainer" parent="Center" unique_id=382168868]
+layout_mode = 2
+
+[node name="Margin" type="MarginContainer" parent="Center/Base" unique_id=477577611]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBox" type="VBoxContainer" parent="Center/Base/Margin" unique_id=1606479444]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Message" type="Label" parent="Center/Base/Margin/VBox" unique_id=1034261352]
+layout_mode = 2
+text = "QUIT_CONFIRMATION"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="Center/Base/Margin/VBox" unique_id=532644081]
+layout_mode = 2
+
+[node name="Ok" type="Button" parent="Center/Base/Margin/VBox/HBox" unique_id=160718779]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Cancel")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Cancel")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Cancel")
+focus_previous = NodePath("../Cancel")
+text = "OK"
+
+[node name="Cancel" type="Button" parent="Center/Base/Margin/VBox/HBox" unique_id=676998247]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_neighbor_left = NodePath("../Ok")
+focus_neighbor_top = NodePath(".")
+focus_neighbor_right = NodePath("../Ok")
+focus_neighbor_bottom = NodePath(".")
+focus_next = NodePath("../Ok")
+focus_previous = NodePath("../Ok")
+text = "CANCEL"
+
+[connection signal="pressed" from="Center/Base/Margin/VBox/HBox/Ok" to="." method="_accept"]
+[connection signal="pressed" from="Center/Base/Margin/VBox/HBox/Cancel" to="." method="_cancel"]

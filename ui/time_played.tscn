@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://phuo6yhhna3q"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_nxtdb"]
+[ext_resource type="Script" uid="uid://cdoq7gh4vqtqh" path="res://ui/time_played.gd" id="2_4h14j"]
+
+[node name="TimePlayed" type="Label" unique_id=1408229026]
+theme = ExtResource("1_nxtdb")
+text = "Time Played: 00:00:00"
+script = ExtResource("2_4h14j")
+
+[node name="Tick" type="Timer" parent="." unique_id=802276609]
+autostart = true
+
+[connection signal="timeout" from="Tick" to="." method="tick"]

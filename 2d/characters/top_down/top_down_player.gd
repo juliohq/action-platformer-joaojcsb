@@ -1,0 +1,2 @@
+extends TopDownCharacter
+class_name TopDownPlayer

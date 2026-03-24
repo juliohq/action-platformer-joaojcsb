@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dhlve6w06gab8"]
+
+[ext_resource type="Script" uid="uid://dt3j1eqiyf4xb" path="res://2d/scenes/velocity.gd" id="1_xsufw"]
+
+[node name="Velocity" type="Node" unique_id=1908117501]
+script = ExtResource("1_xsufw")

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://xl800ikjx413"]
+
+[ext_resource type="Shader" uid="uid://daidsnnwe0ine" path="res://shaders/grayscale.gdshader" id="1_dcnvb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mmhxi"]
+shader = ExtResource("1_dcnvb")
+shader_parameter/amount = 1.0
+
+[node name="Grayscale" type="ColorRect" unique_id=234156091]
+material = SubResource("ShaderMaterial_mmhxi")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

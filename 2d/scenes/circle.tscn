@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://fxrbb167lhio"]
+
+[ext_resource type="Script" uid="uid://b1u1yeu2a44ds" path="res://2d/scenes/circle.gd" id="1_2qu5o"]
+
+[node name="Circle" type="Node2D" unique_id=690896691 groups=["circles"]]
+script = ExtResource("1_2qu5o")
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

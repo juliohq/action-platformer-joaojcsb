@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://lyllqb6n7a42"]
+
+[ext_resource type="Script" uid="uid://5o6tp4gwlhbl" path="res://3d/levels/level.gd" id="1_7sidt"]
+[ext_resource type="PackedScene" uid="uid://dsl842cl3a2qr" path="res://ui/ui.tscn" id="2_k58cd"]
+[ext_resource type="PackedScene" uid="uid://cjh3fna7p3rbx" path="res://3d/scenes/default_environment.tscn" id="2_qf5cx"]
+[ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_aew1e"]
+
+[node name="Level" type="Node3D" unique_id=4571939]
+script = ExtResource("1_7sidt")
+metadata/_edit_lock_ = true
+
+[node name="DefaultEnvironment" parent="." unique_id=682999128 instance=ExtResource("2_qf5cx")]
+
+[node name="World" type="Node3D" parent="." unique_id=1961157602]
+metadata/_edit_lock_ = true
+
+[node name="UI" parent="." unique_id=1167548186 instance=ExtResource("2_k58cd")]
+
+[node name="Music" parent="." unique_id=321250781 instance=ExtResource("4_aew1e")]

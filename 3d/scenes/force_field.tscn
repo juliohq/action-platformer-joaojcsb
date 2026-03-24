@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpt3yuyqu2w8b"]
+
+[ext_resource type="Shader" uid="uid://cov61xp4qylr5" path="res://3d/shaders/force_field.gdshader" id="1_55461"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yxmvk"]
+render_priority = 0
+shader = ExtResource("1_55461")
+shader_parameter/color = Color(0, 1, 1, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_un7mn"]
+material = SubResource("ShaderMaterial_yxmvk")
+radius = 1.0
+height = 2.0
+
+[node name="ForceField" type="MeshInstance3D" unique_id=1848313090]
+mesh = SubResource("SphereMesh_un7mn")

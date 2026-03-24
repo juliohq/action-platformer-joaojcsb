@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clbr4v4limuej"]
+
+[ext_resource type="Script" uid="uid://bx8xxirxfa6ck" path="res://3d/scenes/rotating_camera.gd" id="1_2re78"]
+
+[node name="RotatingCamera" type="Camera3D" unique_id=1641131803]
+script = ExtResource("1_2re78")

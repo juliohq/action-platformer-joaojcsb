@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://bds6j84e85c2a"]
+
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_3566s"]
+[ext_resource type="Script" uid="uid://bwjj6ca14yqri" path="res://ui/options.gd" id="1_kx1he"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_ohe46"]
+
+[node name="Options" type="Control" unique_id=555513973 node_paths=PackedStringArray("focus_control")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ohe46")
+script = ExtResource("1_kx1he")
+focus_control = NodePath("Margin/VBox/Options/Languages")
+
+[node name="Background" parent="." unique_id=1654896986 instance=ExtResource("1_3566s")]
+layout_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=150774017]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=176573781]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Margin/VBox" unique_id=913477852]
+layout_mode = 2
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="Options" type="GridContainer" parent="Margin/VBox" unique_id=553788003]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+columns = 2
+
+[node name="Language" type="Label" parent="Margin/VBox/Options" unique_id=1882182860]
+layout_mode = 2
+text = "LANGUAGE"
+
+[node name="Languages" type="OptionButton" parent="Margin/VBox/Options" unique_id=173796219]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Difficulty" type="Label" parent="Margin/VBox/Options" unique_id=1229238818]
+layout_mode = 2
+text = "DIFFICULTY"
+
+[node name="DifficultyMode" type="OptionButton" parent="Margin/VBox/Options" unique_id=1577372560]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "DIFFICULTY_EASY"
+popup/item_0/id = 0
+popup/item_1/text = "DIFFICULTY_MEDIUM"
+popup/item_1/id = 1
+popup/item_2/text = "DIFFICULTY_HARD"
+popup/item_2/id = 2
+
+[node name="Fullscreen" type="Label" parent="Margin/VBox/Options" unique_id=804043589]
+layout_mode = 2
+text = "FULLSCREEN"
+
+[node name="FullscreenValue" type="CheckBox" parent="Margin/VBox/Options" unique_id=1693606274]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="SpacerLeft" type="Control" parent="Margin/VBox/Options" unique_id=2132455988]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="SpacerRight" type="Control" parent="Margin/VBox/Options" unique_id=1861079188]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="General" type="Label" parent="Margin/VBox/Options" unique_id=1307249505]
+layout_mode = 2
+text = "GENERAL"
+
+[node name="GeneralVolume" type="HSlider" parent="Margin/VBox/Options" unique_id=498227974]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="Music" type="Label" parent="Margin/VBox/Options" unique_id=659226115]
+layout_mode = 2
+text = "MUSIC"
+
+[node name="MusicVolume" type="HSlider" parent="Margin/VBox/Options" unique_id=1191837840]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="Sounds" type="Label" parent="Margin/VBox/Options" unique_id=1878559546]
+layout_mode = 2
+text = "SOUNDS"
+
+[node name="SoundsVolume" type="HSlider" parent="Margin/VBox/Options" unique_id=1719431879]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+step = 0.01
+
+[node name="HBox" type="HBoxContainer" parent="Margin/VBox" unique_id=852546739]
+layout_mode = 2
+alignment = 1
+
+[node name="Reset" type="Button" parent="Margin/VBox/HBox" unique_id=294167429]
+layout_mode = 2
+text = "RESET"
+
+[node name="Back" type="Button" parent="Margin/VBox/HBox" unique_id=1709515213]
+layout_mode = 2
+text = "BACK"
+
+[connection signal="item_selected" from="Margin/VBox/Options/Languages" to="." method="_language_changed"]
+[connection signal="item_selected" from="Margin/VBox/Options/DifficultyMode" to="." method="_difficulty_changed"]
+[connection signal="toggled" from="Margin/VBox/Options/FullscreenValue" to="." method="_fullscreen"]
+[connection signal="value_changed" from="Margin/VBox/Options/GeneralVolume" to="." method="_general_volume_changed"]
+[connection signal="value_changed" from="Margin/VBox/Options/MusicVolume" to="." method="_music_volume_changed"]
+[connection signal="value_changed" from="Margin/VBox/Options/SoundsVolume" to="." method="_sounds_volume_changed"]
+[connection signal="pressed" from="Margin/VBox/HBox/Reset" to="." method="_reset"]
+[connection signal="pressed" from="Margin/VBox/HBox/Back" to="." method="_back"]

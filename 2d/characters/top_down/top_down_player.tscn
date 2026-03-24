@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://d1wk2tseps8om"]
+
+[ext_resource type="PackedScene" uid="uid://7vhkurl7a7ci" path="res://2d/characters/top_down/top_down_character.tscn" id="1_l1fhr"]
+[ext_resource type="Script" uid="uid://bpddva6cm3ii6" path="res://2d/characters/top_down/top_down_player.gd" id="2_ghpwv"]
+[ext_resource type="PackedScene" uid="uid://cg6jln88qrf4q" path="res://2d/scenes/clamp.tscn" id="3_nql31"]
+[ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="4_7lowx"]
+[ext_resource type="Script" uid="uid://jkrxhtdsg7ch" path="res://2d/characters/top_down/states/idle.gd" id="5_rgl2k"]
+[ext_resource type="Script" uid="uid://blbgkytseywhm" path="res://2d/characters/top_down/states/walk.gd" id="6_mpx21"]
+
+[node name="TopDownPlayer" unique_id=1687700117 node_paths=PackedStringArray("animator") instance=ExtResource("1_l1fhr")]
+collision_layer = 1
+script = ExtResource("2_ghpwv")
+animator = NodePath("Animator")
+
+[node name="Sprite" type="Sprite2D" parent="." index="0" unique_id=1962270635]
+
+[node name="Collision" type="CollisionShape2D" parent="." index="1" unique_id=1568022005]
+
+[node name="Animator" type="AnimationPlayer" parent="." index="2" unique_id=639390855]
+
+[node name="Clamp" parent="." index="3" unique_id=959592811 node_paths=PackedStringArray("root") instance=ExtResource("3_nql31")]
+callback = 1
+root = NodePath("..")
+
+[node name="StateMachine" type="Node" parent="." index="4" unique_id=1598256744 node_paths=PackedStringArray("current_state", "animation_player")]
+script = ExtResource("4_7lowx")
+current_state = NodePath("Idle")
+animation_player = NodePath("../Animator")
+
+[node name="Idle" type="Node" parent="StateMachine" index="0" unique_id=1111411097 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("5_rgl2k")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Walk" type="Node" parent="StateMachine" index="1" unique_id=848273568 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("6_mpx21")
+root = NodePath("../..")
+animator = NodePath("../../Animator")

@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dnpqk7xeb6e7k"]
+
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_5qkld"]
+[ext_resource type="Script" uid="uid://bnxnh1llp3de2" path="res://ui/game_over.gd" id="1_34ofb"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_y1rcl"]
+
+[node name="GameOver" type="Control" unique_id=946583267 node_paths=PackedStringArray("focus_control")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y1rcl")
+script = ExtResource("1_34ofb")
+focus_control = NodePath("Margin/VBox/Buttons/PlayAgain")
+
+[node name="Background" parent="." unique_id=886663138 instance=ExtResource("1_5qkld")]
+layout_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=1965853817]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=663732798]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Margin/VBox" unique_id=307187193]
+layout_mode = 2
+text = "GAME_OVER"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Margin/VBox" unique_id=607708767]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+alignment = 1
+
+[node name="PlayAgain" type="Button" parent="Margin/VBox/Buttons" unique_id=94961387]
+layout_mode = 2
+text = "PLAY_AGAIN"
+
+[node name="MainMenu" type="Button" parent="Margin/VBox/Buttons" unique_id=143985310]
+layout_mode = 2
+text = "MAIN_MENU"
+
+[node name="Quit" type="Button" parent="Margin/VBox/Buttons" unique_id=27531493]
+layout_mode = 2
+text = "QUIT"
+
+[connection signal="pressed" from="Margin/VBox/Buttons/PlayAgain" to="." method="_play_again"]
+[connection signal="pressed" from="Margin/VBox/Buttons/MainMenu" to="." method="_main_menu"]
+[connection signal="pressed" from="Margin/VBox/Buttons/Quit" to="." method="_quit"]

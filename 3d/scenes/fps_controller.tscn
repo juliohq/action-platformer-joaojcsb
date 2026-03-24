@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://c3ffql15mo0aj"]
+
+[ext_resource type="Script" uid="uid://bkcte1k437ykw" path="res://3d/scenes/fps_controller.gd" id="1_pgc1p"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u6tj1"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6tv51"]
+
+[node name="FirstPersonPlayer" type="CharacterBody3D" unique_id=2089221804]
+script = ExtResource("1_pgc1p")
+
+[node name="Collision" type="CollisionShape3D" parent="." unique_id=777620301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_u6tj1")
+
+[node name="Capsule" type="MeshInstance3D" parent="Collision" unique_id=1460451637]
+mesh = SubResource("CapsuleMesh_6tv51")
+
+[node name="Camera" type="Camera3D" parent="." unique_id=1784839793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)

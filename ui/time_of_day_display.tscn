@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://chaga3ft2feso"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_4oeqc"]
+[ext_resource type="Script" uid="uid://bn68ec70b13q8" path="res://ui/time_of_day_display.gd" id="2_vhlf1"]
+
+[node name="TimeOfDayDisplay" type="VBoxContainer" unique_id=1082162607]
+theme = ExtResource("1_4oeqc")
+script = ExtResource("2_vhlf1")
+
+[node name="Day" type="Label" parent="." unique_id=1078548775]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Day: 0"
+
+[node name="Time" type="VBoxContainer" parent="." unique_id=1734212663]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Time" unique_id=294199978]
+layout_mode = 2
+text = "Time:"
+
+[node name="Time" type="ProgressBar" parent="Time" unique_id=1076507903]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 8)
+layout_mode = 2
+max_value = 1.0
+show_percentage = false

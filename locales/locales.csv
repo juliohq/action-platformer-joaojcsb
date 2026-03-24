@@ -1,0 +1,33 @@
+,en
+NEW_GAME,New Game
+LOAD_GAME,Load Game
+HOW_TO_PLAY,How to Play
+OPTIONS,Options
+CREDITS,Credits
+QUIT,Quit
+QUIT_CONFIRMATION,Are you sure you want to leave?
+DIFFICULTY_SELECTION,Difficulty Selection
+DIFFICULTY_EASY,Easy
+DIFFICULTY_MEDIUM,Medium
+DIFFICULTY_HARD,Hard
+GAME_PAUSED,Game Paused
+RESUME,Resume
+RESTART,Restart
+SAVE_GAME,Save Game
+MAIN_MENU,Main Menu
+INVENTORY,Inventory
+CLOSE,Close
+LOADING,Loading...
+LANGUAGE,Language:
+DIFFICULTY,Difficulty:
+FULLSCREEN,Fullscreen:
+GENERAL,General:
+MUSIC,Music:
+SOUNDS,Sounds:
+RESET,Reset
+PREVIOUS,Previous
+BACK,Back
+NEXT,Next
+PLAY_AGAIN,Play Again
+GAME_OVER,Game Over
+GAME_FINISHED,Game Finished

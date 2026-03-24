@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cg6jln88qrf4q"]
+
+[ext_resource type="Script" uid="uid://dmm40m20lr7a4" path="res://2d/scenes/clamp.gd" id="1_j1iox"]
+
+[node name="Clamp" type="Node" unique_id=866164286]
+script = ExtResource("1_j1iox")

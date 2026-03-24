@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://kbgmjg5gv8kj"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_pojjl"]
+[ext_resource type="Script" uid="uid://b82p2owyfc6rs" path="res://ui/loading_screen.gd" id="2_1kfex"]
+[ext_resource type="StyleBox" uid="uid://4a1yh1nsg4vy" path="res://ui/theme/loading_bar_bg.tres" id="3_e66os"]
+[ext_resource type="StyleBox" uid="uid://i2k5hbilgwjk" path="res://ui/theme/loading_bar_fg.tres" id="4_to6u5"]
+
+[node name="LoadingScreen" type="Control" unique_id=1549295554]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_pojjl")
+script = ExtResource("2_1kfex")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1137378431]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=321286803]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=482658021]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 8
+
+[node name="Loading" type="Label" parent="Margin/VBox" unique_id=1177252229]
+layout_mode = 2
+text = "LOADING"
+
+[node name="Progress" type="ProgressBar" parent="Margin/VBox" unique_id=656154016]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/background = ExtResource("3_e66os")
+theme_override_styles/fill = ExtResource("4_to6u5")
+max_value = 1.0
+show_percentage = false

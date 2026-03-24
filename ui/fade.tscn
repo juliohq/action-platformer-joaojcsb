@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://rkhyu6n3h5h0"]
+
+[ext_resource type="Script" uid="uid://l613appjqisi" path="res://ui/fade.gd" id="1_fgufa"]
+
+[sub_resource type="Animation" id="Animation_pheqj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ukh7c"]
+resource_name = "SHOW"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xkrd"]
+_data = {
+&"RESET": SubResource("Animation_pheqj"),
+&"SHOW": SubResource("Animation_ukh7c")
+}
+
+[node name="Fade" type="ColorRect" unique_id=12204861]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)
+script = ExtResource("1_fgufa")
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=2107117500]
+libraries/ = SubResource("AnimationLibrary_7xkrd")
+autoplay = &"SHOW"

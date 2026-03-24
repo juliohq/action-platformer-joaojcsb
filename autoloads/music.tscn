@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bxss8qijt72vt"]
+
+[ext_resource type="Script" uid="uid://d2wxtbnsvr1lt" path="res://autoloads/music.gd" id="2_r1hok"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=1601896474]
+process_mode = 3
+bus = &"Music"
+script = ExtResource("2_r1hok")

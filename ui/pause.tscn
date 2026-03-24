@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://ut1dut7lg4yb"]
+
+[ext_resource type="Script" uid="uid://b2cve7nlgiqmw" path="res://ui/pause.gd" id="1_m05ps"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_xwoew"]
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="2_5kp7q"]
+
+[node name="Pause" type="Control" unique_id=479832315 node_paths=PackedStringArray("focus_control")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_xwoew")
+script = ExtResource("1_m05ps")
+focus_control = NodePath("Margin/VBox/Buttons/Resume")
+
+[node name="Background" parent="." unique_id=1313916010 instance=ExtResource("2_5kp7q")]
+layout_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=548974200]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1516549078]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Margin/VBox" unique_id=80955098]
+layout_mode = 2
+size_flags_vertical = 3
+text = "GAME_PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Margin/VBox" unique_id=1004489241]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+alignment = 1
+
+[node name="Resume" type="Button" parent="Margin/VBox/Buttons" unique_id=443854998]
+layout_mode = 2
+text = "RESUME"
+
+[node name="Restart" type="Button" parent="Margin/VBox/Buttons" unique_id=227205110]
+layout_mode = 2
+text = "RESTART"
+
+[node name="SaveGame" type="Button" parent="Margin/VBox/Buttons" unique_id=1640770422]
+layout_mode = 2
+text = "SAVE_GAME"
+
+[node name="LoadGame" type="Button" parent="Margin/VBox/Buttons" unique_id=2098542712]
+layout_mode = 2
+text = "LOAD_GAME"
+
+[node name="Options" type="Button" parent="Margin/VBox/Buttons" unique_id=1738578504]
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="MainMenu" type="Button" parent="Margin/VBox/Buttons" unique_id=101857491]
+layout_mode = 2
+text = "MAIN_MENU"
+
+[node name="Quit" type="Button" parent="Margin/VBox/Buttons" unique_id=1415387742]
+layout_mode = 2
+text = "QUIT"
+
+[node name="Spacer" type="Control" parent="Margin/VBox" unique_id=1569290814]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="pressed" from="Margin/VBox/Buttons/Resume" to="." method="_resume"]
+[connection signal="pressed" from="Margin/VBox/Buttons/Restart" to="." method="_restart"]
+[connection signal="pressed" from="Margin/VBox/Buttons/SaveGame" to="." method="_save_game"]
+[connection signal="pressed" from="Margin/VBox/Buttons/LoadGame" to="." method="_load_game"]
+[connection signal="pressed" from="Margin/VBox/Buttons/Options" to="." method="_options"]
+[connection signal="pressed" from="Margin/VBox/Buttons/MainMenu" to="." method="_main_menu"]
+[connection signal="pressed" from="Margin/VBox/Buttons/Quit" to="." method="_quit"]

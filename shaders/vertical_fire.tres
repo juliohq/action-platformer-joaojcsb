@@ -1,0 +1,35 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bart8tmqmtovl"]
+
+[ext_resource type="Shader" uid="uid://xvbc8t14t2gy" path="res://shaders/vertical_fire.gdshader" id="1_ej338"]
+
+[sub_resource type="Gradient" id="Gradient_mehiu"]
+offsets = PackedFloat32Array(0, 0.162162, 0.27027, 0.387387, 0.990991)
+colors = PackedColorArray(0, 0, 0, 1, 0.415686, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_lt4yx"]
+gradient = SubResource("Gradient_mehiu")
+
+[sub_resource type="Gradient" id="Gradient_f7cmv"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mehiu"]
+gradient = SubResource("Gradient_f7cmv")
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_f7cmv"]
+noise_type = 3
+frequency = 0.08
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mehiu"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_f7cmv")
+normalize = false
+
+[resource]
+shader = ExtResource("1_ej338")
+shader_parameter/noise = SubResource("NoiseTexture2D_mehiu")
+shader_parameter/clip_low = 0.1
+shader_parameter/clip_high = 0.7
+shader_parameter/gradient = SubResource("GradientTexture2D_mehiu")
+shader_parameter/color_gradient = SubResource("GradientTexture1D_lt4yx")
