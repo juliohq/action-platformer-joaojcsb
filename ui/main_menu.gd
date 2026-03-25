@@ -47,11 +47,6 @@ func _load_game() -> void:
 	Globals.load_game()
 
 
-## Handles the logic when the how to play button is pressed. Override to provide custom behavior.
-func _how_to_play() -> void:
-	root.add_child(preload("res://ui/how_to_play.tscn").instantiate())
-
-
 ## Handles the logic when the options button is pressed. Override to provide custom behavior.
 func _options() -> void:
 	%Margin.hide()
@@ -59,11 +54,6 @@ func _options() -> void:
 	options.tree_exited.connect(%Margin.show)
 	options.tree_exited.connect(%Options.grab_focus)
 	root.add_child(options)
-
-
-## Handles the logic when the credits button is pressed. Override to provide custom behavior.
-func _credits() -> void:
-	root.add_child(preload("res://ui/credits.tscn").instantiate())
 
 
 ## Handles the logic when the quit button is pressed. Override to provide custom behavior.
