@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bwl87qakymxoq"]
+
+[ext_resource type="Script" uid="uid://dg71aj43yh3o4" path="res://scenes/orb.gd" id="1_ktqa0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ktqa0"]
+radius = 8.0
+
+[node name="Orb" type="CharacterBody2D" unique_id=177147229]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ktqa0")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1821670992]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=994521606]
+shape = SubResource("CircleShape2D_ktqa0")
