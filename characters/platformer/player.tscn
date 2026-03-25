@@ -47,5 +47,5 @@ animator = NodePath("../../Animator")
 
 [node name="Clamp" parent="." index="4" unique_id=707076611 node_paths=PackedStringArray("root") instance=ExtResource("8_0ytbo")]
 callback = 1
-axes = 1
+clamp_y = false
 root = NodePath("..")
