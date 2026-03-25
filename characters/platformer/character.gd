@@ -1,5 +1,5 @@
 extends CharacterBody2D
-class_name PlatformerCharacter
+class_name Character
 
 
 ## How fast the character will move along the X axis.

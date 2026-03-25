@@ -1,8 +1,7 @@
-extends PlatformerCharacter
-class_name PlatformerPlayer
+extends Character
 
 
-@onready var sprite: Sprite2D = $Sprite
+@export var sprite: Sprite2D
 
 
 func _physics_process(delta: float) -> void:
