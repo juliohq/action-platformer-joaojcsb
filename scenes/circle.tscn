@@ -4,5 +4,3 @@
 
 [node name="Circle" type="Node2D" unique_id=690896691 groups=["circles"]]
 script = ExtResource("1_2qu5o")
-
-[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

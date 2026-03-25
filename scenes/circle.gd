@@ -24,6 +24,10 @@ var _radius := 0.0
 var counter := 0.0
 
 
+func _ready() -> void:
+	visibility_changed.connect(_visibility_changed)
+
+
 func _draw() -> void:
 	draw_arc(shadow_offset, _radius, 0.0, TAU, 32, shadow_color, shadow_width)
 	draw_arc(radius_origin, _radius, 0.0, TAU, 32, radius_color, width)
@@ -40,7 +44,7 @@ func _process(delta: float) -> void:
 	queue_redraw()
 
 
-func _on_visibility_changed() -> void:
+func _visibility_changed() -> void:
 	set_process(visible)
 
 
