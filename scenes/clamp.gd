@@ -38,8 +38,10 @@ func clamp_to_bounds() -> void:
 	
 	# X axis
 	if clamp_x:
-		root.global_position.x = clampf(root.global_position.x, camera.limit_left + margins.x, camera.limit_right - margins.x)
+		root.global_position.x = clampf(root.global_position.x,
+				camera.limit_left + margins.x, camera.limit_right - margins.x)
 	
 	# Y axis
 	if clamp_y:
-		root.global_position.y = clampf(root.global_position.y, camera.limit_top + margins.y, camera.limit_bottom - margins.y)
+		root.global_position.y = clampf(root.global_position.y,
+				camera.limit_top + margins.y, camera.limit_bottom - margins.y)
