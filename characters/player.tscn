@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://d0nubcpsalgj"]
 
-[ext_resource type="PackedScene" uid="uid://baqvkmha0uu0n" path="res://characters/platformer/character.tscn" id="1_dg5ma"]
-[ext_resource type="Script" uid="uid://bv04py5qfgjs0" path="res://characters/platformer/player.gd" id="2_03c6q"]
+[ext_resource type="PackedScene" uid="uid://baqvkmha0uu0n" path="res://characters/character.tscn" id="1_dg5ma"]
+[ext_resource type="Script" uid="uid://bv04py5qfgjs0" path="res://characters/player.gd" id="2_03c6q"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="3_0hafw"]
-[ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/platformer/states/idle.gd" id="4_3ak4l"]
-[ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/platformer/states/walk.gd" id="5_bxfkk"]
-[ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/platformer/states/jump.gd" id="6_238id"]
-[ext_resource type="Script" uid="uid://c2cu7m76a5xgl" path="res://characters/platformer/states/fall.gd" id="7_4vov5"]
+[ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/states/idle.gd" id="4_3ak4l"]
+[ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/states/walk.gd" id="5_bxfkk"]
+[ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/states/jump.gd" id="6_238id"]
+[ext_resource type="Script" uid="uid://c2cu7m76a5xgl" path="res://characters/states/fall.gd" id="7_4vov5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
 radius = 8.0

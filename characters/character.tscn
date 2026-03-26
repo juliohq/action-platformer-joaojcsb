@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://baqvkmha0uu0n"]
 
-[ext_resource type="Script" uid="uid://bjafvndmx0b7s" path="res://characters/platformer/character.gd" id="1_qv602"]
+[ext_resource type="Script" uid="uid://bjafvndmx0b7s" path="res://characters/character.gd" id="1_qv602"]
 
 [node name="Character" type="CharacterBody2D" unique_id=2003408289]
 collision_layer = 0
