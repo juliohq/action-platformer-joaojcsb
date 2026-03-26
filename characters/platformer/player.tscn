@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/platformer/states/walk.gd" id="5_bxfkk"]
 [ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/platformer/states/jump.gd" id="6_238id"]
 [ext_resource type="Script" uid="uid://c2cu7m76a5xgl" path="res://characters/platformer/states/fall.gd" id="7_4vov5"]
-[ext_resource type="PackedScene" uid="uid://cg6jln88qrf4q" path="res://scenes/clamp.tscn" id="8_0ytbo"]
 
 [node name="Player" unique_id=2136620420 node_paths=PackedStringArray("sprite") instance=ExtResource("1_dg5ma")]
 collision_layer = 1
@@ -44,8 +43,3 @@ animator = NodePath("../../Animator")
 script = ExtResource("7_4vov5")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
-
-[node name="Clamp" parent="." index="4" unique_id=707076611 node_paths=PackedStringArray("root") instance=ExtResource("8_0ytbo")]
-callback = 1
-clamp_y = false
-root = NodePath("..")
