@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://d0nubcpsalgj"]
 
-[ext_resource type="PackedScene" uid="uid://baqvkmha0uu0n" path="res://characters/character.tscn" id="1_dg5ma"]
 [ext_resource type="Script" uid="uid://bv04py5qfgjs0" path="res://characters/player.gd" id="2_03c6q"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="3_0hafw"]
 [ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/states/idle.gd" id="4_3ak4l"]
@@ -11,39 +10,39 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
 radius = 8.0
 
-[node name="Player" unique_id=2136620420 node_paths=PackedStringArray("sprite") instance=ExtResource("1_dg5ma")]
-collision_layer = 1
+[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite")]
+collision_mask = 2
 script = ExtResource("2_03c6q")
 sprite = NodePath("Sprite")
 
-[node name="Sprite" type="Sprite2D" parent="." index="0" unique_id=1046985751]
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1046985751]
 
-[node name="Collision" type="CollisionShape2D" parent="." index="1" unique_id=596819665]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=596819665]
 shape = SubResource("CircleShape2D_24ibb")
 
-[node name="Animator" type="AnimationPlayer" parent="." index="2" unique_id=2044165746]
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=2044165746]
 
-[node name="StateMachine" type="Node" parent="." index="3" unique_id=1356709498 node_paths=PackedStringArray("current_state", "animation_player")]
+[node name="StateMachine" type="Node" parent="." unique_id=1356709498 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("3_0hafw")
 current_state = NodePath("Idle")
 animation_player = NodePath("../Animator")
 
-[node name="Idle" type="Node" parent="StateMachine" index="0" unique_id=974191573 node_paths=PackedStringArray("root", "animator")]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=974191573 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("4_3ak4l")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Walk" type="Node" parent="StateMachine" index="1" unique_id=1182877665 node_paths=PackedStringArray("root", "animator")]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=1182877665 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("5_bxfkk")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Jump" type="Node" parent="StateMachine" index="2" unique_id=451099790 node_paths=PackedStringArray("root", "animator")]
+[node name="Jump" type="Node" parent="StateMachine" unique_id=451099790 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("6_238id")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Fall" type="Node" parent="StateMachine" index="3" unique_id=1359371988 node_paths=PackedStringArray("root", "animator")]
+[node name="Fall" type="Node" parent="StateMachine" unique_id=1359371988 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("7_4vov5")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
