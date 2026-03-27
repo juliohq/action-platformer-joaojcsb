@@ -4,7 +4,7 @@ extends CharacterBody2D
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
-@export_range(1, 100, 1, "or_greater", "suffix:px") var jump_height := 512
+@export_range(1, 100, 1, "or_greater", "suffix:px") var jump_height := 384
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var state_machine: FiniteStateMachine
