@@ -2,7 +2,7 @@ extends BaseState
 
 
 func on_enter() -> void:
-	animator.play(&"WALK")
+	animator.play(&"RUN")
 
 
 func on_physics_process(_delta: float) -> void:

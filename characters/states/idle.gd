@@ -10,6 +10,6 @@ func on_physics_process(_delta: float) -> void:
 		root.direction = Input.get_axis(&"left", &"right")
 		
 		if root.direction:
-			change_state("Walk")
+			change_state("Run")
 	else:
 		change_state("Fall")

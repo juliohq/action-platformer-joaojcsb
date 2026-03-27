@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px") var jump_height := 512
 @export_category("Nodes")
 @export var sprite: Sprite2D
+@export var state_machine: FiniteStateMachine
+@export var jump_state: BaseState
 
 ## The horizontal direction the player is moving to.
 var direction := 0.0
@@ -51,6 +53,7 @@ func _physics_process(delta: float) -> void:
 ## Makes the character jump upwards.
 func jump() -> void:
 	velocity.y = -jump_height
+	state_machine.current_state = jump_state
 
 
 ## Makes the character start falling (usually after a jump).
