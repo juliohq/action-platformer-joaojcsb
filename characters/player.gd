@@ -5,9 +5,12 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
 @export_range(1, 100, 1, "or_greater", "suffix:px") var jump_height := 384
-## How long a jump will be accepted.
+## How long a jump will be accepted after another one.
 @export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
 var jump_buffering := 0.2
+## How long a jump will be accepted after falling a cliff.
+@export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
+var coyote_buffering := 0.1
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var state_machine: FiniteStateMachine
@@ -17,6 +20,8 @@ var jump_buffering := 0.2
 var direction := 0.0
 ## The time left to jump.
 var jump_buffer := 0.0
+## The time left to jump.
+var coyote_buffer := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -31,6 +36,10 @@ func _physics_process(delta: float) -> void:
 	# Jump logic (with jump buffering)
 	if Input.is_action_just_pressed(&"jump"):
 		jump_buffer = jump_buffering
+		
+		if coyote_buffer > 0.0:
+			jump()
+			move_and_slide()
 	# Variable jump height logic
 	elif Input.is_action_just_released(&"jump") and velocity.y < 0.0:
 		fall()
@@ -40,11 +49,17 @@ func _physics_process(delta: float) -> void:
 		jump()
 		move_and_slide()
 	
-	# Uncomment to enable
-	# Note: Remember to disable the same logic in _unhandled_input
-	# Hold jump logic
-	#if Input.is_action_pressed(&"jump") and is_on_floor():
-		#jump()
+	# Jump buffer
+	if jump_buffer > 0.0:
+		jump_buffer -= delta
+	else:
+		jump_buffer = 0.0
+	
+	# Coyote buffer
+	if coyote_buffer > 0.0:
+		coyote_buffer -= delta
+	else:
+		coyote_buffer = 0.0
 	
 	# Process character movement
 	velocity.x = direction * movement_speed
@@ -54,12 +69,6 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 0.0
 	else:
 		velocity.y += gravity * delta
-	
-	# Jump buffer
-	if jump_buffer > 0.0:
-		jump_buffer -= delta
-	else:
-		jump_buffer = 0.0
 	
 	# Perform the actual movement
 	move_and_slide()

@@ -12,4 +12,5 @@ func on_physics_process(_delta: float) -> void:
 		if not root.direction:
 			change_state("Idle")
 	else:
+		root.coyote_buffer = root.coyote_buffering
 		change_state("Fall")
