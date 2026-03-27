@@ -12,7 +12,12 @@ metadata/_edit_lock_ = true
 [node name="World" type="Node2D" parent="." unique_id=574016881]
 metadata/_edit_lock_ = true
 
-[node name="Tiles" type="TileMapLayer" parent="World" unique_id=1717989281]
+[node name="Background" type="TileMapLayer" parent="World" unique_id=880495963]
+tile_set = ExtResource("2_7emdn")
+collision_enabled = false
+metadata/_edit_lock_ = true
+
+[node name="Terrain" type="TileMapLayer" parent="World" unique_id=1717989281]
 tile_set = ExtResource("2_7emdn")
 metadata/_edit_lock_ = true
 
