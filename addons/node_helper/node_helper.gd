@@ -2,6 +2,8 @@
 extends EditorPlugin
 
 
+## The inspector plugin for Camera2D nodes.
+var camera_2d_helper: EditorInspectorPlugin
 ## The inspector plugin for Node2D nodes.
 var node_2d_inspector: EditorInspectorPlugin
 
@@ -18,6 +20,10 @@ func _disable_plugin() -> void:
 
 func _enter_tree() -> void:
 	# Initialization of the plugin goes here.
+	camera_2d_helper = preload("res://addons/node_helper/camera_2d_helper.gd").new()
+	camera_2d_helper.plugin = self
+	add_inspector_plugin(camera_2d_helper)
+	
 	node_2d_inspector = preload("res://addons/node_helper/node_2d_inspector.gd").new()
 	node_2d_inspector.plugin = self
 	add_inspector_plugin(node_2d_inspector)
