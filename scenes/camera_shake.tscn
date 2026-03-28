@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://fsgqds4e7nnk"]
+
+[ext_resource type="Script" uid="uid://cttfdrj1mwjds" path="res://scenes/camera_shake.gd" id="1_ke7gi"]
+
+[node name="CameraShake" type="Node" unique_id=1062562463]
+script = ExtResource("1_ke7gi")
