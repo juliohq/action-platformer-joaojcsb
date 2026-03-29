@@ -46,7 +46,17 @@ func _set_tilemap_limits(node: Camera2D) -> void:
 	var used_rect := Rect2i()
 	
 	for layer: TileMapLayer in layers:
-		used_rect = used_rect.merge(layer.get_used_rect())
+		# Get tile size
+		var tile_size := Vector2i()
+		
+		if layer.tile_set:
+			tile_size = layer.tile_set.tile_size
+		
+		# Calculate final used rect
+		var rect: Rect2i = layer.get_used_rect()
+		rect.position *= tile_size
+		rect.size *= tile_size
+		used_rect = used_rect.merge(rect)
 	
 	# Apply used rect
 	if used_rect:
