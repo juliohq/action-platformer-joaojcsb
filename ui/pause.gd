@@ -53,21 +53,6 @@ func _resume() -> void:
 	queue_free()
 
 
-## Handles the level restart logic. Override to provide custom behavior.
-func _restart() -> void:
-	get_tree().reload_current_scene()
-
-
-## Handles the save game logic. Override to provide custom behavior.
-func _save_game() -> void:
-	Globals.save_game()
-
-
-## Handles the load game logic. Override to provide custom behavior.
-func _load_game() -> void:
-	push_warning("Load game logic not implemented!")
-
-
 ## Handles the game options logic. Override to provide custom behavior.
 func _options() -> void:
 	var options := preload("res://ui/options.tscn").instantiate()

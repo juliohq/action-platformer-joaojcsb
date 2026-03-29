@@ -52,18 +52,6 @@ alignment = 1
 layout_mode = 2
 text = "RESUME"
 
-[node name="Restart" type="Button" parent="Margin/VBox/Buttons" unique_id=227205110]
-layout_mode = 2
-text = "RESTART"
-
-[node name="SaveGame" type="Button" parent="Margin/VBox/Buttons" unique_id=1640770422]
-layout_mode = 2
-text = "SAVE_GAME"
-
-[node name="LoadGame" type="Button" parent="Margin/VBox/Buttons" unique_id=2098542712]
-layout_mode = 2
-text = "LOAD_GAME"
-
 [node name="Options" type="Button" parent="Margin/VBox/Buttons" unique_id=1738578504]
 layout_mode = 2
 text = "OPTIONS"
@@ -81,9 +69,6 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [connection signal="pressed" from="Margin/VBox/Buttons/Resume" to="." method="_resume"]
-[connection signal="pressed" from="Margin/VBox/Buttons/Restart" to="." method="_restart"]
-[connection signal="pressed" from="Margin/VBox/Buttons/SaveGame" to="." method="_save_game"]
-[connection signal="pressed" from="Margin/VBox/Buttons/LoadGame" to="." method="_load_game"]
 [connection signal="pressed" from="Margin/VBox/Buttons/Options" to="." method="_options"]
 [connection signal="pressed" from="Margin/VBox/Buttons/MainMenu" to="." method="_main_menu"]
 [connection signal="pressed" from="Margin/VBox/Buttons/Quit" to="." method="_quit"]
