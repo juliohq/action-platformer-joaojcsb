@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjlscqp5df7uh" path="res://ui/ui.gd" id="1_8q4px"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="2_qoaob"]
+[ext_resource type="PackedScene" uid="uid://diy5txggb2sto" path="res://ui/orb.tscn" id="3_vkava"]
 [ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="3_wl5ax"]
 
 [node name="UI" type="CanvasLayer" unique_id=477995803]
@@ -34,5 +35,12 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Orb" parent="Main/Margin/Stats" unique_id=1785923407 instance=ExtResource("3_vkava")]
+layout_mode = 2
+
+[node name="Orb2" parent="Main/Margin/Stats" unique_id=1733355768 instance=ExtResource("3_vkava")]
+layout_mode = 2
 
 [node name="Fade" parent="." unique_id=12204861 instance=ExtResource("3_wl5ax")]
