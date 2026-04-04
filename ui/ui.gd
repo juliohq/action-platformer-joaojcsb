@@ -2,15 +2,7 @@ extends CanvasLayer
 
 
 func _ready() -> void:
-	Events.ui_updated.connect(_update)
 	Events.game_over.connect(_game_over)
-	
-	_update()
-
-
-## Handles the logic when the UI is updated. Override to provide custom behavior.
-func _update() -> void:
-	pass
 
 
 func _input(event: InputEvent) -> void:
