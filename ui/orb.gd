@@ -22,7 +22,13 @@ const RED_ORB := [
 
 
 func _ready() -> void:
+	update()
+
+
+func update() -> void:
+	var count := get_index()
 	%Orb.texture = [
 		BLUE_ORB,
 		RED_ORB,
-	][get_index()][0]
+	][count][0]
+	%Count.text = "%d/%d" % [count, 5]
