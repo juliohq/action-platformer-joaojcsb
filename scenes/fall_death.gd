@@ -6,7 +6,7 @@ extends Node
 ## The checkpoint.
 @export var checkpoint: Node
 ## The threshold at which a death is considered.
-@export var threshold := 640
+@export var threshold := 320
 
 
 func _ready() -> void:
