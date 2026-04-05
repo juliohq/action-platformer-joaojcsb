@@ -83,3 +83,17 @@ func jump() -> void:
 ## Makes the character start falling (usually after a jump).
 func fall() -> void:
 	velocity.y = 0.0
+
+
+func hit() -> void:
+	if Globals.blue_orbs > 0:
+		# Drop blue orb
+		Globals.blue_orbs -= 1
+		Events.orb_dropped.emit()
+	elif Globals.red_orbs > 0:
+		# Drop red orb
+		Globals.red_orbs -= 1
+		Events.orb_dropped.emit()
+	else:
+		# Death
+		pass

@@ -29,6 +29,8 @@ const RED_ORB := [
 
 
 func _ready() -> void:
+	Events.orb_dropped.connect(update)
+	
 	update()
 
 
