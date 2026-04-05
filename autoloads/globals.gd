@@ -70,8 +70,8 @@ func load_game(file_path := SAVE_PATH) -> void:
 
 
 ## Saves the game settings.
-func save_settings(filename: String) -> void:
-	var f := FileAccess.open(filename, FileAccess.WRITE)
+func save_settings(file_path: String) -> void:
+	var f := FileAccess.open(file_path, FileAccess.WRITE)
 	var err := f.get_error()
 	
 	if err == OK:
@@ -104,13 +104,13 @@ func save_settings(filename: String) -> void:
 		#
 		#f.store_var(input_map)
 	else:
-		push_error("Failed to save file to %s (error %d)" % [filename, err])
+		push_error("Failed to save file to %s (error %d)" % [file_path, err])
 
 
 ## Loads the game settings.
-func load_settings(filename: String) -> void:
-	if FileAccess.file_exists(SETTINGS_PATH):
-		var f := FileAccess.open(filename, FileAccess.READ)
+func load_settings(file_path: String) -> void:
+	if FileAccess.file_exists(file_path):
+		var f := FileAccess.open(file_path, FileAccess.READ)
 		var err := f.get_error()
 		
 		if err == OK:
@@ -140,7 +140,7 @@ func load_settings(filename: String) -> void:
 				#for event: InputEvent in str_to_var(input_map[action]):
 					#InputMap.action_add_event(action, event)
 		else:
-			push_error("Failed to load file from %s (error %d)" % [filename, err])
+			push_error("Failed to load file from %s (error %d)" % [file_path, err])
 
 
 func reset() -> void:
