@@ -1,6 +1,11 @@
 extends MarginContainer
 
 
+enum Orb {
+	BLUE,
+	RED,
+}
+
 const BLUE_ORB := [
 	preload("res://assets/ui/blue_orb/0.png"),
 	preload("res://assets/ui/blue_orb/1.png"),
@@ -20,15 +25,23 @@ const RED_ORB := [
 	preload("res://assets/ui/red_orb/6.png"),
 ]
 
+@export var type := Orb.BLUE
+
 
 func _ready() -> void:
 	update()
 
 
 func update() -> void:
-	var count := get_index()
+	var count := -1
+	
+	if type == Orb.BLUE:
+		count = Globals.blue_orbs
+	else:
+		count = Globals.red_orbs
+	
 	%Orb.texture = [
 		BLUE_ORB,
 		RED_ORB,
-	][count][0]
+	][type][5 - count]
 	%Count.text = "%d/%d" % [count, 5]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjlscqp5df7uh" path="res://ui/ui.gd" id="1_8q4px"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="2_qoaob"]
+[ext_resource type="StyleBox" uid="uid://bqm20bvf32r81" path="res://ui/theme/black_panel.tres" id="3_tf0e0"]
 [ext_resource type="PackedScene" uid="uid://diy5txggb2sto" path="res://ui/orb.tscn" id="3_vkava"]
 [ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="3_wl5ax"]
 
@@ -37,10 +38,25 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Orb" parent="Main/Margin/Stats" unique_id=1785923407 instance=ExtResource("3_vkava")]
+[node name="Orbs" type="PanelContainer" parent="Main/Margin/Stats" unique_id=704277549]
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_tf0e0")
+
+[node name="Margin" type="MarginContainer" parent="Main/Margin/Stats/Orbs" unique_id=1621550170]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBox" type="VBoxContainer" parent="Main/Margin/Stats/Orbs/Margin" unique_id=1942137105]
 layout_mode = 2
 
-[node name="Orb2" parent="Main/Margin/Stats" unique_id=1733355768 instance=ExtResource("3_vkava")]
+[node name="BlueOrb" parent="Main/Margin/Stats/Orbs/Margin/VBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
 layout_mode = 2
+
+[node name="RedOrb" parent="Main/Margin/Stats/Orbs/Margin/VBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
+layout_mode = 2
+type = 1
 
 [node name="Fade" parent="." unique_id=12204861 instance=ExtResource("3_wl5ax")]

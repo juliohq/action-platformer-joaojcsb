@@ -8,8 +8,17 @@ const SAVE_PATH := "user://save.dat"
 ## The version of the same file. (for backward compatibility)
 const SAVE_VERSION := 1
 
+## How many blue orbs the player has.
+const BLUE_ORBS := 5
+## How many red orbs the player has.
+const RED_ORBS := 5
+
 ## The current language code.
 var language := "en"
+## How many blue orbs the player has.
+var blue_orbs := BLUE_ORBS
+## How many red orbs the player has.
+var red_orbs := RED_ORBS
 
 
 func _ready() -> void:
@@ -132,3 +141,8 @@ func load_settings(filename: String) -> void:
 					#InputMap.action_add_event(action, event)
 		else:
 			push_error("Failed to load file from %s (error %d)" % [filename, err])
+
+
+func reset() -> void:
+	blue_orbs = BLUE_ORBS
+	red_orbs = RED_ORBS
