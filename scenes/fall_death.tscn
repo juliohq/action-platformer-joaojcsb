@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cerb5ptfjmsfc"]
+
+[ext_resource type="Script" uid="uid://dgqnd1eses2oe" path="res://scenes/fall_death.gd" id="1_ku2tm"]
+
+[node name="FallDeath" type="Node" unique_id=240358636]
+script = ExtResource("1_ku2tm")
