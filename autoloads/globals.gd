@@ -8,6 +8,8 @@ const SAVE_PATH := "user://save.dat"
 ## The version of the same file. (for backward compatibility)
 const SAVE_VERSION := 1
 
+## The player health (HP).
+const PLAYER_HEALTH := 2
 ## How many blue orbs the player has.
 const BLUE_ORBS := 5
 ## How many red orbs the player has.
@@ -15,6 +17,9 @@ const RED_ORBS := 5
 
 ## The current language code.
 var language := "en"
+
+## The player health (HP).
+var player_health := PLAYER_HEALTH
 ## How many blue orbs the player has.
 var blue_orbs := BLUE_ORBS
 ## How many red orbs the player has.
@@ -144,5 +149,6 @@ func load_settings(file_path: String) -> void:
 
 
 func reset() -> void:
+	player_health = PLAYER_HEALTH
 	blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS

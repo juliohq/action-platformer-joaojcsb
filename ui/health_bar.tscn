@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://drjiyaocwe2vj"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_1w8tp"]
+[ext_resource type="Script" uid="uid://cy4u53icmfxhc" path="res://ui/health_bar.gd" id="2_1w8tp"]
+[ext_resource type="Texture2D" uid="uid://cp7u6smglttdc" path="res://assets/ui/health_bar/0.png" id="3_1w8tp"]
+
+[node name="HealthBar" type="MarginContainer" unique_id=2135712761]
+offset_right = 33.0
+offset_bottom = 14.0
+theme = ExtResource("1_1w8tp")
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("2_1w8tp")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1564280413]
+layout_mode = 2
+
+[node name="Health" type="TextureRect" parent="HBox" unique_id=1733355768]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_1w8tp")
+
+[node name="Count" type="Label" parent="HBox" unique_id=1404627578]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5/5"
