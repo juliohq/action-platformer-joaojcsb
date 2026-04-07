@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://dp0qjmn4wkmu0" path="res://scenes/checkpoint.gd" id="1_yyywg"]
 
-[node name="Checkpoint" type="Node" unique_id=2115206883]
+[node name="Checkpoint" type="Node" unique_id=1064409228]
 script = ExtResource("1_yyywg")

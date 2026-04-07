@@ -283,9 +283,21 @@ clamp_y = false
 margins = Vector2(8, 0)
 root = NodePath("..")
 
-[node name="Checkpoint" parent="." unique_id=2115206883 node_paths=PackedStringArray("parent") instance=ExtResource("12_8sqrr")]
+[node name="Checkpoint" parent="." unique_id=2115206883 node_paths=PackedStringArray("parent", "raycast_a", "raycast_b") instance=ExtResource("12_8sqrr")]
 parent = NodePath("..")
+raycast_a = NodePath("../Left")
+raycast_b = NodePath("../Right")
 
 [node name="FallDeath" parent="." unique_id=240358636 node_paths=PackedStringArray("parent", "checkpoint") instance=ExtResource("13_6rrl0")]
 parent = NodePath("..")
 checkpoint = NodePath("../Checkpoint")
+
+[node name="Left" type="RayCast2D" parent="." unique_id=991136442]
+position = Vector2(-8, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
+
+[node name="Right" type="RayCast2D" parent="." unique_id=819082567]
+position = Vector2(8, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
