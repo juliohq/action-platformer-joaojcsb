@@ -1,6 +1,8 @@
 extends Node
 
 
+## Emitted when the orb is changed.
+signal orb_changed()
 ## Emitted when an orb is dropped.
 signal orb_dropped()
 ## Emitted when the game is paused.

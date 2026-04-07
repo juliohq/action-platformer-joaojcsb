@@ -31,6 +31,13 @@ func _ready() -> void:
 	fall_death.dead.connect(die)
 
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("use"):
+		get_viewport().set_input_as_handled()
+		Globals.orb = (Globals.orb + 1) % 2
+		Events.orb_changed.emit()
+
+
 func _physics_process(delta: float) -> void:
 	# Flip sprite logic
 	if direction < 0.0:

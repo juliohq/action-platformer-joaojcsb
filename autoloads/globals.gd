@@ -1,6 +1,11 @@
 extends Node
 
 
+enum Orb {
+	BLUE,
+	RED,
+}
+
 ## The default path for the settings file.
 const SETTINGS_PATH := "user://settings.dat"
 ## The default path for the save file.
@@ -10,6 +15,8 @@ const SAVE_VERSION := 1
 
 ## The player health (HP).
 const PLAYER_HEALTH := 2
+## The current orb selected.
+const ORB := Orb.BLUE
 ## How many blue orbs the player has.
 const BLUE_ORBS := 5
 ## How many red orbs the player has.
@@ -20,6 +27,8 @@ var language := "en"
 
 ## The player health (HP).
 var player_health := PLAYER_HEALTH
+## The current orb selected.
+var orb := ORB
 ## How many blue orbs the player has.
 var blue_orbs := BLUE_ORBS
 ## How many red orbs the player has.
@@ -150,5 +159,6 @@ func load_settings(file_path: String) -> void:
 
 func reset() -> void:
 	player_health = PLAYER_HEALTH
+	orb = ORB
 	blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS

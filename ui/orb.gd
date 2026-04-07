@@ -1,11 +1,6 @@
 extends MarginContainer
 
 
-enum Orb {
-	BLUE,
-	RED,
-}
-
 const BLUE_ORB := [
 	preload("res://assets/ui/blue_orb/0.png"),
 	preload("res://assets/ui/blue_orb/1.png"),
@@ -25,7 +20,7 @@ const RED_ORB := [
 	preload("res://assets/ui/red_orb/6.png"),
 ]
 
-@export var type := Orb.BLUE
+@export var type := Globals.Orb.BLUE
 
 
 func _ready() -> void:
@@ -37,7 +32,7 @@ func _ready() -> void:
 func update() -> void:
 	var count := -1
 	
-	if type == Orb.BLUE:
+	if type == Globals.Orb.BLUE:
 		count = Globals.blue_orbs
 	else:
 		count = Globals.red_orbs
