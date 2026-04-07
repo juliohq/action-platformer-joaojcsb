@@ -1,6 +1,7 @@
 extends MarginContainer
 
 
+const COUNT := 5
 const BLUE_ORB := [
 	preload("res://assets/ui/blue_orb/0.png"),
 	preload("res://assets/ui/blue_orb/1.png"),
@@ -40,5 +41,5 @@ func update() -> void:
 	%Orb.texture = [
 		BLUE_ORB,
 		RED_ORB,
-	][type][5 - count]
-	%Count.text = "%d/%d" % [count, 5]
+	][type][COUNT - count]
+	%Count.text = "%d/%d" % [count, COUNT]
