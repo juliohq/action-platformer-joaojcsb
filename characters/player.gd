@@ -95,5 +95,9 @@ func hit() -> void:
 		Globals.red_orbs -= 1
 		Events.orb_dropped.emit()
 	else:
+		Globals.player_health -= 1
+		Events.player_health_changed.emit()
+		
 		# Death
-		pass
+		if Globals.player_health <= 0:
+			Events.game_over.emit()

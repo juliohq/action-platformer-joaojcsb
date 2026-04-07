@@ -7,6 +7,8 @@ signal orb_dropped()
 signal game_paused()
 ## Emitted when the game is resumed.
 signal game_resumed()
+## Emitted when the player health changes.
+signal player_health_changed()
 ## Emitted when the game over screen is shown.
 signal game_over()
 ## Emitted when the game finished screen is shown.

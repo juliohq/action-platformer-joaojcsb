@@ -18,7 +18,7 @@ const HEALTH_BAR := [
 
 
 func _ready() -> void:
-	Events.orb_dropped.connect(update)
+	Events.player_health_changed.connect(update)
 	
 	update()
 
