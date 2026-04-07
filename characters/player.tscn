@@ -232,12 +232,13 @@ _data = {
 &"RUN": SubResource("Animation_6t23p")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "state_machine", "jump_state")]
+[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "state_machine", "jump_state", "fall_death")]
 collision_mask = 2
 script = ExtResource("2_03c6q")
 sprite = NodePath("Sprite")
 state_machine = NodePath("StateMachine")
 jump_state = NodePath("StateMachine/Jump")
+fall_death = NodePath("FallDeath")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1046985751]
 texture = ExtResource("2_j31ep")

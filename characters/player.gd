@@ -15,6 +15,7 @@ var coyote_buffering := 0.1
 @export var sprite: Sprite2D
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
+@export var fall_death: Node
 
 ## The horizontal direction the player is moving to.
 var direction := 0.0
@@ -24,6 +25,10 @@ var jump_buffer := 0.0
 var coyote_buffer := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
+
+
+func _ready() -> void:
+	fall_death.dead.connect(die)
 
 
 func _physics_process(delta: float) -> void:
@@ -95,9 +100,13 @@ func hit() -> void:
 		Globals.red_orbs -= 1
 		Events.orb_dropped.emit()
 	else:
-		Globals.player_health -= 1
-		Events.player_health_changed.emit()
-		
-		# Death
-		if Globals.player_health <= 0:
-			Events.game_over.emit()
+		die()
+
+
+func die() -> void:
+	Globals.player_health -= 1
+	Events.player_health_changed.emit()
+	
+	# Death
+	if Globals.player_health <= 0:
+		Events.game_over.emit()

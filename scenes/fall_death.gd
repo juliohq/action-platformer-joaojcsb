@@ -1,6 +1,9 @@
 extends Node
 
 
+## Emitted when the parent dies.
+signal dead()
+
 ## The parent to die from fall.
 @export var parent: Node2D
 ## The checkpoint.
@@ -21,3 +24,6 @@ func _physics_process(_delta: float) -> void:
 		
 		# Restore parent position
 		parent.position = checkpoint.position
+		
+		# Emit signal
+		dead.emit()
