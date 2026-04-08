@@ -18,12 +18,17 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if parent.position.y >= threshold:
-		# Reset gravity
-		if "velocity" in parent:
-			parent.velocity.y = 0.0
-		
-		# Restore parent position
-		parent.position = checkpoint.position
+		if _restore():
+			# Reset gravity
+			if "velocity" in parent:
+				parent.velocity.y = 0.0
+			
+			# Restore parent position
+			parent.position = checkpoint.position
 		
 		# Emit signal
 		dead.emit()
+
+
+func _restore() -> bool:
+	return Globals.player_health > 1
