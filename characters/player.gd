@@ -34,7 +34,7 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("use"):
 		get_viewport().set_input_as_handled()
-		Globals.orb = (Globals.orb + 1) % 2
+		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
 
 
