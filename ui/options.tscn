@@ -54,21 +54,6 @@ unique_name_in_owner = true
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 
-[node name="Difficulty" type="Label" parent="Margin/VBox/Options" unique_id=1229238818]
-layout_mode = 2
-text = "DIFFICULTY"
-
-[node name="DifficultyMode" type="OptionButton" parent="Margin/VBox/Options" unique_id=1577372560]
-layout_mode = 2
-selected = 0
-item_count = 3
-popup/item_0/text = "DIFFICULTY_EASY"
-popup/item_0/id = 0
-popup/item_1/text = "DIFFICULTY_MEDIUM"
-popup/item_1/id = 1
-popup/item_2/text = "DIFFICULTY_HARD"
-popup/item_2/id = 2
-
 [node name="Fullscreen" type="Label" parent="Margin/VBox/Options" unique_id=804043589]
 layout_mode = 2
 text = "FULLSCREEN"
@@ -133,7 +118,6 @@ layout_mode = 2
 text = "BACK"
 
 [connection signal="item_selected" from="Margin/VBox/Options/Languages" to="." method="_language_changed"]
-[connection signal="item_selected" from="Margin/VBox/Options/DifficultyMode" to="." method="_difficulty_changed"]
 [connection signal="toggled" from="Margin/VBox/Options/FullscreenValue" to="." method="_fullscreen"]
 [connection signal="value_changed" from="Margin/VBox/Options/GeneralVolume" to="." method="_general_volume_changed"]
 [connection signal="value_changed" from="Margin/VBox/Options/MusicVolume" to="." method="_music_volume_changed"]

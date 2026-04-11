@@ -19,7 +19,6 @@ func _ready() -> void:
 	%Languages.select(index)
 	
 	# Prepare the rest of the menu
-	push_warning("Difficulty mode read logic isn't implemented")
 	%FullscreenValue.set_pressed_no_signal(get_window().mode == Window.MODE_FULLSCREEN)
 	%GeneralVolume.value = AudioServer.get_bus_volume_linear(master_bus)
 	%MusicVolume.value = AudioServer.get_bus_volume_linear(music_bus)
@@ -38,11 +37,6 @@ func _language_changed(index: int) -> void:
 	var locales = TranslationServer.get_loaded_locales()
 	Globals.language = locales[index]
 	TranslationServer.set_locale(Globals.language)
-
-
-## Handles the logic when the difficulty mode is changed. Override to provide custom behavior.
-func _difficulty_changed(_difficulty: int) -> void:
-	push_warning("Difficulty logic not implemented!")
 
 
 ## Handles the logic when the fullscreen mode is toggled. Override to provide custom behavior.

@@ -92,9 +92,6 @@ func save_settings(file_path: String) -> void:
 		# Save language
 		f.store_var(language)
 		
-		# Save difficulty mode
-		push_warning("Difficulty save logic isn't implemented")
-		
 		# Save window fullscreen mode
 		f.store_var(get_window().mode == Window.MODE_FULLSCREEN)
 		
@@ -131,9 +128,6 @@ func load_settings(file_path: String) -> void:
 			# Read language
 			language = f.get_var()
 			TranslationServer.set_locale(language)
-			
-			# Read difficulty mode
-			push_warning("Difficulty load logic isn't implemented")
 			
 			# Read window fullscreen mode
 			get_window().mode = Window.MODE_FULLSCREEN if f.get_var() else Window.MODE_WINDOWED
