@@ -14,3 +14,7 @@ script = ExtResource("1_ktqa0")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=994521606]
 shape = SubResource("CircleShape2D_ktqa0")
+
+[node name="Vanish" type="Timer" parent="." unique_id=995013265]
+wait_time = 5.0
+autostart = true
