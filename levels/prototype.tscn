@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bb5xgb1r1rlhp" path="res://scenes/level.tscn" id="1_0vqeo"]
 [ext_resource type="PackedScene" uid="uid://d0nubcpsalgj" path="res://characters/player.tscn" id="2_f7yxy"]
 [ext_resource type="PackedScene" uid="uid://bll28k40uoiju" path="res://scenes/camera.tscn" id="3_pdryj"]
+[ext_resource type="PackedScene" uid="uid://by5485q870gw" path="res://characters/enemy.tscn" id="4_1nyb5"]
 
 [node name="Prototype" unique_id=1054854771 instance=ExtResource("1_0vqeo")]
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]
@@ -21,3 +22,6 @@ limit_left = -320
 limit_top = -176
 limit_right = 960
 limit_bottom = 176
+
+[node name="Enemy" parent="World" parent_id_path=PackedInt32Array(574016881) index="3" unique_id=2003408289 instance=ExtResource("4_1nyb5")]
+position = Vector2(304, 64)

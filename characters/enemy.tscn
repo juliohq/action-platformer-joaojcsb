@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://by5485q870gw"]
+
+[ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://characters/enemy.gd" id="1_wa0eo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
+radius = 8.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2003408289]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_wa0eo")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_wa0eo")
