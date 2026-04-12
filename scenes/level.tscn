@@ -5,8 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dsl842cl3a2qr" path="res://ui/ui.tscn" id="2_jedpt"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_uf75n"]
 
-[node name="Level" type="Node2D" unique_id=1054854771]
+[node name="Level" type="Node2D" unique_id=1054854771 node_paths=PackedStringArray("world", "background", "terrain")]
 script = ExtResource("1_6i3tb")
+world = NodePath("World")
+background = NodePath("World/Background")
+terrain = NodePath("World/Terrain")
 metadata/_edit_lock_ = true
 
 [node name="World" type="Node2D" parent="." unique_id=574016881]

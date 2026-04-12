@@ -1,6 +1,8 @@
 extends Node
 
 
+## Emitted when the loot is dropped.
+signal loot_dropped(loot)
 ## Emitted when the orb is changed.
 signal orb_changed()
 ## Emitted when an orb is dropped.

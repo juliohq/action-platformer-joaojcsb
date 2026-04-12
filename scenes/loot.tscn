@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3r8vkrqytjxr"]
+
+[ext_resource type="Script" uid="uid://dvc0722ocwo30" path="res://scenes/loot.gd" id="1_xofgn"]
+
+[node name="Loot" type="Node2D" unique_id=1730885191]
+script = ExtResource("1_xofgn")
