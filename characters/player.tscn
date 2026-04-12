@@ -4,18 +4,61 @@
 [ext_resource type="Texture2D" uid="uid://c8r3mss6tiyc5" path="res://assets/player/cat_idle.png" id="2_j31ep"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="3_0hafw"]
 [ext_resource type="Texture2D" uid="uid://vfjpvigcwxrv" path="res://assets/player/cat_run.png" id="3_6t23p"]
+[ext_resource type="Texture2D" uid="uid://bf4ulji12hcb1" path="res://assets/player/cat_attack.png" id="3_eus45"]
 [ext_resource type="Texture2D" uid="uid://c4ltt3anbbxx0" path="res://assets/player/cat_jump.png" id="3_n8jd0"]
 [ext_resource type="Texture2D" uid="uid://b57slnqgd1uf4" path="res://assets/player/cat_fall.png" id="3_q605b"]
 [ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/states/idle.gd" id="4_3ak4l"]
 [ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/states/run.gd" id="5_bxfkk"]
 [ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/states/jump.gd" id="6_238id"]
 [ext_resource type="Script" uid="uid://c2cu7m76a5xgl" path="res://characters/states/fall.gd" id="7_4vov5"]
+[ext_resource type="Script" uid="uid://cswnib7vvpuxw" path="res://characters/states/attack.gd" id="10_vcag3"]
 [ext_resource type="PackedScene" uid="uid://cg6jln88qrf4q" path="res://scenes/clamp.tscn" id="11_eho78"]
 [ext_resource type="PackedScene" uid="uid://b3i57t6al7jrj" path="res://scenes/checkpoint.tscn" id="12_8sqrr"]
 [ext_resource type="PackedScene" uid="uid://cerb5ptfjmsfc" path="res://scenes/fall_death.tscn" id="13_6rrl0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
 radius = 8.0
+
+[sub_resource type="Animation" id="Animation_6rrl0"]
+resource_name = "ATTACK"
+length = 0.37500626
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_eus45")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q605b"]
 resource_name = "FALL"
@@ -225,6 +268,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j31ep"]
 _data = {
+&"ATTACK": SubResource("Animation_6rrl0"),
 &"FALL": SubResource("Animation_q605b"),
 &"IDLE": SubResource("Animation_h1q25"),
 &"JUMP": SubResource("Animation_n8jd0"),
@@ -264,6 +308,11 @@ animator = NodePath("../../Animator")
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1182877665 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("5_bxfkk")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=703915949 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("10_vcag3")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
