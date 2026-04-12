@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bb5xgb1r1rlhp" path="res://scenes/level.tscn" id="1_0vqeo"]
 [ext_resource type="PackedScene" uid="uid://d0nubcpsalgj" path="res://characters/player.tscn" id="2_f7yxy"]
 [ext_resource type="PackedScene" uid="uid://bll28k40uoiju" path="res://scenes/camera.tscn" id="3_pdryj"]
-[ext_resource type="PackedScene" uid="uid://by5485q870gw" path="res://characters/enemy.tscn" id="4_1nyb5"]
+[ext_resource type="PackedScene" uid="uid://by5485q870gw" path="res://enemies/enemy/enemy.tscn" id="4_1nyb5"]
 
 [node name="Prototype" unique_id=1054854771 instance=ExtResource("1_0vqeo")]
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]

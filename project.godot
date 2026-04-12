@@ -47,12 +47,13 @@ folder_colors={
 "res://assets/": "orange",
 "res://autoloads/": "yellow",
 "res://characters/": "green",
-"res://levels/": "teal",
-"res://locales/": "blue",
-"res://scenes/": "purple",
-"res://scripts/": "pink",
-"res://shaders/": "red",
-"res://ui/": "orange"
+"res://enemies/": "teal",
+"res://levels/": "blue",
+"res://locales/": "purple",
+"res://scenes/": "pink",
+"res://scripts/": "red",
+"res://shaders/": "orange",
+"res://ui/": "yellow"
 }
 
 [importer_defaults]

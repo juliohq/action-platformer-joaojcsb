@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://by5485q870gw"]
 
-[ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://characters/enemy.gd" id="1_wa0eo"]
+[ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_wa0eo"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="2_ggbst"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="2_nhupr"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="2_toq4n"]
 [ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="3_1ohc2"]
+[ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="6_u8tuc"]
+[ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="7_f76jb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -48,10 +50,18 @@ collision_mask = 2
 position = Vector2(0, -8)
 scene = ExtResource("3_1ohc2")
 
-[node name="StateMachine" type="Node" parent="." unique_id=2038685419]
+[node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("2_toq4n")
+current_state = NodePath("Idle")
+animation_player = NodePath("../Animator")
 metadata/_custom_type_script = "uid://cgyspffsce7rr"
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384]
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("6_u8tuc")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("7_f76jb")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
