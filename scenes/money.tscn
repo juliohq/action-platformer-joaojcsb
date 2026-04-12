@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://cpv7ml611bwqp"]
+
+[ext_resource type="Script" uid="uid://ckuesm1p7tao7" path="res://scenes/money.gd" id="1_v42d4"]
+[ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="2_dia0j"]
+
+[node name="Money" type="Area2D" unique_id=1703661126 node_paths=PackedStringArray("collectible")]
+script = ExtResource("1_v42d4")
+collectible = NodePath("Collectible")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=672595963]
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=2100977738]
+
+[node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("2_dia0j")]
+
+[node name="Collision" type="CollisionShape2D" parent="Collectible" unique_id=933081482]
