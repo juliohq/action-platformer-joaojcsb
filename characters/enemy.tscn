@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://characters/enemy.gd" id="1_wa0eo"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="2_ggbst"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="2_nhupr"]
+[ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="2_toq4n"]
 [ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="3_1ohc2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
@@ -16,6 +17,8 @@ script = ExtResource("1_wa0eo")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 
 [node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("2_ggbst")]
 left = NodePath("Left")
@@ -44,3 +47,11 @@ collision_mask = 2
 [node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("2_nhupr")]
 position = Vector2(0, -8)
 scene = ExtResource("3_1ohc2")
+
+[node name="StateMachine" type="Node" parent="." unique_id=2038685419]
+script = ExtResource("2_toq4n")
+metadata/_custom_type_script = "uid://cgyspffsce7rr"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384]
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227]
