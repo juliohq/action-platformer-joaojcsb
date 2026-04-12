@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by5485q870gw"]
 
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://characters/enemy.gd" id="1_wa0eo"]
+[ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="2_ggbst"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="2_nhupr"]
 [ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="3_1ohc2"]
 
@@ -15,6 +16,30 @@ script = ExtResource("1_wa0eo")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
+
+[node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("2_ggbst")]
+left = NodePath("Left")
+right = NodePath("Right")
+ground_left = NodePath("GroundLeft")
+ground_right = NodePath("GroundRight")
+
+[node name="Left" type="RayCast2D" parent="SurfaceDetector" unique_id=251897372]
+target_position = Vector2(-32, 0)
+collision_mask = 2
+
+[node name="Right" type="RayCast2D" parent="SurfaceDetector" unique_id=1771102934]
+target_position = Vector2(32, 0)
+collision_mask = 2
+
+[node name="GroundLeft" type="RayCast2D" parent="SurfaceDetector" unique_id=1451372453]
+position = Vector2(-16, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
+
+[node name="GroundRight" type="RayCast2D" parent="SurfaceDetector" unique_id=988281008]
+position = Vector2(16, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
 
 [node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("2_nhupr")]
 position = Vector2(0, -8)
