@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
+@export_category("Nodes")
+@export var hit_box: Area2D
 
 ## The horizontal direction the player is moving to.
 var direction := 0.0

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://by5485q870gw"]
 
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_wa0eo"]
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_dvtch"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="2_ggbst"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="2_nhupr"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="2_toq4n"]
@@ -11,16 +12,26 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2003408289]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
+radius = 12.0
+
+[node name="Enemy" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wa0eo")
+hit_box = NodePath("HitBox")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
+
+[node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("2_dvtch")]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=743560867]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_8uprq")
 
 [node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("2_ggbst")]
 left = NodePath("Left")
