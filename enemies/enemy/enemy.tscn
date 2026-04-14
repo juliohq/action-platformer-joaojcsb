@@ -19,6 +19,7 @@ radius = 12.0
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_wa0eo")
+movement_speed = 32
 hit_box = NodePath("HitBox")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
@@ -64,7 +65,7 @@ max_count = 5
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("2_toq4n")
-current_state = NodePath("Idle")
+current_state = NodePath("Walk")
 animation_player = NodePath("../Animator")
 metadata/_custom_type_script = "uid://cgyspffsce7rr"
 
@@ -73,7 +74,8 @@ script = ExtResource("6_u8tuc")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("root", "animator")]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("surface_detector", "root", "animator")]
 script = ExtResource("7_f76jb")
+surface_detector = NodePath("../../SurfaceDetector")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
