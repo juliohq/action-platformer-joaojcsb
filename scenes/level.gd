@@ -4,7 +4,7 @@ extends Node2D
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
-@export var terrain: TileMapLayer
+@export var foreground: TileMapLayer
 
 
 func _enter_tree() -> void:

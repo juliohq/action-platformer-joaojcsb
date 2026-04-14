@@ -5,11 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://dsl842cl3a2qr" path="res://ui/ui.tscn" id="2_jedpt"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_uf75n"]
 
-[node name="Level" type="Node2D" unique_id=1054854771 node_paths=PackedStringArray("world", "background", "terrain")]
+[node name="Level" type="Node2D" unique_id=1054854771 node_paths=PackedStringArray("world", "background", "foreground")]
 script = ExtResource("1_6i3tb")
 world = NodePath("World")
 background = NodePath("World/Background")
-terrain = NodePath("World/Terrain")
+foreground = NodePath("World/Foreground")
 metadata/_edit_lock_ = true
 
 [node name="World" type="Node2D" parent="." unique_id=574016881]
@@ -20,7 +20,7 @@ tile_set = ExtResource("2_7emdn")
 collision_enabled = false
 metadata/_edit_lock_ = true
 
-[node name="Terrain" type="TileMapLayer" parent="World" unique_id=1717989281]
+[node name="Foreground" type="TileMapLayer" parent="World" unique_id=1717989281]
 tile_set = ExtResource("2_7emdn")
 metadata/_edit_lock_ = true
 
