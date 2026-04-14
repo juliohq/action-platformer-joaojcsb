@@ -30,8 +30,8 @@ func _handle_pause(paused: bool) -> void:
 
 ## Handles the play again logic. Override to provide custom behavior.
 func _play_again() -> void:
-	push_warning("The play again logic might be partially implemented")
-	get_tree().reload_current_scene()
+	var err := get_tree().reload_current_scene()
+	assert(err == OK, "failed to change scene")
 
 
 ## Handles the main menu logic. Override to provide custom behavior.
