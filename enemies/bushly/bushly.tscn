@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://djfqtdit362kp"]
+
+[ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_ehs4y"]
+[ext_resource type="Texture2D" uid="uid://cbovl8wv8p6nb" path="res://assets/enemies/bushly/camouflaged.png" id="2_6dppi"]
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_i8sxu"]
+[ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="3_6dppi"]
+[ext_resource type="Texture2D" uid="uid://bkvixy6d0wh3e" path="res://assets/enemies/bushly/idle.png" id="3_wqn3j"]
+[ext_resource type="Texture2D" uid="uid://5ow7bcwxifma" path="res://assets/enemies/bushly/running.png" id="4_hfbxs"]
+[ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="4_wqn3j"]
+[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="5_hfbxs"]
+[ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="6_i2776"]
+[ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
+[ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
+[ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="8_vm5xc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
+radius = 8.0
+
+[sub_resource type="Animation" id="Animation_i8sxu"]
+resource_name = "CAMOUFLAGED"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_6dppi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wqn3j"]
+resource_name = "IDLE"
+length = 0.5000167
+loop_mode = 1
+step = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wqn3j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6dppi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_6dppi")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hfbxs"]
+resource_name = "RUN"
+length = 0.50000834
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hfbxs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6dppi"]
+_data = {
+&"CAMOUFLAGED": SubResource("Animation_i8sxu"),
+&"IDLE": SubResource("Animation_wqn3j"),
+&"RESET": SubResource("Animation_6dppi"),
+&"RUN": SubResource("Animation_hfbxs")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
+radius = 12.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
+radius = 128.0
+
+[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_ehs4y")
+movement_speed = 64
+hit_box = NodePath("HitBox")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
+texture = ExtResource("2_6dppi")
+offset = Vector2(0, -8)
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_wa0eo")
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
+libraries/ = SubResource("AnimationLibrary_6dppi")
+
+[node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("2_i8sxu")]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=743560867]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_8uprq")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=1621230065]
+collision_layer = 0
+
+[node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1731492826]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_6dppi")
+
+[node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("3_6dppi")]
+left = NodePath("Left")
+right = NodePath("Right")
+ground_left = NodePath("GroundLeft")
+ground_right = NodePath("GroundRight")
+
+[node name="Left" type="RayCast2D" parent="SurfaceDetector" unique_id=251897372]
+target_position = Vector2(-32, 0)
+collision_mask = 2
+
+[node name="Right" type="RayCast2D" parent="SurfaceDetector" unique_id=1771102934]
+target_position = Vector2(32, 0)
+collision_mask = 2
+
+[node name="GroundLeft" type="RayCast2D" parent="SurfaceDetector" unique_id=1451372453]
+position = Vector2(-16, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
+
+[node name="GroundRight" type="RayCast2D" parent="SurfaceDetector" unique_id=988281008]
+position = Vector2(16, 0)
+target_position = Vector2(0, 32)
+collision_mask = 2
+
+[node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("4_wqn3j")]
+position = Vector2(0, -8)
+scene = ExtResource("5_hfbxs")
+max_count = 5
+
+[node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
+script = ExtResource("6_i2776")
+current_state = NodePath("Camouflaged")
+animation_player = NodePath("../Animator")
+metadata/_custom_type_script = "uid://cgyspffsce7rr"
+
+[node name="Camouflaged" type="Node" parent="StateMachine" unique_id=1047482332 node_paths=PackedStringArray("idle", "player_detector", "root", "animator")]
+script = ExtResource("8_6dppi")
+idle = NodePath("../Idle")
+player_detector = NodePath("../../PlayerDetector")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("walk", "sprite", "player_detector", "root", "animator")]
+script = ExtResource("7_3yxkd")
+walk = NodePath("../Walk")
+sprite = NodePath("../../Sprite")
+player_detector = NodePath("../../PlayerDetector")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "surface_detector", "root", "animator")]
+script = ExtResource("8_vm5xc")
+sprite = NodePath("../../Sprite")
+surface_detector = NodePath("../../SurfaceDetector")
+root = NodePath("../..")
+animator = NodePath("../../Animator")

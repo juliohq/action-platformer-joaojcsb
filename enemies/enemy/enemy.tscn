@@ -22,6 +22,8 @@ script = ExtResource("1_wa0eo")
 movement_speed = 32
 hit_box = NodePath("HitBox")
 
+[node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
+
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
