@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dyclbjoiofcb5" path="res://scenes/level.gd" id="1_6i3tb"]
 [ext_resource type="TileSet" uid="uid://dhr264lyjpv58" path="res://scenes/tileset.tres" id="2_7emdn"]
 [ext_resource type="PackedScene" uid="uid://dsl842cl3a2qr" path="res://ui/ui.tscn" id="2_jedpt"]
+[ext_resource type="PackedScene" uid="uid://d0nubcpsalgj" path="res://characters/player.tscn" id="3_2r41h"]
+[ext_resource type="PackedScene" uid="uid://bll28k40uoiju" path="res://scenes/camera.tscn" id="4_klq6b"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_uf75n"]
 
 [node name="Level" type="Node2D" unique_id=1054854771 node_paths=PackedStringArray("world", "background", "foreground")]
@@ -26,6 +28,14 @@ metadata/_edit_lock_ = true
 
 [node name="Enemies" type="Node2D" parent="World" unique_id=1528690379]
 metadata/_edit_lock_ = true
+
+[node name="Player" parent="World" unique_id=2136620420 instance=ExtResource("3_2r41h")]
+
+[node name="Camera" parent="World/Player" unique_id=785309888 instance=ExtResource("4_klq6b")]
+limit_left = -320
+limit_top = -176
+limit_right = 960
+limit_bottom = 176
 
 [node name="UI" parent="." unique_id=114827551 instance=ExtResource("2_jedpt")]
 
