@@ -51,8 +51,8 @@ folder_colors={
 "res://levels/": "blue",
 "res://locales/": "purple",
 "res://scenes/": "pink",
-"res://scripts/": "red",
-"res://shaders/": "orange",
+"res://shaders/": "red",
+"res://tools/": "orange",
 "res://ui/": "yellow"
 }
 
