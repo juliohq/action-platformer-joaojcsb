@@ -251,7 +251,8 @@ collision_mask = 2
 [node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("4_wqn3j")]
 position = Vector2(0, -8)
 scene = ExtResource("5_hfbxs")
-max_count = 5
+min_count = 3
+max_count = 7
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("6_i2776")
