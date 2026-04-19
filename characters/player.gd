@@ -1,6 +1,8 @@
 extends CharacterBody2D
 
 
+const JUMP_SOUND := preload("res://assets/audio/player_jump.wav")
+
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
@@ -88,6 +90,7 @@ func _physics_process(delta: float) -> void:
 
 ## Makes the character jump upwards.
 func jump() -> void:
+	AudioManager.play(JUMP_SOUND, 1.0, &"Sounds")
 	velocity.y = -jump_height
 	state_machine.current_state = jump_state
 
