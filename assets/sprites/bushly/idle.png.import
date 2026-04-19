@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf4ulji12hcb1"
-path="res://.godot/imported/cat_attack.png-2e0d8dca5b05863f1ba0dbf6fd9e3891.ctex"
+uid="uid://bkvixy6d0wh3e"
+path="res://.godot/imported/idle.png-534ef8bd4d0ea12ad76372738ed0ce7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/cat_attack.png"
-dest_files=["res://.godot/imported/cat_attack.png-2e0d8dca5b05863f1ba0dbf6fd9e3891.ctex"]
+source_file="res://assets/sprites/bushly/idle.png"
+dest_files=["res://.godot/imported/idle.png-534ef8bd4d0ea12ad76372738ed0ce7b.ctex"]
 
 [params]
 

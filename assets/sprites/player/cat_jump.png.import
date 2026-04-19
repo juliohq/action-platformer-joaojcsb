@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkvixy6d0wh3e"
-path="res://.godot/imported/idle.png-cabcf21a5ea8549eec4b3cdbf17faf2c.ctex"
+uid="uid://c4ltt3anbbxx0"
+path="res://.godot/imported/cat_jump.png-3f0054b19fa5e95fb57b059bb419c7fa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/idle.png"
-dest_files=["res://.godot/imported/idle.png-cabcf21a5ea8549eec4b3cdbf17faf2c.ctex"]
+source_file="res://assets/sprites/player/cat_jump.png"
+dest_files=["res://.godot/imported/cat_jump.png-3f0054b19fa5e95fb57b059bb419c7fa.ctex"]
 
 [params]
 

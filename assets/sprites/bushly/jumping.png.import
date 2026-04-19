@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbovl8wv8p6nb"
-path="res://.godot/imported/camouflaged.png-3c3f56a7c0b359df367473f94d43e9fa.ctex"
+uid="uid://cgudl42mp7rxt"
+path="res://.godot/imported/jumping.png-6610766ba39ac5a7d04a8a08157d9af6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/camouflaged.png"
-dest_files=["res://.godot/imported/camouflaged.png-3c3f56a7c0b359df367473f94d43e9fa.ctex"]
+source_file="res://assets/sprites/bushly/jumping.png"
+dest_files=["res://.godot/imported/jumping.png-6610766ba39ac5a7d04a8a08157d9af6.ctex"]
 
 [params]
 

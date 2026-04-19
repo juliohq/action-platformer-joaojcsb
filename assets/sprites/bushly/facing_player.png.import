@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ci6rvusypfb7m"
-path="res://.godot/imported/facing_player.png-62fc4ad03a3a9c96acde582b13c3b36f.ctex"
+path="res://.godot/imported/facing_player.png-8e81f1161192cca022bf8d9039704c87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/facing_player.png"
-dest_files=["res://.godot/imported/facing_player.png-62fc4ad03a3a9c96acde582b13c3b36f.ctex"]
+source_file="res://assets/sprites/bushly/facing_player.png"
+dest_files=["res://.godot/imported/facing_player.png-8e81f1161192cca022bf8d9039704c87.ctex"]
 
 [params]
 

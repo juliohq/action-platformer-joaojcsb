@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgudl42mp7rxt"
-path="res://.godot/imported/jumping.png-26d2ccfd961b996eeae2a9b896f4961f.ctex"
+uid="uid://c03kr83rkqaqw"
+path="res://.godot/imported/hurt.png-97359dad113944c7ce62f969756513cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/jumping.png"
-dest_files=["res://.godot/imported/jumping.png-26d2ccfd961b996eeae2a9b896f4961f.ctex"]
+source_file="res://assets/sprites/bushly/hurt.png"
+dest_files=["res://.godot/imported/hurt.png-97359dad113944c7ce62f969756513cc.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b374e5tw8wxta"
-path="res://.godot/imported/cat_death.png-01e1fd9bb07a554285a8d8a998cc59be.ctex"
+uid="uid://cbovl8wv8p6nb"
+path="res://.godot/imported/camouflaged.png-e2f83e4f5950eaad2661f6d1da4cbf34.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/cat_death.png"
-dest_files=["res://.godot/imported/cat_death.png-01e1fd9bb07a554285a8d8a998cc59be.ctex"]
+source_file="res://assets/sprites/bushly/camouflaged.png"
+dest_files=["res://.godot/imported/camouflaged.png-e2f83e4f5950eaad2661f6d1da4cbf34.ctex"]
 
 [params]
 

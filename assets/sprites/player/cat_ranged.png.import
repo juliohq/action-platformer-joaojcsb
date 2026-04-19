@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ee45gerelah"
-path="res://.godot/imported/falling.png-90149f8b20ccb8a71dfe0a7b8c4ee8eb.ctex"
+uid="uid://co5v6x7itdktj"
+path="res://.godot/imported/cat_ranged.png-c27c2b4e77d4c35d312a0eb2b33b0b80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/falling.png"
-dest_files=["res://.godot/imported/falling.png-90149f8b20ccb8a71dfe0a7b8c4ee8eb.ctex"]
+source_file="res://assets/sprites/player/cat_ranged.png"
+dest_files=["res://.godot/imported/cat_ranged.png-c27c2b4e77d4c35d312a0eb2b33b0b80.ctex"]
 
 [params]
 

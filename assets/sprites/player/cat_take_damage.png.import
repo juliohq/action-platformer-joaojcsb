@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c03kr83rkqaqw"
-path="res://.godot/imported/hurt.png-dd665ec2906e0f936be7fc154e57582d.ctex"
+uid="uid://dbltkmih4l5a8"
+path="res://.godot/imported/cat_take_damage.png-34953aadf6a75933dd4fbd13b03bc9d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemies/bushly/hurt.png"
-dest_files=["res://.godot/imported/hurt.png-dd665ec2906e0f936be7fc154e57582d.ctex"]
+source_file="res://assets/sprites/player/cat_take_damage.png"
+dest_files=["res://.godot/imported/cat_take_damage.png-34953aadf6a75933dd4fbd13b03bc9d9.ctex"]
 
 [params]
 

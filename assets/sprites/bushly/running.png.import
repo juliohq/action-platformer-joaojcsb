@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ltt3anbbxx0"
-path="res://.godot/imported/cat_jump.png-655848843a63d3f541b0c011572f59dc.ctex"
+uid="uid://5ow7bcwxifma"
+path="res://.godot/imported/running.png-0bb0ba72fb7b2521bd1ea30d3c41b95c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/player/cat_jump.png"
-dest_files=["res://.godot/imported/cat_jump.png-655848843a63d3f541b0c011572f59dc.ctex"]
+source_file="res://assets/sprites/bushly/running.png"
+dest_files=["res://.godot/imported/running.png-0bb0ba72fb7b2521bd1ea30d3c41b95c.ctex"]
 
 [params]
 
