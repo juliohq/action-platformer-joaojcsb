@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://c3rsk0sut6vp3"]
+
+[ext_resource type="Script" uid="uid://7x0oixcqkdfd" path="res://scenes/despawn.gd" id="1_ynpxg"]
+
+[node name="Despawn" type="VisibleOnScreenNotifier2D" unique_id=223831442]
+script = ExtResource("1_ynpxg")

@@ -12,4 +12,5 @@ func _enter_tree() -> void:
 
 
 func _ready() -> void:
+	Events.bullet.connect(world.add_child)
 	Events.loot_dropped.connect(world.add_child)

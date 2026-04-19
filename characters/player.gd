@@ -15,6 +15,7 @@ var jump_buffering := 0.2
 var coyote_buffering := 0.1
 @export_category("Nodes")
 @export var sprite: Sprite2D
+@export var pivot: Node2D
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
 @export var fall_death: Node
@@ -38,14 +39,20 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
+	elif event.is_action_pressed("attack"):
+		get_viewport().set_input_as_handled()
+		var bullet := preload("res://scenes/fire.tscn").instantiate()
+		bullet.global_position = pivot.global_position
+		bullet.direction.x = sprite.scale.x
+		Events.bullet.emit(bullet)
 
 
 func _physics_process(delta: float) -> void:
 	# Flip sprite logic
 	if direction < 0.0:
-		sprite.flip_h = true
+		sprite.scale.x = -1
 	elif direction > 0.0:
-		sprite.flip_h = false
+		sprite.scale.x = 1
 	
 	# Jump logic (with jump buffering)
 	if Input.is_action_just_pressed(&"jump"):

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dkpor11njai40"]
 
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_7h3iy"]
+[ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="2_y25gk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
 radius = 8.0
@@ -13,7 +14,5 @@ script = ExtResource("1_7h3iy")
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=39689981]
 shape = SubResource("CircleShape2D_y25gk")
 
-[node name="Visible" type="VisibleOnScreenNotifier2D" parent="." unique_id=1258237782]
-rect = Rect2(-8, -8, 16, 16)
-
-[connection signal="screen_exited" from="Visible" to="." method="_screen_exited"]
+[node name="Despawn" parent="." unique_id=223831442 node_paths=PackedStringArray("parent") instance=ExtResource("2_y25gk")]
+parent = NodePath("..")
