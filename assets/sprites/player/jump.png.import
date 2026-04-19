@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b374e5tw8wxta"
-path="res://.godot/imported/cat_death.png-eee165d608beb456ddc846856dc8e1f8.ctex"
+uid="uid://c4ltt3anbbxx0"
+path="res://.godot/imported/jump.png-c3f95b961857855bc13fa37dd6abd938.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player/cat_death.png"
-dest_files=["res://.godot/imported/cat_death.png-eee165d608beb456ddc846856dc8e1f8.ctex"]
+source_file="res://assets/sprites/player/jump.png"
+dest_files=["res://.godot/imported/jump.png-c3f95b961857855bc13fa37dd6abd938.ctex"]
 
 [params]
 
