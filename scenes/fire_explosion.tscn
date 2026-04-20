@@ -10,6 +10,7 @@ radius = 8.0
 
 [node name="FireExplosion" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_fidew")
+speed = 150
 sprite = NodePath("Sprite")
 hit_box = NodePath("HitBox")
 
