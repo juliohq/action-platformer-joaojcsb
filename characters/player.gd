@@ -13,6 +13,8 @@ var jump_buffering := 0.2
 ## How long a jump will be accepted after falling a cliff.
 @export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
 var coyote_buffering := 0.1
+## How often you can shoot per second.
+@export_range(1, 10, 1, "or_greater", "suffix:units/s") var fire_rate := 2
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var pivot: Node2D
@@ -26,12 +28,16 @@ var direction := 0.0
 var jump_buffer := 0.0
 ## The time left to jump.
 var coyote_buffer := 0.0
+## The current cooldown.
+var cooldown := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
 
 func _ready() -> void:
 	fall_death.dead.connect(die)
+	
+	cooldown = 1.0 / fire_rate
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -39,12 +45,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
-	elif event.is_action_pressed("attack"):
+	elif event.is_action_pressed("attack") and cooldown <= 0.0:
 		get_viewport().set_input_as_handled()
-		var bullet := preload("res://scenes/fireball.tscn").instantiate()
-		bullet.global_position = pivot.global_position
-		bullet.direction.x = sprite.scale.x
-		Events.bullet.emit(bullet)
+		shoot()
 
 
 func _physics_process(delta: float) -> void:
@@ -81,6 +84,9 @@ func _physics_process(delta: float) -> void:
 		coyote_buffer -= delta
 	else:
 		coyote_buffer = 0.0
+	
+	# Cooldown
+	cooldown = move_toward(cooldown, 0.0, delta)
 	
 	# Process character movement
 	velocity.x = direction * movement_speed
@@ -133,3 +139,14 @@ func spawn_orb(scene: PackedScene) -> void:
 	var orb := scene.instantiate()
 	orb.global_position = global_position
 	Events.orb_dropped.emit(orb)
+
+
+func shoot() -> void:
+	# Shoot
+	var bullet := preload("res://scenes/fireball.tscn").instantiate()
+	bullet.global_position = pivot.global_position
+	bullet.direction.x = sprite.scale.x
+	Events.bullet.emit(bullet)
+	
+	# Cooldown
+	cooldown += 1.0 / fire_rate
