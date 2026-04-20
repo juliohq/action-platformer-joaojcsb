@@ -111,11 +111,11 @@ func hit() -> void:
 	if Globals.blue_orbs > 0:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
-		Events.orb_dropped.emit()
+		spawn_orb(preload("res://scenes/blue_orb.tscn"))
 	elif Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
-		Events.orb_dropped.emit()
+		spawn_orb(preload("res://scenes/red_orb.tscn"))
 	else:
 		die()
 
@@ -127,3 +127,9 @@ func die() -> void:
 	# Death
 	if Globals.player_health <= 0:
 		Events.game_over.emit()
+
+
+func spawn_orb(scene: PackedScene) -> void:
+	var orb := scene.instantiate()
+	orb.global_position = global_position
+	Events.orb_dropped.emit(orb)

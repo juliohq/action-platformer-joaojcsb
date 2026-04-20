@@ -8,7 +8,7 @@ signal loot_dropped(loot)
 ## Emitted when the orb is changed.
 signal orb_changed()
 ## Emitted when an orb is dropped.
-signal orb_dropped()
+signal orb_dropped(orb)
 ## Emitted when the game is paused.
 signal game_paused()
 ## Emitted when the game is resumed.

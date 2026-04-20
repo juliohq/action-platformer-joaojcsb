@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 @export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s²") var gravity := 980
-@export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s") var bounce := 360
+@export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s") var bounce := 300
 @export_category("Nodes")
 @export var vanish: Timer
 
