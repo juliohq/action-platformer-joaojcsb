@@ -3,9 +3,7 @@
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_rpp2m"]
 [ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/ice_effect.png" id="2_rpp2m"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_k7y80"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
-radius = 8.0
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_co5bh"]
 
 [sub_resource type="Animation" id="Animation_rpp2m"]
 resource_name = "ICE"
@@ -46,16 +44,17 @@ _data = {
 &"RESET": SubResource("Animation_co5bh")
 }
 
-[node name="Ice" type="Area2D" unique_id=1766717537 node_paths=PackedStringArray("sprite")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 8.0
+
+[node name="Ice" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_rpp2m")
 sprite = NodePath("Sprite")
+hit_box = NodePath("HitBox")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=25797444]
 texture = ExtResource("2_rpp2m")
 hframes = 10
-
-[node name="Collision" type="CollisionShape2D" parent="." unique_id=39689981]
-shape = SubResource("CircleShape2D_y25gk")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=705404215]
 libraries/ = SubResource("AnimationLibrary_co5bh")
@@ -63,3 +62,8 @@ autoplay = &"ICE"
 
 [node name="Despawn" parent="." unique_id=223831442 node_paths=PackedStringArray("parent") instance=ExtResource("3_k7y80")]
 parent = NodePath("..")
+
+[node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_co5bh")]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=1334675608]
+shape = SubResource("CircleShape2D_y25gk")
