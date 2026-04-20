@@ -107,7 +107,7 @@ func fall() -> void:
 	velocity.y = 0.0
 
 
-func hit() -> void:
+func hit(_damage: int) -> void:
 	if Globals.blue_orbs > 0:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
