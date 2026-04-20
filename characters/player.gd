@@ -41,7 +41,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		Events.orb_changed.emit()
 	elif event.is_action_pressed("attack"):
 		get_viewport().set_input_as_handled()
-		var bullet := preload("res://scenes/fire.tscn").instantiate()
+		var bullet := preload("res://scenes/fireball.tscn").instantiate()
 		bullet.global_position = pivot.global_position
 		bullet.direction.x = sprite.scale.x
 		Events.bullet.emit(bullet)
