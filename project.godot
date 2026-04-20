@@ -197,6 +197,7 @@ locale/translations=PackedStringArray("res://locales/locales.en.translation")
 2d_physics/layer_2="World"
 3d_physics/layer_2="World"
 2d_physics/layer_3="Orbs"
+2d_physics/layer_4="Enemies"
 
 [rendering]
 
