@@ -15,5 +15,4 @@ func _ready() -> void:
 func _hit(body: Node2D) -> void:
 	if body.has_method("hit"):
 		body.hit(attack)
-	
-	hit.emit(body)
+		hit.emit(body)
