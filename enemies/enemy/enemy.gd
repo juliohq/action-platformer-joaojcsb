@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px/s")
 var default_knockback := 128
 ## How fast the knockback will reset.
-@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 64
+@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 256
 @export_category("Nodes")
 @export var hit_box: Area2D
 
