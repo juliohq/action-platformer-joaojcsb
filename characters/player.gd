@@ -36,8 +36,6 @@ var cooldown := 0.0
 
 func _ready() -> void:
 	fall_death.dead.connect(die)
-	
-	cooldown = 1.0 / fire_rate
 
 
 func _unhandled_input(event: InputEvent) -> void:
