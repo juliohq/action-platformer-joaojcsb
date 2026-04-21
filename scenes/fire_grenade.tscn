@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://bhuajem3iq8gd"]
+
+[ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_mbcym"]
+[ext_resource type="Texture2D" uid="uid://rs8vay5dc87f" path="res://assets/sprites/fire_effect.png" id="2_6sd4o"]
+[ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_ss8sg"]
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_e0j61"]
+
+[sub_resource type="Animation" id="Animation_mbcym"]
+resource_name = "FIRE_GRENADE"
+length = 0.50000834
+loop_mode = 1
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667, 0.25, 0.33333334, 0.41666666),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6sd4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6sd4o"]
+_data = {
+&"FIRE_GRENADE": SubResource("Animation_mbcym"),
+&"RESET": SubResource("Animation_6sd4o")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 8.0
+
+[node name="FireGrenade" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
+script = ExtResource("1_mbcym")
+speed = 150
+sprite = NodePath("Sprite")
+hit_box = NodePath("HitBox")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=25797444]
+texture = ExtResource("2_6sd4o")
+hframes = 6
+region_enabled = true
+region_rect = Rect2(480, 112, 96, 16)
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=1770274792]
+libraries/ = SubResource("AnimationLibrary_6sd4o")
+autoplay = &"FIRE_GRENADE"
+
+[node name="Despawn" parent="." unique_id=223831442 node_paths=PackedStringArray("parent") instance=ExtResource("3_ss8sg")]
+rect = Rect2(-8, -8, 16, 16)
+parent = NodePath("..")
+
+[node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_e0j61")]
+collision_mask = 8
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=39689981]
+shape = SubResource("CircleShape2D_y25gk")
