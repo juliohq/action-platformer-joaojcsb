@@ -12,6 +12,7 @@ var default_knockback := 64
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 256
 @export_category("Nodes")
 @export var hit_box: Area2D
+@export var loot: Node2D
 
 ## The health of the enemy.
 var health := max_health
@@ -53,4 +54,9 @@ func hit(damage: int) -> void:
 		knockback = default_knockback
 	else:
 		# Death logic here
-		queue_free()
+		die()
+
+
+func die() -> void:
+	loot.drop()
+	queue_free()

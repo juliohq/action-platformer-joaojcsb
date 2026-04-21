@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="2_ggbst"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="2_nhupr"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="2_toq4n"]
-[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="3_1ohc2"]
+[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="3_1ohc2"]
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="6_u8tuc"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="7_f76jb"]
 

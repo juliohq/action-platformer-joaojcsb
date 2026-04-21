@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bkvixy6d0wh3e" path="res://assets/sprites/bushly/idle.png" id="3_wqn3j"]
 [ext_resource type="Texture2D" uid="uid://5ow7bcwxifma" path="res://assets/sprites/bushly/running.png" id="4_hfbxs"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="4_wqn3j"]
-[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/money.tscn" id="5_hfbxs"]
+[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="5_hfbxs"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="6_i2776"]
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
 [ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
@@ -193,13 +193,14 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box")]
+[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loot")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_ehs4y")
 max_health = 2
 movement_speed = 64
 hit_box = NodePath("HitBox")
+loot = NodePath("Loot")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
 texture = ExtResource("2_6dppi")

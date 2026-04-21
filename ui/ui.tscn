@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://diy5txggb2sto" path="res://ui/orb.tscn" id="3_vkava"]
 [ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="3_wl5ax"]
 [ext_resource type="PackedScene" uid="uid://drjiyaocwe2vj" path="res://ui/health_bar.tscn" id="4_obcwv"]
+[ext_resource type="PackedScene" uid="uid://bciush7d0mdcn" path="res://ui/coins.tscn" id="4_pa1oa"]
 [ext_resource type="PackedScene" uid="uid://yevle2dgfxvl" path="res://ui/orb_selector.tscn" id="6_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://b53k8e0urcybb" path="res://ui/tutorial.tscn" id="7_gycre"]
 
@@ -53,6 +54,9 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
 [node name="VBox" type="VBoxContainer" parent="Main/Margin/Stats/Base/Margin" unique_id=1942137105]
+layout_mode = 2
+
+[node name="Coins" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=465799691 instance=ExtResource("4_pa1oa")]
 layout_mode = 2
 
 [node name="HealthBar" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=2135712761 instance=ExtResource("4_obcwv")]

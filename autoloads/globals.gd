@@ -33,6 +33,8 @@ var orb := ORB
 var blue_orbs := BLUE_ORBS
 ## How many red orbs the player has.
 var red_orbs := RED_ORBS
+## The count of coins the player has.
+var coins := 0
 
 
 func _ready() -> void:
@@ -156,3 +158,4 @@ func reset() -> void:
 	orb = ORB
 	blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS
+	coins = 0

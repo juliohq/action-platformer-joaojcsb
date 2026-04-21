@@ -1,8 +1,11 @@
 [gd_scene format=3 uid="uid://cpv7ml611bwqp"]
 
-[ext_resource type="Script" uid="uid://ckuesm1p7tao7" path="res://scenes/money.gd" id="1_v42d4"]
+[ext_resource type="Script" uid="uid://ckuesm1p7tao7" path="res://scenes/coin.gd" id="1_v42d4"]
 [ext_resource type="Texture2D" uid="uid://5ylytft4xmkt" path="res://assets/sprites/coin.png" id="2_7xgx0"]
 [ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="2_dia0j"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_11l1o"]
+radius = 8.0
 
 [sub_resource type="Animation" id="Animation_7xgx0"]
 resource_name = "COIN"
@@ -43,7 +46,12 @@ _data = {
 &"RESET": SubResource("Animation_6q70k")
 }
 
-[node name="Money" type="Area2D" unique_id=1703661126 node_paths=PackedStringArray("collectible")]
+[sub_resource type="CircleShape2D" id="CircleShape2D_d14el"]
+radius = 8.0
+
+[node name="Coin" type="CharacterBody2D" unique_id=913093480 node_paths=PackedStringArray("collectible")]
+collision_layer = 0
+collision_mask = 2
 script = ExtResource("1_v42d4")
 collectible = NodePath("Collectible")
 
@@ -52,6 +60,7 @@ texture = ExtResource("2_7xgx0")
 hframes = 5
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=2100977738]
+shape = SubResource("CircleShape2D_11l1o")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=1551320238]
 libraries/ = SubResource("AnimationLibrary_6q70k")
@@ -59,4 +68,5 @@ autoplay = &"COIN"
 
 [node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("2_dia0j")]
 
-[node name="Collision" type="CollisionShape2D" parent="Collectible" unique_id=933081482]
+[node name="Collision" type="CollisionShape2D" parent="Collectible" unique_id=167460190]
+shape = SubResource("CircleShape2D_d14el")
