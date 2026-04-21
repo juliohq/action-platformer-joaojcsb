@@ -2,8 +2,8 @@ extends Node
 
 
 enum Orb {
-	BLUE,
 	RED,
+	BLUE,
 }
 
 ## The default path for the settings file.
@@ -16,11 +16,11 @@ const SAVE_VERSION := 1
 ## The player health (HP).
 const PLAYER_HEALTH := 2
 ## The current orb selected.
-const ORB := Orb.BLUE
-## How many blue orbs the player has.
-const BLUE_ORBS := 5
+const ORB := Orb.RED
 ## How many red orbs the player has.
 const RED_ORBS := 5
+## How many blue orbs the player has.
+const BLUE_ORBS := 5
 
 ## The current language code.
 var language := "en"

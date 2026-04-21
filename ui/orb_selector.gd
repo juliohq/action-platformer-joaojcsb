@@ -1,8 +1,8 @@
 extends MarginContainer
 
 
-const BLUE_ORB := preload("res://assets/ui/blue_orb/0.png")
 const RED_ORB := preload("res://assets/ui/red_orb/0.png")
+const BLUE_ORB := preload("res://assets/ui/blue_orb/0.png")
 
 
 func _ready() -> void:
@@ -13,6 +13,6 @@ func _ready() -> void:
 
 func update() -> void:
 	%Orb.texture = [
-		BLUE_ORB,
 		RED_ORB,
+		BLUE_ORB,
 	][Globals.orb]

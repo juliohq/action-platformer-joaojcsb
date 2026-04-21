@@ -112,14 +112,14 @@ func fall() -> void:
 
 
 func hit(_damage: int) -> void:
-	if Globals.blue_orbs > 0:
-		# Drop blue orb
-		Globals.blue_orbs -= 1
-		spawn_orb(preload("res://scenes/blue_orb.tscn"))
-	elif Globals.red_orbs > 0:
+	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
 		spawn_orb(preload("res://scenes/red_orb.tscn"))
+	elif Globals.blue_orbs > 0:
+		# Drop blue orb
+		Globals.blue_orbs -= 1
+		spawn_orb(preload("res://scenes/blue_orb.tscn"))
 	else:
 		die()
 

@@ -58,10 +58,10 @@ layout_mode = 2
 [node name="HealthBar" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=2135712761 instance=ExtResource("4_obcwv")]
 layout_mode = 2
 
-[node name="BlueOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
+[node name="RedOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
 layout_mode = 2
 
-[node name="RedOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
+[node name="BlueOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
 layout_mode = 2
 type = 1
 
