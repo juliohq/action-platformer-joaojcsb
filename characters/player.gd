@@ -15,6 +15,9 @@ var jump_buffering := 0.2
 var coyote_buffering := 0.1
 ## How often you can shoot per second.
 @export_range(1, 10, 1, "or_greater", "suffix:units/s") var fire_rate := 2
+## How often you can shoot per second.
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var invincibility := 2.0
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var pivot: Node2D
@@ -30,6 +33,8 @@ var jump_buffer := 0.0
 var coyote_buffer := 0.0
 ## The current cooldown.
 var cooldown := 0.0
+## Invincibility time left.
+var invincibility_left := invincibility
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -86,6 +91,14 @@ func _physics_process(delta: float) -> void:
 	# Cooldown
 	cooldown = move_toward(cooldown, 0.0, delta)
 	
+	# Invincibility frames
+	if invincibility_left > 0.0:
+		invincibility_left -= delta
+		sprite.modulate.a = fposmod(invincibility_left, 0.25) * 4.0
+		
+		if invincibility_left <= 0.0:
+			sprite.modulate.a = 1.0
+	
 	# Process character movement
 	velocity.x = direction * movement_speed
 	
@@ -112,6 +125,12 @@ func fall() -> void:
 
 
 func hit(_damage: int) -> void:
+	# Invincibility
+	if invincibility_left > 0.0:
+		return
+	
+	invincibility_left = invincibility
+	
 	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
