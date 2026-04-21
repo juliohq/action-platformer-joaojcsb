@@ -7,6 +7,8 @@ signal bullet()
 signal loot_dropped(loot)
 ## Emitted when the player changes orb.
 signal orb_changed()
+## Emitted when the player earns an orb.
+signal orb_added()
 ## Emitted when an orb is dropped.
 signal orb_dropped(orb)
 ## Emitted when the game is paused.
