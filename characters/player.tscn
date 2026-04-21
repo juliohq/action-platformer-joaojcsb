@@ -11,10 +11,14 @@
 [ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/states/run.gd" id="5_bxfkk"]
 [ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/states/jump.gd" id="6_238id"]
 [ext_resource type="Script" uid="uid://c2cu7m76a5xgl" path="res://characters/states/fall.gd" id="7_4vov5"]
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="10_h076o"]
 [ext_resource type="Script" uid="uid://cswnib7vvpuxw" path="res://characters/states/attack.gd" id="10_vcag3"]
 [ext_resource type="PackedScene" uid="uid://cg6jln88qrf4q" path="res://scenes/clamp.tscn" id="11_eho78"]
 [ext_resource type="PackedScene" uid="uid://b3i57t6al7jrj" path="res://scenes/checkpoint.tscn" id="12_8sqrr"]
 [ext_resource type="PackedScene" uid="uid://cerb5ptfjmsfc" path="res://scenes/fall_death.tscn" id="13_6rrl0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
 radius = 8.0
@@ -58,6 +62,20 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/HitBox")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.0625),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"damage"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_q605b"]
@@ -292,6 +310,15 @@ hframes = 8
 
 [node name="Pivot" type="Marker2D" parent="Sprite" unique_id=553181657]
 position = Vector2(8, -8)
+
+[node name="HitBox" parent="Sprite" unique_id=1755339269 instance=ExtResource("10_h076o")]
+position = Vector2(12, 0)
+collision_mask = 8
+on_enter = false
+
+[node name="Collision" type="CollisionShape2D" parent="Sprite/HitBox" unique_id=1375740045]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_h076o")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=596819665]
 position = Vector2(0, -8)
