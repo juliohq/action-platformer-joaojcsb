@@ -6,6 +6,7 @@ signal picked_up()
 
 
 func _ready() -> void:
+	await get_tree().physics_frame
 	body_entered.connect(_collected)
 
 
