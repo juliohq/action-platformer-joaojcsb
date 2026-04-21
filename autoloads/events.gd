@@ -5,7 +5,7 @@ extends Node
 signal bullet()
 ## Emitted when the loot is dropped.
 signal loot_dropped(loot)
-## Emitted when the orb is changed.
+## Emitted when the player changes orb.
 signal orb_changed()
 ## Emitted when an orb is dropped.
 signal orb_dropped(orb)
