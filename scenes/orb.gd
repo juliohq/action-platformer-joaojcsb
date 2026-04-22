@@ -29,8 +29,10 @@ func _physics_process(delta: float) -> void:
 func _picked_up() -> void:
 	if orb == Globals.Orb.RED:
 		Globals.red_orbs += 1
+		Globals.red_orbs = mini(Globals.red_orbs, Globals.RED_ORBS)
 	else:
 		Globals.blue_orbs += 1
+		Globals.blue_orbs = mini(Globals.blue_orbs, Globals.BLUE_ORBS)
 	
 	Events.orb_added.emit()
 	queue_free()
