@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
 [ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="8_vm5xc"]
+[ext_resource type="PackedScene" uid="uid://kdfa6aginscu" path="res://scenes/red_orb.tscn" id="9_vm5xc"]
+[ext_resource type="PackedScene" uid="uid://bxxabyldvg3wx" path="res://scenes/blue_orb.tscn" id="10_vm5xc"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_i2776"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
@@ -194,14 +196,14 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loot", "health_bar")]
+[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_ehs4y")
 max_health = 2
 movement_speed = 64
 hit_box = NodePath("HitBox")
-loot = NodePath("Loot")
+loots = [NodePath("LootCoins"), NodePath("LootRedOrb"), NodePath("LootBlueOrb")]
 health_bar = NodePath("HealthBar")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
@@ -252,11 +254,21 @@ position = Vector2(16, 0)
 target_position = Vector2(0, 32)
 collision_mask = 2
 
-[node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("4_wqn3j")]
+[node name="LootCoins" parent="." unique_id=1730885191 instance=ExtResource("4_wqn3j")]
 position = Vector2(0, -8)
 scene = ExtResource("5_hfbxs")
 min_count = 3
 max_count = 7
+
+[node name="LootRedOrb" parent="." unique_id=1241416835 instance=ExtResource("4_wqn3j")]
+position = Vector2(0, -8)
+scene = ExtResource("9_vm5xc")
+min_count = 0
+
+[node name="LootBlueOrb" parent="." unique_id=646199605 instance=ExtResource("4_wqn3j")]
+position = Vector2(0, -8)
+scene = ExtResource("10_vm5xc")
+min_count = 0
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("6_i2776")

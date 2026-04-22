@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bwl87qakymxoq"]
+[gd_scene format=3 uid="uid://kdfa6aginscu"]
 
-[ext_resource type="Script" uid="uid://dg71aj43yh3o4" path="res://scenes/orb.gd" id="1_ktqa0"]
-[ext_resource type="Texture2D" uid="uid://du11rvnbnf6dv" path="res://assets/ui/red_orb/0.png" id="2_mf5g8"]
-[ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="3_jigkk"]
+[ext_resource type="Script" uid="uid://dg71aj43yh3o4" path="res://scenes/orb.gd" id="1_jigkk"]
+[ext_resource type="Texture2D" uid="uid://du11rvnbnf6dv" path="res://assets/ui/red_orb/0.png" id="2_8ji51"]
+[ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="3_frsn5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktqa0"]
 radius = 4.0
@@ -13,21 +13,21 @@ radius = 4.0
 [node name="RedOrb" type="CharacterBody2D" unique_id=177147229 node_paths=PackedStringArray("vanish", "collectible")]
 collision_layer = 4
 collision_mask = 2
-script = ExtResource("1_ktqa0")
+script = ExtResource("1_jigkk")
 vanish = NodePath("Vanish")
 collectible = NodePath("Collectible")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1821670992]
-texture = ExtResource("2_mf5g8")
+texture = ExtResource("2_8ji51")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=994521606]
 shape = SubResource("CircleShape2D_ktqa0")
 
-[node name="Vanish" type="Timer" parent="." unique_id=995013265]
-wait_time = 5.0
+[node name="Vanish" type="Timer" parent="." unique_id=1867767362]
+wait_time = 25.0
 autostart = true
 
-[node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("3_jigkk")]
+[node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("3_frsn5")]
 
 [node name="Collision" type="CollisionShape2D" parent="Collectible" unique_id=1702175728]
 shape = SubResource("CircleShape2D_jigkk")

@@ -12,7 +12,7 @@ var default_knockback := 64
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 256
 @export_category("Nodes")
 @export var hit_box: Area2D
-@export var loot: Node2D
+@export var loots: Array[Node2D]
 @export var health_bar: ProgressBar
 
 ## The health of the enemy.
@@ -63,5 +63,7 @@ func hit(damage: int) -> void:
 
 
 func die() -> void:
-	loot.drop()
+	for loot: Node2D in loots:
+		loot.drop()
+	
 	queue_free()

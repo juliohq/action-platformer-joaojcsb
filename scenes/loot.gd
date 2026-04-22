@@ -2,8 +2,8 @@ extends Node2D
 
 
 @export var scene: PackedScene
-@export_range(1, 10, 1, "or_greater") var min_count := 1
-@export_range(1, 10, 1, "or_greater") var max_count := 1
+@export_range(0, 10, 1, "or_greater") var min_count := 1
+@export_range(0, 10, 1, "or_greater") var max_count := 1
 @export_range(1, 100, 1, "or_greater", "suffix:px") var radius := 16
 
 

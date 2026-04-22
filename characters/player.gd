@@ -134,11 +134,11 @@ func hit(_damage: int) -> void:
 	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
-		spawn_orb(preload("res://scenes/red_orb.tscn"))
+		spawn_orb(preload("res://scenes/red_orb_drop.tscn"))
 	elif Globals.blue_orbs > 0:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
-		spawn_orb(preload("res://scenes/blue_orb.tscn"))
+		spawn_orb(preload("res://scenes/blue_orb_drop.tscn"))
 	else:
 		die()
 

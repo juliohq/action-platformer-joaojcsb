@@ -9,7 +9,9 @@ extends CharacterBody2D
 
 
 func _ready() -> void:
-	vanish.timeout.connect(queue_free)
+	if is_instance_valid(vanish):
+		vanish.timeout.connect(queue_free)
+	
 	collectible.picked_up.connect(_picked_up)
 
 
