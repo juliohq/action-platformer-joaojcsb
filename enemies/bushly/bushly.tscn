@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
 [ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="8_vm5xc"]
+[ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_i2776"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -193,7 +194,7 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loot")]
+[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loot", "health_bar")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_ehs4y")
@@ -201,6 +202,7 @@ max_health = 2
 movement_speed = 64
 hit_box = NodePath("HitBox")
 loot = NodePath("Loot")
+health_bar = NodePath("HealthBar")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
 texture = ExtResource("2_6dppi")
@@ -283,3 +285,5 @@ sprite = NodePath("../../Sprite")
 surface_detector = NodePath("../../SurfaceDetector")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
+
+[node name="HealthBar" parent="." unique_id=565073395 instance=ExtResource("13_i2776")]

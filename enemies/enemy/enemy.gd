@@ -13,6 +13,7 @@ var default_knockback := 64
 @export_category("Nodes")
 @export var hit_box: Area2D
 @export var loot: Node2D
+@export var health_bar: ProgressBar
 
 ## The health of the enemy.
 var health := max_health
@@ -26,6 +27,8 @@ var knockback := 0.0
 
 func _ready() -> void:
 	health = max_health
+	
+	health_bar.update(health, max_health)
 
 
 func _physics_process(delta: float) -> void:
@@ -48,6 +51,8 @@ func _physics_process(delta: float) -> void:
 
 func hit(damage: int) -> void:
 	health -= damage
+	health_bar.show()
+	health_bar.update(health, max_health)
 	
 	if health > 0:
 		# Knockback
