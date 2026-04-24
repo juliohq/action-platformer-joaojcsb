@@ -48,9 +48,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
-	elif event.is_action_pressed("attack") and cooldown <= 0.0:
-		get_viewport().set_input_as_handled()
-		shoot()
 
 
 func _physics_process(delta: float) -> void:
@@ -156,6 +153,11 @@ func spawn_orb(scene: PackedScene) -> void:
 	var orb := scene.instantiate()
 	orb.global_position = global_position
 	Events.orb_dropped.emit(orb)
+
+
+func try_shoot() -> void:
+	if cooldown <= 0.0:
+		state_machine.change_state("Attack")
 
 
 func shoot() -> void:

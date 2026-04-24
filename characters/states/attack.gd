@@ -2,7 +2,11 @@ extends BaseState
 
 
 func on_enter() -> void:
-	animator.play(&"ATTACK")
+	if true:
+		animator.play(&"SHOOT")
+	else:
+		animator.play(&"MELEE")
+	
 	await animator.animation_finished
 	change_state("Idle")
 
