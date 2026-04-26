@@ -167,10 +167,15 @@ func shoot() -> void:
 	# Shoot
 	var bullet: Node2D
 	
-	if attack == Globals.Attack.A:
-		bullet = preload("res://scenes/fireball.tscn").instantiate()
+	if Globals.orb == Globals.Orb.RED:
+		if attack == Globals.Attack.A:
+			bullet = preload("res://scenes/fireball.tscn").instantiate()
+		else:
+			bullet = preload("res://scenes/fire_grenade.tscn").instantiate()
+	elif attack == Globals.Attack.A:
+		bullet = preload("res://scenes/ice.tscn").instantiate()
 	else:
-		bullet = preload("res://scenes/fire_grenade.tscn").instantiate()
+		bullet = preload("res://scenes/ice.tscn").instantiate()
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
