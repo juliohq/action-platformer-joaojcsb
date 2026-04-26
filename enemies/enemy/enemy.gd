@@ -10,6 +10,8 @@ extends CharacterBody2D
 var default_knockback := 64
 ## How fast the knockback will reset.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 256
+## The sprite is facing left by default.
+@export var sprite_faces_left := true
 @export_category("Nodes")
 @export var hit_box: Area2D
 @export var loots: Array[Node2D]

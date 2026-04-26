@@ -26,6 +26,6 @@ func on_physics_process(delta: float) -> void:
 	
 	# Flip sprite
 	if root.direction > 0.0:
-		sprite.flip_h = false
+		sprite.flip_h = root.sprite_faces_left
 	elif root.direction < 0.0:
-		sprite.flip_h = true
+		sprite.flip_h = not root.sprite_faces_left
