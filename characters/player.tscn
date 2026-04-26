@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://cg6jln88qrf4q" path="res://scenes/clamp.tscn" id="11_eho78"]
 [ext_resource type="PackedScene" uid="uid://b3i57t6al7jrj" path="res://scenes/checkpoint.tscn" id="12_8sqrr"]
 [ext_resource type="PackedScene" uid="uid://cerb5ptfjmsfc" path="res://scenes/fall_death.tscn" id="13_6rrl0"]
+[ext_resource type="Script" uid="uid://pcvv3ko7bwo5" path="res://characters/states/melee.gd" id="15_b0vde"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
@@ -421,6 +422,11 @@ animator = NodePath("../../Animator")
 
 [node name="Run" type="Node" parent="StateMachine" unique_id=1182877665 node_paths=PackedStringArray("root", "animator")]
 script = ExtResource("5_bxfkk")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Melee" type="Node" parent="StateMachine" unique_id=210571881 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("15_b0vde")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 

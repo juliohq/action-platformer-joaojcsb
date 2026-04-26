@@ -35,6 +35,8 @@ var coyote_buffer := 0.0
 var cooldown := 0.0
 ## Invincibility time left.
 var invincibility_left := invincibility
+## The current attack type.
+var attack := Globals.Attack.A
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -44,7 +46,7 @@ func _ready() -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("use"):
+	if event.is_action_pressed(&"change_orb"):
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
@@ -155,14 +157,21 @@ func spawn_orb(scene: PackedScene) -> void:
 	Events.orb_dropped.emit(orb)
 
 
-func try_shoot() -> void:
+func try_shoot(attack_type: Globals.Attack) -> void:
 	if cooldown <= 0.0:
+		attack = attack_type
 		state_machine.change_state("Attack")
 
 
 func shoot() -> void:
 	# Shoot
-	var bullet := preload("res://scenes/fireball.tscn").instantiate()
+	var bullet: Node2D
+	
+	if attack == Globals.Attack.A:
+		bullet = preload("res://scenes/fireball.tscn").instantiate()
+	else:
+		bullet = preload("res://scenes/fire_grenade.tscn").instantiate()
+	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
 	Events.bullet.emit(bullet)

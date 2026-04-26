@@ -2,7 +2,7 @@ extends BaseState
 
 
 func on_enter() -> void:
-	animator.play(&"SHOOT")
+	animator.play(&"MELEE")
 	await animator.animation_finished
 	change_state("Idle")
 

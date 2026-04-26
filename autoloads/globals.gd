@@ -6,6 +6,13 @@ enum Orb {
 	BLUE,
 }
 
+enum Attack {
+	# Level 1 attack
+	A,
+	# Level 2 attack
+	B,
+}
+
 ## The default path for the settings file.
 const SETTINGS_PATH := "user://settings.dat"
 ## The default path for the save file.

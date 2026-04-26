@@ -45,10 +45,12 @@ layout_mode = 2
 
 [node name="Text" type="Label" parent="Base/VBox/Margin/VBox" unique_id=739820520]
 layout_mode = 2
-text = "Move: left / right / A / D
-Jump: up / space bar / W
-Change orb: E/C
-Attack: R/X"
+text = "Movimento do Player: Seta Esquerda / Seta Direita/ A /D
+Para Pular: Seta pra Cima/ W / tecla Espaço
+Mudar o Elemento da Orb: ALT
+Ataque corpo a corpo: Tecla J
+Ataque Nivel 1 das orbs: Tecla I
+Ataque Nivel 2 das orbs: Tecla K"
 
 [node name="TimeLeft" type="ProgressBar" parent="Base/VBox" unique_id=1256167108]
 unique_name_in_owner = true
