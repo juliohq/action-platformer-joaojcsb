@@ -173,9 +173,9 @@ func shoot() -> void:
 		else:
 			bullet = preload("res://scenes/fire_grenade.tscn").instantiate()
 	elif attack == Globals.Attack.A:
-		bullet = preload("res://scenes/ice.tscn").instantiate()
+		bullet = preload("res://scenes/freeze_touch.tscn").instantiate()
 	else:
-		bullet = preload("res://scenes/ice.tscn").instantiate()
+		bullet = preload("res://scenes/giant_ice_orb.tscn").instantiate()
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x

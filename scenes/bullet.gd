@@ -8,6 +8,7 @@ extends Node2D
 var max_distance := 1000.0
 @export_category("Nodes")
 @export var sprite: Sprite2D
+@export var animator: AnimationPlayer
 @export var hit_box: Area2D
 
 ## The current direction of the bullet.
