@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_65vc3"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_mwmim"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_wci4i"]
-[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="7_jckg5"]
+[ext_resource type="PackedScene" uid="uid://bwl87qakymxoq" path="res://scenes/red_orb_drop.tscn" id="6_yomaf"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_rfd56"]
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="9_78hpo"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="10_6s4ar"]
@@ -82,10 +82,9 @@ radius = 128.0
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_qkwqw")
-max_health = 2
 movement_speed = 64
 hit_box = NodePath("HitBox")
-loots = [NodePath("LootCoins")]
+loots = [NodePath("LootRedOrb")]
 health_bar = NodePath("HealthBar")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
@@ -137,10 +136,9 @@ position = Vector2(16, 0)
 target_position = Vector2(0, 32)
 collision_mask = 2
 
-[node name="LootCoins" parent="." unique_id=1730885191 instance=ExtResource("6_wci4i")]
+[node name="LootRedOrb" parent="." unique_id=1730885191 instance=ExtResource("6_wci4i")]
 position = Vector2(0, -8)
-scene = ExtResource("7_jckg5")
-max_count = 6
+scene = ExtResource("6_yomaf")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("8_rfd56")
