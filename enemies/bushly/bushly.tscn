@@ -139,7 +139,7 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_hfbxs"]
-resource_name = "RUN"
+resource_name = "WALK"
 length = 0.50000834
 loop_mode = 1
 step = 0.083333336
@@ -185,7 +185,7 @@ _data = {
 &"CAMOUFLAGED": SubResource("Animation_i8sxu"),
 &"IDLE": SubResource("Animation_wqn3j"),
 &"RESET": SubResource("Animation_6dppi"),
-&"RUN": SubResource("Animation_hfbxs")
+&"WALK": SubResource("Animation_hfbxs")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]

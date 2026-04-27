@@ -11,7 +11,7 @@ var time_left := 0.0
 
 
 func on_enter() -> void:
-	animator.play("RUN")
+	animator.play("WALK")
 	root.direction = signf(randf() - 0.5)
 
 

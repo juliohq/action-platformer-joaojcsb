@@ -48,7 +48,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_e3m2o"]
-resource_name = "RUN"
+resource_name = "WALK"
 length = 0.5000125
 loop_mode = 1
 step = 0.125
@@ -69,7 +69,7 @@ tracks/0/keys = {
 _data = {
 &"IDLE": SubResource("Animation_e0dxa"),
 &"RESET": SubResource("Animation_ngp6l"),
-&"RUN": SubResource("Animation_e3m2o")
+&"WALK": SubResource("Animation_e3m2o")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
