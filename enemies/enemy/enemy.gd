@@ -7,9 +7,9 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How much is the default knockback on the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s")
-var default_knockback := 64
+var default_knockback := 96
 ## How fast the knockback will reset.
-@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 128
+@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 192
 ## The sprite is facing left by default.
 @export var sprite_faces_left := true
 @export_category("Nodes")
