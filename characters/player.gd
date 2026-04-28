@@ -123,7 +123,7 @@ func fall() -> void:
 	velocity.y = 0.0
 
 
-func hit(_damage: int) -> void:
+func hit(_damage: int, _knockback_direction: float) -> void:
 	# Invincibility
 	if invincibility_left > 0.0:
 		return

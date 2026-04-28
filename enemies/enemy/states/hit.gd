@@ -5,7 +5,10 @@ extends BaseState
 
 
 func on_enter() -> void:
-	root.direction = 0.0
 	animator.play("HIT")
 	await animator.animation_finished
 	state_machine.current_state = idle
+
+
+func on_physics_process(_delta: float) -> void:
+	root.direction = 0.0

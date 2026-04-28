@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 
-func hit(damage: int) -> void:
+func hit(damage: int, knockback_direction: float) -> void:
 	health -= damage
 	health_bar.show()
 	health_bar.update(health, max_health)
@@ -62,7 +62,7 @@ func hit(damage: int) -> void:
 		state_machine.current_state = hit_state
 		
 		# Knockback
-		knockback = default_knockback
+		knockback = default_knockback * knockback_direction
 	else:
 		# Death logic here
 		die()
