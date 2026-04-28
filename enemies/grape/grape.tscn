@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_qkwqw"]
 [ext_resource type="Texture2D" uid="uid://cvvw260c07t3" path="res://assets/sprites/grape/grape.png" id="2_yomaf"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_65vc3"]
+[ext_resource type="PackedScene" uid="uid://dhsagarn1puuu" path="res://scenes/grape_fireball.tscn" id="4_ru4uc"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_mwmim"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_wci4i"]
 [ext_resource type="PackedScene" uid="uid://bwl87qakymxoq" path="res://scenes/red_orb_drop.tscn" id="6_yomaf"]
@@ -11,6 +12,7 @@
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="10_6s4ar"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="10_qkwqw"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="11_dp5qa"]
+[ext_resource type="PackedScene" uid="uid://c3lwk4g52jtvj" path="res://scenes/shoot.tscn" id="12_8qcrn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -112,6 +114,12 @@ hit_state = NodePath("StateMachine/Hit")
 texture = ExtResource("2_yomaf")
 offset = Vector2(0, -8)
 hframes = 5
+
+[node name="Shoot" parent="Sprite" unique_id=1230341981 node_paths=PackedStringArray("root") instance=ExtResource("12_8qcrn")]
+position = Vector2(0, -8)
+scene = ExtResource("4_ru4uc")
+fire_rate = 0.5
+root = NodePath("../..")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
