@@ -9,13 +9,15 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px/s")
 var default_knockback := 64
 ## How fast the knockback will reset.
-@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 256
+@export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 128
 ## The sprite is facing left by default.
 @export var sprite_faces_left := true
 @export_category("Nodes")
 @export var hit_box: Area2D
 @export var loots: Array[Node2D]
 @export var health_bar: ProgressBar
+@export var state_machine: FiniteStateMachine
+@export var hit_state: BaseState
 
 ## The health of the enemy.
 var health := max_health
@@ -57,6 +59,8 @@ func hit(damage: int) -> void:
 	health_bar.update(health, max_health)
 	
 	if health > 0:
+		state_machine.current_state = hit_state
+		
 		# Knockback
 		knockback = default_knockback
 	else:

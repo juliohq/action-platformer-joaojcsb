@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
 [ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="8_vm5xc"]
+[ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="13_3yxkd"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_i2776"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
@@ -55,6 +56,47 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_3yxkd"]
+resource_name = "HIT"
+length = 0.25000834
+step = 0.083333336
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_wqn3j")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.083333336, 0.16666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_wqn3j"]
@@ -183,6 +225,7 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dppi"]
 _data = {
 &"CAMOUFLAGED": SubResource("Animation_i8sxu"),
+&"HIT": SubResource("Animation_3yxkd"),
 &"IDLE": SubResource("Animation_wqn3j"),
 &"RESET": SubResource("Animation_6dppi"),
 &"WALK": SubResource("Animation_hfbxs")
@@ -194,7 +237,7 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar")]
+[node name="Bushly" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_ehs4y")
@@ -204,6 +247,8 @@ sprite_faces_left = false
 hit_box = NodePath("HitBox")
 loots = [NodePath("LootCoins")]
 health_bar = NodePath("HealthBar")
+state_machine = NodePath("StateMachine")
+hit_state = NodePath("StateMachine/Hit")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
 texture = ExtResource("2_6dppi")
@@ -284,6 +329,12 @@ animator = NodePath("../../Animator")
 script = ExtResource("8_vm5xc")
 sprite = NodePath("../../Sprite")
 surface_detector = NodePath("../../SurfaceDetector")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Hit" type="Node" parent="StateMachine" unique_id=1365448507 node_paths=PackedStringArray("idle", "root", "animator")]
+script = ExtResource("13_3yxkd")
+idle = NodePath("../Idle")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 

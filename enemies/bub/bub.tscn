@@ -9,11 +9,53 @@
 [ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="8_33wm6"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="9_1b4ox"]
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="11_5e83j"]
+[ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="11_77a18"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="12_8f4tb"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_lix8j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
+
+[sub_resource type="Animation" id="Animation_rpvw6"]
+resource_name = "HIT"
+length = 0.2500125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_m14rs")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_wqn3j"]
 resource_name = "IDLE"
@@ -140,6 +182,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dppi"]
 _data = {
+&"HIT": SubResource("Animation_rpvw6"),
 &"IDLE": SubResource("Animation_wqn3j"),
 &"RESET": SubResource("Animation_6dppi"),
 &"WALK": SubResource("Animation_hfbxs")
@@ -151,7 +194,7 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bub" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar")]
+[node name="Bub" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_m14rs")
@@ -160,6 +203,8 @@ movement_speed = 64
 hit_box = NodePath("HitBox")
 loots = [NodePath("LootCoins")]
 health_bar = NodePath("HealthBar")
+state_machine = NodePath("StateMachine")
+hit_state = NodePath("StateMachine/Hit")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
 texture = ExtResource("3_m14rs")
@@ -233,6 +278,12 @@ animator = NodePath("../../Animator")
 script = ExtResource("12_8f4tb")
 sprite = NodePath("../../Sprite")
 surface_detector = NodePath("../../SurfaceDetector")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Hit" type="Node" parent="StateMachine" unique_id=424863087 node_paths=PackedStringArray("idle", "root", "animator")]
+script = ExtResource("11_77a18")
+idle = NodePath("../Idle")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
