@@ -325,9 +325,10 @@ player_detector = NodePath("../../PlayerDetector")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "surface_detector", "root", "animator")]
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "player_detector", "surface_detector", "root", "animator")]
 script = ExtResource("8_vm5xc")
 sprite = NodePath("../../Sprite")
+player_detector = NodePath("../../PlayerDetector")
 surface_detector = NodePath("../../SurfaceDetector")
 root = NodePath("../..")
 animator = NodePath("../../Animator")

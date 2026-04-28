@@ -4,6 +4,7 @@ extends BaseState
 const BOUND_CHECK := 0.05
 
 @export var sprite: Sprite2D
+@export var player_detector: Area2D
 @export var surface_detector: Node2D
 
 # Fix bounds checks too often
@@ -23,6 +24,10 @@ func on_physics_process(delta: float) -> void:
 		
 		if surface_detector.bound_reached():
 			root.direction *= -1
+		else:
+			for player: Node2D in player_detector.get_overlapping_bodies():
+				root.direction = signf(player.global_position.x - root.global_position.x)
+				break
 	
 	# Flip sprite
 	if root.direction > 0.0:
