@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dnt632ekt8ak5" path="res://assets/sprites/ice_dude/ice_dude.png" id="2_e3m2o"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_v1ni5"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_etk8r"]
+[ext_resource type="PackedScene" uid="uid://dv7d3hmss6moq" path="res://scenes/blue_orb_drop.tscn" id="6_e3m2o"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_icun5"]
-[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="7_b4rt4"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_x2s5h"]
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="9_cdp8d"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="10_nhwxd"]
@@ -84,7 +84,7 @@ collision_mask = 2
 script = ExtResource("1_ngp6l")
 movement_speed = 64
 hit_box = NodePath("HitBox")
-loots = [NodePath("LootCoins")]
+loots = [NodePath("LootBlueOrb")]
 health_bar = NodePath("HealthBar")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]
@@ -136,10 +136,9 @@ position = Vector2(16, 0)
 target_position = Vector2(0, 32)
 collision_mask = 2
 
-[node name="LootCoins" parent="." unique_id=1730885191 instance=ExtResource("6_icun5")]
+[node name="LootBlueOrb" parent="." unique_id=1730885191 instance=ExtResource("6_icun5")]
 position = Vector2(0, -8)
-scene = ExtResource("7_b4rt4")
-max_count = 6
+scene = ExtResource("6_e3m2o")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("8_x2s5h")
