@@ -2,7 +2,7 @@ extends Area2D
 
 
 ## Emitted when it hurts the player.
-signal hit(body)
+signal hit(body: Node2D)
 
 ## Apply damage when a body enters the hit box.
 ## otherwise, attack will be manual.
