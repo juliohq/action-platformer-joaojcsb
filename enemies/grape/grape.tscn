@@ -200,3 +200,7 @@ root = NodePath("../..")
 animator = NodePath("../../Animator")
 
 [node name="HealthBar" parent="." unique_id=565073395 instance=ExtResource("11_dp5qa")]
+
+[node name="Visibility" type="VisibleOnScreenEnabler2D" parent="." unique_id=1821609072]
+rect = Rect2(-8, -16, 16, 16)
+enable_node_path = NodePath("../Shoot")

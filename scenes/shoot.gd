@@ -8,6 +8,7 @@ extends Node2D
 var fire_rate := 1.0
 @export_category("Nodes")
 @export var root: Node2D
+@export var visibility: VisibleOnScreenNotifier2D
 
 ## How fast to shoot.
 var cooldown := 0.0
