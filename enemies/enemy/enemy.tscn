@@ -15,11 +15,13 @@ radius = 8.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
 radius = 12.0
 
-[node name="Enemy" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box")]
+[node name="Enemy" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_wa0eo")
 movement_speed = 32
+sprite = NodePath("Sprite")
+animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=514667481]

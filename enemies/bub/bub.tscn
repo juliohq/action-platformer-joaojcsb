@@ -194,12 +194,14 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Bub" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar", "state_machine", "hit_state")]
+[node name="Bub" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_m14rs")
 max_health = 2
 movement_speed = 64
+sprite = NodePath("Sprite")
+animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
 loots = [NodePath("LootCoins")]
 health_bar = NodePath("HealthBar")

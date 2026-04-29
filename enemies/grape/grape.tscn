@@ -99,11 +99,13 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
 radius = 128.0
 
-[node name="Grape" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("hit_box", "loots", "health_bar", "state_machine", "hit_state")]
+[node name="Grape" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_qkwqw")
 movement_speed = 64
+sprite = NodePath("Sprite")
+animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
 loots = [NodePath("LootRedOrb")]
 health_bar = NodePath("HealthBar")
@@ -115,18 +117,18 @@ texture = ExtResource("2_yomaf")
 offset = Vector2(0, -8)
 hframes = 5
 
-[node name="Shoot" parent="Sprite" unique_id=1230341981 node_paths=PackedStringArray("root") instance=ExtResource("12_8qcrn")]
-position = Vector2(0, -8)
-scene = ExtResource("4_ru4uc")
-fire_rate = 0.5
-root = NodePath("../..")
-
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 libraries/ = SubResource("AnimationLibrary_qkwqw")
+
+[node name="Shoot" parent="." unique_id=1230341981 node_paths=PackedStringArray("root") instance=ExtResource("12_8qcrn")]
+position = Vector2(0, -8)
+scene = ExtResource("4_ru4uc")
+fire_rate = 0.5
+root = NodePath("..")
 
 [node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_65vc3")]
 

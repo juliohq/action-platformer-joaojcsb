@@ -14,6 +14,9 @@ var cooldown := 0.0
 
 
 func _physics_process(delta: float) -> void:
+	if root.freeze_time > 0.0:
+		return
+	
 	if cooldown > 0.0:
 		cooldown -= delta
 	else:

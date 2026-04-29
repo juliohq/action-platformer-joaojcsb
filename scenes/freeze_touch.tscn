@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/ice_effect.png" id="2_86pvt"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_a81r1"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_dr0af"]
+[ext_resource type="PackedScene" uid="uid://byu8e06u0427t" path="res://scenes/freeze.tscn" id="5_86pvt"]
 
 [sub_resource type="Animation" id="Animation_rpp2m"]
 resource_name = "ICE"
@@ -68,3 +69,6 @@ collision_mask = 8
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=1334675608]
 shape = SubResource("CircleShape2D_y25gk")
+
+[node name="Freeze" parent="." unique_id=141722922 node_paths=PackedStringArray("hit_box") instance=ExtResource("5_86pvt")]
+hit_box = NodePath("../HitBox")

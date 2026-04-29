@@ -13,6 +13,8 @@ var default_knockback := 96
 ## The sprite is facing left by default.
 @export var sprite_faces_left := true
 @export_category("Nodes")
+@export var sprite: Sprite2D
+@export var animator: AnimationPlayer
 @export var hit_box: Area2D
 @export var loots: Array[Node2D]
 @export var health_bar: ProgressBar
@@ -25,6 +27,8 @@ var health := max_health
 var direction := 0.0
 ## The current knockback.
 var knockback := 0.0
+## The enemy will be freezed for this long.
+var freeze_time := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -38,6 +42,13 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	# Process character movement
 	velocity.x = direction * movement_speed
+	
+	# Freeze time
+	if freeze_time > 0.0:
+		freeze_time -= delta
+		_freeze()
+	else:
+		_unfreeze()
 	
 	# Gravity logic
 	if is_on_floor():
@@ -73,3 +84,14 @@ func die() -> void:
 		loot.drop()
 	
 	queue_free()
+
+
+func _freeze() -> void:
+	velocity.x = 0.0
+	animator.speed_scale = 0.0
+	sprite.modulate = Color.AQUAMARINE
+
+
+func _unfreeze() -> void:
+	animator.speed_scale = 1.0
+	sprite.modulate = Color.WHITE

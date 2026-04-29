@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://byu8e06u0427t"]
+
+[ext_resource type="Script" uid="uid://cqsdojxtpji2u" path="res://scenes/freeze.gd" id="1_g2jp4"]
+
+[node name="Freeze" type="Node" unique_id=141722922]
+script = ExtResource("1_g2jp4")
