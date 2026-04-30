@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://xecp2sm0rjb6"]
+
+[ext_resource type="Texture2D" uid="uid://cieux6gyvqpos" path="res://assets/sprites/fire_grenade_hit.png" id="1_yx8u5"]
+
+[sub_resource type="Animation" id="Animation_viq6r"]
+resource_name = "HIT"
+length = 0.5000031
+step = 0.015151516
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.015151516, 0.030303031, 0.045454547, 0.060606062, 0.07575758, 0.09090909, 0.10606061, 0.121212125, 0.13636364, 0.15151516, 0.16666667, 0.18181819, 0.1969697, 0.21212122, 0.22727273, 0.24242425, 0.25757575, 0.27272728, 0.28787878, 0.3030303, 0.3181818, 0.33333334, 0.34848484, 0.36363637, 0.37878788, 0.3939394, 0.4090909, 0.42424244, 0.43939394, 0.45454547, 0.46969697, 0.4848485),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0), Vector2i(9, 0), Vector2i(10, 0), Vector2i(11, 0), Vector2i(12, 0), Vector2i(13, 0), Vector2i(14, 0), Vector2i(15, 0), Vector2i(16, 0), Vector2i(17, 0), Vector2i(18, 0), Vector2i(19, 0), Vector2i(20, 0), Vector2i(21, 0), Vector2i(22, 0), Vector2i(23, 0), Vector2i(24, 0), Vector2i(25, 0), Vector2i(26, 0), Vector2i(27, 0), Vector2i(28, 0), Vector2i(29, 0), Vector2i(30, 0), Vector2i(31, 0), Vector2i(32, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_yxc0v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yxc0v"]
+_data = {
+&"HIT": SubResource("Animation_viq6r"),
+&"RESET": SubResource("Animation_yxc0v")
+}
+
+[node name="FireGranadeEffect" type="Sprite2D" unique_id=1941136992]
+texture = ExtResource("1_yx8u5")
+hframes = 33
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=932256447]
+libraries/ = SubResource("AnimationLibrary_yxc0v")
+autoplay = &"HIT"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_mbcym"]
 [ext_resource type="Texture2D" uid="uid://rs8vay5dc87f" path="res://assets/sprites/fire_effect.png" id="2_6sd4o"]
+[ext_resource type="PackedScene" uid="uid://xecp2sm0rjb6" path="res://scenes/fire_grenade_effect.tscn" id="2_ss8sg"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_ss8sg"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_e0j61"]
 
@@ -50,6 +51,7 @@ radius = 8.0
 [node name="FireGrenade" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_mbcym")
 speed = 150
+hit_effect = ExtResource("2_ss8sg")
 sprite = NodePath("Sprite")
 hit_box = NodePath("HitBox")
 
