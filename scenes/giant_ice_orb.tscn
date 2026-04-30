@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dld4uyacfh45g"]
 
 [ext_resource type="Script" uid="uid://7wsxxqi3f66f" path="res://scenes/giant_ice_orb.gd" id="1_j4onh"]
+[ext_resource type="PackedScene" uid="uid://clxbxrubm3lgb" path="res://scenes/giant_ice_orb_effect.tscn" id="2_chtlq"]
 [ext_resource type="Texture2D" uid="uid://pxusk7i0syrs" path="res://assets/sprites/giant_ice_orb.png" id="2_j4onh"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_fyydg"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_q2ded"]
@@ -68,6 +69,7 @@ radius = 8.0
 [node name="GiantIceOrb" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "animator", "hit_box")]
 script = ExtResource("1_j4onh")
 speed = 256
+hit_effect = ExtResource("2_chtlq")
 sprite = NodePath("Sprite")
 animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
