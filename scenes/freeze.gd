@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 func _hit(body: Node2D) -> void:
-	if "freeze_time" in body:
-		body.freeze_time = time
+	if "freeze" in body:
+		body.freeze(time)
 	else:
 		push_warning("%s does not have freeze time" % body.get_path())

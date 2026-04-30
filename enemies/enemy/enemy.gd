@@ -12,6 +12,8 @@ var default_knockback := 96
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var knockback_speed := 192
 ## The sprite is facing left by default.
 @export var sprite_faces_left := true
+## The enemy can be freezed.
+@export var allow_freeze := true
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var animator: AnimationPlayer
@@ -84,6 +86,11 @@ func die() -> void:
 		loot.drop()
 	
 	queue_free()
+
+
+func freeze(time: float) -> void:
+	if allow_freeze:
+		freeze_time = time
 
 
 func _freeze() -> void:

@@ -102,6 +102,7 @@ collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_ngp6l")
 movement_speed = 64
+allow_freeze = false
 sprite = NodePath("Sprite")
 animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
