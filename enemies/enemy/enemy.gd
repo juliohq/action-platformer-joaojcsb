@@ -98,8 +98,10 @@ func _freeze() -> void:
 	velocity.x = 0.0
 	animator.speed_scale = 0.0
 	sprite.modulate = Color.AQUAMARINE
+	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func _unfreeze() -> void:
 	animator.speed_scale = 1.0
 	sprite.modulate = Color.WHITE
+	hit_box.process_mode = Node.PROCESS_MODE_INHERIT
