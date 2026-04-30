@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0qbk2wiq0gu4"]
 
-[ext_resource type="Texture2D" uid="uid://6qw3d0pn3sli" path="res://assets/sprites/ice_effect_hit.png" id="1_viq6r"]
+[ext_resource type="Texture2D" uid="uid://6qw3d0pn3sli" path="res://assets/sprites/freeze_touch_hit.png" id="1_viq6r"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"

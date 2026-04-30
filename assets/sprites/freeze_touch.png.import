@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6qw3d0pn3sli"
-path="res://.godot/imported/ice_effect_hit.png-49c69524c0d88260b02104162e7dcabd.ctex"
+uid="uid://d0gm2nlk650wc"
+path="res://.godot/imported/freeze_touch.png-4802c9aad18a0544a82913ad662c93cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/ice_effect_hit.png"
-dest_files=["res://.godot/imported/ice_effect_hit.png-49c69524c0d88260b02104162e7dcabd.ctex"]
+source_file="res://assets/sprites/freeze_touch.png"
+dest_files=["res://.godot/imported/freeze_touch.png-4802c9aad18a0544a82913ad662c93cd.ctex"]
 
 [params]
 

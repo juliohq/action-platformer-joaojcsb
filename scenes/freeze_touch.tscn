@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bx12a8mx7l2oq"]
 
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_ws7j3"]
-[ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/ice_effect.png" id="2_86pvt"]
+[ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/freeze_touch.png" id="2_86pvt"]
 [ext_resource type="PackedScene" uid="uid://b0qbk2wiq0gu4" path="res://scenes/freeze_touch_effect.tscn" id="2_a81r1"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_a81r1"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_dr0af"]
