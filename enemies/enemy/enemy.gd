@@ -88,6 +88,7 @@ func die() -> void:
 	queue_free()
 
 
+## Freezes the enemy for the given amount of time.
 func freeze(time: float) -> void:
 	if allow_freeze:
 		freeze_time = time
