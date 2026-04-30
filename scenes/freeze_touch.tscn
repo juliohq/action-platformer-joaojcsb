@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_ws7j3"]
 [ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/ice_effect.png" id="2_86pvt"]
+[ext_resource type="PackedScene" uid="uid://b0qbk2wiq0gu4" path="res://scenes/freeze_touch_effect.tscn" id="2_a81r1"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_a81r1"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_dr0af"]
 [ext_resource type="PackedScene" uid="uid://byu8e06u0427t" path="res://scenes/freeze.tscn" id="5_86pvt"]
@@ -50,6 +51,7 @@ radius = 8.0
 
 [node name="FreezeTouch" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_ws7j3")
+hit_effect = ExtResource("2_a81r1")
 sprite = NodePath("Sprite")
 hit_box = NodePath("HitBox")
 

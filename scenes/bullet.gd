@@ -6,6 +6,8 @@ extends Node2D
 ## At which distance this bullet will vanish.
 @export_range(1, 1_500, 1, "or_greater", "suffix:px")
 var max_distance := 1000.0
+## The hit effect scene to be spawned when hit.
+@export var hit_effect: PackedScene
 @export_category("Nodes")
 @export var sprite: Sprite2D
 @export var animator: AnimationPlayer
@@ -39,4 +41,9 @@ func _physics_process(delta: float) -> void:
 
 
 func _hit(_body: Node2D) -> void:
+	if hit_effect:
+		var effect := hit_effect.instantiate()
+		effect.global_position = global_position
+		Events.hit_effect.emit(effect)
+	
 	queue_free()
