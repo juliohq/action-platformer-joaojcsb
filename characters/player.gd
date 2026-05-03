@@ -42,7 +42,7 @@ var attack := Globals.Attack.A
 
 
 func _ready() -> void:
-	fall_death.dead.connect(die)
+	fall_death.dead.connect(_fall_death)
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -140,6 +140,14 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		spawn_orb(preload("res://scenes/blue_orb_drop.tscn"))
 	else:
 		die()
+
+
+func _fall_death() -> void:
+	die()
+	
+	# Reset player direction
+	direction = 0.0
+	sprite.scale.x = 1
 
 
 func die() -> void:
