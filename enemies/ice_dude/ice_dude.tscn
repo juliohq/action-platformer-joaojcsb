@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_ngp6l"]
 [ext_resource type="Texture2D" uid="uid://dnt632ekt8ak5" path="res://assets/sprites/ice_dude/ice_dude.png" id="2_e3m2o"]
+[ext_resource type="Texture2D" uid="uid://br6sbj4rj5wv2" path="res://assets/sprites/ice_dude/attack.png" id="3_v1ni5"]
 [ext_resource type="PackedScene" uid="uid://cpo3frqk4p45n" path="res://enemies/ice_dude/ice.tscn" id="4_minlu"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_v1ni5"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_etk8r"]
@@ -13,9 +14,51 @@
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="11_eprai"]
 [ext_resource type="Script" uid="uid://cb34d3duf5ihb" path="res://enemies/ice_dude/states/walk.gd" id="11_minlu"]
 [ext_resource type="PackedScene" uid="uid://c3lwk4g52jtvj" path="res://scenes/shoot.tscn" id="12_e0dxa"]
+[ext_resource type="Script" uid="uid://c6a37qata68u1" path="res://enemies/ice_dude/states/attack.gd" id="13_etk8r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
+
+[sub_resource type="Animation" id="Animation_v1ni5"]
+resource_name = "ATTACK"
+length = 0.5000125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(4, 0), Vector2i(5, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Attack:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Attack:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_minlu"]
 resource_name = "HIT"
@@ -46,10 +89,22 @@ tracks/0/path = NodePath("Sprite:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(4, 0), Vector2i(5, 0)]
+"values": [Vector2i(4, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Attack:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_ngp6l"]
@@ -65,6 +120,30 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [Vector2i(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite/Attack:frame_coords")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite/Attack:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_e3m2o"]
@@ -87,6 +166,7 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ngp6l"]
 _data = {
+&"ATTACK": SubResource("Animation_v1ni5"),
 &"HIT": SubResource("Animation_minlu"),
 &"IDLE": SubResource("Animation_e0dxa"),
 &"RESET": SubResource("Animation_ngp6l"),
@@ -117,6 +197,12 @@ hit_state = NodePath("StateMachine/Hit")
 texture = ExtResource("2_e3m2o")
 offset = Vector2(0, -8)
 hframes = 6
+
+[node name="Attack" type="Sprite2D" parent="Sprite" unique_id=1582268365]
+visible = false
+position = Vector2(-8, -8)
+texture = ExtResource("3_v1ni5")
+hframes = 4
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
@@ -193,6 +279,15 @@ script = ExtResource("11_minlu")
 sprite = NodePath("../../Sprite")
 player_detector = NodePath("../../PlayerDetector")
 surface_detector = NodePath("../../SurfaceDetector")
+shoot = NodePath("../../Shoot")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Attack" type="Node" parent="StateMachine" unique_id=1875648836 node_paths=PackedStringArray("walk", "sprite", "player_detector", "shoot", "root", "animator")]
+script = ExtResource("13_etk8r")
+walk = NodePath("../Walk")
+sprite = NodePath("../../Sprite")
+player_detector = NodePath("../../PlayerDetector")
 shoot = NodePath("../../Shoot")
 root = NodePath("../..")
 animator = NodePath("../../Animator")

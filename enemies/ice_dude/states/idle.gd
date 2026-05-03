@@ -22,9 +22,9 @@ func on_physics_process(_delta: float) -> void:
 		# Force stop
 		root.direction = 0.0
 		
-		# Shoot
-		if player.freeze_time <= 0.0:
-			shoot.shoot()
+		# Attack
+		if player.freeze_time <= 0.0 and shoot.can_shoot():
+			change_state("Attack")
 		
 		return
 	

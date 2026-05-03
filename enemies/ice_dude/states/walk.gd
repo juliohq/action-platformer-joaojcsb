@@ -37,9 +37,6 @@ func on_physics_process(delta: float) -> void:
 			for player: Node2D in player_detector.get_overlapping_bodies():
 				root.direction = signf(player.global_position.x - root.global_position.x)
 				
-				if player.freeze_time <= 0.0:
-					shoot.shoot()
-				
 				# Change to idle
 				change_state("Idle")
 				

@@ -26,6 +26,10 @@ func _physics_process(delta: float) -> void:
 		shoot()
 
 
+func can_shoot() -> bool:
+	return cooldown <= 0.0
+
+
 func shoot(force := false) -> void:
 	if not force and cooldown > 0.0:
 		return
