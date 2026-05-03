@@ -172,6 +172,9 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 
 
 func shoot() -> void:
+	# Cooldown
+	cooldown += 1.0 / fire_rate
+	
 	# Shoot
 	var bullet: Node2D
 	
@@ -188,6 +191,3 @@ func shoot() -> void:
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
 	Events.bullet.emit(bullet)
-	
-	# Cooldown
-	cooldown += 1.0 / fire_rate
