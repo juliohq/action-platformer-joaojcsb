@@ -20,6 +20,10 @@ extends Node
 var position := Vector2()
 
 
+func _ready() -> void:
+	position = parent.position
+
+
 func _physics_process(_delta: float) -> void:
 	var on_floor := raycast_a.is_colliding() and raycast_b.is_colliding()
 	
