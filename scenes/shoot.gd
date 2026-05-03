@@ -3,6 +3,8 @@ extends Node2D
 
 ## The scene to be spawned.
 @export var scene: PackedScene
+## Autoshoot will be enabled.
+@export var autoshoot := false
 ## How fast to shoot.
 @export_range(0.01, 10.0, 0.01, "or_greater", "suffix:units/s")
 var fire_rate := 1.0
@@ -20,12 +22,18 @@ func _physics_process(delta: float) -> void:
 	
 	if cooldown > 0.0:
 		cooldown -= delta
-	else:
-		cooldown += 1.0 / fire_rate
+	elif autoshoot:
 		shoot()
 
 
-func shoot() -> void:
+func shoot(force := false) -> void:
+	if not force and cooldown > 0.0:
+		return
+	
+	# Cooldown
+	cooldown += 1.0 / fire_rate
+	
+	# Spawn bullet
 	var bullet := scene.instantiate()
 	bullet.direction.x = 1 if sprite.flip_h and root.sprite_faces_left else -1
 	bullet.global_position = global_position
