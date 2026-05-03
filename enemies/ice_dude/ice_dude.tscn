@@ -2,15 +2,16 @@
 
 [ext_resource type="Script" uid="uid://b8mp0kb35wgwj" path="res://enemies/enemy/enemy.gd" id="1_ngp6l"]
 [ext_resource type="Texture2D" uid="uid://dnt632ekt8ak5" path="res://assets/sprites/ice_dude/ice_dude.png" id="2_e3m2o"]
+[ext_resource type="PackedScene" uid="uid://cpo3frqk4p45n" path="res://enemies/ice_dude/ice.tscn" id="4_minlu"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_v1ni5"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_etk8r"]
 [ext_resource type="PackedScene" uid="uid://dv7d3hmss6moq" path="res://scenes/blue_orb_drop.tscn" id="6_e3m2o"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_icun5"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_x2s5h"]
-[ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="9_cdp8d"]
+[ext_resource type="Script" uid="uid://dj8ci0x315mq6" path="res://enemies/ice_dude/states/idle.gd" id="10_minlu"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="10_ngp6l"]
-[ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="10_nhwxd"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="11_eprai"]
+[ext_resource type="Script" uid="uid://cb34d3duf5ihb" path="res://enemies/ice_dude/states/walk.gd" id="11_minlu"]
 [ext_resource type="PackedScene" uid="uid://c3lwk4g52jtvj" path="res://scenes/shoot.tscn" id="12_e0dxa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
@@ -126,6 +127,7 @@ libraries/ = SubResource("AnimationLibrary_ngp6l")
 
 [node name="Shoot" parent="." unique_id=1230341981 node_paths=PackedStringArray("root", "sprite") instance=ExtResource("12_e0dxa")]
 position = Vector2(0, -8)
+scene = ExtResource("4_minlu")
 fire_rate = 0.5
 root = NodePath("..")
 sprite = NodePath("../Sprite")
@@ -177,19 +179,21 @@ current_state = NodePath("Idle")
 animation_player = NodePath("../Animator")
 metadata/_custom_type_script = "uid://cgyspffsce7rr"
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("walk", "sprite", "player_detector", "root", "animator")]
-script = ExtResource("9_cdp8d")
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("walk", "sprite", "player_detector", "shoot", "root", "animator")]
+script = ExtResource("10_minlu")
 walk = NodePath("../Walk")
 sprite = NodePath("../../Sprite")
 player_detector = NodePath("../../PlayerDetector")
+shoot = NodePath("../../Shoot")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "player_detector", "surface_detector", "root", "animator")]
-script = ExtResource("10_nhwxd")
+[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "player_detector", "surface_detector", "shoot", "root", "animator")]
+script = ExtResource("11_minlu")
 sprite = NodePath("../../Sprite")
 player_detector = NodePath("../../PlayerDetector")
 surface_detector = NodePath("../../SurfaceDetector")
+shoot = NodePath("../../Shoot")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 

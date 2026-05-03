@@ -20,6 +20,8 @@ var coyote_buffering := 0.1
 var invincibility := 2.0
 @export_category("Nodes")
 @export var sprite: Sprite2D
+@export var hit_box: Area2D
+@export var animator: AnimationPlayer
 @export var pivot: Node2D
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
@@ -37,6 +39,8 @@ var cooldown := 0.0
 var invincibility_left := invincibility
 ## The current attack type.
 var attack := Globals.Attack.A
+## The enemy will be freezed for this long.
+var freeze_time := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -54,10 +58,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _physics_process(delta: float) -> void:
 	# Flip sprite logic
-	if direction < 0.0:
-		sprite.scale.x = -1
-	elif direction > 0.0:
-		sprite.scale.x = 1
+	if freeze_time <= 0.0:
+		if direction < 0.0:
+			sprite.scale.x = -1
+		elif direction > 0.0:
+			sprite.scale.x = 1
 	
 	# Jump logic (with jump buffering)
 	if Input.is_action_just_pressed(&"jump"):
@@ -100,6 +105,13 @@ func _physics_process(delta: float) -> void:
 	
 	# Process character movement
 	velocity.x = direction * movement_speed
+	
+	# Freeze time
+	if freeze_time > 0.0:
+		freeze_time -= delta
+		_freeze()
+	else:
+		_unfreeze()
 	
 	# Gravity logic
 	if is_on_floor():
@@ -191,3 +203,22 @@ func shoot() -> void:
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
 	Events.bullet.emit(bullet)
+
+
+## Freezes the player for the given amount of time.
+func freeze(time: float) -> void:
+	freeze_time = time
+
+
+func _freeze() -> void:
+	velocity.x = 0.0
+	animator.process_mode = Node.PROCESS_MODE_DISABLED
+	sprite.modulate = Color.AQUAMARINE
+	hit_box.process_mode = Node.PROCESS_MODE_DISABLED
+
+
+func _unfreeze() -> void:
+	animator.speed_scale = 1.0
+	animator.process_mode = Node.PROCESS_MODE_INHERIT
+	sprite.modulate = Color.WHITE
+	hit_box.process_mode = Node.PROCESS_MODE_INHERIT
