@@ -8,4 +8,5 @@ func on_enter() -> void:
 
 
 func on_physics_process(_delta: float) -> void:
-	root.direction = 0.0
+	if root.is_on_floor():
+		root.direction = 0.0
