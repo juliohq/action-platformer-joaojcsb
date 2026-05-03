@@ -10,6 +10,8 @@ const BOUND_CHECK := 0.05
 
 # Fix bounds checks too often
 var time_left := 0.0
+## Time until spin randomly.
+var random_spinning := 0.0
 
 
 func on_enter() -> void:
@@ -42,3 +44,10 @@ func on_physics_process(delta: float) -> void:
 				change_state("Idle")
 				
 				break
+	
+	# Random spinning
+	if random_spinning > 0.0:
+		random_spinning -= delta
+	else:
+		random_spinning += randf_range(1.0, 4.0)
+		root.direction *= -1
