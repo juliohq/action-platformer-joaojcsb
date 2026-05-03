@@ -8,8 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_wci4i"]
 [ext_resource type="PackedScene" uid="uid://bwl87qakymxoq" path="res://scenes/red_orb_drop.tscn" id="6_yomaf"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_rfd56"]
-[ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="9_78hpo"]
-[ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="10_6s4ar"]
+[ext_resource type="Script" uid="uid://bom4gvhonhxb8" path="res://enemies/grape/states/idle.gd" id="10_8qcrn"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="10_qkwqw"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="11_dp5qa"]
 [ext_resource type="PackedScene" uid="uid://c3lwk4g52jtvj" path="res://scenes/shoot.tscn" id="12_8qcrn"]
@@ -177,19 +176,10 @@ current_state = NodePath("Idle")
 animation_player = NodePath("../Animator")
 metadata/_custom_type_script = "uid://cgyspffsce7rr"
 
-[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("walk", "sprite", "player_detector", "root", "animator")]
-script = ExtResource("9_78hpo")
-walk = NodePath("../Walk")
+[node name="Idle" type="Node" parent="StateMachine" unique_id=433227384 node_paths=PackedStringArray("sprite", "player_detector", "root", "animator")]
+script = ExtResource("10_8qcrn")
 sprite = NodePath("../../Sprite")
 player_detector = NodePath("../../PlayerDetector")
-root = NodePath("../..")
-animator = NodePath("../../Animator")
-
-[node name="Walk" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("sprite", "player_detector", "surface_detector", "root", "animator")]
-script = ExtResource("10_6s4ar")
-sprite = NodePath("../../Sprite")
-player_detector = NodePath("../../PlayerDetector")
-surface_detector = NodePath("../../SurfaceDetector")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
