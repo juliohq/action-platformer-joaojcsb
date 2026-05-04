@@ -22,9 +22,9 @@ func on_enter() -> void:
 func on_physics_process(delta: float) -> void:
 	# Flip sprite
 	if root.direction > 0.0:
-		sprite.flip_h = root.sprite_faces_left
+		sprite.scale.x = -1 if root.sprite_faces_left else 1
 	elif root.direction < 0.0:
-		sprite.flip_h = not root.sprite_faces_left
+		sprite.scale.x = 1 if root.sprite_faces_left else -1
 	
 	if time_left > 0.0:
 		time_left -= delta

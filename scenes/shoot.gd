@@ -39,6 +39,6 @@ func shoot(force := false) -> void:
 	
 	# Spawn bullet
 	var bullet := scene.instantiate()
-	bullet.direction.x = 1 if sprite.flip_h and root.sprite_faces_left else -1
+	bullet.direction.x = sprite.scale.x * (-1 if root.sprite_faces_left else 1)
 	bullet.global_position = global_position
 	Events.bullet.emit(bullet)

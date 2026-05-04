@@ -19,9 +19,9 @@ func on_physics_process(delta: float) -> void:
 	# Flip sprite
 	for player: Node2D in player_detector.get_overlapping_bodies():
 		if root.position.x > player.position.x:
-			sprite.flip_h = not root.sprite_faces_left
+			sprite.scale.x = 1 if root.sprite_faces_left else -1
 		elif root.position.x < player.position.x:
-			sprite.flip_h = root.sprite_faces_left
+			sprite.scale.x = -1 if root.sprite_faces_left else 1
 		
 		break
 	
