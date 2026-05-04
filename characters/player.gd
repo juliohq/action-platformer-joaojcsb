@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 			sprite.scale.x = 1
 	
 	# Jump logic (with jump buffering)
-	if Input.is_action_just_pressed(&"jump"):
+	if Input.is_action_just_pressed(&"jump") and freeze_time <= 0.0:
 		jump_buffer = jump_buffering
 		
 		if coyote_buffer > 0.0:
