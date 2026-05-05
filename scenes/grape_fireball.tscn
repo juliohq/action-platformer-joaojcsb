@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_f3wyb"]
 [ext_resource type="Texture2D" uid="uid://rs8vay5dc87f" path="res://assets/sprites/fire_effect.png" id="2_8lajs"]
+[ext_resource type="PackedScene" uid="uid://y3purbv6fwk8" path="res://scenes/fireball_effect.tscn" id="2_20qaf"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_20qaf"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_f3v0v"]
 
@@ -11,6 +12,7 @@ radius = 8.0
 [node name="GrapeFireball" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_f3wyb")
 speed = 96
+hit_effect = ExtResource("2_20qaf")
 sprite = NodePath("Sprite")
 hit_box = NodePath("HitBox")
 
