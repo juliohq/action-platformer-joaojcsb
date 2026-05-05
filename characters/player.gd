@@ -28,6 +28,7 @@ var invincibility := 2.0
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
 @export var hit_state: BaseState
+@export var death_state: BaseState
 @export var fall_death: Node
 
 ## The horizontal direction the player is moving to.
@@ -150,15 +151,18 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		# Drop red orb
 		Globals.red_orbs -= 1
 		spawn_orb(RED_ORB_DROP)
+		
+		# Hit state
+		state_machine.current_state = hit_state
 	elif Globals.blue_orbs > 0:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
 		spawn_orb(BLUE_ORB_DROP)
+		
+		# Hit state
+		state_machine.current_state = hit_state
 	else:
 		die()
-	
-	# Hit state
-	state_machine.current_state = hit_state
 
 
 func _fall_death() -> void:
@@ -178,7 +182,7 @@ func die() -> void:
 	
 	# Death
 	if Globals.player_health <= 0:
-		Events.game_over.emit()
+		state_machine.current_state = death_state
 
 
 func spawn_orb(scene: PackedScene) -> void:

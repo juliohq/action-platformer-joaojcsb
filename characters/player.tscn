@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c4ltt3anbbxx0" path="res://assets/sprites/player/jump.png" id="3_n8jd0"]
 [ext_resource type="Texture2D" uid="uid://b57slnqgd1uf4" path="res://assets/sprites/player/fall.png" id="3_q605b"]
 [ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/states/idle.gd" id="4_3ak4l"]
+[ext_resource type="Texture2D" uid="uid://b374e5tw8wxta" path="res://assets/sprites/player/death.png" id="4_4rspn"]
 [ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/states/run.gd" id="5_bxfkk"]
 [ext_resource type="Texture2D" uid="uid://dbltkmih4l5a8" path="res://assets/sprites/player/hit.png" id="5_ke0a4"]
 [ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/states/jump.gd" id="6_238id"]
@@ -20,12 +21,54 @@
 [ext_resource type="PackedScene" uid="uid://cerb5ptfjmsfc" path="res://scenes/fall_death.tscn" id="13_6rrl0"]
 [ext_resource type="Script" uid="uid://pcvv3ko7bwo5" path="res://characters/states/melee.gd" id="15_b0vde"]
 [ext_resource type="Script" uid="uid://bd7y3wcgutqn0" path="res://characters/states/hit.gd" id="20_41yun"]
+[ext_resource type="Script" uid="uid://f2jsjcjxitcy" path="res://characters/states/death.gd" id="21_svrv0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
 radius = 8.0
+
+[sub_resource type="Animation" id="Animation_svrv0"]
+resource_name = "DEATH"
+length = 1.1250125
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_4rspn")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_q605b"]
 resource_name = "FALL"
@@ -386,6 +429,7 @@ tracks/3/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j31ep"]
 _data = {
+&"DEATH": SubResource("Animation_svrv0"),
 &"FALL": SubResource("Animation_q605b"),
 &"HIT": SubResource("Animation_b0vde"),
 &"IDLE": SubResource("Animation_h1q25"),
@@ -396,7 +440,7 @@ _data = {
 &"SHOOT": SubResource("Animation_h076o")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "pivot", "state_machine", "jump_state", "hit_state", "fall_death")]
+[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "pivot", "state_machine", "jump_state", "hit_state", "death_state", "fall_death")]
 collision_mask = 2
 script = ExtResource("2_03c6q")
 sprite = NodePath("Sprite")
@@ -406,6 +450,7 @@ pivot = NodePath("Sprite/Pivot")
 state_machine = NodePath("StateMachine")
 jump_state = NodePath("StateMachine/Jump")
 hit_state = NodePath("StateMachine/Hit")
+death_state = NodePath("StateMachine/Death")
 fall_death = NodePath("FallDeath")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1046985751]
@@ -494,6 +539,12 @@ animator = NodePath("../../Animator")
 
 [node name="Hit" type="Node" parent="StateMachine" unique_id=685215527 node_paths=PackedStringArray("sprite", "root", "animator")]
 script = ExtResource("20_41yun")
+sprite = NodePath("../../Sprite")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Death" type="Node" parent="StateMachine" unique_id=2034391913 node_paths=PackedStringArray("sprite", "root", "animator")]
+script = ExtResource("21_svrv0")
 sprite = NodePath("../../Sprite")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
