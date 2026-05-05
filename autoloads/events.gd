@@ -21,6 +21,8 @@ signal game_paused()
 signal game_resumed()
 ## Emitted when the player health changes.
 signal player_health_changed()
+## Emitted when the player is hit.
+signal player_hit(effect: Node2D)
 ## Emitted when the game over screen is shown.
 signal game_over()
 ## Emitted when the game finished screen is shown.

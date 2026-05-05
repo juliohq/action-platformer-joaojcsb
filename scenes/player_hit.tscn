@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ciimaswewdxob"]
+
+[ext_resource type="Texture2D" uid="uid://b0nlmx1y0jhsq" path="res://assets/sprites/player/player_hit.png" id="1_jyjqe"]
+
+[sub_resource type="Animation" id="Animation_jyjqe"]
+resource_name = "HIT"
+length = 0.50000715
+step = 0.071428575
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.071428575, 0.14285715, 0.21428573, 0.2857143, 0.35714287, 0.42857146),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_5xgpe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5xgpe"]
+_data = {
+&"HIT": SubResource("Animation_jyjqe"),
+&"RESET": SubResource("Animation_5xgpe")
+}
+
+[node name="PlayerHit" type="Sprite2D" unique_id=340348195]
+texture = ExtResource("1_jyjqe")
+hframes = 7
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=1321240233]
+libraries/ = SubResource("AnimationLibrary_5xgpe")
+autoplay = &"HIT"

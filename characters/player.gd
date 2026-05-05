@@ -27,6 +27,7 @@ var invincibility := 2.0
 @export var pivot: Node2D
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
+@export var hit_state: BaseState
 @export var fall_death: Node
 
 ## The horizontal direction the player is moving to.
@@ -144,6 +145,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	
 	invincibility_left = invincibility
 	
+	# Orb drop and die logic
 	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
@@ -154,6 +156,9 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		spawn_orb(BLUE_ORB_DROP)
 	else:
 		die()
+	
+	# Hit state
+	state_machine.current_state = hit_state
 
 
 func _fall_death() -> void:
