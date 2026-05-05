@@ -168,6 +168,9 @@ func die() -> void:
 	Globals.player_health -= 1
 	Events.player_health_changed.emit()
 	
+	# Invincibility
+	invincibility_left = invincibility
+	
 	# Death
 	if Globals.player_health <= 0:
 		Events.game_over.emit()
