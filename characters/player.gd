@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 
 const JUMP_SOUND := preload("res://assets/audio/player_jump.wav")
+const RED_ORB_DROP := preload("res://scenes/red_orb_drop.tscn")
+const BLUE_ORB_DROP := preload("res://scenes/blue_orb_drop.tscn")
 
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
@@ -145,11 +147,11 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
-		spawn_orb(preload("res://scenes/red_orb_drop.tscn"))
+		spawn_orb(RED_ORB_DROP)
 	elif Globals.blue_orbs > 0:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
-		spawn_orb(preload("res://scenes/blue_orb_drop.tscn"))
+		spawn_orb(BLUE_ORB_DROP)
 	else:
 		die()
 
