@@ -2,6 +2,7 @@ extends BaseState
 
 
 const BOUND_CHECK := 0.05
+const EDGE_TURN := 0.5
 const PLAYER_DISTANCE := 50
 
 @export var sprite: Sprite2D
@@ -10,6 +11,7 @@ const PLAYER_DISTANCE := 50
 
 # Fix bounds checks too often
 var bound_check := 0.0
+var edge_turn := 0.0
 
 
 func on_enter() -> void:
@@ -18,6 +20,9 @@ func on_enter() -> void:
 
 
 func on_physics_process(delta: float) -> void:
+	if edge_turn > 0.0:
+		edge_turn -= delta
+	
 	if bound_check > 0.0:
 		bound_check -= delta
 	else:
@@ -25,7 +30,8 @@ func on_physics_process(delta: float) -> void:
 		
 		if surface_detector.bound_reached():
 			root.direction *= -1
-		else:
+			edge_turn = EDGE_TURN
+		elif edge_turn <= 0.0:
 			follow_player()
 	
 	# Flip sprite
