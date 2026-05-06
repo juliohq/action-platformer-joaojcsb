@@ -2,6 +2,7 @@ extends BaseState
 
 
 const BOUND_CHECK := 0.05
+const RANDOM_SPINNING := 3.0
 
 @export var sprite: Sprite2D
 @export var player_detector: Area2D
@@ -14,7 +15,8 @@ var random_spinning := 0.0
 
 
 func on_enter() -> void:
-	animator.play("WALK")
+	animator.play("SPINNING")
+	random_spinning = RANDOM_SPINNING
 	root.direction = signf(randf() - 0.5)
 
 
@@ -45,5 +47,4 @@ func on_physics_process(delta: float) -> void:
 	if random_spinning > 0.0:
 		random_spinning -= delta
 	else:
-		random_spinning += randf_range(1.0, 5.0)
-		change_state("Spin")
+		change_state("Idle")
