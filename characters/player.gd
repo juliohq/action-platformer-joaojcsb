@@ -162,18 +162,18 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		# Hit state
 		state_machine.current_state = hit_state
 	else:
-		die()
+		die(false)
 
 
 func _fall_death() -> void:
-	die()
+	die(true)
 	
 	# Reset player direction
 	direction = 0.0
 	sprite.scale.x = 1
 
 
-func die() -> void:
+func die(fallen: bool) -> void:
 	Globals.player_health -= 1
 	
 	if Globals.player_health >= 0:
@@ -184,7 +184,10 @@ func die() -> void:
 	
 	# Death
 	if Globals.player_health <= 0:
-		state_machine.current_state = death_state
+		if fallen:
+			Events.game_over.emit()
+		else:
+			state_machine.current_state = death_state
 
 
 func spawn_orb(scene: PackedScene) -> void:
