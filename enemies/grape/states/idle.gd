@@ -8,7 +8,7 @@ const JUMP_INTERVAL := 0.5
 @export var player_detector: Area2D
 
 ## Time left until jump again.
-var time_left := 0.0
+var jump_timer := 0.0
 
 
 func on_enter() -> void:
@@ -31,9 +31,9 @@ func on_physics_process(delta: float) -> void:
 
 func jump(delta: float) -> void:
 	if root.is_on_floor():
-		if time_left > 0.0:
-			time_left -= delta
+		if jump_timer > 0.0:
+			jump_timer -= delta
 		else:
-			time_left = JUMP_INTERVAL
+			jump_timer = JUMP_INTERVAL
 			root.velocity.y = -JUMP_HEIGHT
 			root.move_and_slide()
