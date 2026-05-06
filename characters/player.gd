@@ -229,7 +229,12 @@ func shoot() -> void:
 
 ## Freezes the player for the given amount of time.
 func freeze(time: float) -> void:
+	if invincibility_left > 0.0:
+		print("[freeze] player is invincible")
+		return
+	
 	freeze_time = time
+	prints("[freeze] player frozen for", freeze_time, "s")
 
 
 func _freeze() -> void:

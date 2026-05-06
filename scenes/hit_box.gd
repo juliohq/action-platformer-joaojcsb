@@ -18,8 +18,8 @@ func _ready() -> void:
 
 func _hit(body: Node2D) -> void:
 	if body.has_method("hit"):
-		body.hit(attack, signf(body.global_position.x - global_position.x))
 		hit.emit(body)
+		body.hit(attack, signf(body.global_position.x - global_position.x))
 
 
 func damage() -> void:
