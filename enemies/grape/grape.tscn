@@ -95,8 +95,8 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
 radius = 12.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
-radius = 100.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qcrn"]
+size = Vector2(192, 48)
 
 [node name="Grape" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
@@ -140,9 +140,9 @@ shape = SubResource("CircleShape2D_8uprq")
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=1621230065]
 collision_layer = 0
 
-[node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1731492826]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_6dppi")
+[node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1082939082]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_8qcrn")
 
 [node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("5_mwmim")]
 left = NodePath("Left")
