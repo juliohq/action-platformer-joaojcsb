@@ -8,7 +8,7 @@ const BOUND_CHECK := 0.05
 @export var surface_detector: Node2D
 
 # Fix bounds checks too often
-var time_left := 0.0
+var bound_check := 0.0
 
 
 func on_enter() -> void:
@@ -17,10 +17,10 @@ func on_enter() -> void:
 
 
 func on_physics_process(delta: float) -> void:
-	if time_left > 0.0:
-		time_left -= delta
+	if bound_check > 0.0:
+		bound_check -= delta
 	else:
-		time_left += BOUND_CHECK
+		bound_check += BOUND_CHECK
 		
 		if surface_detector.bound_reached():
 			root.direction *= -1
