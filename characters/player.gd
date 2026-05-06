@@ -5,6 +5,11 @@ const JUMP_SOUND := preload("res://assets/audio/player_jump.wav")
 const RED_ORB_DROP := preload("res://scenes/red_orb_drop.tscn")
 const BLUE_ORB_DROP := preload("res://scenes/blue_orb_drop.tscn")
 
+const FIREBALL := preload("res://scenes/fireball.tscn")
+const FIRE_GRENADE := preload("res://scenes/fire_grenade.tscn")
+const FREEZE_TOUCH := preload("res://scenes/freeze_touch.tscn")
+const GIANT_ICE_ORB := preload("res://scenes/giant_ice_orb.tscn")
+
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
@@ -214,13 +219,13 @@ func shoot() -> void:
 	
 	if Globals.orb == Globals.Orb.RED:
 		if attack == Globals.Attack.A:
-			bullet = preload("res://scenes/fireball.tscn").instantiate()
+			bullet = FIREBALL.instantiate()
 		else:
-			bullet = preload("res://scenes/fire_grenade.tscn").instantiate()
+			bullet = FIRE_GRENADE.instantiate()
 	elif attack == Globals.Attack.A:
-		bullet = preload("res://scenes/freeze_touch.tscn").instantiate()
+		bullet = FREEZE_TOUCH.instantiate()
 	else:
-		bullet = preload("res://scenes/giant_ice_orb.tscn").instantiate()
+		bullet = GIANT_ICE_ORB.instantiate()
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
