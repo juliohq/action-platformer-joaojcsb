@@ -96,7 +96,7 @@ _data = {
 radius = 12.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6dppi"]
-radius = 128.0
+radius = 100.0
 
 [node name="Grape" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8

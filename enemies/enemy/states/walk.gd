@@ -26,7 +26,7 @@ func on_physics_process(delta: float) -> void:
 	if bound_check > 0.0:
 		bound_check -= delta
 	else:
-		bound_check += BOUND_CHECK
+		bound_check = BOUND_CHECK
 		
 		if surface_detector.bound_reached():
 			root.direction *= -1
