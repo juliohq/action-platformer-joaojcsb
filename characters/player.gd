@@ -182,6 +182,9 @@ func die(fallen: bool) -> void:
 	# Invincibility
 	invincibility_left = invincibility
 	
+	# Freeze
+	freeze_time = 0.0
+	
 	# Death
 	if Globals.player_health <= 0:
 		if fallen:
