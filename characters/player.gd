@@ -56,6 +56,8 @@ var freeze_time := 0.0
 
 func _ready() -> void:
 	fall_death.dead.connect(_fall_death)
+	
+	prints("[player] invincible for:", invincibility_left, "s")
 
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -63,6 +65,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
+		prints("[player] orb changed:", Globals.orb)
 
 
 func _physics_process(delta: float) -> void:
@@ -110,6 +113,7 @@ func _physics_process(delta: float) -> void:
 		sprite.modulate.a = fposmod(invincibility_left, 0.25) * 4.0
 		
 		if invincibility_left <= 0.0:
+			prints("[player] invincibility ran out")
 			sprite.modulate.a = 1.0
 	
 	# Process character movement
@@ -150,12 +154,14 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		return
 	
 	invincibility_left = invincibility
+	prints("[player] invincible for:", invincibility_left, "s")
 	
 	# Orb drop and die logic
 	if Globals.red_orbs > 0:
 		# Drop red orb
 		Globals.red_orbs -= 1
 		spawn_orb(RED_ORB_DROP)
+		prints("[player] red orb dropped")
 		
 		# Hit state
 		state_machine.current_state = hit_state
@@ -163,6 +169,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		# Drop blue orb
 		Globals.blue_orbs -= 1
 		spawn_orb(BLUE_ORB_DROP)
+		prints("[player] blue orb dropped")
 		
 		# Hit state
 		state_machine.current_state = hit_state
@@ -172,8 +179,9 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 
 func _fall_death() -> void:
 	die(true)
+	prints("[player] fell")
 	
-	# Reset player direction
+	# Reset player directions
 	direction = 0.0
 	sprite.scale.x = 1
 

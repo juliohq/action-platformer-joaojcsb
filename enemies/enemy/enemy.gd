@@ -72,6 +72,7 @@ func hit(damage: int, knockback_direction: float) -> void:
 	health_bar.update(health, max_health)
 	
 	if health > 0:
+		prints("[enemy]", name, "hit:", "%d/%d" % [health, max_health])
 		state_machine.current_state = hit_state
 		
 		# Knockback
@@ -85,6 +86,7 @@ func die() -> void:
 	for loot: Node2D in loots:
 		loot.drop()
 	
+	prints("[enemy]", name, "destroyed")
 	queue_free()
 
 
@@ -92,6 +94,7 @@ func die() -> void:
 func freeze(time: float) -> void:
 	if allow_freeze:
 		freeze_time = time
+		prints("[enemy]", name, "frozen for", freeze_time, "s")
 
 
 func _freeze() -> void:
