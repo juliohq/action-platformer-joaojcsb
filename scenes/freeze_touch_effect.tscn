@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://b0qbk2wiq0gu4"]
 
 [ext_resource type="Texture2D" uid="uid://6qw3d0pn3sli" path="res://assets/sprites/freeze_touch_hit.png" id="1_viq6r"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="2_yxc0v"]
+[ext_resource type="AudioStream" uid="uid://b6dv11jibwxk" path="res://assets/audio/freeze_touch_hit.wav" id="3_bryh2"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"
@@ -61,3 +63,6 @@ hframes = 8
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=932256447]
 libraries/ = SubResource("AnimationLibrary_yxc0v")
 autoplay = &"HIT"
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("2_yxc0v")]
+audio = ExtResource("3_bryh2")

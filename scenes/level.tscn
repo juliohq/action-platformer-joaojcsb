@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d0nubcpsalgj" path="res://characters/player.tscn" id="3_2r41h"]
 [ext_resource type="PackedScene" uid="uid://bll28k40uoiju" path="res://scenes/camera.tscn" id="4_klq6b"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_uf75n"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="7_klq6b"]
+[ext_resource type="AudioStream" uid="uid://deyuq5nybi5nu" path="res://assets/audio/level_started.wav" id="8_b121j"]
 
 [node name="Level" type="Node2D" unique_id=1054854771 node_paths=PackedStringArray("world", "background", "foreground")]
 script = ExtResource("1_6i3tb")
@@ -40,3 +42,7 @@ limit_bottom = 176
 [node name="UI" parent="." unique_id=114827551 instance=ExtResource("2_jedpt")]
 
 [node name="Music" parent="." unique_id=1966762641 instance=ExtResource("4_uf75n")]
+play_after = 2.5
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("7_klq6b")]
+audio = ExtResource("8_b121j")

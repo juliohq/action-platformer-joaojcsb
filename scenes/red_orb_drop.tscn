@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dg71aj43yh3o4" path="res://scenes/orb.gd" id="1_ktqa0"]
 [ext_resource type="Texture2D" uid="uid://du11rvnbnf6dv" path="res://assets/ui/red_orb/0.png" id="2_mf5g8"]
 [ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="3_jigkk"]
+[ext_resource type="AudioStream" uid="uid://dexbielrixug6" path="res://assets/audio/pickup_orb.wav" id="4_tyc5l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktqa0"]
 radius = 4.0
@@ -28,6 +29,7 @@ wait_time = 5.0
 autostart = true
 
 [node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("3_jigkk")]
+audio = ExtResource("4_tyc5l")
 
 [node name="Collision" type="CollisionShape2D" parent="Collectible" unique_id=1702175728]
 shape = SubResource("CircleShape2D_jigkk")

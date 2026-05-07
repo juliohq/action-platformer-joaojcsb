@@ -5,6 +5,9 @@ extends BaseState
 
 
 func on_enter() -> void:
+	AudioManager.play(preload("res://assets/audio/player_hit.wav"), 1.0, &"Sounds")
+	
+	# Spawn player hit effect
 	var effect := preload("res://scenes/player_hit.tscn").instantiate()
 	effect.scale.x = sprite.scale.x
 	effect.global_position = root.global_position

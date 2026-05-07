@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://xecp2sm0rjb6"]
 
 [ext_resource type="Texture2D" uid="uid://cieux6gyvqpos" path="res://assets/sprites/fire_grenade_hit.png" id="1_yx8u5"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="2_ekwto"]
+[ext_resource type="AudioStream" uid="uid://dv30qfh0qytbi" path="res://assets/audio/fire_grenade_hit.wav" id="3_1sxqs"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"
@@ -61,3 +63,6 @@ hframes = 33
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=932256447]
 libraries/ = SubResource("AnimationLibrary_yxc0v")
 autoplay = &"HIT"
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("2_ekwto")]
+audio = ExtResource("3_1sxqs")

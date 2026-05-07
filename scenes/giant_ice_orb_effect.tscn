@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://clxbxrubm3lgb"]
 
 [ext_resource type="Texture2D" uid="uid://cr3olcgyg04hp" path="res://assets/sprites/giant_ice_orb_hit.png" id="1_434lb"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="2_v0a6m"]
+[ext_resource type="AudioStream" uid="uid://ciyko5jhsdtph" path="res://assets/audio/giant_ice_orb_hit.wav" id="3_hrwv7"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"
@@ -61,3 +63,6 @@ hframes = 16
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=932256447]
 libraries/ = SubResource("AnimationLibrary_yxc0v")
 autoplay = &"HIT"
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("2_v0a6m")]
+audio = ExtResource("3_hrwv7")

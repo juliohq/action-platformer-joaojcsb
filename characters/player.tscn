@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://pcvv3ko7bwo5" path="res://characters/states/melee.gd" id="15_b0vde"]
 [ext_resource type="Script" uid="uid://bd7y3wcgutqn0" path="res://characters/states/hit.gd" id="20_41yun"]
 [ext_resource type="Script" uid="uid://f2jsjcjxitcy" path="res://characters/states/death.gd" id="21_svrv0"]
+[ext_resource type="AudioStream" uid="uid://eb438pqdw2f5" path="res://assets/audio/player_run.wav" id="23_hsn1j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
@@ -371,6 +372,33 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0), Vector2i(8, 0), Vector2i(9, 0)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Run")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_hsn1j")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_hsn1j")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_hsn1j")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("23_hsn1j")
+}],
+"times": PackedFloat32Array(0.25, 0.5, 0.875, 1.125)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="Animation" id="Animation_h076o"]
 resource_name = "SHOOT"
@@ -548,3 +576,6 @@ script = ExtResource("21_svrv0")
 sprite = NodePath("../../Sprite")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
+
+[node name="Run" type="AudioStreamPlayer" parent="." unique_id=1909796119]
+bus = &"Sounds"

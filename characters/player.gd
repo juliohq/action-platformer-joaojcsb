@@ -10,6 +10,9 @@ const FIRE_GRENADE := preload("res://scenes/fire_grenade.tscn")
 const FREEZE_TOUCH := preload("res://scenes/freeze_touch.tscn")
 const GIANT_ICE_ORB := preload("res://scenes/giant_ice_orb.tscn")
 
+const SLINGSHOT_AUDIO := preload("res://assets/audio/player_slingshot.wav")
+const SLOT_CHANGED_AUDIO := preload("res://assets/audio/player_slot_changed.wav")
+
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
@@ -65,6 +68,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
+		AudioManager.play(SLOT_CHANGED_AUDIO, 1.0, &"Sounds")
 		prints("[player] orb changed:", Globals.orb)
 
 
@@ -221,6 +225,9 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 func shoot() -> void:
 	# Cooldown
 	cooldown += 1.0 / fire_rate
+	
+	# Audio
+	AudioManager.play(SLINGSHOT_AUDIO, 1.0, &"Sounds")
 	
 	# Shoot
 	var bullet: Node2D

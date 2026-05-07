@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_5qkld"]
 [ext_resource type="Script" uid="uid://bnxnh1llp3de2" path="res://ui/game_over.gd" id="1_34ofb"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_y1rcl"]
+[ext_resource type="AudioStream" uid="uid://dd6f2ag3k6n0e" path="res://assets/audio/game_over.wav" id="4_xjda6"]
 
 [node name="GameOver" type="Control" unique_id=946583267 node_paths=PackedStringArray("focus_control")]
 process_mode = 3
@@ -56,6 +57,11 @@ text = "MAIN_MENU"
 [node name="Quit" type="Button" parent="Margin/VBox/Buttons" unique_id=27531493]
 layout_mode = 2
 text = "QUIT"
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=658620490]
+stream = ExtResource("4_xjda6")
+autoplay = true
+bus = &"Sounds"
 
 [connection signal="pressed" from="Margin/VBox/Buttons/PlayAgain" to="." method="_play_again"]
 [connection signal="pressed" from="Margin/VBox/Buttons/MainMenu" to="." method="_main_menu"]

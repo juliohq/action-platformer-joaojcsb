@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://y3purbv6fwk8"]
 
 [ext_resource type="Texture2D" uid="uid://0cgofo760jja" path="res://assets/sprites/fireball_effect.png" id="1_11f3b"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="2_16mai"]
+[ext_resource type="AudioStream" uid="uid://m6umliee8dd2" path="res://assets/audio/fireball_hit.wav" id="3_thtl1"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"
@@ -61,3 +63,6 @@ hframes = 5
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=932256447]
 libraries/ = SubResource("AnimationLibrary_yxc0v")
 autoplay = &"HIT"
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("2_16mai")]
+audio = ExtResource("3_thtl1")
