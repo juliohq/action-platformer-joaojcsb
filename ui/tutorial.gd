@@ -22,3 +22,9 @@ func _ready() -> void:
 func update_time(value: float) -> void:
 	%TimeLeft.max_value = DURATION
 	%TimeLeft.value = value
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel"):
+		get_viewport().set_input_as_handled()
+		queue_free()
