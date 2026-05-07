@@ -5,6 +5,13 @@
 [ext_resource type="PackedScene" uid="uid://djfqtdit362kp" path="res://enemies/bushly/bushly.tscn" id="4_1nyb5"]
 [ext_resource type="PackedScene" uid="uid://8r1ymbpirrn5" path="res://enemies/grape/grape.tscn" id="4_qsqu8"]
 [ext_resource type="PackedScene" uid="uid://df3646t5j0bru" path="res://enemies/ice_dude/ice_dude.tscn" id="5_qsqu8"]
+[ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="6_m2vnp"]
+[ext_resource type="AudioStream" uid="uid://sbs2tndfxc63" path="res://assets/music/level_1.ogg" id="7_7p336"]
+
+[sub_resource type="Resource" id="Resource_7p336"]
+script = ExtResource("6_m2vnp")
+stream = ExtResource("7_7p336")
+metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="Prototype" unique_id=1054854771 instance=ExtResource("1_0vqeo")]
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]
@@ -45,3 +52,6 @@ position = Vector2(864, -64)
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="3" unique_id=2136620420]
 position = Vector2(-256, 0)
+
+[node name="Music" parent="." index="2" unique_id=1966762641]
+stream = SubResource("Resource_7p336")

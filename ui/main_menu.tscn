@@ -4,6 +4,13 @@
 [ext_resource type="Script" uid="uid://dskveuvscr36x" path="res://ui/main_menu.gd" id="1_ecucs"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_gaqaa"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_rmr83"]
+[ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_ei257"]
+[ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
+
+[sub_resource type="Resource" id="Resource_ubpvv"]
+script = ExtResource("5_ei257")
+stream = ExtResource("6_p8ri8")
+metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="MainMenu" type="Control" unique_id=212698053 node_paths=PackedStringArray("root", "focus_control")]
 layout_mode = 3
@@ -86,6 +93,7 @@ size_flags_vertical = 8
 text = "v0.0.0"
 
 [node name="Music" parent="." unique_id=525561170 instance=ExtResource("4_rmr83")]
+stream = SubResource("Resource_ubpvv")
 
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/NewGame" to="." method="_new_game"]
 [connection signal="pressed" from="UI/Root/Margin/VBox/VBox/LoadGame" to="." method="_load_game"]
