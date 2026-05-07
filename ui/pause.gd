@@ -18,6 +18,11 @@ var mouse_mode := Input.MOUSE_MODE_VISIBLE
 
 
 func _ready() -> void:
+	%Resume.pressed.connect(_resume)
+	%Options.pressed.connect(_options)
+	%MainMenu.pressed.connect(_main_menu)
+	%Quit.pressed.connect(_quit)
+	
 	AudioManager.play(pause_sound, sound_volume, sound_bus)
 	
 	mouse_mode = Input.mouse_mode
