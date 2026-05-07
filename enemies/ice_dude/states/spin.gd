@@ -5,6 +5,7 @@ const BOUND_CHECK := 0.05
 const RANDOM_SPINNING := 3.0
 
 @export var sprite: Sprite2D
+@export var flame: Sprite2D
 @export var player_detector: Area2D
 @export var surface_detector: Node2D
 
@@ -16,8 +17,13 @@ var random_spinning := 0.0
 
 func on_enter() -> void:
 	animator.play("SPINNING")
+	flame.show()
 	random_spinning = RANDOM_SPINNING
 	root.direction = signf(randf() - 0.5)
+
+
+func on_exit() -> void:
+	flame.hide()
 
 
 func on_physics_process(delta: float) -> void:
