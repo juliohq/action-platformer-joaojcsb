@@ -8,6 +8,7 @@ const RANDOM_SPINNING := 3.0
 @export var flame: Sprite2D
 @export var player_detector: Area2D
 @export var surface_detector: Node2D
+@export var audio: AudioStreamPlayer2D
 
 # Fix bounds checks too often
 var bound_check := 0.0
@@ -20,6 +21,7 @@ func on_enter() -> void:
 	flame.show()
 	random_spinning = RANDOM_SPINNING
 	root.direction = signf(randf() - 0.5)
+	audio.play()
 
 
 func on_exit() -> void:

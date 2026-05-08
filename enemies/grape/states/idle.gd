@@ -6,6 +6,7 @@ const JUMP_INTERVAL := 0.5
 
 @export var sprite: Sprite2D
 @export var player_detector: Area2D
+@export var audio: AudioStreamPlayer2D
 
 ## Time left until jump again.
 var jump_timer := 0.0
@@ -34,6 +35,7 @@ func jump(delta: float) -> void:
 		if jump_timer > 0.0:
 			jump_timer -= delta
 		else:
+			audio.play()
 			jump_timer = JUMP_INTERVAL
 			root.velocity.y = -JUMP_HEIGHT
 			root.move_and_slide()

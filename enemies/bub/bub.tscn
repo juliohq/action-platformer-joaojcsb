@@ -11,7 +11,9 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="11_5e83j"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="11_77a18"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="12_8f4tb"]
+[ext_resource type="AudioStream" uid="uid://br4d72nux040f" path="res://assets/audio/bub_hit.wav" id="12_lujfu"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_lix8j"]
+[ext_resource type="AudioStream" uid="uid://dhtkbw844j3eb" path="res://assets/audio/bub_walk.wav" id="14_bajw6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -179,6 +181,25 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Walk")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.05724839,
+"start_offset": 0.0,
+"stream": ExtResource("14_bajw6")
+}, {
+"end_offset": 0.05724839,
+"start_offset": 0.0,
+"stream": ExtResource("14_bajw6")
+}],
+"times": PackedFloat32Array(0, 0.25)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dppi"]
 _data = {
@@ -287,7 +308,13 @@ animator = NodePath("../../Animator")
 [node name="Hit" type="Node" parent="StateMachine" unique_id=424863087 node_paths=PackedStringArray("idle", "root", "animator")]
 script = ExtResource("11_77a18")
 idle = NodePath("../Idle")
+audio = ExtResource("12_lujfu")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
 [node name="HealthBar" parent="." unique_id=565073395 instance=ExtResource("13_lix8j")]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=239712082]
+volume_db = -12.0
+max_distance = 320.0
+bus = &"Sounds"

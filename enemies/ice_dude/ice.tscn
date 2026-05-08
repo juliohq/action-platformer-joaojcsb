@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="4_ka42g"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="5_imle2"]
 [ext_resource type="PackedScene" uid="uid://byu8e06u0427t" path="res://scenes/freeze.tscn" id="6_m7byo"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="7_rcobq"]
+[ext_resource type="AudioStream" uid="uid://8mojcljdpc33" path="res://assets/audio/ice_dude_attack.wav" id="8_iapvu"]
 
 [sub_resource type="Animation" id="Animation_rpp2m"]
 resource_name = "ICE"
@@ -74,3 +76,7 @@ shape = SubResource("CircleShape2D_y25gk")
 [node name="Freeze" parent="." unique_id=141722922 node_paths=PackedStringArray("hit_box") instance=ExtResource("6_m7byo")]
 time = 5.0
 hit_box = NodePath("../HitBox")
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("7_rcobq")]
+audio = ExtResource("8_iapvu")
+audio_volume = 0.8

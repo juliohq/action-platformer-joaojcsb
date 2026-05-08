@@ -12,8 +12,11 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="7_3yxkd"]
 [ext_resource type="Script" uid="uid://cditqrtk6glsj" path="res://enemies/bushly/states/camouflaged.gd" id="8_6dppi"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="8_vm5xc"]
+[ext_resource type="AudioStream" uid="uid://c83yfvb7kflol" path="res://assets/audio/bushly_discover.wav" id="11_mlm1g"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="13_3yxkd"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_i2776"]
+[ext_resource type="AudioStream" uid="uid://f3btfjarcl81" path="res://assets/audio/bushly_hit.wav" id="14_vm5xc"]
+[ext_resource type="AudioStream" uid="uid://bbwhfeu32olov" path="res://assets/audio/bushly_walk.wav" id="17_rpha0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -221,6 +224,29 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0)]
 }
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Walk")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.28865805,
+"start_offset": 0.0,
+"stream": ExtResource("17_rpha0")
+}, {
+"end_offset": 0.28865805,
+"start_offset": 0.0,
+"stream": ExtResource("17_rpha0")
+}, {
+"end_offset": 0.28865805,
+"start_offset": 0.0,
+"stream": ExtResource("17_rpha0")
+}],
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334)
+}
+tracks/3/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6dppi"]
 _data = {
@@ -316,6 +342,7 @@ metadata/_custom_type_script = "uid://cgyspffsce7rr"
 script = ExtResource("8_6dppi")
 idle = NodePath("../Idle")
 player_detector = NodePath("../../PlayerDetector")
+audio = ExtResource("11_mlm1g")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
@@ -338,7 +365,13 @@ animator = NodePath("../../Animator")
 [node name="Hit" type="Node" parent="StateMachine" unique_id=1365448507 node_paths=PackedStringArray("idle", "root", "animator")]
 script = ExtResource("13_3yxkd")
 idle = NodePath("../Idle")
+audio = ExtResource("14_vm5xc")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
 [node name="HealthBar" parent="." unique_id=565073395 instance=ExtResource("13_i2776")]
+
+[node name="Walk" type="AudioStreamPlayer2D" parent="." unique_id=722501714]
+volume_db = -12.0
+max_distance = 320.0
+bus = &"Sounds"
