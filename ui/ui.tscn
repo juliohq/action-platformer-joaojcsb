@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bjlscqp5df7uh" path="res://ui/ui.gd" id="1_8q4px"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="2_qoaob"]
-[ext_resource type="StyleBox" uid="uid://bqm20bvf32r81" path="res://ui/theme/black_panel.tres" id="3_tf0e0"]
+[ext_resource type="StyleBox" uid="uid://cvkfrhiocoolr" path="res://ui/theme/panel.tres" id="3_pa1oa"]
 [ext_resource type="PackedScene" uid="uid://diy5txggb2sto" path="res://ui/orb.tscn" id="3_vkava"]
 [ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="3_wl5ax"]
 [ext_resource type="PackedScene" uid="uid://drjiyaocwe2vj" path="res://ui/health_bar.tscn" id="4_obcwv"]
@@ -44,7 +44,7 @@ theme_override_constants/separation = 0
 
 [node name="Base" type="PanelContainer" parent="Main/Margin/Stats" unique_id=704277549]
 layout_mode = 2
-theme_override_styles/panel = ExtResource("3_tf0e0")
+theme_override_styles/panel = ExtResource("3_pa1oa")
 
 [node name="Margin" type="MarginContainer" parent="Main/Margin/Stats/Base" unique_id=1621550170]
 layout_mode = 2

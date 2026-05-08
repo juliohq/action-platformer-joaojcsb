@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_5qkld"]
 [ext_resource type="Script" uid="uid://bnxnh1llp3de2" path="res://ui/game_over.gd" id="1_34ofb"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_y1rcl"]
+[ext_resource type="Texture2D" uid="uid://tnk2tlpbtufw" path="res://assets/ui/game_over.png" id="4_akjlf"]
 [ext_resource type="AudioStream" uid="uid://dd6f2ag3k6n0e" path="res://assets/audio/game_over.wav" id="4_xjda6"]
 
 [node name="GameOver" type="Control" unique_id=946583267 node_paths=PackedStringArray("focus_control")]
@@ -35,10 +36,10 @@ theme_override_constants/margin_bottom = 32
 [node name="VBox" type="VBoxContainer" parent="Margin" unique_id=663732798]
 layout_mode = 2
 
-[node name="Header" type="Label" parent="Margin/VBox" unique_id=307187193]
+[node name="Header" type="TextureRect" parent="Margin/VBox" unique_id=845448653]
 layout_mode = 2
-text = "GAME_OVER"
-horizontal_alignment = 1
+texture = ExtResource("4_akjlf")
+stretch_mode = 3
 
 [node name="Buttons" type="VBoxContainer" parent="Margin/VBox" unique_id=607708767]
 layout_mode = 2

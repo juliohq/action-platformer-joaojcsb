@@ -18,6 +18,8 @@ extends Control
 
 
 func _ready() -> void:
+	%NewGame.pressed.connect(_new_game)
+	
 	AudioManager.play(sound, sound_volume, sound_bus)
 	
 	if use_project_name:

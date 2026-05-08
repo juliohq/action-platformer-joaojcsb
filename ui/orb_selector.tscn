@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_oo70d"]
 [ext_resource type="Script" uid="uid://b0sceriagkya0" path="res://ui/orb_selector.gd" id="2_oo70d"]
 [ext_resource type="Texture2D" uid="uid://gep8f0byh3nj" path="res://assets/ui/blue_orb/0.png" id="3_hiumi"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="3_yh8um"]
 
 [node name="OrbSelector" type="MarginContainer" unique_id=2135712761]
 offset_right = 33.0
@@ -20,6 +21,7 @@ layout_mode = 2
 [node name="Header" type="Label" parent="HBox" unique_id=1404627578]
 layout_mode = 2
 text = "LABEL_ORB"
+label_settings = ExtResource("3_yh8um")
 
 [node name="Orb" type="TextureRect" parent="HBox" unique_id=1733355768]
 unique_name_in_owner = true

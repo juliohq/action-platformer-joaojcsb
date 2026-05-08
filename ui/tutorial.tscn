@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://b53k8e0urcybb"]
 
-[ext_resource type="StyleBox" uid="uid://bqm20bvf32r81" path="res://ui/theme/black_panel.tres" id="1_ket05"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_wct7o"]
 [ext_resource type="Script" uid="uid://fl20c7plygi8" path="res://ui/tutorial.gd" id="2_11rxk"]
+[ext_resource type="StyleBox" uid="uid://cvkfrhiocoolr" path="res://ui/theme/panel.tres" id="3_iambg"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_iambg"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_11rxk"]
 bg_color = Color(0.22229451, 0.22229457, 0.22229442, 1)
@@ -27,7 +28,7 @@ script = ExtResource("2_11rxk")
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_styles/panel = ExtResource("1_ket05")
+theme_override_styles/panel = ExtResource("3_iambg")
 
 [node name="VBox" type="VBoxContainer" parent="Base" unique_id=253637110]
 layout_mode = 2
@@ -51,6 +52,7 @@ Mudar o Elemento da Orb: ALT
 Ataque corpo a corpo: Tecla J
 Ataque Nivel 1 das orbs: Tecla I
 Ataque Nivel 2 das orbs: Tecla K"
+label_settings = ExtResource("4_iambg")
 
 [node name="TimeLeft" type="ProgressBar" parent="Base/VBox" unique_id=1256167108]
 unique_name_in_owner = true

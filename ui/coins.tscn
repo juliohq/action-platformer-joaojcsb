@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_7fd4p"]
 [ext_resource type="Script" uid="uid://dgocu8tiuvoa4" path="res://ui/coins.gd" id="1_f1lgg"]
 [ext_resource type="Texture2D" uid="uid://5ylytft4xmkt" path="res://assets/sprites/coin.png" id="3_07k5v"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_g1vfm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_07k5v"]
 atlas = ExtResource("3_07k5v")
@@ -25,3 +26,4 @@ stretch_mode = 3
 unique_name_in_owner = true
 layout_mode = 2
 text = "0"
+label_settings = ExtResource("4_g1vfm")

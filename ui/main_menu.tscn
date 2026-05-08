@@ -3,8 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_c5kpb"]
 [ext_resource type="Script" uid="uid://dskveuvscr36x" path="res://ui/main_menu.gd" id="1_ecucs"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_gaqaa"]
+[ext_resource type="Texture2D" uid="uid://cjqf0n6ycdypk" path="res://assets/ui/play_normal.png" id="4_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_rmr83"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_ei257"]
+[ext_resource type="Texture2D" uid="uid://cws4ul2n0c6ck" path="res://assets/ui/play_pressed.png" id="5_ubpvv"]
 [ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
 
 [sub_resource type="Resource" id="Resource_ubpvv"]
@@ -22,7 +24,7 @@ grow_vertical = 2
 theme = ExtResource("1_gaqaa")
 script = ExtResource("1_ecucs")
 root = NodePath("UI/Root")
-focus_control = NodePath("UI/Root/Margin/VBox/VBox/NewGame")
+focus_control = NodePath("")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1593758440]
 
@@ -68,9 +70,12 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="NewGame" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=908961925]
+[node name="NewGame" type="TextureButton" parent="UI/Root/Margin/VBox/VBox" unique_id=1025570377]
+unique_name_in_owner = true
 layout_mode = 2
-text = "NEW_GAME"
+texture_normal = ExtResource("4_p8ri8")
+texture_pressed = ExtResource("5_ubpvv")
+stretch_mode = 3
 
 [node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=82619897]
 layout_mode = 2
