@@ -42,34 +42,37 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 theme_override_constants/separation = 0
 
-[node name="Base" type="PanelContainer" parent="Main/Margin/Stats" unique_id=704277549]
+[node name="Base" type="PanelContainer" parent="Main/Margin" unique_id=704277549]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 theme_override_styles/panel = ExtResource("3_pa1oa")
 
-[node name="Margin" type="MarginContainer" parent="Main/Margin/Stats/Base" unique_id=1621550170]
+[node name="Margin" type="MarginContainer" parent="Main/Margin/Base" unique_id=1621550170]
 layout_mode = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBox" type="VBoxContainer" parent="Main/Margin/Stats/Base/Margin" unique_id=1942137105]
+[node name="Grid" type="GridContainer" parent="Main/Margin/Base/Margin" unique_id=754222516]
+layout_mode = 2
+columns = 2
+
+[node name="Coins" parent="Main/Margin/Base/Margin/Grid" unique_id=465799691 instance=ExtResource("4_pa1oa")]
 layout_mode = 2
 
-[node name="Coins" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=465799691 instance=ExtResource("4_pa1oa")]
+[node name="RedOrb" parent="Main/Margin/Base/Margin/Grid" unique_id=1733355768 instance=ExtResource("3_vkava")]
 layout_mode = 2
 
-[node name="HealthBar" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=2135712761 instance=ExtResource("4_obcwv")]
+[node name="HealthBar" parent="Main/Margin/Base/Margin/Grid" unique_id=2135712761 instance=ExtResource("4_obcwv")]
 layout_mode = 2
 
-[node name="RedOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
-layout_mode = 2
-
-[node name="BlueOrb" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
+[node name="BlueOrb" parent="Main/Margin/Base/Margin/Grid" unique_id=1785923407 instance=ExtResource("3_vkava")]
 layout_mode = 2
 type = 1
 
-[node name="OrbSelector" parent="Main/Margin/Stats/Base/Margin/VBox" unique_id=385832756 instance=ExtResource("6_bo1jx")]
+[node name="OrbSelector" parent="Main/Margin/Base/Margin/Grid" unique_id=385832756 instance=ExtResource("6_bo1jx")]
 layout_mode = 2
 
 [node name="Tutorial" parent="." unique_id=138246792 instance=ExtResource("7_gycre")]
