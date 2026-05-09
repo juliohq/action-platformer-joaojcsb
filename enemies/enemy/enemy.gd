@@ -94,7 +94,7 @@ func die() -> void:
 func freeze(time: float) -> void:
 	if allow_freeze:
 		freeze_time = time
-		prints("[enemy]", name, "frozen for", freeze_time, "s")
+		prints("[enemy]", name, "frozen for:", freeze_time, "s")
 
 
 func _freeze() -> void:

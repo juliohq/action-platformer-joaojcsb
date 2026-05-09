@@ -254,7 +254,7 @@ func freeze(time: float) -> void:
 		return
 	
 	freeze_time = time
-	prints("[freeze] player frozen for", freeze_time, "s")
+	prints("[freeze] player frozen for:", freeze_time, "s")
 
 
 func _freeze() -> void:
