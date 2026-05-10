@@ -163,16 +163,19 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	prints("[player] invincible for:", invincibility_left, "s")
 	
 	# Orb drop and die logic
-	if Globals.red_orbs > 0:
+	if Globals.orb == Globals.Orb.RED:
 		# Drop red orb
-		Globals.red_orbs -= 1
-		spawn_orb(RED_ORB_DROP)
-		prints("[player] red orb dropped")
-		
-		# Hit state
-		state_machine.current_state = hit_state
+		if Globals.red_orbs > 0:
+			Globals.red_orbs -= 1
+			spawn_orb(RED_ORB_DROP)
+			prints("[player] red orb dropped")
+			
+			# Hit state
+			state_machine.current_state = hit_state
+		else:
+			die(false)
+	# Drop blue orb
 	elif Globals.blue_orbs > 0:
-		# Drop blue orb
 		Globals.blue_orbs -= 1
 		spawn_orb(BLUE_ORB_DROP)
 		prints("[player] blue orb dropped")
