@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b0hf6nxfqvvit"]
+
+[ext_resource type="StyleBox" uid="uid://bhwq7nunk3lde" path="res://ui/theme/health_bar_bg.tres" id="1_n0epf"]
+[ext_resource type="StyleBox" uid="uid://jtl5auoyvflo" path="res://ui/theme/cooldown_bar_fg.tres" id="2_n0epf"]
+[ext_resource type="Script" uid="uid://djpwmd25fgjyl" path="res://scenes/cooldown_bar.gd" id="3_n0epf"]
+
+[node name="CooldownBar" type="ProgressBar" unique_id=565073395]
+offset_left = -7.0
+offset_top = -26.0
+offset_right = 7.0
+offset_bottom = -25.0
+theme_override_styles/background = ExtResource("1_n0epf")
+theme_override_styles/fill = ExtResource("2_n0epf")
+show_percentage = false
+script = ExtResource("3_n0epf")

@@ -23,6 +23,7 @@
 [ext_resource type="Script" uid="uid://bd7y3wcgutqn0" path="res://characters/states/hit.gd" id="20_41yun"]
 [ext_resource type="Script" uid="uid://f2jsjcjxitcy" path="res://characters/states/death.gd" id="21_svrv0"]
 [ext_resource type="AudioStream" uid="uid://eb438pqdw2f5" path="res://assets/audio/player_run.wav" id="23_hsn1j"]
+[ext_resource type="PackedScene" uid="uid://b0hf6nxfqvvit" path="res://scenes/cooldown_bar.tscn" id="24_dx8gg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
@@ -468,7 +469,7 @@ _data = {
 &"SHOOT": SubResource("Animation_h076o")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "pivot", "state_machine", "jump_state", "hit_state", "death_state", "fall_death")]
+[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "pivot", "state_machine", "jump_state", "hit_state", "death_state", "fall_death", "cooldown_bar")]
 collision_mask = 2
 script = ExtResource("2_03c6q")
 sprite = NodePath("Sprite")
@@ -480,6 +481,7 @@ jump_state = NodePath("StateMachine/Jump")
 hit_state = NodePath("StateMachine/Hit")
 death_state = NodePath("StateMachine/Death")
 fall_death = NodePath("FallDeath")
+cooldown_bar = NodePath("CooldownBar")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1046985751]
 texture = ExtResource("2_j31ep")
@@ -579,3 +581,5 @@ animator = NodePath("../../Animator")
 
 [node name="Run" type="AudioStreamPlayer" parent="." unique_id=1909796119]
 bus = &"Sounds"
+
+[node name="CooldownBar" parent="." unique_id=565073395 instance=ExtResource("24_dx8gg")]

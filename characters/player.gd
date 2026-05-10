@@ -38,6 +38,7 @@ var invincibility := 2.0
 @export var hit_state: BaseState
 @export var death_state: BaseState
 @export var fall_death: Node
+@export var cooldown_bar: ProgressBar
 
 ## The horizontal direction the player is moving to.
 var direction := 0.0
@@ -110,6 +111,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Cooldown
 	cooldown = move_toward(cooldown, 0.0, delta)
+	update_cooldown_bar()
 	
 	# Invincibility frames
 	if invincibility_left > 0.0:
@@ -269,3 +271,8 @@ func _unfreeze() -> void:
 	animator.process_mode = Node.PROCESS_MODE_INHERIT
 	sprite.self_modulate = Color.WHITE
 	hit_box.process_mode = Node.PROCESS_MODE_INHERIT
+
+
+func update_cooldown_bar() -> void:
+	var max_cooldown := 1.0 / fire_rate
+	cooldown_bar.update(max_cooldown - cooldown, max_cooldown)
