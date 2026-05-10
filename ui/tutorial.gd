@@ -1,4 +1,4 @@
-extends MarginContainer
+extends HBoxContainer
 
 
 const DELAY := 1.0
