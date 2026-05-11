@@ -19,6 +19,9 @@ extends Control
 
 func _ready() -> void:
 	%NewGame.pressed.connect(_new_game)
+	%LoadGame.pressed.connect(_load_game)
+	%Options.pressed.connect(_options)
+	%Quit.pressed.connect(_quit)
 	
 	AudioManager.play(sound, sound_volume, sound_bus)
 	

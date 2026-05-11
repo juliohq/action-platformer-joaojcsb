@@ -24,7 +24,7 @@ grow_vertical = 2
 theme = ExtResource("1_gaqaa")
 script = ExtResource("1_ecucs")
 root = NodePath("UI/Root")
-focus_control = NodePath("")
+focus_control = NodePath("UI/Root/Margin/VBox/VBox/NewGame")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1593758440]
 
@@ -78,6 +78,7 @@ texture_pressed = ExtResource("5_ubpvv")
 stretch_mode = 3
 
 [node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=82619897]
+unique_name_in_owner = true
 layout_mode = 2
 text = "LOAD_GAME"
 
@@ -87,6 +88,7 @@ layout_mode = 2
 text = "OPTIONS"
 
 [node name="Quit" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=903234449]
+unique_name_in_owner = true
 layout_mode = 2
 text = "QUIT"
 
@@ -99,8 +101,3 @@ text = "v0.0.0"
 
 [node name="Music" parent="." unique_id=525561170 instance=ExtResource("4_rmr83")]
 stream = SubResource("Resource_ubpvv")
-
-[connection signal="pressed" from="UI/Root/Margin/VBox/VBox/NewGame" to="." method="_new_game"]
-[connection signal="pressed" from="UI/Root/Margin/VBox/VBox/LoadGame" to="." method="_load_game"]
-[connection signal="pressed" from="UI/Root/Margin/VBox/VBox/Options" to="." method="_options"]
-[connection signal="pressed" from="UI/Root/Margin/VBox/VBox/Quit" to="." method="_quit"]
