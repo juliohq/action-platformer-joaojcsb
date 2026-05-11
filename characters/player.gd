@@ -25,6 +25,9 @@ var jump_buffering := 0.2
 var coyote_buffering := 0.1
 ## How often you can shoot per second.
 @export_range(1, 10, 1, "or_greater", "suffix:units/s") var fire_rate := 2
+## How often you can use the strong power.
+@export_range(0.1, 10.0, 0.01, "or_greater", "suffix:s")
+var strong_power_duration := 10.0
 ## How often you can shoot per second.
 @export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
 var invincibility := 2.0
@@ -46,8 +49,12 @@ var direction := 0.0
 var jump_buffer := 0.0
 ## The time left to jump.
 var coyote_buffer := 0.0
+
 ## The current cooldown.
 var cooldown := 0.0
+## The current strong power cooldown.
+var strong_power_cooldown := 0.0
+
 ## Invincibility time left.
 var invincibility_left := invincibility
 ## The current attack type.
@@ -112,6 +119,8 @@ func _physics_process(delta: float) -> void:
 	# Cooldown
 	cooldown = move_toward(cooldown, 0.0, delta)
 	update_cooldown_bar()
+	
+	strong_power_cooldown = move_toward(strong_power_cooldown, 0.0, delta)
 	
 	# Invincibility frames
 	if invincibility_left > 0.0:
@@ -222,9 +231,23 @@ func spawn_orb(scene: PackedScene) -> void:
 
 
 func try_shoot(attack_type: Globals.Attack) -> void:
-	if cooldown <= 0.0:
-		attack = attack_type
+	if cooldown > 0.0:
+		return
+	
+	attack = attack_type
+	
+	if can_shoot():
 		state_machine.change_state("Attack")
+
+
+func can_shoot() -> bool:
+	if attack == Globals.Attack.A:
+		return true
+	
+	if strong_power_cooldown <= 0.0:
+		return true
+	
+	return false
 
 
 func shoot() -> void:
@@ -242,10 +265,12 @@ func shoot() -> void:
 			bullet = FIREBALL.instantiate()
 		else:
 			bullet = FIRE_GRENADE.instantiate()
+			strong_power_cooldown += strong_power_duration
 	elif attack == Globals.Attack.A:
 		bullet = FREEZE_TOUCH.instantiate()
 	else:
 		bullet = GIANT_ICE_ORB.instantiate()
+		strong_power_cooldown += strong_power_duration
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
