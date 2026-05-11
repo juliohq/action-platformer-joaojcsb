@@ -15,6 +15,8 @@ signal orb_changed()
 signal orb_added()
 ## Emitted when an orb is dropped.
 signal orb_dropped(orb)
+## Emitted when orbs were consumed.
+signal orb_consumed()
 ## Emitted when the game is paused.
 signal game_paused()
 ## Emitted when the game is resumed.

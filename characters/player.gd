@@ -13,6 +13,11 @@ const GIANT_ICE_ORB := preload("res://scenes/giant_ice_orb.tscn")
 const SLINGSHOT_AUDIO := preload("res://assets/audio/player_slingshot.wav")
 const SLOT_CHANGED_AUDIO := preload("res://assets/audio/player_slot_changed.wav")
 
+## How many orbs the power will cost.
+const FIRE_GRENADE_COST := 2
+## How many orbs the power will cost.
+const GIANT_ICE_ORB_COST := 2
+
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
@@ -237,6 +242,14 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 	attack = attack_type
 	
 	if can_shoot():
+		if attack == Globals.Attack.B:
+			if Globals.orb == Globals.Orb.RED:
+				Globals.red_orbs -= FIRE_GRENADE_COST
+			else:
+				Globals.blue_orbs -= GIANT_ICE_ORB_COST
+			
+			Events.orb_consumed.emit()
+		
 		state_machine.change_state("Attack")
 
 
@@ -245,7 +258,12 @@ func can_shoot() -> bool:
 		return true
 	
 	if strong_power_cooldown <= 0.0:
-		return true
+		if Globals.orb == Globals.Orb.RED:
+			if Globals.red_orbs >= FIRE_GRENADE_COST:
+				return true
+		
+		if Globals.blue_orbs >= GIANT_ICE_ORB_COST:
+			return true
 	
 	return false
 

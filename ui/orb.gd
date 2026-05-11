@@ -27,6 +27,7 @@ const BLUE_ORB := [
 func _ready() -> void:
 	Events.orb_added.connect(update)
 	Events.orb_dropped.connect(update.unbind(1))
+	Events.orb_consumed.connect(update)
 	
 	update()
 
