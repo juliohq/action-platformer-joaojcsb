@@ -36,10 +36,10 @@ var language := "en"
 var player_health := PLAYER_HEALTH
 ## The current orb selected.
 var orb := ORB
-## How many blue orbs the player has.
-var blue_orbs := BLUE_ORBS
 ## How many red orbs the player has.
 var red_orbs := RED_ORBS
+## How many blue orbs the player has.
+var blue_orbs := BLUE_ORBS
 ## The count of coins the player has.
 var coins := 0
 
