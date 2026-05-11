@@ -322,3 +322,20 @@ func _unfreeze() -> void:
 func update_cooldown_bar() -> void:
 	var max_cooldown := 1.0 / fire_rate
 	cooldown_bar.update(max_cooldown - cooldown, max_cooldown)
+
+
+func heal() -> bool:
+	if Globals.player_health <= Globals.PLAYER_HEALTH:
+		if Globals.orb == Globals.Orb.RED:
+			if Globals.red_orbs >= Globals.LIFE_COST:
+				Globals.red_orbs -= Globals.LIFE_COST
+				Globals.player_health += 1
+				Events.player_health_changed.emit()
+				return true
+		elif Globals.blue_orbs >= Globals.LIFE_COST:
+			Globals.blue_orbs -= Globals.LIFE_COST
+			Globals.player_health += 1
+			Events.player_health_changed.emit()
+			return true
+	
+	return false

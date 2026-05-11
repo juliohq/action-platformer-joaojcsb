@@ -10,6 +10,9 @@ func on_physics_process(_delta: float) -> void:
 		if Input.is_action_just_pressed("melee"):
 			change_state("Melee")
 			return
+		elif Input.is_action_just_pressed("heal"):
+			if root.heal():
+				return
 		elif Input.is_action_just_pressed("attack_1"):
 			root.try_shoot(Globals.Attack.A)
 			return

@@ -28,6 +28,8 @@ const ORB := Orb.RED
 const RED_ORBS := 5
 ## How many blue orbs the player has.
 const BLUE_ORBS := 5
+## How many orbs a life costs.
+const LIFE_COST := 1
 
 ## The current language code.
 var language := "en"
