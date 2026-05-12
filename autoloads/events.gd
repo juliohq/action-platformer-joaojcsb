@@ -17,6 +17,10 @@ signal orb_added()
 signal orb_dropped(orb)
 ## Emitted when orbs were consumed.
 signal orb_consumed()
+## Emitted when the strong power is used.
+signal strong_power_used()
+## Emitted when the strong power is ready to be used.
+signal strong_power_ready()
 ## Emitted when the game is paused.
 signal game_paused()
 ## Emitted when the game is resumed.

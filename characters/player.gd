@@ -127,7 +127,12 @@ func _physics_process(delta: float) -> void:
 	cooldown = move_toward(cooldown, 0.0, delta)
 	update_cooldown_bar()
 	
-	strong_power_cooldown = move_toward(strong_power_cooldown, 0.0, delta)
+	if strong_power_cooldown > 0.0:
+		strong_power_cooldown -= delta
+		
+		if strong_power_cooldown <= 0.0:
+			strong_power_cooldown = 0.0
+			Events.strong_power_ready.emit()
 	
 	# Invincibility frames
 	if invincibility_left > 0.0:
@@ -286,11 +291,13 @@ func shoot() -> void:
 		else:
 			bullet = FIRE_GRENADE.instantiate()
 			strong_power_cooldown += strong_power_duration
+			Events.strong_power_used.emit()
 	elif attack == Globals.Attack.A:
 		bullet = FREEZE_TOUCH.instantiate()
 	else:
 		bullet = GIANT_ICE_ORB.instantiate()
 		strong_power_cooldown += strong_power_duration
+		Events.strong_power_used.emit()
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x

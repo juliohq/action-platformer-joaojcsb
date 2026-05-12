@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ctmdpq50rss8g"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_p5ps0"]
+[ext_resource type="Script" uid="uid://dewcmxa4qsnoa" path="res://ui/power.gd" id="2_p5ps0"]
+[ext_resource type="Texture2D" uid="uid://gep8f0byh3nj" path="res://assets/ui/blue_orb/0.png" id="3_goequ"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_440sx"]
+
+[node name="Power" type="MarginContainer" unique_id=2135712761]
+offset_right = 33.0
+offset_bottom = 14.0
+theme = ExtResource("1_p5ps0")
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+script = ExtResource("2_p5ps0")
+
+[node name="HBox" type="HBoxContainer" parent="." unique_id=1564280413]
+layout_mode = 2
+
+[node name="Level" type="Label" parent="HBox" unique_id=1404627578]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Lv x"
+label_settings = ExtResource("4_440sx")
+
+[node name="Power" type="TextureRect" parent="HBox" unique_id=1733355768]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_goequ")
+expand_mode = 1
