@@ -82,7 +82,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
 		AudioManager.play(SLOT_CHANGED_AUDIO, 1.0, &"Sounds")
-		prints("[player] orb changed:", Globals.orb)
+		
+		var orb_name: String = Globals.Orb.keys()[Globals.orb]
+		prints("[player] orb changed:", orb_name.capitalize())
 
 
 func _physics_process(delta: float) -> void:
