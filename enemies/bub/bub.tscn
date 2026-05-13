@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://br4d72nux040f" path="res://assets/audio/bub_hit.wav" id="12_lujfu"]
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="13_lix8j"]
 [ext_resource type="AudioStream" uid="uid://dhtkbw844j3eb" path="res://assets/audio/bub_walk.wav" id="14_bajw6"]
+[ext_resource type="PackedScene" uid="uid://b0mwowfwljxir" path="res://scenes/pause_until_visible.tscn" id="15_k1pc0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -318,3 +319,7 @@ animator = NodePath("../../Animator")
 volume_db = -12.0
 max_distance = 320.0
 bus = &"Sounds"
+
+[node name="PauseUntilVisible" parent="." unique_id=1555583813 node_paths=PackedStringArray("parent") instance=ExtResource("15_k1pc0")]
+rect = Rect2(-8, -16, 16, 16)
+parent = NodePath("..")
