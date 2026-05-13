@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://dewcmxa4qsnoa" path="res://ui/power.gd" id="2_p5ps0"]
 [ext_resource type="Texture2D" uid="uid://gep8f0byh3nj" path="res://assets/ui/blue_orb/0.png" id="3_goequ"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_440sx"]
+[ext_resource type="PackedScene" uid="uid://b0hf6nxfqvvit" path="res://scenes/cooldown_bar.tscn" id="5_gn316"]
 
 [node name="Power" type="MarginContainer" unique_id=2135712761]
 offset_right = 33.0
@@ -15,19 +16,28 @@ theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 script = ExtResource("2_p5ps0")
 
-[node name="HBox" type="HBoxContainer" parent="." unique_id=1564280413]
+[node name="VBox" type="VBoxContainer" parent="." unique_id=892086847]
+layout_mode = 2
+theme_override_constants/separation = 1
+
+[node name="HBox" type="HBoxContainer" parent="VBox" unique_id=1564280413]
 layout_mode = 2
 
-[node name="Level" type="Label" parent="HBox" unique_id=1404627578]
+[node name="Level" type="Label" parent="VBox/HBox" unique_id=1404627578]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Lv x"
 label_settings = ExtResource("4_440sx")
 
-[node name="Power" type="TextureRect" parent="HBox" unique_id=1733355768]
+[node name="Power" type="TextureRect" parent="VBox/HBox" unique_id=1733355768]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_goequ")
 expand_mode = 1
+
+[node name="CooldownBar" parent="VBox" unique_id=565073395 instance=ExtResource("5_gn316")]
+unique_name_in_owner = true
+layout_mode = 2
+autohide = false

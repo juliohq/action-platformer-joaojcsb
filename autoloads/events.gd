@@ -21,6 +21,8 @@ signal orb_consumed()
 signal strong_power_used()
 ## Emitted when the strong power is ready to be used.
 signal strong_power_ready()
+## Emitted when the strong power cooldown changed.
+signal strong_power_cooldown(value, max_value)
 ## Emitted when the game is paused.
 signal game_paused()
 ## Emitted when the game is resumed.

@@ -12,9 +12,12 @@ const GIANT_ICE_ORB := preload("res://assets/sprites/giant_ice_orb.tres")
 func _ready() -> void:
 	Events.orb_changed.connect(update)
 	
-	if attack == Globals.Attack.B:
+	if attack == Globals.Attack.A:
+		%CooldownBar.hide()
+	else:
 		Events.strong_power_used.connect(_power_used)
 		Events.strong_power_ready.connect(_power_ready)
+		Events.strong_power_cooldown.connect(%CooldownBar.update)
 	
 	update()
 

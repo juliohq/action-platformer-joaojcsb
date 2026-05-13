@@ -134,6 +134,8 @@ func _physics_process(delta: float) -> void:
 			strong_power_cooldown = 0.0
 			Events.strong_power_ready.emit()
 	
+	Events.strong_power_cooldown.emit(strong_power_duration - strong_power_cooldown, strong_power_duration)
+	
 	# Invincibility frames
 	if invincibility_left > 0.0:
 		invincibility_left -= delta
