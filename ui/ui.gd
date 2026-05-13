@@ -3,6 +3,8 @@ extends CanvasLayer
 
 func _ready() -> void:
 	Events.game_over.connect(_game_over)
+	
+	show()
 
 
 func _input(event: InputEvent) -> void:

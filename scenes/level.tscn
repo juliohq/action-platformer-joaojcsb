@@ -40,6 +40,7 @@ limit_right = 960
 limit_bottom = 176
 
 [node name="UI" parent="." unique_id=114827551 instance=ExtResource("2_jedpt")]
+visible = false
 
 [node name="Music" parent="." unique_id=1966762641 instance=ExtResource("4_uf75n")]
 play_after = 2.5
