@@ -30,6 +30,10 @@ const RED_ORBS := 5
 const BLUE_ORBS := 5
 ## How many orbs a life costs.
 const LIFE_COST := 1
+## How many orbs the power will cost.
+const FIRE_GRENADE_COST := 2
+## How many orbs the power will cost.
+const GIANT_ICE_ORB_COST := 2
 
 ## The current language code.
 var language := "en"

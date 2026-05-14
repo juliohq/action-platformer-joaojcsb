@@ -37,7 +37,18 @@ size_flags_vertical = 4
 texture = ExtResource("3_goequ")
 expand_mode = 1
 
-[node name="CooldownBar" parent="VBox" unique_id=565073395 instance=ExtResource("5_gn316")]
+[node name="Bottom" type="HBoxContainer" parent="VBox" unique_id=1880438399]
+layout_mode = 2
+
+[node name="CooldownBar" parent="VBox/Bottom" unique_id=565073395 instance=ExtResource("5_gn316")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(24, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+autohide = false
+
+[node name="Cost" type="HBoxContainer" parent="VBox/Bottom" unique_id=158415229]
 unique_name_in_owner = true
 layout_mode = 2
-autohide = false
+size_flags_horizontal = 3
+theme_override_constants/separation = -2
