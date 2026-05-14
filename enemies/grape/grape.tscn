@@ -126,10 +126,10 @@ shape = SubResource("CircleShape2D_wa0eo")
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 libraries/ = SubResource("AnimationLibrary_qkwqw")
 
-[node name="Shoot" parent="." unique_id=1230341981 node_paths=PackedStringArray("root", "sprite") instance=ExtResource("12_8qcrn")]
+[node name="Shoot" parent="." unique_id=1230341981 node_paths=PackedStringArray("detector", "root", "sprite") instance=ExtResource("12_8qcrn")]
 position = Vector2(0, -8)
 scene = ExtResource("4_ru4uc")
-autoshoot = true
+detector = NodePath("../PlayerDetector")
 fire_rate = 0.5
 root = NodePath("..")
 sprite = NodePath("../Sprite")

@@ -5,6 +5,8 @@ extends Node2D
 @export var scene: PackedScene
 ## Autoshoot will be enabled.
 @export var autoshoot := false
+## The detector area.
+@export var detector: Area2D
 ## How fast to shoot.
 @export_range(0.01, 10.0, 0.01, "or_greater", "suffix:units/s")
 var fire_rate := 1.0
@@ -22,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 	if cooldown > 0.0:
 		cooldown -= delta
-	elif autoshoot:
+	elif autoshoot or detect():
 		shoot()
 
 
@@ -42,3 +44,14 @@ func shoot(force := false) -> void:
 	bullet.direction.x = sprite.scale.x * (-1 if root.sprite_faces_left else 1)
 	bullet.global_position = global_position
 	Events.bullet.emit(bullet)
+
+
+func detect() -> bool:
+	if is_instance_valid(detector):
+		if detector.has_overlapping_areas():
+			return true
+		
+		if detector.has_overlapping_bodies():
+			return true
+	
+	return false
