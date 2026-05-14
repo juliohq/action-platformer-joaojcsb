@@ -20,6 +20,12 @@ func on_enter() -> void:
 
 
 func on_physics_process(delta: float) -> void:
+	# Flip sprite
+	if root.direction > 0.0:
+		sprite.scale.x = -1 if root.sprite_faces_left else 1
+	elif root.direction < 0.0:
+		sprite.scale.x = 1 if root.sprite_faces_left else -1
+	
 	if edge_turn > 0.0:
 		edge_turn -= delta
 	
@@ -33,12 +39,6 @@ func on_physics_process(delta: float) -> void:
 			edge_turn = EDGE_TURN
 		elif edge_turn <= 0.0:
 			follow_player()
-	
-	# Flip sprite
-	if root.direction > 0.0:
-		sprite.scale.x = -1 if root.sprite_faces_left else 1
-	elif root.direction < 0.0:
-		sprite.scale.x = 1 if root.sprite_faces_left else -1
 
 
 func follow_player() -> void:
