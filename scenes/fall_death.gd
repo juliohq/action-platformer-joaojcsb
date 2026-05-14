@@ -9,7 +9,7 @@ signal dead()
 ## The checkpoint.
 @export var checkpoint: Node
 ## The threshold at which a death is considered.
-@export var threshold := 320
+@export var threshold := 1000
 
 
 func _ready() -> void:
@@ -17,7 +17,7 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if parent.position.y >= threshold:
+	if parent.velocity.y >= threshold:
 		if _restore():
 			# Reset gravity
 			if "velocity" in parent:
