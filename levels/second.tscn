@@ -8,6 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://sbs2tndfxc63" path="res://assets/music/level_1.ogg" id="4_xr2vq"]
 [ext_resource type="PackedScene" uid="uid://dpc4rxhka5wx1" path="res://enemies/bub/bub.tscn" id="5_xr2vq"]
 [ext_resource type="PackedScene" uid="uid://df3646t5j0bru" path="res://enemies/ice_dude/ice_dude.tscn" id="6_tpfj2"]
+[ext_resource type="PackedScene" uid="uid://bv2yeta50a11w" path="res://scenes/teleport.tscn" id="7_1hb53"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1hb53"]
+size = Vector2(96, 32)
 
 [sub_resource type="Resource" id="Resource_7p336"]
 script = ExtResource("3_k7yc0")
@@ -137,6 +141,13 @@ position = Vector2(-304, 0)
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
 limit_right = 896
 limit_bottom = 528
+
+[node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_1hb53")]
+position = Vector2(848, 512)
+scene_path = "uid://d3emagiip7vi6"
+
+[node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=92257102]
+shape = SubResource("RectangleShape2D_1hb53")
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")

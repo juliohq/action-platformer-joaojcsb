@@ -7,6 +7,9 @@
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="6_7vv13"]
 [ext_resource type="AudioStream" uid="uid://sbs2tndfxc63" path="res://assets/music/level_1.ogg" id="7_ipxjn"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w70r"]
+size = Vector2(32, 32)
+
 [sub_resource type="Resource" id="Resource_7p336"]
 script = ExtResource("6_7vv13")
 stream = ExtResource("7_ipxjn")
@@ -68,6 +71,9 @@ drag_bottom_margin = 1.0
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("3_scpq4")]
 position = Vector2(880, 112)
 scene_path = "uid://cb8ckvxf4677v"
+
+[node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=652184097]
+shape = SubResource("RectangleShape2D_2w70r")
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")
