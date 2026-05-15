@@ -57,6 +57,7 @@ func _ready() -> void:
 	randomize()
 	load_settings(SETTINGS_PATH)
 	set_process_unhandled_input(OS.is_debug_build())
+	reset()
 
 
 func _unhandled_input(event: InputEvent) -> void:

@@ -7,10 +7,6 @@ extends Node2D
 @export var foreground: TileMapLayer
 
 
-func _enter_tree() -> void:
-	Globals.reset()
-
-
 func _ready() -> void:
 	Events.bullet.connect(world.add_child)
 	Events.hit_effect.connect(world.add_child)
