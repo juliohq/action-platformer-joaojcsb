@@ -40,6 +40,8 @@ var language := "en"
 
 ## The player health (HP).
 var player_health := PLAYER_HEALTH
+## The max player health (HP).
+var max_player_health := PLAYER_HEALTH
 ## The current orb selected.
 var orb := ORB
 ## How many red orbs the player has.
@@ -172,6 +174,7 @@ func load_settings(file_path: String) -> void:
 
 func reset() -> void:
 	player_health = PLAYER_HEALTH
+	max_player_health = PLAYER_HEALTH
 	orb = ORB
 	blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS

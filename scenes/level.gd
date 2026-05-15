@@ -7,6 +7,11 @@ extends Node2D
 @export var foreground: TileMapLayer
 
 
+func _enter_tree() -> void:
+	Globals.player_health = mini(Globals.player_health, Globals.PLAYER_HEALTH)
+	Globals.max_player_health = Globals.PLAYER_HEALTH
+
+
 func _ready() -> void:
 	Events.bullet.connect(world.add_child)
 	Events.hit_effect.connect(world.add_child)

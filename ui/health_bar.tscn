@@ -3,6 +3,7 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_1w8tp"]
 [ext_resource type="Script" uid="uid://cy4u53icmfxhc" path="res://ui/health_bar.gd" id="2_1w8tp"]
 [ext_resource type="Texture2D" uid="uid://cp7u6smglttdc" path="res://assets/ui/health_bar/0.png" id="3_1w8tp"]
+[ext_resource type="Texture2D" uid="uid://ca5lulvsj5tg2" path="res://assets/ui/health_bar/6.png" id="3_eo044"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_thfh1"]
 
 [node name="HealthBar" type="MarginContainer" unique_id=2135712761]
@@ -18,14 +19,31 @@ script = ExtResource("2_1w8tp")
 [node name="HBox" type="HBoxContainer" parent="." unique_id=1564280413]
 layout_mode = 2
 
-[node name="Health" type="TextureRect" parent="HBox" unique_id=1733355768]
+[node name="Health" type="TextureProgressBar" parent="HBox" unique_id=1251987424]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 4
-texture = ExtResource("3_1w8tp")
+fill_mode = 3
+texture_under = ExtResource("3_eo044")
+texture_progress = ExtResource("3_1w8tp")
 
-[node name="Count" type="Label" parent="HBox" unique_id=1404627578]
+[node name="HBox" type="HBoxContainer" parent="HBox" unique_id=2140747665]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Count" type="Label" parent="HBox/HBox" unique_id=1404627578]
 unique_name_in_owner = true
 layout_mode = 2
-text = "5/5"
+text = "5"
+label_settings = ExtResource("4_thfh1")
+
+[node name="Slash" type="Label" parent="HBox/HBox" unique_id=1630240587]
+layout_mode = 2
+text = "/"
+label_settings = ExtResource("4_thfh1")
+
+[node name="MaxCount" type="Label" parent="HBox/HBox" unique_id=26462954]
+unique_name_in_owner = true
+layout_mode = 2
+text = "5"
 label_settings = ExtResource("4_thfh1")

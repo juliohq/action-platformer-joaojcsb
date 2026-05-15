@@ -331,17 +331,18 @@ func update_cooldown_bar() -> void:
 
 
 func heal() -> bool:
-	if Globals.player_health <= Globals.PLAYER_HEALTH:
-		if Globals.orb == Globals.Orb.RED:
-			if Globals.red_orbs >= Globals.LIFE_COST:
-				Globals.red_orbs -= Globals.LIFE_COST
-				Globals.player_health += 1
-				Events.player_health_changed.emit()
-				return true
-		elif Globals.blue_orbs >= Globals.LIFE_COST:
-			Globals.blue_orbs -= Globals.LIFE_COST
+	if Globals.orb == Globals.Orb.RED:
+		if Globals.red_orbs >= Globals.LIFE_COST:
+			Globals.red_orbs -= Globals.LIFE_COST
 			Globals.player_health += 1
+			Globals.max_player_health += 1
 			Events.player_health_changed.emit()
 			return true
+	elif Globals.blue_orbs >= Globals.LIFE_COST:
+		Globals.blue_orbs -= Globals.LIFE_COST
+		Globals.player_health += 1
+		Globals.max_player_health += 1
+		Events.player_health_changed.emit()
+		return true
 	
 	return false
