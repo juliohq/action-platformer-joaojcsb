@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_v1ni5"]
 [ext_resource type="Texture2D" uid="uid://7yjbrr730t3e" path="res://assets/sprites/ice_dude/flame.png" id="4_x2s5h"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_etk8r"]
-[ext_resource type="PackedScene" uid="uid://dv7d3hmss6moq" path="res://scenes/blue_orb_drop.tscn" id="6_e3m2o"]
 [ext_resource type="AudioStream" uid="uid://g4kyqur0yk7r" path="res://assets/audio/ice_dude_walk.wav" id="6_eprai"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_icun5"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_x2s5h"]
@@ -17,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://b1f3fnhpk7j1q" path="res://scenes/health_bar.tscn" id="11_eprai"]
 [ext_resource type="Script" uid="uid://cb34d3duf5ihb" path="res://enemies/ice_dude/states/walk.gd" id="11_minlu"]
 [ext_resource type="PackedScene" uid="uid://c3lwk4g52jtvj" path="res://scenes/shoot.tscn" id="12_e0dxa"]
+[ext_resource type="PackedScene" uid="uid://bxxabyldvg3wx" path="res://scenes/blue_orb.tscn" id="12_eprai"]
 [ext_resource type="Script" uid="uid://c6a37qata68u1" path="res://enemies/ice_dude/states/attack.gd" id="13_etk8r"]
 [ext_resource type="Script" uid="uid://cfcyxxbwlcfhq" path="res://enemies/ice_dude/states/spin.gd" id="14_b4rt4"]
 [ext_resource type="AudioStream" uid="uid://p0i8l0cfnojw" path="res://assets/audio/ice_dude_spinning.wav" id="16_nhwxd"]
@@ -462,7 +462,7 @@ collision_mask = 2
 
 [node name="LootBlueOrb" parent="." unique_id=1730885191 instance=ExtResource("6_icun5")]
 position = Vector2(0, -8)
-scene = ExtResource("6_e3m2o")
+scene = ExtResource("12_eprai")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("8_x2s5h")

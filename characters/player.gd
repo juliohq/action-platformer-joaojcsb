@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 const JUMP_SOUND := preload("res://assets/audio/player_jump.wav")
-const RED_ORB_DROP := preload("res://scenes/red_orb_drop.tscn")
-const BLUE_ORB_DROP := preload("res://scenes/blue_orb_drop.tscn")
+const RED_ORB := preload("res://scenes/red_orb.tscn")
+const BLUE_ORB := preload("res://scenes/blue_orb.tscn")
 
 const FIREBALL := preload("res://scenes/fireball.tscn")
 const FIRE_GRENADE := preload("res://scenes/fire_grenade.tscn")
@@ -185,7 +185,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		# Drop red orb
 		if Globals.red_orbs > 0:
 			Globals.red_orbs -= 1
-			spawn_orb(RED_ORB_DROP)
+			spawn_orb(RED_ORB)
 			prints("[player] red orb dropped")
 			
 			# Hit state
@@ -195,7 +195,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	# Drop blue orb
 	elif Globals.blue_orbs > 0:
 		Globals.blue_orbs -= 1
-		spawn_orb(BLUE_ORB_DROP)
+		spawn_orb(BLUE_ORB)
 		prints("[player] blue orb dropped")
 		
 		# Hit state

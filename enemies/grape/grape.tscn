@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dhsagarn1puuu" path="res://scenes/grape_fireball.tscn" id="4_ru4uc"]
 [ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_mwmim"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_wci4i"]
-[ext_resource type="PackedScene" uid="uid://bwl87qakymxoq" path="res://scenes/red_orb_drop.tscn" id="6_yomaf"]
+[ext_resource type="PackedScene" uid="uid://kdfa6aginscu" path="res://scenes/red_orb.tscn" id="8_mwmim"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_rfd56"]
 [ext_resource type="Script" uid="uid://bom4gvhonhxb8" path="res://enemies/grape/states/idle.gd" id="10_8qcrn"]
 [ext_resource type="Script" uid="uid://bb2m7qv7uhh5h" path="res://enemies/enemy/states/hit.gd" id="10_qkwqw"]
@@ -173,7 +173,7 @@ collision_mask = 2
 
 [node name="LootRedOrb" parent="." unique_id=1730885191 instance=ExtResource("6_wci4i")]
 position = Vector2(0, -8)
-scene = ExtResource("6_yomaf")
+scene = ExtResource("8_mwmim")
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("8_rfd56")
