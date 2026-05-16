@@ -18,3 +18,5 @@ func on_physics_process(_delta: float) -> void:
 	
 	if root.is_on_floor():
 		change_state("Idle")
+	
+	root.jump()

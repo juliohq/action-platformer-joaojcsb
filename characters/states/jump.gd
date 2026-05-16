@@ -20,3 +20,5 @@ func on_physics_process(_delta: float) -> void:
 		change_state("Idle")
 	elif root.velocity.y > 0.0:
 		change_state("Fall")
+	
+	root.jump()

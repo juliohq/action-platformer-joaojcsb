@@ -28,3 +28,5 @@ func on_physics_process(_delta: float) -> void:
 	else:
 		root.coyote_buffer = root.coyote_buffering
 		change_state("Fall")
+	
+	root.jump()

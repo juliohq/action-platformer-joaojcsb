@@ -27,3 +27,5 @@ func on_physics_process(_delta: float) -> void:
 			change_state("Run")
 	else:
 		change_state("Fall")
+	
+	root.jump()

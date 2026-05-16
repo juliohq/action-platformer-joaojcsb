@@ -90,22 +90,6 @@ func _physics_process(delta: float) -> void:
 		elif direction > 0.0:
 			sprite.scale.x = 1
 	
-	# Jump logic (with jump buffering)
-	if Input.is_action_just_pressed(&"jump") and freeze_time <= 0.0:
-		jump_buffer = jump_buffering
-		
-		if coyote_buffer > 0.0:
-			jump()
-			move_and_slide()
-	# Variable jump height logic
-	elif Input.is_action_just_released(&"jump") and velocity.y < 0.0:
-		fall()
-	
-	if is_on_floor() and jump_buffer > 0.0:
-		jump_buffer = 0.0
-		jump()
-		move_and_slide()
-	
 	# Jump buffer
 	if jump_buffer > 0.0:
 		jump_buffer -= delta
@@ -162,6 +146,25 @@ func _physics_process(delta: float) -> void:
 
 ## Makes the character jump upwards.
 func jump() -> void:
+	# Jump logic (with jump buffering)
+	if Input.is_action_just_pressed(&"jump") and freeze_time <= 0.0:
+		jump_buffer = jump_buffering
+		
+		if coyote_buffer > 0.0:
+			jump_now()
+			move_and_slide()
+	# Variable jump height logic
+	elif Input.is_action_just_released(&"jump") and velocity.y < 0.0:
+		fall()
+	
+	# Jump
+	if is_on_floor() and jump_buffer > 0.0:
+		jump_buffer = 0.0
+		jump_now()
+		move_and_slide()
+
+
+func jump_now() -> void:
 	AudioManager.play(JUMP_SOUND, 1.0, &"Sounds")
 	velocity.y = -jump_height
 	state_machine.current_state = jump_state
