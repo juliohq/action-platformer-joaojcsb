@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s²") var gravity := 980
 @export var orb := Globals.Orb.RED
+@export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s²") var gravity := 980
 @export_category("Nodes")
 @export var vanish: Timer
 @export var collectible: Area2D
