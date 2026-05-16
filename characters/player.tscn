@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://b57slnqgd1uf4" path="res://assets/sprites/player/fall.png" id="3_q605b"]
 [ext_resource type="Script" uid="uid://i7h4gryw5nss" path="res://characters/states/idle.gd" id="4_3ak4l"]
 [ext_resource type="Texture2D" uid="uid://b374e5tw8wxta" path="res://assets/sprites/player/death.png" id="4_4rspn"]
+[ext_resource type="Texture2D" uid="uid://b4jmsbrafbvkk" path="res://assets/sprites/heal_vfx.png" id="4_qp1es"]
 [ext_resource type="Script" uid="uid://bjtqlihxylent" path="res://characters/states/run.gd" id="5_bxfkk"]
 [ext_resource type="Texture2D" uid="uid://dbltkmih4l5a8" path="res://assets/sprites/player/hit.png" id="5_ke0a4"]
 [ext_resource type="Script" uid="uid://xybjflk2rhfb" path="res://characters/states/jump.gd" id="6_238id"]
@@ -24,6 +25,7 @@
 [ext_resource type="Script" uid="uid://f2jsjcjxitcy" path="res://characters/states/death.gd" id="21_svrv0"]
 [ext_resource type="AudioStream" uid="uid://eb438pqdw2f5" path="res://assets/audio/player_run.wav" id="23_hsn1j"]
 [ext_resource type="PackedScene" uid="uid://b0hf6nxfqvvit" path="res://scenes/cooldown_bar.tscn" id="24_dx8gg"]
+[ext_resource type="Script" uid="uid://12r3i8nol3nf" path="res://characters/states/heal.gd" id="24_qk7w8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
@@ -112,6 +114,71 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qp1es"]
+resource_name = "HEAL"
+length = 1.0000062
+step = 0.0625
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_j31ep")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame_coords")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25, 0.375, 0.5, 0.625, 0.75, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0), Vector2i(5, 0), Vector2i(6, 0), Vector2i(7, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Heal:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite/Heal:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0625, 0.125, 0.1875, 0.25, 0.3125, 0.375, 0.4375, 0.5, 0.5625, 0.625, 0.6875, 0.75, 0.8125, 0.875, 0.9375),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2), Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_b0vde"]
@@ -331,6 +398,30 @@ tracks/2/keys = {
 "update": 1,
 "values": [Vector2i(0, 0)]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite/Heal:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite/Heal:frame_coords")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_6t23p"]
 resource_name = "RUN"
@@ -460,6 +551,7 @@ tracks/3/keys = {
 _data = {
 &"DEATH": SubResource("Animation_svrv0"),
 &"FALL": SubResource("Animation_q605b"),
+&"HEAL": SubResource("Animation_qp1es"),
 &"HIT": SubResource("Animation_b0vde"),
 &"IDLE": SubResource("Animation_h1q25"),
 &"JUMP": SubResource("Animation_n8jd0"),
@@ -499,6 +591,12 @@ on_enter = false
 [node name="Collision" type="CollisionShape2D" parent="Sprite/HitBox" unique_id=1375740045]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_h076o")
+
+[node name="Heal" type="Sprite2D" parent="Sprite" unique_id=340580676]
+visible = false
+texture = ExtResource("4_qp1es")
+hframes = 4
+vframes = 4
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=596819665]
 position = Vector2(0, -8)
@@ -570,6 +668,11 @@ animator = NodePath("../../Animator")
 [node name="Hit" type="Node" parent="StateMachine" unique_id=685215527 node_paths=PackedStringArray("sprite", "root", "animator")]
 script = ExtResource("20_41yun")
 sprite = NodePath("../../Sprite")
+root = NodePath("../..")
+animator = NodePath("../../Animator")
+
+[node name="Heal" type="Node" parent="StateMachine" unique_id=1653249916 node_paths=PackedStringArray("root", "animator")]
+script = ExtResource("24_qk7w8")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
