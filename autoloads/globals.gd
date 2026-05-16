@@ -46,8 +46,12 @@ var max_player_health := PLAYER_HEALTH
 var orb := ORB
 ## How many red orbs the player has.
 var red_orbs := RED_ORBS
+## How many red orbs the player has at max.
+var max_red_orbs := RED_ORBS
 ## How many blue orbs the player has.
 var blue_orbs := BLUE_ORBS
+## How many blue orbs the player has at max.
+var max_blue_orbs := BLUE_ORBS
 ## The count of coins the player has.
 var coins := 0
 
@@ -177,5 +181,7 @@ func reset() -> void:
 	max_player_health = PLAYER_HEALTH
 	orb = ORB
 	blue_orbs = BLUE_ORBS
+	max_blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS
+	max_red_orbs = RED_ORBS
 	coins = 0

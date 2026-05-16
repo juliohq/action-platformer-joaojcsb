@@ -1,25 +1,13 @@
 extends MarginContainer
 
 
-const COUNT := 5
-const RED_ORB := [
-	preload("res://assets/ui/red_orb/0.png"),
-	preload("res://assets/ui/red_orb/1.png"),
-	preload("res://assets/ui/red_orb/2.png"),
-	preload("res://assets/ui/red_orb/3.png"),
-	preload("res://assets/ui/red_orb/4.png"),
-	preload("res://assets/ui/red_orb/5.png"),
-	preload("res://assets/ui/red_orb/6.png"),
-]
-const BLUE_ORB := [
-	preload("res://assets/ui/blue_orb/0.png"),
-	preload("res://assets/ui/blue_orb/1.png"),
-	preload("res://assets/ui/blue_orb/2.png"),
-	preload("res://assets/ui/blue_orb/3.png"),
-	preload("res://assets/ui/blue_orb/4.png"),
-	preload("res://assets/ui/blue_orb/5.png"),
-	preload("res://assets/ui/blue_orb/6.png"),
-]
+const LABEL_SETTINGS_NORMAL := preload("res://ui/theme/label_settings.tres")
+const LABEL_SETTINGS_GREEN := preload("res://ui/theme/label_settings_green.tres")
+
+const RED_ORB_FULL := preload("res://assets/ui/red_orb/0.png")
+const RED_ORB_EMPTY := preload("res://assets/ui/red_orb/6.png")
+const BLUE_ORB_FULL := preload("res://assets/ui/blue_orb/0.png")
+const BLUE_ORB_EMPTY := preload("res://assets/ui/blue_orb/6.png")
 
 @export var type := Globals.Orb.RED
 
@@ -33,15 +21,33 @@ func _ready() -> void:
 
 
 func update() -> void:
-	var count := -1
+	var value := -1
+	var max_value := -1
+	var default := -1
 	
 	if type == Globals.Orb.RED:
-		count = Globals.red_orbs
+		value = Globals.red_orbs
+		max_value = Globals.max_red_orbs
+		default = Globals.RED_ORBS
 	else:
-		count = Globals.blue_orbs
+		value = Globals.blue_orbs
+		max_value = Globals.max_blue_orbs
+		default = Globals.BLUE_ORBS
 	
-	%Orb.texture = [
-		RED_ORB,
-		BLUE_ORB,
-	][type][COUNT - count]
-	%Count.text = "%d/%d" % [count, COUNT]
+	%Orb.texture_under = [
+		RED_ORB_EMPTY,
+		BLUE_ORB_EMPTY,
+	][type]
+	%Orb.texture_progress = [
+		RED_ORB_FULL,
+		BLUE_ORB_FULL,
+	][type]
+	%Orb.max_value = max_value
+	%Orb.value = value
+	%Count.text = str(value)
+	%MaxCount.text = str(max_value)
+	
+	if max_value > default:
+		%MaxCount.label_settings = LABEL_SETTINGS_GREEN
+	else:
+		%MaxCount.label_settings = LABEL_SETTINGS_NORMAL

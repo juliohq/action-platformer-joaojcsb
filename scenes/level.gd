@@ -10,6 +10,12 @@ extends Node2D
 func _enter_tree() -> void:
 	Globals.player_health = mini(Globals.player_health, Globals.PLAYER_HEALTH)
 	Globals.max_player_health = Globals.PLAYER_HEALTH
+	
+	Globals.red_orbs = mini(Globals.red_orbs, Globals.RED_ORBS)
+	Globals.max_red_orbs = Globals.RED_ORBS
+	
+	Globals.blue_orbs = mini(Globals.blue_orbs, Globals.BLUE_ORBS)
+	Globals.max_blue_orbs = Globals.BLUE_ORBS
 
 
 func _ready() -> void:
