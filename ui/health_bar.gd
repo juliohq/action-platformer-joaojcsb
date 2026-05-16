@@ -1,11 +1,6 @@
 extends MarginContainer
 
 
-enum Orb {
-	BLUE,
-	RED,
-}
-
 const LABEL_SETTINGS_NORMAL := preload("res://ui/theme/label_settings.tres")
 const LABEL_SETTINGS_GREEN := preload("res://ui/theme/label_settings_green.tres")
 
