@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b8s32f06875bb"]
+
+[ext_resource type="Script" uid="uid://dqy26h1052qtg" path="res://scenes/aoe_hit_box.gd" id="1_q68vr"]
+
+[node name="AoEHitBox" type="Area2D" unique_id=1755339269]
+collision_layer = 0
+script = ExtResource("1_q68vr")

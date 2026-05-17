@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cieux6gyvqpos" path="res://assets/sprites/fire_grenade_hit.png" id="1_yx8u5"]
 [ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="2_ekwto"]
 [ext_resource type="AudioStream" uid="uid://dv30qfh0qytbi" path="res://assets/audio/fire_grenade_hit.wav" id="3_1sxqs"]
+[ext_resource type="PackedScene" uid="uid://b8s32f06875bb" path="res://scenes/aoe_hit_box.tscn" id="4_m7obe"]
 
 [sub_resource type="Animation" id="Animation_viq6r"]
 resource_name = "HIT"
@@ -56,6 +57,9 @@ _data = {
 &"RESET": SubResource("Animation_yxc0v")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m7obe"]
+radius = 48.0
+
 [node name="FireGranadeEffect" type="Sprite2D" unique_id=1941136992]
 texture = ExtResource("1_yx8u5")
 hframes = 33
@@ -66,3 +70,9 @@ autoplay = &"HIT"
 
 [node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("2_ekwto")]
 audio = ExtResource("3_1sxqs")
+
+[node name="AoEHitBox" parent="." unique_id=1755339269 instance=ExtResource("4_m7obe")]
+collision_mask = 8
+
+[node name="Collision" type="CollisionShape2D" parent="AoEHitBox" unique_id=123618871]
+shape = SubResource("CircleShape2D_m7obe")
