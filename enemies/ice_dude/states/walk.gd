@@ -30,7 +30,7 @@ func on_physics_process(delta: float) -> void:
 	else:
 		bound_check = BOUND_CHECK
 		
-		if surface_detector.bound_reached():
+		if surface_detector.bound_reached() or surface_detector.is_on_wall():
 			root.direction *= -1
 		else:
 			for player: Node2D in player_detector.get_overlapping_bodies():
