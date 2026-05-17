@@ -443,22 +443,24 @@ ground_left = NodePath("GroundLeft")
 ground_right = NodePath("GroundRight")
 
 [node name="Left" type="RayCast2D" parent="SurfaceDetector" unique_id=251897372]
-target_position = Vector2(-32, 0)
+target_position = Vector2(-16, 0)
 collision_mask = 2
 
 [node name="Right" type="RayCast2D" parent="SurfaceDetector" unique_id=1771102934]
-target_position = Vector2(32, 0)
+target_position = Vector2(16, 0)
 collision_mask = 2
 
 [node name="GroundLeft" type="RayCast2D" parent="SurfaceDetector" unique_id=1451372453]
 position = Vector2(-16, 0)
 target_position = Vector2(0, 16)
 collision_mask = 2
+hit_from_inside = true
 
 [node name="GroundRight" type="RayCast2D" parent="SurfaceDetector" unique_id=988281008]
 position = Vector2(16, 0)
 target_position = Vector2(0, 16)
 collision_mask = 2
+hit_from_inside = true
 
 [node name="LootBlueOrb" parent="." unique_id=1730885191 instance=ExtResource("6_icun5")]
 position = Vector2(0, -8)
