@@ -68,6 +68,7 @@ parent = NodePath("..")
 
 [node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_dr0af")]
 collision_mask = 8
+attack = 0
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=1334675608]
 shape = SubResource("CircleShape2D_y25gk")
