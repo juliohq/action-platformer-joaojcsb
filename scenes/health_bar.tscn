@@ -11,5 +11,7 @@ offset_right = 14.0
 offset_bottom = -21.0
 theme_override_styles/background = ExtResource("1_y3kqx")
 theme_override_styles/fill = ExtResource("2_6opq1")
+max_value = 1.0
+value = 1.0
 show_percentage = false
 script = ExtResource("3_6opq1")
