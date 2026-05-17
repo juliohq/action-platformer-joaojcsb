@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://drjiyaocwe2vj" path="res://ui/health_bar.tscn" id="4_obcwv"]
 [ext_resource type="PackedScene" uid="uid://bciush7d0mdcn" path="res://ui/coins.tscn" id="4_pa1oa"]
 [ext_resource type="PackedScene" uid="uid://yevle2dgfxvl" path="res://ui/orb_selector.tscn" id="6_bo1jx"]
-[ext_resource type="PackedScene" uid="uid://b53k8e0urcybb" path="res://ui/tutorial.tscn" id="7_gycre"]
 [ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/power.tscn" id="8_ay4pc"]
 
 [node name="UI" type="CanvasLayer" unique_id=477995803 node_paths=PackedStringArray("health_bar", "coins", "orb_selector", "red_orb", "blue_orb", "power_a", "power_b")]
@@ -104,8 +103,5 @@ layout_mode = 2
 [node name="PowerB" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1894051662 instance=ExtResource("8_ay4pc")]
 layout_mode = 2
 attack = 1
-
-[node name="Tutorial" parent="." unique_id=138246792 instance=ExtResource("7_gycre")]
-visible = false
 
 [node name="Fade" parent="." unique_id=12204861 instance=ExtResource("3_wl5ax")]

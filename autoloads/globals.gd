@@ -55,9 +55,6 @@ var max_blue_orbs := BLUE_ORBS
 ## The count of coins the player has.
 var coins := 0
 
-## Show the tutorial the next time a level starts.
-var show_tutorial := true
-
 
 func _ready() -> void:
 	randomize()
