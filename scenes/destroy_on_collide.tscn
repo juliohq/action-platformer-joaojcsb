@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://chpkk8aw8fwk1"]
+
+[ext_resource type="Script" uid="uid://def82w60753pp" path="res://scenes/destroy_on_collide.gd" id="1_chs1r"]
+
+[node name="DestroyOnCollide" type="Area2D" unique_id=597034228]
+collision_layer = 0
+script = ExtResource("1_chs1r")
