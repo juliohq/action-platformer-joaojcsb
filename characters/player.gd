@@ -29,7 +29,7 @@ var coyote_buffering := 0.1
 @export_range(0.1, 10.0, 0.01, "or_greater", "suffix:s")
 var strong_power_duration := 10.0
 ## How often you can shoot per second.
-@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+@export_range(0.0, 10.0, 0.01, "or_greater", "suffix:s")
 var invincibility := 2.0
 @export_category("Nodes")
 @export var sprite: Sprite2D
@@ -56,7 +56,7 @@ var cooldown := 0.0
 var strong_power_cooldown := 0.0
 
 ## Invincibility time left.
-var invincibility_left := invincibility
+var invincibility_left := 0.0
 ## The current attack type.
 var attack := Globals.Attack.A
 ## The enemy will be freezed for this long.
@@ -67,6 +67,10 @@ var freeze_time := 0.0
 
 func _ready() -> void:
 	fall_death.dead.connect(_fall_death)
+	
+	# Start invincibility
+	if invincibility > invincibility_left:
+		invincibility_left = invincibility
 	
 	prints("[player] invincible for:", invincibility_left, "s")
 
