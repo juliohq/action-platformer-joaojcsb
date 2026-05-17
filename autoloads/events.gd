@@ -3,6 +3,8 @@ extends Node
 
 ## Emitted when a bullet is shot.
 signal bullet()
+## Emitted when particles are spawned.
+signal particles(particles: Node2D)
 ## Emitted when a bullet hits.
 signal hit_effect(effect: Node2D)
 ## Emitted when the loot is dropped.

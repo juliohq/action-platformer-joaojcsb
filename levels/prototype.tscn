@@ -50,7 +50,7 @@ position = Vector2(656, -64)
 [node name="IceDude6" parent="World/Enemies" parent_id_path=PackedInt32Array(1528690379) index="8" unique_id=603743468 instance=ExtResource("5_qsqu8")]
 position = Vector2(864, -64)
 
-[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="4" unique_id=2136620420]
+[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="5" unique_id=2136620420]
 position = Vector2(-256, 0)
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]

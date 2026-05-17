@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Action Platformer"
 config/version="1.0.0"
-run/main_scene="uid://d3emagiip7vi6"
+run/main_scene="uid://c7sf4drvx0wcw"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -183,6 +183,7 @@ locale/translations=PackedStringArray("res://locales/locales.en.translation")
 3d_physics/layer_2="World"
 2d_physics/layer_3="Orbs"
 2d_physics/layer_4="Enemies"
+2d_physics/layer_5="Objects"
 
 [rendering]
 

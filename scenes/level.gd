@@ -20,6 +20,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	Events.bullet.connect(world.add_child)
+	Events.particles.connect(world.add_child)
 	Events.hit_effect.connect(world.add_child, CONNECT_DEFERRED)
 	Events.orb_dropped.connect(world.add_child, CONNECT_DEFERRED)
 	Events.loot_dropped.connect(world.add_child, CONNECT_DEFERRED)

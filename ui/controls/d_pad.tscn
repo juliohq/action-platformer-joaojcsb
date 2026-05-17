@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://bgoo66n8ocuqv"]
+
+[ext_resource type="Texture2D" uid="uid://cd8ml6jb1eyuf" path="res://assets/ui/controls/dpad.png" id="1_1dx83"]
+[ext_resource type="Script" uid="uid://1aqqs8vrn2ps" path="res://ui/controls/d_pad.gd" id="2_6kfav"]
+
+[sub_resource type="Animation" id="Animation_lw84k"]
+resource_name = "DUAL"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(2, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1dx83"]
+resource_name = "HORIZONTAL"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6kfav"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_1gx7k"]
+resource_name = "VERTICAL"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(4, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6kfav"]
+_data = {
+&"DUAL": SubResource("Animation_lw84k"),
+&"HORIZONTAL": SubResource("Animation_1dx83"),
+&"RESET": SubResource("Animation_6kfav"),
+&"VERTICAL": SubResource("Animation_1gx7k")
+}
+
+[node name="DPad" type="Sprite2D" unique_id=231084556]
+texture = ExtResource("1_1dx83")
+hframes = 9
+script = ExtResource("2_6kfav")
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=1194575160]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_6kfav")
+autoplay = &"HORIZONTAL"

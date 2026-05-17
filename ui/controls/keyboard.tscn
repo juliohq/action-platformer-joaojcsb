@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bdp4jtgaeiiex"]
+
+[ext_resource type="Texture2D" uid="uid://bgxik43rrjx2f" path="res://assets/ui/controls/keyboard_normal.png" id="1_k0s7p"]
+[ext_resource type="Texture2D" uid="uid://b3hlir4nww3i2" path="res://assets/ui/controls/keyboard_pressed.png" id="2_2bgk6"]
+
+[sub_resource type="Animation" id="Animation_k0s7p"]
+resource_name = "LOOP"
+loop_mode = 1
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_k0s7p"), ExtResource("2_2bgk6")]
+}
+
+[sub_resource type="Animation" id="Animation_2bgk6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_k0s7p")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2bgk6"]
+_data = {
+&"LOOP": SubResource("Animation_k0s7p"),
+&"RESET": SubResource("Animation_2bgk6")
+}
+
+[node name="Keyboard" type="Sprite2D" unique_id=1808728134]
+texture = ExtResource("1_k0s7p")
+
+[node name="Animator" type="AnimationPlayer" parent="." unique_id=408771973]
+libraries/ = SubResource("AnimationLibrary_2bgk6")
+autoplay = &"LOOP"
