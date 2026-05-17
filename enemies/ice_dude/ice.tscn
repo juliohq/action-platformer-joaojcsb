@@ -53,7 +53,7 @@ _data = {
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ka42g"]
-radius = 8.0
+radius = 7.0
 
 [node name="Ice" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_t01jr")
