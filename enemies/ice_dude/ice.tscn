@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d0gm2nlk650wc" path="res://assets/sprites/freeze_touch.png" id="3_iapvu"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="4_ka42g"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="5_imle2"]
+[ext_resource type="PackedScene" uid="uid://chpkk8aw8fwk1" path="res://scenes/destroy_on_collide.tscn" id="6_ka42g"]
 [ext_resource type="PackedScene" uid="uid://byu8e06u0427t" path="res://scenes/freeze.tscn" id="6_m7byo"]
 [ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="7_rcobq"]
 [ext_resource type="AudioStream" uid="uid://8mojcljdpc33" path="res://assets/audio/ice_dude_attack.wav" id="8_iapvu"]
@@ -51,6 +52,9 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
 radius = 8.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ka42g"]
+radius = 8.0
+
 [node name="Ice" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_t01jr")
 hit_effect = ExtResource("2_rcobq")
@@ -72,6 +76,13 @@ parent = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=1334675608]
 shape = SubResource("CircleShape2D_y25gk")
+
+[node name="DestroyOnCollide" parent="." unique_id=597034228 node_paths=PackedStringArray("parent") instance=ExtResource("6_ka42g")]
+collision_mask = 2
+parent = NodePath("..")
+
+[node name="Collision" type="CollisionShape2D" parent="DestroyOnCollide" unique_id=1349861456]
+shape = SubResource("CircleShape2D_ka42g")
 
 [node name="Freeze" parent="." unique_id=141722922 node_paths=PackedStringArray("hit_box") instance=ExtResource("6_m7byo")]
 time = 5.0

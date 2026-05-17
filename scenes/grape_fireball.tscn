@@ -5,8 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://y3purbv6fwk8" path="res://scenes/fireball_effect.tscn" id="2_20qaf"]
 [ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="3_20qaf"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_f3v0v"]
+[ext_resource type="PackedScene" uid="uid://chpkk8aw8fwk1" path="res://scenes/destroy_on_collide.tscn" id="6_20qaf"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_20qaf"]
 radius = 8.0
 
 [node name="GrapeFireball" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
@@ -28,3 +32,10 @@ parent = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=39689981]
 shape = SubResource("CircleShape2D_y25gk")
+
+[node name="DestroyOnCollide" parent="." unique_id=597034228 node_paths=PackedStringArray("parent") instance=ExtResource("6_20qaf")]
+collision_mask = 2
+parent = NodePath("..")
+
+[node name="Collision" type="CollisionShape2D" parent="DestroyOnCollide" unique_id=171867595]
+shape = SubResource("CircleShape2D_20qaf")
