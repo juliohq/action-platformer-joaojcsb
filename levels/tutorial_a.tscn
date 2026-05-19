@@ -178,7 +178,6 @@ region_rect = Rect2(2, 455, 29, 41)
 shape = SubResource("RectangleShape2D_2w70r")
 
 [node name="UI" parent="." index="1" unique_id=114827551]
-show_coins = false
 show_orb_selector = false
 show_red_orb = false
 show_blue_orb = false
