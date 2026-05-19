@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://b4xeakg27kbab" path="res://assets/sprites/box/box_pieces_1.png" id="1_34j0s"]
 [ext_resource type="Script" uid="uid://bj67x57ws3wpk" path="res://scenes/box_destruction.gd" id="2_3y7to"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="3_53jw1"]
+[ext_resource type="AudioStream" uid="uid://botans13ef6cn" path="res://assets/audio/box_broken.wav" id="4_6fnld"]
 
 [sub_resource type="Gradient" id="Gradient_34j0s"]
 offsets = PackedFloat32Array(0, 0.7066116, 1)
@@ -20,3 +22,6 @@ initial_velocity_max = 80.0
 angle_max = 720.0
 color_ramp = SubResource("Gradient_34j0s")
 script = ExtResource("2_3y7to")
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("3_53jw1")]
+audio = ExtResource("4_6fnld")
