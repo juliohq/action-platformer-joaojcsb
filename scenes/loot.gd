@@ -5,6 +5,8 @@ extends Node2D
 @export_range(0, 10, 1, "or_greater") var min_count := 1
 @export_range(0, 10, 1, "or_greater") var max_count := 1
 @export_range(1, 100, 1, "or_greater", "suffix:px") var radius := 16
+@export_range(0, 100, 1, "or_less", "or_greater", "suffix:px")
+var limit_bottom := 0
 
 
 func drop() -> void:
@@ -17,5 +19,6 @@ func drop() -> void:
 func spawn() -> void:
 	var loot := scene.instantiate()
 	var offset := Vector2.from_angle(TAU * randf()) * radius
-	loot.global_position = global_position + offset
+	var local_position := Vector2(offset.x, minf(offset.y, limit_bottom))
+	loot.global_position = to_global(local_position)
 	Events.loot_dropped.emit(loot)
