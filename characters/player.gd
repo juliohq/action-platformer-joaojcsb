@@ -346,6 +346,9 @@ func update_cooldown_bar() -> void:
 
 
 func heal() -> bool:
+	if not Globals.enable_orbs:
+		return false
+	
 	if Globals.orb == Globals.Orb.RED:
 		if Globals.red_orbs >= Globals.LIFE_COST:
 			Globals.red_orbs -= Globals.LIFE_COST
