@@ -351,15 +351,21 @@ func heal() -> bool:
 	
 	if Globals.orb == Globals.Orb.RED:
 		if Globals.red_orbs >= Globals.LIFE_COST:
+			# Take orbs
 			Globals.red_orbs -= Globals.LIFE_COST
 			Events.orb_consumed.emit()
+			
+			# Heal
 			Globals.player_health += 1
 			Globals.max_player_health += 1
 			Events.player_health_changed.emit()
 			return true
 	elif Globals.blue_orbs >= Globals.LIFE_COST:
+		# Take orbs
 		Globals.blue_orbs -= Globals.LIFE_COST
 		Events.orb_consumed.emit()
+		
+		# Heal
 		Globals.player_health += 1
 		Globals.max_player_health += 1
 		Events.player_health_changed.emit()
