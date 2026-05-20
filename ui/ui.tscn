@@ -10,15 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://yevle2dgfxvl" path="res://ui/orb_selector.tscn" id="6_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/power.tscn" id="8_ay4pc"]
 
-[node name="UI" type="CanvasLayer" unique_id=477995803 node_paths=PackedStringArray("health_bar", "coins", "orb_selector", "red_orb", "blue_orb", "power_a", "power_b")]
+[node name="UI" type="CanvasLayer" unique_id=477995803]
 script = ExtResource("1_8q4px")
-health_bar = NodePath("Main/Borderless/Top/Base/Margin/HBox/HealthBar")
-coins = NodePath("Main/Borderless/Top/Base/Margin/HBox/Coins")
-orb_selector = NodePath("Main/Borderless/Top/Base/Margin/HBox/OrbSelector")
-red_orb = NodePath("Main/Borderless/Top/Base/Margin/HBox/RedOrb")
-blue_orb = NodePath("Main/Borderless/Top/Base/Margin/HBox/BlueOrb")
-power_a = NodePath("Main/Borderless/Top/Base/Margin/HBox/PowerA")
-power_b = NodePath("Main/Borderless/Top/Base/Margin/HBox/PowerB")
 
 [node name="Main" type="Control" parent="." unique_id=33512560]
 unique_name_in_owner = true
@@ -81,26 +74,33 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="HealthBar" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=2135712761 instance=ExtResource("4_obcwv")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="Coins" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=465799691 instance=ExtResource("4_pa1oa")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="OrbSelector" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=385832756 instance=ExtResource("6_bo1jx")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="RedOrb" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="BlueOrb" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
+unique_name_in_owner = true
 layout_mode = 2
 type = 1
 
 [node name="PowerA" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=373654465 instance=ExtResource("8_ay4pc")]
+unique_name_in_owner = true
 layout_mode = 2
 
 [node name="PowerB" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1894051662 instance=ExtResource("8_ay4pc")]
+unique_name_in_owner = true
 layout_mode = 2
 attack = 1
 
