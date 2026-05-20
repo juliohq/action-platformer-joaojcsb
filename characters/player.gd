@@ -77,6 +77,9 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"change_orb"):
+		if not Globals.enable_orbs:
+			return
+		
 		get_viewport().set_input_as_handled()
 		Globals.orb = ((Globals.orb + 1) % 2) as Globals.Orb
 		Events.orb_changed.emit()
