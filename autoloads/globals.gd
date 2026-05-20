@@ -55,6 +55,12 @@ var blue_orbs := BLUE_ORBS
 ## How many blue orbs the player has at max.
 var max_blue_orbs := BLUE_ORBS
 
+# Tutorial toggles
+var enable_health := true
+var enable_coins := true
+var enable_orbs := true
+var enable_powers := true
+
 
 func _ready() -> void:
 	randomize()

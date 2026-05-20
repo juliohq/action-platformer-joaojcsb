@@ -177,12 +177,5 @@ region_rect = Rect2(2, 455, 29, 41)
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="1" unique_id=652184097]
 shape = SubResource("RectangleShape2D_2w70r")
 
-[node name="UI" parent="." index="1" unique_id=114827551]
-show_orb_selector = false
-show_red_orb = false
-show_blue_orb = false
-show_power_a = false
-show_power_b = false
-
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")

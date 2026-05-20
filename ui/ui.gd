@@ -1,56 +1,49 @@
 extends CanvasLayer
 
 
-@export var show_health_bar := true
 @export var health_bar: Control
-@export var show_coins := true
 @export var coins: Control
-@export var show_orb_selector := true
 @export var orb_selector: Control
-@export var show_red_orb := true
 @export var red_orb: Control
-@export var show_blue_orb := true
 @export var blue_orb: Control
-@export var show_power_a := true
 @export var power_a: Control
-@export var show_power_b := true
 @export var power_b: Control
 
 
 func _ready() -> void:
 	Events.game_over.connect(_game_over)
 	
-	if show_health_bar:
+	if Globals.enable_health:
 		health_bar.modulate = Color.WHITE
 	else:
 		health_bar.modulate = Color.TRANSPARENT
 	
-	if show_coins:
+	if Globals.enable_coins:
 		coins.modulate = Color.WHITE
 	else:
 		coins.modulate = Color.TRANSPARENT
 	
-	if show_orb_selector:
+	if Globals.enable_orbs:
 		orb_selector.modulate = Color.WHITE
 	else:
 		orb_selector.modulate = Color.TRANSPARENT
 	
-	if show_red_orb:
+	if Globals.enable_orbs:
 		red_orb.modulate = Color.WHITE
 	else:
 		red_orb.modulate = Color.TRANSPARENT
 	
-	if show_blue_orb:
+	if Globals.enable_orbs:
 		blue_orb.modulate = Color.WHITE
 	else:
 		blue_orb.modulate = Color.TRANSPARENT
 	
-	if show_power_a:
+	if Globals.enable_powers:
 		power_a.modulate = Color.WHITE
 	else:
 		power_a.modulate = Color.TRANSPARENT
 	
-	if show_power_b:
+	if Globals.enable_powers:
 		power_b.modulate = Color.WHITE
 	else:
 		power_b.modulate = Color.TRANSPARENT
