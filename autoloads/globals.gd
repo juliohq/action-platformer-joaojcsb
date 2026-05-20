@@ -59,7 +59,6 @@ var max_blue_orbs := BLUE_ORBS
 var enable_health := true
 var enable_coins := true
 var enable_orbs := true
-var enable_powers := true
 
 
 func _ready() -> void:

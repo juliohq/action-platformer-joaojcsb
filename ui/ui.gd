@@ -38,12 +38,12 @@ func _ready() -> void:
 	else:
 		blue_orb.modulate = Color.TRANSPARENT
 	
-	if Globals.enable_powers:
+	if Globals.enable_orbs:
 		power_a.modulate = Color.WHITE
 	else:
 		power_a.modulate = Color.TRANSPARENT
 	
-	if Globals.enable_powers:
+	if Globals.enable_orbs:
 		power_b.modulate = Color.WHITE
 	else:
 		power_b.modulate = Color.TRANSPARENT

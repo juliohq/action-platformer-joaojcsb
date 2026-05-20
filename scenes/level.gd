@@ -4,7 +4,6 @@ extends Node2D
 @export var enable_health := true
 @export var enable_coins := true
 @export var enable_orbs := true
-@export var enable_powers := true
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
@@ -26,7 +25,6 @@ func _enter_tree() -> void:
 	Globals.enable_health = enable_health
 	Globals.enable_coins = enable_coins
 	Globals.enable_orbs = enable_orbs
-	Globals.enable_powers = enable_powers
 
 
 func _ready() -> void:
