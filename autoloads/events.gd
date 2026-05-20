@@ -2,7 +2,7 @@ extends Node
 
 
 ## Emitted when a bullet is shot.
-signal bullet()
+signal bullet(node: Node2D)
 ## Emitted when particles are spawned.
 signal particles(particles: Node2D)
 ## Emitted when a bullet hits.
