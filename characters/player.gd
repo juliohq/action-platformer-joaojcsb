@@ -187,6 +187,11 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	invincibility_left = invincibility
 	prints("[player] invincible for:", invincibility_left, "s")
 	
+	# Die straight
+	if not Globals.enable_orbs:
+		die(false)
+		return
+	
 	# Orb drop and die logic
 	if Globals.orb == Globals.Orb.RED:
 		# Drop red orb
