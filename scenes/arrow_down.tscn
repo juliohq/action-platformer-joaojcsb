@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b5ll4wu72fhoe"]
+
+[ext_resource type="Script" uid="uid://cnxohp1ea0j8w" path="res://scenes/bullet.gd" id="1_pg0pa"]
+[ext_resource type="Texture2D" uid="uid://x2eem4t6qooe" path="res://assets/sprites/traps/arrow.png" id="2_4j7ij"]
+[ext_resource type="PackedScene" uid="uid://c3rsk0sut6vp3" path="res://scenes/despawn.tscn" id="2_mctrc"]
+[ext_resource type="PackedScene" uid="uid://y3purbv6fwk8" path="res://scenes/fireball_effect.tscn" id="2_ruy4b"]
+[ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_4j7ij"]
+[ext_resource type="PackedScene" uid="uid://chpkk8aw8fwk1" path="res://scenes/destroy_on_collide.tscn" id="6_an40p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
+radius = 8.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_86oub"]
+radius = 8.0
+
+[node name="ArrowDown" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
+script = ExtResource("1_pg0pa")
+speed = 150
+hit_effect = ExtResource("2_ruy4b")
+sprite = NodePath("Sprite")
+hit_box = NodePath("HitBox")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=25797444]
+texture = ExtResource("2_4j7ij")
+
+[node name="Despawn" parent="." unique_id=223831442 node_paths=PackedStringArray("parent") instance=ExtResource("2_mctrc")]
+parent = NodePath("..")
+
+[node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_4j7ij")]
+
+[node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=39689981]
+shape = SubResource("CircleShape2D_y25gk")
+
+[node name="DestroyOnCollide" parent="." unique_id=597034228 node_paths=PackedStringArray("parent") instance=ExtResource("6_an40p")]
+collision_mask = 2
+parent = NodePath("..")
+
+[node name="Collision" type="CollisionShape2D" parent="DestroyOnCollide" unique_id=1578070000]
+shape = SubResource("CircleShape2D_86oub")
