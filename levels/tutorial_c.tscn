@@ -47,10 +47,10 @@ position = Vector2(416, -56)
 rotation = 1.5707964
 
 [node name="Bub" parent="World/Enemies" parent_id_path=PackedInt32Array(1528690379) index="0" unique_id=2003408289 instance=ExtResource("2_vw8x6")]
-position = Vector2(528, 128)
+position = Vector2(720, 240)
 
 [node name="Bub2" parent="World/Enemies" parent_id_path=PackedInt32Array(1528690379) index="1" unique_id=1742321527 instance=ExtResource("2_vw8x6")]
-position = Vector2(600, 128)
+position = Vector2(776, 240)
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="6" unique_id=2136620420]
 position = Vector2(-296, 0)
