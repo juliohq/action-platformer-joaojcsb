@@ -154,7 +154,6 @@ position = Vector2(824, 112)
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="6" unique_id=2136620420]
 position = Vector2(-288, 120)
-invincibility = 0.0
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
 limit_top = -96
