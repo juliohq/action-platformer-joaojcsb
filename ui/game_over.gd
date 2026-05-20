@@ -23,22 +23,19 @@ func _exit_tree() -> void:
 	_handle_pause(false)
 
 
-## Handles the pause logic. Override to provide custom behavior.
 func _handle_pause(paused: bool) -> void:
 	get_tree().paused = paused
 
 
-## Handles the play again logic. Override to provide custom behavior.
 func _play_again() -> void:
+	Globals.reset()
 	var err := get_tree().reload_current_scene()
 	assert(err == OK, "failed to change scene")
 
 
-## Handles the main menu logic. Override to provide custom behavior.
 func _main_menu() -> void:
 	get_tree().change_scene_to_packed(load("res://ui/main_menu.tscn"))
 
 
-## Handles the game quit logic. Override to provide custom behavior.
 func _quit() -> void:
 	get_tree().quit()
