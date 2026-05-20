@@ -36,12 +36,15 @@ position = Vector2(32, 40)
 
 [node name="ShooterArrow" parent="World/Objects" parent_id_path=PackedInt32Array(1355202169) index="2" unique_id=1937937865 instance=ExtResource("3_28njw")]
 position = Vector2(264, -56)
+rotation = 1.5707964
 
 [node name="ShooterArrow2" parent="World/Objects" parent_id_path=PackedInt32Array(1355202169) index="3" unique_id=26621247 instance=ExtResource("3_28njw")]
 position = Vector2(360, -56)
+rotation = 1.5707964
 
 [node name="ShooterArrow3" parent="World/Objects" parent_id_path=PackedInt32Array(1355202169) index="4" unique_id=1579887279 instance=ExtResource("3_28njw")]
 position = Vector2(416, -56)
+rotation = 1.5707964
 
 [node name="Bub" parent="World/Enemies" parent_id_path=PackedInt32Array(1528690379) index="0" unique_id=2003408289 instance=ExtResource("2_vw8x6")]
 position = Vector2(528, 128)

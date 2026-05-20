@@ -62,6 +62,7 @@ script = ExtResource("1_v8qai")
 scene = ExtResource("2_e8db7")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=189615254]
+rotation = -1.5707964
 texture = ExtResource("1_4mdmu")
 hframes = 6
 

@@ -6,6 +6,6 @@ extends Node2D
 
 func shoot() -> void:
 	var bullet := scene.instantiate()
-	bullet.direction = Vector2.DOWN
+	bullet.direction = Vector2.from_angle(rotation)
 	bullet.global_position = global_position
 	Events.bullet.emit(bullet)
