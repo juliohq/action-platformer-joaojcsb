@@ -1,6 +1,10 @@
 extends Node2D
 
 
+@export var enable_health := true
+@export var enable_coins := true
+@export var enable_orbs := true
+@export var enable_powers := true
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
@@ -8,6 +12,7 @@ extends Node2D
 
 
 func _enter_tree() -> void:
+	# Reset variables
 	Globals.player_health = mini(Globals.player_health, Globals.PLAYER_HEALTH)
 	Globals.max_player_health = Globals.PLAYER_HEALTH
 	
@@ -16,6 +21,12 @@ func _enter_tree() -> void:
 	
 	Globals.blue_orbs = mini(Globals.blue_orbs, Globals.BLUE_ORBS)
 	Globals.max_blue_orbs = Globals.BLUE_ORBS
+	
+	# Tutorial variables
+	Globals.enable_health = enable_health
+	Globals.enable_coins = enable_coins
+	Globals.enable_orbs = enable_orbs
+	Globals.enable_powers = enable_powers
 
 
 func _ready() -> void:

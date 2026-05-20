@@ -16,6 +16,8 @@ stream = ExtResource("6_oya27")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="TutorialC" unique_id=1054854771 instance=ExtResource("1_2ks38")]
+enable_orbs = false
+enable_powers = false
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]
 metadata/_edit_horizontal_guides_ = [-176.0, 176.0]
 
