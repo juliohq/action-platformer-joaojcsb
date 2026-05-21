@@ -77,7 +77,7 @@ func _ready() -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"change_orb"):
-		if not Globals.enable_orbs:
+		if Globals.orb_level != Globals.OrbLevel.ALL:
 			return
 		
 		get_viewport().set_input_as_handled()
@@ -191,7 +191,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	prints("[player] invincible for:", invincibility_left, "s")
 	
 	# Die straight
-	if not Globals.enable_orbs:
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		die(false)
 		return
 	
@@ -273,6 +273,9 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 
 
 func can_shoot() -> bool:
+	if Globals.orb_level == Globals.OrbLevel.NONE:
+		return false
+	
 	if attack == Globals.Attack.A:
 		return true
 	
@@ -346,7 +349,7 @@ func update_cooldown_bar() -> void:
 
 
 func heal() -> bool:
-	if not Globals.enable_orbs:
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		return false
 	
 	if Globals.orb == Globals.Orb.RED:

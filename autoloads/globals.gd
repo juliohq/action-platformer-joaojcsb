@@ -13,6 +13,13 @@ enum Attack {
 	B,
 }
 
+## The orb level (used in tutorial).
+enum OrbLevel {
+	NONE,
+	FIRST,
+	ALL,
+}
+
 ## The default path for the settings file.
 const SETTINGS_PATH := "user://settings.dat"
 ## The default path for the save file.
@@ -58,7 +65,7 @@ var max_blue_orbs := BLUE_ORBS
 # Tutorial toggles
 var enable_health := true
 var enable_coins := true
-var enable_orbs := true
+var orb_level := OrbLevel.ALL
 
 
 func _ready() -> void:

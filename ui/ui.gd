@@ -14,30 +14,30 @@ func _ready() -> void:
 	else:
 		%Coins.modulate = Color.TRANSPARENT
 	
-	if Globals.enable_orbs:
-		%OrbSelector.modulate = Color.WHITE
-	else:
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		%OrbSelector.modulate = Color.TRANSPARENT
-	
-	if Globals.enable_orbs:
-		%RedOrb.modulate = Color.WHITE
 	else:
+		%OrbSelector.modulate = Color.WHITE
+	
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		%RedOrb.modulate = Color.TRANSPARENT
-	
-	if Globals.enable_orbs:
-		%BlueOrb.modulate = Color.WHITE
 	else:
+		%RedOrb.modulate = Color.WHITE
+	
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		%BlueOrb.modulate = Color.TRANSPARENT
-	
-	if Globals.enable_orbs:
-		%PowerA.modulate = Color.WHITE
 	else:
+		%BlueOrb.modulate = Color.WHITE
+	
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		%PowerA.modulate = Color.TRANSPARENT
-	
-	if Globals.enable_orbs:
-		%PowerB.modulate = Color.WHITE
 	else:
+		%PowerA.modulate = Color.WHITE
+	
+	if Globals.orb_level == Globals.OrbLevel.NONE:
 		%PowerB.modulate = Color.TRANSPARENT
+	else:
+		%PowerB.modulate = Color.WHITE
 	
 	show()
 
