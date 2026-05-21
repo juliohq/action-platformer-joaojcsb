@@ -2,8 +2,14 @@ extends CanvasLayer
 
 
 func _ready() -> void:
+	Events.chest_opened.connect(update)
 	Events.game_over.connect(_game_over)
 	
+	update()
+	show()
+
+
+func update() -> void:
 	if Globals.enable_health:
 		%HealthBar.modulate = Color.WHITE
 	else:
@@ -24,7 +30,7 @@ func _ready() -> void:
 	else:
 		%RedOrb.modulate = Color.WHITE
 	
-	if Globals.orb_level == Globals.OrbLevel.NONE:
+	if Globals.orb_level != Globals.OrbLevel.ALL:
 		%BlueOrb.modulate = Color.TRANSPARENT
 	else:
 		%BlueOrb.modulate = Color.WHITE
@@ -34,12 +40,10 @@ func _ready() -> void:
 	else:
 		%PowerA.modulate = Color.WHITE
 	
-	if Globals.orb_level == Globals.OrbLevel.NONE:
+	if Globals.orb_level != Globals.OrbLevel.ALL:
 		%PowerB.modulate = Color.TRANSPARENT
 	else:
 		%PowerB.modulate = Color.WHITE
-	
-	show()
 
 
 func _input(event: InputEvent) -> void:

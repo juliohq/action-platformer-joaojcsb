@@ -1,6 +1,8 @@
 extends Node
 
 
+## Emitted when the tutorial chest is opened.
+signal chest_opened()
 ## Emitted when a bullet is shot.
 signal bullet(node: Node2D)
 ## Emitted when particles are spawned.
