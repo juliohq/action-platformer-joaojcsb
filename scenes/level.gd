@@ -1,6 +1,7 @@
 extends Node2D
 
 
+@export var change_flags := true
 @export var enable_health := true
 @export var enable_coins := true
 @export var orb_level := Globals.OrbLevel.ALL
@@ -22,9 +23,10 @@ func _enter_tree() -> void:
 	Globals.max_blue_orbs = Globals.BLUE_ORBS
 	
 	# Tutorial variables
-	Globals.enable_health = enable_health
-	Globals.enable_coins = enable_coins
-	Globals.orb_level = orb_level
+	if change_flags:
+		Globals.enable_health = enable_health
+		Globals.enable_coins = enable_coins
+		Globals.orb_level = orb_level
 
 
 func _ready() -> void:

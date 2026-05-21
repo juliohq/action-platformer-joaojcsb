@@ -178,19 +178,19 @@ position = Vector2(-224, 480)
 [node name="IceDude2" parent="World/Enemies" parent_id_path=PackedInt32Array(1528690379) index="23" unique_id=1471427899 instance=ExtResource("6_tpfj2")]
 position = Vector2(-144, 480)
 
-[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="6" unique_id=2136620420]
-position = Vector2(-304, -8)
-
-[node name="Camera" parent="World/Player" index="11" unique_id=785309888]
-limit_right = 896
-limit_bottom = 528
-
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_1hb53")]
 position = Vector2(848, 512)
 scene_path = "uid://d3emagiip7vi6"
 
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=92257102]
 shape = SubResource("RectangleShape2D_1hb53")
+
+[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="7" unique_id=2136620420]
+position = Vector2(-304, -8)
+
+[node name="Camera" parent="World/Player" index="11" unique_id=785309888]
+limit_right = 896
+limit_bottom = 528
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")
