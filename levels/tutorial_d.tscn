@@ -40,6 +40,7 @@ scene_path = "uid://d3emagiip7vi6"
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]
+visible = false
 position = Vector2(0, 16)
 texture = ExtResource("6_xfo1m")
 centered = false
