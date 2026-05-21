@@ -9,10 +9,11 @@ func _can_handle(object: Object) -> bool:
 	return object is Node2D
 
 
-func _parse_begin(object: Object) -> void:
-	add_button("Invert position", &"Node2D", object, _invert_position)
-	add_button("Invert rotation", &"Node2D", object, _invert_rotation)
-	add_button("Invert scale", &"Node2D", object, _invert_scale)
+func _parse_category(object: Object, category: String) -> void:
+	if category == "Node2D":
+		add_button("Invert position", &"Node2D", object, _invert_position)
+		add_button("Invert rotation", &"Node2D", object, _invert_rotation)
+		add_button("Invert scale", &"Node2D", object, _invert_scale)
 
 
 func add_button(name: String, icon: StringName, object: Object,

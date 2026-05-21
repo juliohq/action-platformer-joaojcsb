@@ -9,8 +9,9 @@ func _can_handle(object: Object) -> bool:
 	return object is MarginContainer
 
 
-func _parse_begin(object: Object) -> void:
-	add_button("Reset margins", &"MarginContainer", object, _reset_margins)
+func _parse_category(object: Object, category: String) -> void:
+	if category == "Control":
+		add_button("Reset margins", &"MarginContainer", object, _reset_margins)
 
 
 func add_button(name: String, icon: StringName, object: Object,

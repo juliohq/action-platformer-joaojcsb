@@ -9,7 +9,10 @@ func _can_handle(object: Object) -> bool:
 	return object is Control
 
 
-func _parse_begin(object: Object) -> void:
+func _parse_category(object: Object, category: String) -> void:
+	if category != "Control":
+		return
+	
 	add_button("Set minimum size", &"Control", object, _set_minimum_size,
 			"Copies the current size to the custom_minimum_size property.")
 	add_button("PanelContainer + VBoxContainer", &"PanelContainer", object,

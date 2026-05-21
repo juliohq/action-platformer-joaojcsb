@@ -9,7 +9,10 @@ func _can_handle(object: Object) -> bool:
 	return object is Camera2D
 
 
-func _parse_begin(object: Object) -> void:
+func _parse_category(object: Object, category: String) -> void:
+	if category != "Camera2D":
+		return
+	
 	add_button("Reset limits", &"Camera2D", object, _reset_limits)
 	
 	if is_instance_valid(object.owner):
