@@ -8,4 +8,8 @@ func _ready() -> void:
 
 
 func _skill_one_used() -> void:
+	if Globals.tutorial < Globals.Tutorial.SHOOT:
+		return
+	
+	Globals.tutorial = Globals.Tutorial.CHANGE_ORB
 	show()

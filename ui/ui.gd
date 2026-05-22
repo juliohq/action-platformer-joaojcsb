@@ -1,56 +1,70 @@
 extends CanvasLayer
 
 
+const PAUSE := preload("res://ui/pause.tscn")
+const GAME_OVER := preload("res://ui/game_over.tscn")
+const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
+
+
 func _ready() -> void:
 	Events.chest_opened.connect(update)
 	Events.game_over.connect(_game_over)
+	Events.orb_added.connect(_orb_added)
 	
 	update()
 	show()
 
 
 func update() -> void:
-	if Globals.enable_health:
-		%HealthBar.modulate = Color.WHITE
-	else:
-		%HealthBar.modulate = Color.TRANSPARENT
 	
-	if Globals.enable_coins:
+	if Globals.tutorial >= Globals.Tutorial.BASIC:
+		%HealthBar.modulate = Color.WHITE
 		%Coins.modulate = Color.WHITE
 	else:
+		%HealthBar.modulate = Color.TRANSPARENT
 		%Coins.modulate = Color.TRANSPARENT
 	
-	if Globals.orb_level == Globals.OrbLevel.NONE:
-		%OrbSelector.modulate = Color.TRANSPARENT
-	else:
+	if Globals.tutorial >= Globals.Tutorial.CHANGE_ORB:
 		%OrbSelector.modulate = Color.WHITE
-	
-	if Globals.orb_level == Globals.OrbLevel.NONE:
-		%RedOrb.modulate = Color.TRANSPARENT
 	else:
+		%OrbSelector.modulate = Color.TRANSPARENT
+	
+	if Globals.tutorial >= Globals.Tutorial.SHOOT:
 		%RedOrb.modulate = Color.WHITE
-	
-	if Globals.orb_level != Globals.OrbLevel.ALL:
-		%BlueOrb.modulate = Color.TRANSPARENT
 	else:
+		%RedOrb.modulate = Color.TRANSPARENT
+	
+	if Globals.tutorial >= Globals.Tutorial.SKILL_TWO:
 		%BlueOrb.modulate = Color.WHITE
-	
-	if Globals.orb_level == Globals.OrbLevel.NONE:
-		%PowerA.modulate = Color.TRANSPARENT
 	else:
+		%BlueOrb.modulate = Color.TRANSPARENT
+	
+	if Globals.tutorial >= Globals.Tutorial.SHOOT:
 		%PowerA.modulate = Color.WHITE
-	
-	if Globals.orb_level != Globals.OrbLevel.ALL:
-		%PowerB.modulate = Color.TRANSPARENT
 	else:
+		%PowerA.modulate = Color.TRANSPARENT
+	
+	if Globals.tutorial >= Globals.Tutorial.SKILL_TWO:
 		%PowerB.modulate = Color.WHITE
+	else:
+		%PowerB.modulate = Color.TRANSPARENT
 
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):
 		get_viewport().set_input_as_handled()
-		add_child(preload("res://ui/pause.tscn").instantiate())
+		add_child(PAUSE.instantiate())
 
 
 func _game_over() -> void:
-	add_child(preload("res://ui/game_over.tscn").instantiate())
+	add_child(GAME_OVER.instantiate())
+
+
+func _orb_added() -> void:
+	if Globals.tutorial != Globals.Tutorial.CHANGE_ORB:
+		return
+	
+	if Globals.red_orbs >= Globals.FIRE_GRENADE_COST:
+		Globals.tutorial = Globals.Tutorial.SKILL_TWO
+		update()
+		add_child(SKILL_TWO_PROMPTS.instantiate())

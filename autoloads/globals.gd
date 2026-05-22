@@ -13,11 +13,17 @@ enum Attack {
 	B,
 }
 
-## The orb level (used in tutorial).
-enum OrbLevel {
-	NONE,
-	FIRST,
-	ALL,
+enum Tutorial {
+	# Health and coins only
+	BASIC,
+	# Knows how to shoot skill level 1
+	SHOOT,
+	# Knows how to change orbs
+	CHANGE_ORB,
+	# Knows how to shoot skill level 2
+	SKILL_TWO,
+	# Knows how to heal
+	HEAL,
 }
 
 ## The default path for the settings file.
@@ -63,9 +69,7 @@ var blue_orbs := BLUE_ORBS
 var max_blue_orbs := BLUE_ORBS
 
 # Tutorial toggles
-var enable_health := true
-var enable_coins := true
-var orb_level := OrbLevel.ALL
+var tutorial := Tutorial.HEAL
 
 
 func _ready() -> void:

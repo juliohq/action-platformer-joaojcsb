@@ -6,7 +6,7 @@ extends Node2D
 
 
 func _ready() -> void:
-	if Globals.orb_level == Globals.OrbLevel.NONE:
+	if Globals.tutorial < Globals.Tutorial.SHOOT:
 		player_detector.body_entered.connect(_player_entered, CONNECT_ONE_SHOT)
 
 
@@ -18,5 +18,5 @@ func _player_entered(_body: Node2D) -> void:
 	Globals.red_orbs = 1
 	Events.orb_changed.emit()
 	
-	Globals.orb_level = Globals.OrbLevel.FIRST
+	Globals.tutorial = Globals.Tutorial.SHOOT
 	Events.chest_opened.emit()

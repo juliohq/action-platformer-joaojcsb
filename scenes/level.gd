@@ -1,10 +1,8 @@
 extends Node2D
 
 
-@export var change_flags := true
-@export var enable_health := true
-@export var enable_coins := true
-@export var orb_level := Globals.OrbLevel.ALL
+@export var change_stage := false
+@export var tutorial := Globals.Tutorial.BASIC
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
@@ -22,11 +20,9 @@ func _enter_tree() -> void:
 	Globals.blue_orbs = mini(Globals.blue_orbs, Globals.BLUE_ORBS)
 	Globals.max_blue_orbs = Globals.BLUE_ORBS
 	
-	# Tutorial variables
-	if change_flags:
-		Globals.enable_health = enable_health
-		Globals.enable_coins = enable_coins
-		Globals.orb_level = orb_level
+	# Tutorial stage
+	if change_stage:
+		Globals.tutorial = tutorial
 
 
 func _ready() -> void:
