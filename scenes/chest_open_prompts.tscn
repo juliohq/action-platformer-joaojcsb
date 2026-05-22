@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://xxh3fgru3h63"]
+
+[ext_resource type="Script" uid="uid://cjtanqdgm7g1b" path="res://scenes/chest_open_prompts.gd" id="1_noxlc"]
+
+[node name="ChestOpenPrompts" type="Node2D" unique_id=1354680006]
+script = ExtResource("1_noxlc")

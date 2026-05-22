@@ -307,6 +307,7 @@ func shoot() -> void:
 	if Globals.orb == Globals.Orb.RED:
 		if attack == Globals.Attack.A:
 			bullet = FIREBALL.instantiate()
+			Events.skill_one_used.emit()
 		else:
 			bullet = FIRE_GRENADE.instantiate()
 			strong_power_cooldown += strong_power_duration

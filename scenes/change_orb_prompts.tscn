@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://duc3xwo6x0uve"]
+
+[ext_resource type="Script" uid="uid://cpd5o5x5l8bcb" path="res://scenes/change_orb_prompts.gd" id="1_hwh8v"]
+
+[node name="ChangeOrbPrompts" type="Node2D" unique_id=1354680006]
+script = ExtResource("1_hwh8v")
