@@ -3,13 +3,14 @@ extends CharacterBody2D
 
 @export var orb := Globals.Orb.RED
 @export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s²") var gravity := 980
+@export var auto_vanish := true
 @export_category("Nodes")
 @export var vanish: Timer
 @export var collectible: Area2D
 
 
 func _ready() -> void:
-	if is_instance_valid(vanish):
+	if is_instance_valid(vanish) and auto_vanish:
 		vanish.timeout.connect(queue_free)
 	
 	collectible.picked_up.connect(_picked_up)
