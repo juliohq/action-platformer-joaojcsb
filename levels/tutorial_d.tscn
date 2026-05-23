@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dtgmihdb4mv3a" path="res://ui/controls/joypad_button_x.tscn" id="3_xi1r0"]
 [ext_resource type="PackedScene" uid="uid://bv2yeta50a11w" path="res://scenes/teleport.tscn" id="5_eqccq"]
 [ext_resource type="PackedScene" uid="uid://duc3xwo6x0uve" path="res://scenes/change_orb_prompts.tscn" id="5_xi1r0"]
-[ext_resource type="PackedScene" uid="uid://cyyvjadficxi3" path="res://ui/controls/joypad_button_b.tscn" id="6_jk5ly"]
+[ext_resource type="PackedScene" uid="uid://drssg4befpd1f" path="res://ui/controls/joypad_button_lb.tscn" id="6_jk5ly"]
 [ext_resource type="Texture2D" uid="uid://c07l1geqq0ysa" path="res://assets/tilesets/tileset_castle.png" id="6_xfo1m"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="7_3q73u"]
 [ext_resource type="AudioStream" uid="uid://caelpyhl66nqs" path="res://assets/music/tutorial.ogg" id="8_5ub5s"]
