@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bib8xoqi8hhbi" path="res://ui/controls/skill_two_prompts.gd" id="1_2p1cy"]
 [ext_resource type="PackedScene" uid="uid://dliit53oo7hye" path="res://ui/controls/joypad_button_y.tscn" id="3_1am66"]
 [ext_resource type="PackedScene" uid="uid://bdp4jtgaeiiex" path="res://ui/controls/keyboard.tscn" id="4_heda5"]
-[ext_resource type="PackedScene" uid="uid://cyyvjadficxi3" path="res://ui/controls/joypad_button_b.tscn" id="5_heda5"]
+[ext_resource type="PackedScene" uid="uid://un8sdvrneuw8" path="res://ui/controls/joypad_button_a.tscn" id="5_heda5"]
 
 [node name="SkillTwoPrompts" type="Control" unique_id=788096174]
 process_mode = 3
@@ -52,10 +52,10 @@ offset_bottom = 190.0
 text = "Prosseguir"
 horizontal_alignment = 1
 
-[node name="KeyboardE" parent="." unique_id=101327953 instance=ExtResource("4_heda5")]
+[node name="KeyboardQ" parent="." unique_id=101327953 instance=ExtResource("4_heda5")]
 position = Vector2(216, 208)
 region_enabled = true
-region_rect = Rect2(66, 34, 12, 10)
+region_rect = Rect2(34, 50, 12, 10)
 
-[node name="JoypadButtonB" parent="." unique_id=686631962 instance=ExtResource("5_heda5")]
+[node name="JoypadButtonA" parent="." unique_id=686631962 instance=ExtResource("5_heda5")]
 position = Vector2(248, 208)
