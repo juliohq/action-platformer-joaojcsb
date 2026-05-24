@@ -3,6 +3,7 @@ extends Node2D
 
 @export var change_stage := false
 @export var tutorial := Globals.Tutorial.BASIC
+@export_range(1, 10, 1, "or_greater") var orbs := 5
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
@@ -14,11 +15,11 @@ func _enter_tree() -> void:
 	Globals.player_health = mini(Globals.player_health, Globals.PLAYER_HEALTH)
 	Globals.max_player_health = Globals.PLAYER_HEALTH
 	
-	Globals.red_orbs = mini(Globals.red_orbs, Globals.RED_ORBS)
-	Globals.max_red_orbs = Globals.RED_ORBS
+	Globals.red_orbs = mini(Globals.red_orbs, orbs)
+	Globals.max_red_orbs = orbs
 	
-	Globals.blue_orbs = mini(Globals.blue_orbs, Globals.BLUE_ORBS)
-	Globals.max_blue_orbs = Globals.BLUE_ORBS
+	Globals.blue_orbs = mini(Globals.blue_orbs, orbs)
+	Globals.max_blue_orbs = orbs
 	
 	# Tutorial stage
 	if change_stage:
