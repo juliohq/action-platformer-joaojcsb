@@ -3,6 +3,9 @@ extends Node2D
 
 @export var change_stage := false
 @export var tutorial := Globals.Tutorial.BASIC
+@export var change_health := false
+@export_range(1, 10, 1, "or_greater", "suffix:HP") var health := 2
+@export var change_orbs := false
 @export_range(1, 10, 1, "or_greater") var orbs := 5
 @export_category("Nodes")
 @export var world: Node2D
@@ -11,15 +14,32 @@ extends Node2D
 
 
 func _enter_tree() -> void:
-	# Reset variables
-	Globals.player_health = mini(Globals.player_health, Globals.PLAYER_HEALTH)
-	Globals.max_player_health = Globals.PLAYER_HEALTH
+	# Update max health
+	var max_health := Globals.PLAYER_HEALTH
 	
-	Globals.red_orbs = mini(Globals.red_orbs, orbs)
-	Globals.max_red_orbs = orbs
+	if change_health:
+		max_health = health
 	
-	Globals.blue_orbs = mini(Globals.blue_orbs, orbs)
-	Globals.max_blue_orbs = orbs
+	Globals.player_health = mini(Globals.player_health, max_health)
+	Globals.max_player_health = max_health
+	
+	prints("[level] max health set to", max_health)
+	
+	# Update max orbs
+	var max_red_orbs := Globals.RED_ORBS
+	var max_blue_orbs := Globals.RED_ORBS
+	
+	if change_orbs:
+		max_red_orbs = orbs
+		max_blue_orbs = orbs
+	
+	Globals.red_orbs = mini(Globals.red_orbs, max_red_orbs)
+	Globals.max_red_orbs = max_red_orbs
+	
+	Globals.blue_orbs = mini(Globals.blue_orbs, max_blue_orbs)
+	Globals.max_blue_orbs = max_blue_orbs
+	
+	prints("[level] max orbs set to", max_red_orbs)
 	
 	# Tutorial stage
 	if change_stage:
