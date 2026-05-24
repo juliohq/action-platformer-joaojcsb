@@ -8,6 +8,7 @@ const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
 
 func _ready() -> void:
 	Events.chest_opened.connect(update)
+	Events.skill_one_used.connect(update)
 	Events.game_over.connect(_game_over)
 	Events.orb_added.connect(_orb_added)
 	
@@ -34,7 +35,7 @@ func update() -> void:
 	else:
 		%RedOrb.modulate = Color.TRANSPARENT
 	
-	if Globals.tutorial >= Globals.Tutorial.SKILL_TWO:
+	if Globals.tutorial >= Globals.Tutorial.CHANGE_ORB:
 		%BlueOrb.modulate = Color.WHITE
 	else:
 		%BlueOrb.modulate = Color.TRANSPARENT
