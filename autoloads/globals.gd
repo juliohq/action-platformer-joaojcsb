@@ -26,6 +26,14 @@ enum Tutorial {
 	HEAL,
 }
 
+enum Upgrade {
+	HEALTH,
+	EXTRA_FIRE_ORB,
+	EXTRA_ICE_ORB,
+	IMMUNITY,
+	PARALYZE,
+}
+
 ## The default path for the settings file.
 const SETTINGS_PATH := "user://settings.dat"
 ## The default path for the save file.
@@ -51,10 +59,12 @@ const GIANT_ICE_ORB_COST := 2
 ## The current language code.
 var language := "en"
 
+## The default player health.
+var default_player_health := PLAYER_HEALTH
 ## The player health (HP).
-var player_health := PLAYER_HEALTH
+var player_health := default_player_health
 ## The max player health (HP).
-var max_player_health := PLAYER_HEALTH
+var max_player_health := default_player_health
 ## The count of coins the player has.
 var coins := 0
 ## The current orb selected.
@@ -67,6 +77,8 @@ var max_red_orbs := RED_ORBS
 var blue_orbs := BLUE_ORBS
 ## How many blue orbs the player has at max.
 var max_blue_orbs := BLUE_ORBS
+## How long enemies will be paralyzed.
+var enemy_paralyze := 0.0
 
 # Tutorial toggles
 var tutorial := Tutorial.HEAL
@@ -190,11 +202,19 @@ func load_settings(file_path: String) -> void:
 
 
 func reset() -> void:
-	player_health = PLAYER_HEALTH
-	max_player_health = PLAYER_HEALTH
+	player_health = default_player_health
+	max_player_health = default_player_health
 	coins = 0
 	orb = ORB
 	blue_orbs = BLUE_ORBS
 	max_blue_orbs = BLUE_ORBS
 	red_orbs = RED_ORBS
 	max_red_orbs = RED_ORBS
+
+
+func _process(delta: float) -> void:
+	if enemy_paralyze > 0.0:
+		enemy_paralyze -= delta
+		
+		if enemy_paralyze < 0.0:
+			enemy_paralyze = 0.0

@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://ddnoala043xgc"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_1slnd"]
+[ext_resource type="Script" uid="uid://jnkv12ab0vjr" path="res://ui/shop.gd" id="1_foe6g"]
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="2_2v8nf"]
+
+[node name="Shop" type="Control" unique_id=1642795089]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_1slnd")
+script = ExtResource("1_foe6g")
+
+[node name="Background" parent="." unique_id=731263121 instance=ExtResource("2_2v8nf")]
+layout_mode = 1
+
+[node name="Margin" type="MarginContainer" parent="." unique_id=2064154170]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="Margin" unique_id=148497987]
+layout_mode = 2
+
+[node name="Top" type="MarginContainer" parent="Margin/VBox" unique_id=639103376]
+layout_mode = 2
+
+[node name="Coins" type="Label" parent="Margin/VBox/Top" unique_id=497054278]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Margin/VBox/Top" unique_id=1374606869]
+layout_mode = 2
+text = "Loja"
+horizontal_alignment = 1
+
+[node name="Margin" type="MarginContainer" parent="Margin/VBox" unique_id=1703991280]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Scroll" type="ScrollContainer" parent="Margin/VBox/Margin" unique_id=1202552152]
+layout_mode = 2
+scroll_hint_mode = 1
+
+[node name="Items" type="VBoxContainer" parent="Margin/VBox/Margin/Scroll" unique_id=325142944]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="Exit" type="Button" parent="Margin/VBox" unique_id=1951303232]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Sair"
