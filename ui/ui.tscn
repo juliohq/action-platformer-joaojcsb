@@ -105,3 +105,4 @@ layout_mode = 2
 attack = 1
 
 [node name="Fade" parent="." unique_id=12204861 instance=ExtResource("3_wl5ax")]
+process_mode = 3
