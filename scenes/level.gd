@@ -27,7 +27,7 @@ func _enter_tree() -> void:
 	
 	# Update max orbs
 	var max_red_orbs := Globals.RED_ORBS
-	var max_blue_orbs := Globals.RED_ORBS
+	var max_blue_orbs := Globals.BLUE_ORBS
 	
 	if change_orbs:
 		max_red_orbs = orbs
