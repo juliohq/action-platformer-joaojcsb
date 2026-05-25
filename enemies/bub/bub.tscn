@@ -214,7 +214,7 @@ _data = {
 radius = 12.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_77a18"]
-size = Vector2(192, 48)
+size = Vector2(192, 24)
 
 [node name="Bub" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loots", "health_bar", "state_machine", "hit_state")]
 collision_layer = 8
@@ -252,7 +252,7 @@ shape = SubResource("CircleShape2D_8uprq")
 collision_layer = 0
 
 [node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=773752437]
-position = Vector2(0, -24)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_77a18")
 
 [node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("6_ljv7j")]
