@@ -16,6 +16,7 @@ func _player_entered(_body: Node2D) -> void:
 	
 	# Update orbs
 	Globals.red_orbs = 1
+	Globals.blue_orbs = 1
 	Events.orb_changed.emit()
 	
 	Globals.tutorial = Globals.Tutorial.SHOOT
