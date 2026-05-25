@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bioo1pikg3xtj" path="res://assets/sprites/chest.png" id="1_oii8l"]
 [ext_resource type="Script" uid="uid://dwdvx1nsgoa1s" path="res://scenes/chest.gd" id="1_sy5e1"]
 [ext_resource type="PackedScene" uid="uid://dmf3nj3vlshkx" path="res://scenes/slingshot.tscn" id="3_gqd3d"]
+[ext_resource type="AudioStream" uid="uid://bodtikahu0w7k" path="res://assets/audio/chest_open.wav" id="4_yue2o"]
 
 [sub_resource type="Animation" id="Animation_oii8l"]
 resource_name = "IDLE"
@@ -112,10 +113,11 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_oii8l"]
 radius = 16.0
 
-[node name="Chest" type="Node2D" unique_id=1858812518 node_paths=PackedStringArray("animator", "player_detector")]
+[node name="Chest" type="Node2D" unique_id=1858812518 node_paths=PackedStringArray("animator", "player_detector", "audio")]
 script = ExtResource("1_sy5e1")
 animator = NodePath("Animator")
 player_detector = NodePath("PlayerDetector")
+audio = NodePath("Audio")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=614647588]
 position = Vector2(-16, -32)
@@ -138,3 +140,7 @@ shape = SubResource("CircleShape2D_oii8l")
 [node name="Slingshot" parent="." unique_id=1833899032 instance=ExtResource("3_gqd3d")]
 position = Vector2(0, -8)
 scale = Vector2(1e-05, 1e-05)
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=1058995044]
+stream = ExtResource("4_yue2o")
+bus = &"Sounds"

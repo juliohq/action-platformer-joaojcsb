@@ -3,6 +3,7 @@ extends Node2D
 
 @export var animator: AnimationPlayer
 @export var player_detector: Area2D
+@export var audio: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -12,6 +13,7 @@ func _ready() -> void:
 
 func _player_entered(_body: Node2D) -> void:
 	animator.play("OPEN")
+	audio.play()
 	await animator.animation_finished
 	
 	# Update orbs
