@@ -17,7 +17,6 @@ func _ready() -> void:
 
 
 func update() -> void:
-	
 	if Globals.tutorial >= Globals.Tutorial.BASIC:
 		%HealthBar.modulate = Color.WHITE
 		%Coins.modulate = Color.WHITE
