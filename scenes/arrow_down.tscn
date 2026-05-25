@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://y3purbv6fwk8" path="res://scenes/fireball_effect.tscn" id="2_ruy4b"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_4j7ij"]
 [ext_resource type="PackedScene" uid="uid://chpkk8aw8fwk1" path="res://scenes/destroy_on_collide.tscn" id="6_an40p"]
+[ext_resource type="AudioStream" uid="uid://jvj6qxgy5h68" path="res://assets/audio/roof_trap.wav" id="8_an40p"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y25gk"]
 radius = 8.0
@@ -37,3 +38,10 @@ parent = NodePath("..")
 
 [node name="Collision" type="CollisionShape2D" parent="DestroyOnCollide" unique_id=1578070000]
 shape = SubResource("CircleShape2D_86oub")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=1474562974]
+stream = ExtResource("8_an40p")
+volume_db = -3.0
+autoplay = true
+max_distance = 640.0
+bus = &"Sounds"

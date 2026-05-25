@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cs3lx46vvl610" path="res://assets/sprites/traps/spear.png" id="1_uf2bl"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_efxkm"]
+[ext_resource type="AudioStream" uid="uid://dvtksn4nt2gn" path="res://assets/audio/spear_trap.wav" id="3_efxkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xyot"]
 size = Vector2(6, 64)
@@ -34,6 +35,20 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Audio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_4xyot"]
@@ -86,3 +101,9 @@ shape = SubResource("RectangleShape2D_4xyot")
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_4xyot")
 autoplay = &"ATTACK"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=2013234344]
+stream = ExtResource("3_efxkm")
+volume_db = -3.0
+max_distance = 640.0
+bus = &"Sounds"

@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bptd5cds8hmt3" path="res://assets/sprites/traps/spike_ball.png" id="1_82akx"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_x1r4e"]
+[ext_resource type="AudioStream" uid="uid://bnef41lffmceb" path="res://assets/audio/spike_trap.wav" id="3_jynpk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xyot"]
 size = Vector2(16, 12)
@@ -22,6 +23,20 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(0, 0), Vector2(16, 0), Vector2(0, 0)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Audio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.25),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_4xyot"]
@@ -61,3 +76,9 @@ shape = SubResource("RectangleShape2D_4xyot")
 callback_mode_process = 0
 libraries/ = SubResource("AnimationLibrary_4xyot")
 autoplay = &"PATROL"
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="." unique_id=127433065]
+stream = ExtResource("3_jynpk")
+volume_db = -3.0
+max_distance = 640.0
+bus = &"Sounds"

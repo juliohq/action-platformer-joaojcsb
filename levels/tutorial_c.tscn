@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_j4bvk"]
 [ext_resource type="PackedScene" uid="uid://c548n2rt8loy3" path="res://scenes/spear.tscn" id="5_oya27"]
 [ext_resource type="AudioStream" uid="uid://caelpyhl66nqs" path="res://assets/music/tutorial.ogg" id="6_oya27"]
+[ext_resource type="AudioStream" uid="uid://dvxtslqu0axxh" path="res://assets/audio/door_enter.wav" id="8_oya27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w70r"]
 size = Vector2(32, 32)
@@ -78,6 +79,7 @@ position = Vector2(776, 240)
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("3_ovqjk")]
 position = Vector2(1496, 49)
 scene_path = "uid://h1r0431qgxvc"
+audio = ExtResource("8_oya27")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]

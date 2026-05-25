@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c07l1geqq0ysa" path="res://assets/tilesets/tileset_castle.png" id="8_ij5a6"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="8_mc1ca"]
 [ext_resource type="PackedScene" uid="uid://sx5ycjlvjdr1" path="res://ui/controls/joypad_button_rt.tscn" id="11_mc1ca"]
+[ext_resource type="AudioStream" uid="uid://dvxtslqu0axxh" path="res://assets/audio/door_enter.wav" id="14_j5lyd"]
 [ext_resource type="AudioStream" uid="uid://caelpyhl66nqs" path="res://assets/music/tutorial.ogg" id="14_p251x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w70r"]
@@ -156,6 +157,7 @@ position = Vector2(824, 112)
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_xrdcv")]
 position = Vector2(880, 112)
 scene_path = "uid://bu73e7772wg54"
+audio = ExtResource("14_j5lyd")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bnef41lffmceb"
-path="res://.godot/imported/static_trap.wav-73d630453deb8e3c9e23986fcd855291.sample"
+path="res://.godot/imported/spike_trap.wav-e6acc20a20e77a19446beb199a1e6bf9.sample"
 
 [deps]
 
-source_file="res://assets/audio/static_trap.wav"
-dest_files=["res://.godot/imported/static_trap.wav-73d630453deb8e3c9e23986fcd855291.sample"]
+source_file="res://assets/audio/spike_trap.wav"
+dest_files=["res://.godot/imported/spike_trap.wav-e6acc20a20e77a19446beb199a1e6bf9.sample"]
 
 [params]
 
