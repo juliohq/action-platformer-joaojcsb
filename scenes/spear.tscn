@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_efxkm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4xyot"]
-size = Vector2(16, 64)
+size = Vector2(6, 64)
 
 [sub_resource type="Animation" id="Animation_nltui"]
 resource_name = "PATROL"
