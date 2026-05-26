@@ -3,7 +3,8 @@ extends Node2D
 
 @export var animator: AnimationPlayer
 @export var player_detector: Area2D
-@export var audio: AudioStreamPlayer
+@export var open_audio: AudioStreamPlayer
+@export var slingshot_audio: AudioStreamPlayer
 
 
 func _ready() -> void:
@@ -13,8 +14,11 @@ func _ready() -> void:
 
 func _player_entered(_body: Node2D) -> void:
 	animator.play("OPEN")
-	audio.play()
+	open_audio.play()
 	await animator.animation_finished
+	
+	# Slingshot audio
+	slingshot_audio.play()
 	
 	# Update orbs
 	Globals.red_orbs = 1
