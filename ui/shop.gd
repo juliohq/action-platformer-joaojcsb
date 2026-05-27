@@ -66,6 +66,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
 		queue_free()
+	elif OS.is_debug_build():
+		if event.is_action_pressed(&"cheat_coins"):
+			Globals.coins += 1000
+			Events.coins_changed.emit()
+			update()
 
 
 func _exit() -> void:
