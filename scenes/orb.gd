@@ -29,11 +29,11 @@ func _physics_process(delta: float) -> void:
 
 func _picked_up() -> void:
 	if orb == Globals.Orb.RED:
-		if Globals.red_orbs >= Globals.RED_ORBS:
+		if Globals.red_orbs >= Globals.default_red_orbs:
 			Globals.max_red_orbs += 1
 		else:
 			Globals.red_orbs += 1
-	elif Globals.blue_orbs >= Globals.BLUE_ORBS:
+	elif Globals.blue_orbs >= Globals.default_blue_orbs:
 		Globals.max_blue_orbs += 1
 	else:
 		Globals.blue_orbs += 1

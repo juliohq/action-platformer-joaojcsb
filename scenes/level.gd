@@ -26,8 +26,8 @@ func _enter_tree() -> void:
 	prints("[level] max health set to", max_health)
 	
 	# Update max orbs
-	var max_red_orbs := Globals.RED_ORBS
-	var max_blue_orbs := Globals.BLUE_ORBS
+	var max_red_orbs := Globals.default_red_orbs
+	var max_blue_orbs := Globals.default_blue_orbs
 	
 	if change_orbs:
 		max_red_orbs = orbs

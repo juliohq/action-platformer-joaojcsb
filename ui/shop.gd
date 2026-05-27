@@ -111,9 +111,9 @@ func _purchased(item: Dictionary) -> void:
 		Globals.Upgrade.HEALTH:
 			Globals.default_player_health += 1
 		Globals.Upgrade.EXTRA_FIRE_ORB:
-			Globals.red_orbs += 1
+			Globals.default_red_orbs += 1
 		Globals.Upgrade.EXTRA_ICE_ORB:
-			Globals.blue_orbs += 1
+			Globals.default_blue_orbs += 1
 		Globals.Upgrade.IMMUNITY:
 			Globals.invincibility_left = 8.0
 		Globals.Upgrade.PARALYZE:

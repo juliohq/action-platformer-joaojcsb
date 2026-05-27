@@ -28,11 +28,11 @@ func update() -> void:
 	if type == Globals.Orb.RED:
 		value = Globals.red_orbs
 		max_value = Globals.max_red_orbs
-		default = Globals.RED_ORBS
+		default = Globals.default_red_orbs
 	else:
 		value = Globals.blue_orbs
 		max_value = Globals.max_blue_orbs
-		default = Globals.BLUE_ORBS
+		default = Globals.default_blue_orbs
 	
 	%Orb.texture_under = [
 		RED_ORB_EMPTY,

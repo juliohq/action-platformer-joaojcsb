@@ -69,14 +69,18 @@ var max_player_health := default_player_health
 var coins := 0
 ## The current orb selected.
 var orb := ORB
+## The default red orbs.
+var default_red_orbs := RED_ORBS
 ## How many red orbs the player has.
-var red_orbs := RED_ORBS
+var red_orbs := default_red_orbs
 ## How many red orbs the player has at max.
-var max_red_orbs := RED_ORBS
+var max_red_orbs := default_red_orbs
+## The default blue orbs.
+var default_blue_orbs := BLUE_ORBS
 ## How many blue orbs the player has.
-var blue_orbs := BLUE_ORBS
+var blue_orbs := default_blue_orbs
 ## How many blue orbs the player has at max.
-var max_blue_orbs := BLUE_ORBS
+var max_blue_orbs := default_blue_orbs
 ## How long enemies will be paralyzed.
 var enemy_paralyze := 0.0
 
@@ -210,10 +214,10 @@ func reset() -> void:
 	max_player_health = default_player_health
 	coins = 0
 	orb = ORB
-	blue_orbs = BLUE_ORBS
-	max_blue_orbs = BLUE_ORBS
-	red_orbs = RED_ORBS
-	max_red_orbs = RED_ORBS
+	red_orbs = default_red_orbs
+	max_red_orbs = default_red_orbs
+	blue_orbs = default_blue_orbs
+	max_blue_orbs = default_blue_orbs
 
 
 func _process(delta: float) -> void:
