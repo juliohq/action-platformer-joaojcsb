@@ -115,7 +115,7 @@ func _purchased(item: Dictionary) -> void:
 		Globals.Upgrade.EXTRA_ICE_ORB:
 			Globals.default_blue_orbs += 1
 		Globals.Upgrade.IMMUNITY:
-			Globals.invincibility_left = 8.0
+			Events.player_invincible.emit(8.0)
 		Globals.Upgrade.PARALYZE:
 			Globals.enemy_paralyze = 20.0
 

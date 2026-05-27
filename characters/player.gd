@@ -66,6 +66,8 @@ var freeze_time := 0.0
 
 
 func _ready() -> void:
+	Events.player_invincible.connect(_player_invincible)
+	
 	fall_death.dead.connect(_fall_death)
 	
 	# Start invincibility
@@ -396,3 +398,7 @@ func heal() -> bool:
 		return true
 	
 	return false
+
+
+func _player_invincible(time: float) -> void:
+	invincibility_left = time
