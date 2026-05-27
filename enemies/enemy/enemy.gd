@@ -46,7 +46,9 @@ func _physics_process(delta: float) -> void:
 	velocity.x = direction * movement_speed
 	
 	# Freeze time
-	if freeze_time > 0.0:
+	if Globals.enemy_paralyze > 0.0:
+		_freeze()
+	elif freeze_time > 0.0:
 		freeze_time -= delta
 		_freeze()
 	else:
