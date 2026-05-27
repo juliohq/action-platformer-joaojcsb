@@ -15,7 +15,7 @@ extends Node2D
 
 func _enter_tree() -> void:
 	# Update max health
-	var max_health := Globals.PLAYER_HEALTH
+	var max_health := Globals.default_player_health
 	
 	if change_health:
 		max_health = health

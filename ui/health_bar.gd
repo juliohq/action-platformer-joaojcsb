@@ -17,7 +17,7 @@ func update() -> void:
 	%Count.text = str(Globals.player_health)
 	%MaxCount.text = str(Globals.max_player_health)
 	
-	if Globals.max_player_health > Globals.PLAYER_HEALTH:
+	if Globals.max_player_health > Globals.default_player_health:
 		%MaxCount.label_settings = LABEL_SETTINGS_GREEN
 	else:
 		%MaxCount.label_settings = LABEL_SETTINGS_NORMAL
