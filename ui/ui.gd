@@ -55,7 +55,7 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		add_child(PAUSE.instantiate())
 	elif event is InputEventKey and event.is_pressed():
-		if event.physical_keycode == KEY_1:
+		if event.physical_keycode == KEY_TAB:
 			get_viewport().set_input_as_handled()
 			var shop := preload("res://ui/shop.tscn").instantiate()
 			add_child(shop)
