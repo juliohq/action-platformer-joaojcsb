@@ -94,6 +94,10 @@ func _ready() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):
 		get_tree().quit()
+	elif OS.is_debug_build():
+		if event.is_action_pressed(&"cheat_coins"):
+			coins += 1000
+			Events.coins_changed.emit()
 
 
 ## Saves the game state to the given file path.
