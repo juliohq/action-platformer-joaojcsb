@@ -419,7 +419,7 @@ libraries/ = SubResource("AnimationLibrary_ngp6l")
 [node name="Shoot" parent="." unique_id=1230341981 node_paths=PackedStringArray("root", "sprite") instance=ExtResource("12_e0dxa")]
 position = Vector2(0, -8)
 scene = ExtResource("4_minlu")
-fire_rate = 0.3
+fire_rate = 0.16
 root = NodePath("..")
 sprite = NodePath("../Sprite")
 
