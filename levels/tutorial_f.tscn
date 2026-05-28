@@ -79,5 +79,8 @@ drag_vertical_enabled = true
 drag_top_margin = 1.0
 drag_bottom_margin = 1.0
 
+[node name="UI" parent="." index="1" unique_id=114827551]
+level_indicator = false
+
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")

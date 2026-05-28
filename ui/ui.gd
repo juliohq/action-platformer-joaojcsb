@@ -5,6 +5,10 @@ const PAUSE := preload("res://ui/pause.tscn")
 const GAME_OVER := preload("res://ui/game_over.tscn")
 const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
 
+@export var level_indicator := true
+@export_range(0, 10, 1, "or_greater") var level := 0
+@export_range(1, 10, 1, "or_greater") var map := 1
+
 
 func _ready() -> void:
 	Events.chest_opened.connect(update)
@@ -14,9 +18,17 @@ func _ready() -> void:
 	
 	update()
 	show()
+	
+	# Level indicator
+	if level_indicator:
+		%Animator.play("LEVEL")
+		await %Animator.animation_finished
+		%Animator.play_backwards("LEVEL")
 
 
 func update() -> void:
+	%Level.text = "%d-%d" % [level, map]
+	
 	if Globals.tutorial >= Globals.Tutorial.BASIC:
 		%HealthBar.modulate = Color.WHITE
 		%Coins.modulate = Color.WHITE

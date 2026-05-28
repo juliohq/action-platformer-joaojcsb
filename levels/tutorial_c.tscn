@@ -102,5 +102,8 @@ limit_bottom = 272
 drag_vertical_enabled = true
 drag_vertical_offset = -0.75
 
+[node name="UI" parent="." index="1" unique_id=114827551]
+level_indicator = false
+
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")
