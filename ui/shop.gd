@@ -114,34 +114,37 @@ func _purchased(item: Dictionary) -> void:
 	# Effect
 	match item.id:
 		Globals.Upgrade.HEALTH:
-			# Permanent change
-			Globals.default_player_health += 1
-			
 			# Update right now
 			if Globals.player_health >= Globals.default_player_health:
 				Globals.max_player_health += 1
 			
 			Globals.player_health += 1
+			
+			# Permanent change
+			Globals.default_player_health += 1
+			
 			Events.player_health_changed.emit()
 		Globals.Upgrade.EXTRA_FIRE_ORB:
-			# Permanent change
-			Globals.default_red_orbs += 1
-			
 			# Update right now
 			if Globals.red_orbs >= Globals.default_red_orbs:
 				Globals.max_red_orbs += 1
 			
 			Globals.red_orbs += 1
+			
+			# Permanent change
+			Globals.default_red_orbs += 1
+			
 			Events.orb_added.emit()
 		Globals.Upgrade.EXTRA_ICE_ORB:
-			# Permanent change
-			Globals.default_blue_orbs += 1
-			
 			# Update right now
 			if Globals.blue_orbs >= Globals.default_blue_orbs:
 				Globals.max_blue_orbs += 1
 			
 			Globals.blue_orbs += 1
+			
+			# Permanent change
+			Globals.default_blue_orbs += 1
+			
 			Events.orb_added.emit()
 		Globals.Upgrade.IMMUNITY:
 			Events.player_invincible.emit(8.0)
