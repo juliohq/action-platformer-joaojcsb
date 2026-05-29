@@ -24,6 +24,7 @@ func _ready() -> void:
 		%Animator.play("LEVEL")
 		await %Animator.animation_finished
 		%Animator.play_backwards("LEVEL")
+		%Animator.seek(0.5)
 
 
 func update() -> void:

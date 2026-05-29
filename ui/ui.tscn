@@ -14,7 +14,7 @@
 
 [sub_resource type="Animation" id="Animation_ay4pc"]
 resource_name = "LEVEL"
-length = 4.0
+length = 2.0
 step = 0.017857144
 tracks/0/type = "value"
 tracks/0/imported = false
