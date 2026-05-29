@@ -200,8 +200,9 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 	# Orb drop and die logic
 	if Globals.orb == Globals.Orb.RED:
 		# Drop red orb
-		if Globals.max_red_orbs >= Globals.default_red_orbs:
+		if Globals.max_red_orbs > Globals.default_red_orbs:
 			Globals.max_red_orbs -= 1
+			prints("[player] max red orbs:", Globals.max_red_orbs)
 			
 			spawn_orb(RED_ORB)
 			prints("[player] red orb dropped")
@@ -212,14 +213,16 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 			Globals.red_orbs -= 1
 			spawn_orb(RED_ORB)
 			prints("[player] red orb dropped")
+			prints("[player] red orbs:", Globals.red_orbs)
 			
 			# Hit state
 			state_machine.current_state = hit_state
 		else:
 			die(false)
 	# Drop blue orb
-	elif Globals.max_blue_orbs >= Globals.default_blue_orbs:
+	elif Globals.max_blue_orbs > Globals.default_blue_orbs:
 		Globals.max_blue_orbs -= 1
+		prints("[player] max blue orbs:", Globals.max_blue_orbs)
 		
 		spawn_orb(BLUE_ORB)
 		prints("[player] blue orb dropped")
@@ -230,6 +233,7 @@ func hit(_damage: int, _knockback_direction: float) -> void:
 		Globals.blue_orbs -= 1
 		spawn_orb(BLUE_ORB)
 		prints("[player] blue orb dropped")
+		prints("[player] blue orbs:", Globals.red_orbs)
 		
 		# Hit state
 		state_machine.current_state = hit_state
