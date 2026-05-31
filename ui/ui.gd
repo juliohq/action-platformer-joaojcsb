@@ -4,6 +4,7 @@ extends CanvasLayer
 const PAUSE := preload("res://ui/pause.tscn")
 const GAME_OVER := preload("res://ui/game_over.tscn")
 const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
+const SHOP := preload("res://ui/shop.tscn")
 
 @export var level_indicator := true
 @export_range(0, 10, 1, "or_greater") var level := 0
@@ -15,6 +16,7 @@ func _ready() -> void:
 	Events.skill_one_used.connect(update)
 	Events.game_over.connect(_game_over)
 	Events.orb_added.connect(_orb_added)
+	Events.shop_entered.connect(_shop_entered)
 	
 	update()
 	show()
@@ -86,3 +88,7 @@ func _orb_added() -> void:
 		Globals.tutorial = Globals.Tutorial.SKILL_TWO
 		update()
 		add_child(SKILL_TWO_PROMPTS.instantiate())
+
+
+func _shop_entered() -> void:
+	add_child(SHOP.instantiate())

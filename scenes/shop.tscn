@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b75883gsrc5he"]
+
+[ext_resource type="Script" uid="uid://dylrs3ynuxg02" path="res://scenes/shop.gd" id="1_lx5au"]
+[ext_resource type="Texture2D" uid="uid://dggfasa45gwkk" path="res://assets/sprites/shop.png" id="2_xfvoa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfvoa"]
+size = Vector2(32, 32)
+
+[node name="Shop" type="Node2D" unique_id=1148339079 node_paths=PackedStringArray("player_detector")]
+script = ExtResource("1_lx5au")
+player_detector = NodePath("PlayerDetector")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=1926841447]
+texture = ExtResource("2_xfvoa")
+offset = Vector2(0, -16)
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=347747721]
+
+[node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1234493683]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_xfvoa")

@@ -39,6 +39,8 @@ signal player_health_changed()
 signal player_hit(effect: Node2D)
 ## Sets the player invincible for some time.
 signal player_invincible(time: float)
+## Emitted when the player enters the shop.
+signal shop_entered()
 ## Emitted when the game over screen is shown.
 signal game_over()
 ## Emitted when the game finished screen is shown.
