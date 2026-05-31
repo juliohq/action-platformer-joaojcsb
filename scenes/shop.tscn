@@ -15,6 +15,7 @@ texture = ExtResource("2_xfvoa")
 offset = Vector2(0, -16)
 
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=347747721]
+collision_layer = 0
 
 [node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1234493683]
 position = Vector2(0, -16)
