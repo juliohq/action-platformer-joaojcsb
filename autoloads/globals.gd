@@ -59,6 +59,9 @@ const GIANT_ICE_ORB_COST := 2
 ## The current language code.
 var language := "en"
 
+## The current player.
+var player: CharacterBody2D
+
 ## The default player health.
 var default_player_health := PLAYER_HEALTH
 ## The player health (HP).

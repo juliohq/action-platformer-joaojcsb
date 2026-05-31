@@ -53,3 +53,4 @@ func _ready() -> void:
 	Events.orb_dropped.connect(world.add_child, CONNECT_DEFERRED)
 	Events.loot_dropped.connect(world.add_child, CONNECT_DEFERRED)
 	Events.player_hit.connect(world.add_child)
+	Events.eagle_spawned.connect(world.add_child)

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="3_wl5ax"]
 [ext_resource type="PackedScene" uid="uid://drjiyaocwe2vj" path="res://ui/health_bar.tscn" id="4_obcwv"]
 [ext_resource type="PackedScene" uid="uid://bciush7d0mdcn" path="res://ui/coins.tscn" id="4_pa1oa"]
+[ext_resource type="PackedScene" uid="uid://bufopgo74ospp" path="res://ui/boss_health_bar.tscn" id="5_hrmpd"]
 [ext_resource type="PackedScene" uid="uid://yevle2dgfxvl" path="res://ui/orb_selector.tscn" id="6_bo1jx"]
 [ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/power.tscn" id="8_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://x3tvfobiys7q" path="res://assets/ui/level_ui.png" id="9_ay4pc"]
@@ -122,11 +123,9 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Stats" type="VBoxContainer" parent="Main/Margin" unique_id=712035520]
+[node name="BossHealthBar" parent="Main/Margin" unique_id=1845273101 instance=ExtResource("5_hrmpd")]
+visible = false
 layout_mode = 2
-size_flags_horizontal = 0
-size_flags_vertical = 0
-theme_override_constants/separation = 0
 
 [node name="Borderless" type="MarginContainer" parent="Main" unique_id=776793855]
 layout_mode = 1

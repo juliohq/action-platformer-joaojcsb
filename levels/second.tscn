@@ -180,7 +180,7 @@ position = Vector2(-144, 480)
 
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_1hb53")]
 position = Vector2(848, 512)
-scene_path = "uid://d3emagiip7vi6"
+scene_path = "uid://rqjrj8e0yrhi"
 
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=92257102]
 shape = SubResource("RectangleShape2D_1hb53")

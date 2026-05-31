@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bufopgo74ospp"]
+
+[ext_resource type="Texture2D" uid="uid://3t81newcdb3g" path="res://assets/ui/boss_health_bar_bg.png" id="1_lekdr"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_rrrhm"]
+[ext_resource type="Texture2D" uid="uid://cw3v87h4wn520" path="res://assets/ui/boss_health_bar_over.png" id="2_8e5kh"]
+[ext_resource type="Texture2D" uid="uid://ls27dd1iddri" path="res://assets/ui/boss_health_bar_fill.png" id="3_rrrhm"]
+[ext_resource type="Script" uid="uid://uougrlh23hfo" path="res://ui/boss_health_bar.gd" id="4_8e5kh"]
+
+[node name="BossHealthBar" type="TextureProgressBar" unique_id=1845273101]
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("1_rrrhm")
+texture_under = ExtResource("1_lekdr")
+texture_over = ExtResource("2_8e5kh")
+texture_progress = ExtResource("3_rrrhm")
+script = ExtResource("4_8e5kh")

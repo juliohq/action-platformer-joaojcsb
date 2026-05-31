@@ -70,6 +70,9 @@ func _ready() -> void:
 	
 	fall_death.dead.connect(_fall_death)
 	
+	# Register player
+	Globals.player = self
+	
 	# Start invincibility
 	if invincibility > invincibility_left:
 		invincibility_left = invincibility
