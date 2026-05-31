@@ -236,6 +236,7 @@ offset = Vector2(0, -8)
 hframes = 2
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
+visible = false
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_wa0eo")
 
@@ -243,12 +244,14 @@ shape = SubResource("CircleShape2D_wa0eo")
 libraries/ = SubResource("AnimationLibrary_6dppi")
 
 [node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("5_ycucg")]
+visible = false
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=743560867]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_8uprq")
 
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=1621230065]
+visible = false
 collision_layer = 0
 
 [node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=773752437]
@@ -256,6 +259,7 @@ position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_77a18")
 
 [node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("6_ljv7j")]
+visible = false
 left = NodePath("Left")
 right = NodePath("Right")
 ground_left = NodePath("GroundLeft")
