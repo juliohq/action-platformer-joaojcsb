@@ -127,12 +127,12 @@ func _purchased(item: Dictionary) -> void:
 		Globals.Upgrade.EXTRA_FIRE_ORB:
 			Globals.default_red_orbs += 1
 			Globals.max_red_orbs += 1
-			Globals.red_orbs = Globals.max_red_orbs
+			Globals.red_orbs += 1
 			Events.orb_added.emit()
 		Globals.Upgrade.EXTRA_ICE_ORB:
 			Globals.default_blue_orbs += 1
 			Globals.max_blue_orbs += 1
-			Globals.blue_orbs = Globals.max_red_orbs
+			Globals.blue_orbs += 1
 			Events.orb_added.emit()
 		Globals.Upgrade.IMMUNITY:
 			Events.player_invincible.emit(8.0)
