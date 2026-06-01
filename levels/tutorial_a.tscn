@@ -27,7 +27,7 @@ stream = ExtResource("14_p251x")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="TutorialA" unique_id=1054854771 instance=ExtResource("1_7lmnm")]
-change_stage = true
+change_tutorial_stage = true
 change_orbs = true
 orbs = 3
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]

@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var change_stage := false
+@export var change_tutorial_stage := false
 @export var tutorial := Globals.Tutorial.BASIC
 @export var change_health := false
 @export_range(1, 10, 1, "or_greater", "suffix:HP") var health := 2
@@ -42,7 +42,7 @@ func _enter_tree() -> void:
 	prints("[level] max orbs set to", max_red_orbs)
 	
 	# Tutorial stage
-	if change_stage:
+	if change_tutorial_stage:
 		Globals.tutorial = tutorial
 
 

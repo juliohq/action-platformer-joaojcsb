@@ -19,7 +19,7 @@ stream = ExtResource("6_n7civ")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="TutorialF" unique_id=1054854771 instance=ExtResource("1_ijfou")]
-change_stage = true
+change_tutorial_stage = true
 tutorial = 4
 change_orbs = true
 orbs = 3
