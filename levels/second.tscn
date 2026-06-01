@@ -185,7 +185,7 @@ scene_path = "uid://d3emagiip7vi6"
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=92257102]
 shape = SubResource("RectangleShape2D_1hb53")
 
-[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="7" unique_id=2136620420]
+[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
 position = Vector2(-304, -8)
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
