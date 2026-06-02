@@ -46,9 +46,9 @@ const PLAYER_HEALTH := 2
 ## The current orb selected.
 const ORB := Orb.RED
 ## How many red orbs the player has.
-const RED_ORBS := 5
+const RED_ORBS := 3
 ## How many blue orbs the player has.
-const BLUE_ORBS := 5
+const BLUE_ORBS := 3
 ## How many orbs a life costs.
 const LIFE_COST := 1
 ## How many orbs the power will cost.

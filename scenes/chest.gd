@@ -21,8 +21,8 @@ func _player_entered(_body: Node2D) -> void:
 	slingshot_audio.play()
 	
 	# Update orbs
-	Globals.red_orbs = 1
-	Globals.blue_orbs = 1
+	Globals.red_orbs = Globals.RED_ORBS
+	Globals.blue_orbs = Globals.BLUE_ORBS
 	Events.orb_added.emit()
 	
 	Globals.tutorial = Globals.Tutorial.SHOOT
