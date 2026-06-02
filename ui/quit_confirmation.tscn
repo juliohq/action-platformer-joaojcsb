@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_f50sj"]
 [ext_resource type="Script" uid="uid://dh186u0f8poan" path="res://ui/quit_confirmation.gd" id="1_r2prd"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_x4orh"]
+[ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="4_0fxcx"]
 
 [node name="QuitConfirmation" type="Control" unique_id=1934372341 node_paths=PackedStringArray("focus_control")]
 process_mode = 3
@@ -60,6 +61,9 @@ focus_next = NodePath("../Cancel")
 focus_previous = NodePath("../Cancel")
 text = "OK"
 
+[node name="ControlHoverTween" parent="Center/Base/Margin/VBox/HBox/Ok" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("4_0fxcx")]
+root = NodePath("..")
+
 [node name="Cancel" type="Button" parent="Center/Base/Margin/VBox/HBox" unique_id=676998247]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -70,6 +74,9 @@ focus_neighbor_bottom = NodePath(".")
 focus_next = NodePath("../Ok")
 focus_previous = NodePath("../Ok")
 text = "CANCEL"
+
+[node name="ControlHoverTween" parent="Center/Base/Margin/VBox/HBox/Cancel" unique_id=434646854 node_paths=PackedStringArray("root") instance=ExtResource("4_0fxcx")]
+root = NodePath("..")
 
 [connection signal="pressed" from="Center/Base/Margin/VBox/HBox/Ok" to="." method="_accept"]
 [connection signal="pressed" from="Center/Base/Margin/VBox/HBox/Cancel" to="." method="_cancel"]

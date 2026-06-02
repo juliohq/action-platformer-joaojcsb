@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bsmnsgq2my6at"]
+
+[ext_resource type="Script" uid="uid://bkce73756v71p" path="res://ui/control_hover_tween.gd" id="1_sgjia"]
+
+[node name="ControlHoverTween" type="Node" unique_id=505721675]
+script = ExtResource("1_sgjia")

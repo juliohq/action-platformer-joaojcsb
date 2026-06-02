@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_3566s"]
 [ext_resource type="Script" uid="uid://bwjj6ca14yqri" path="res://ui/options.gd" id="1_kx1he"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_ohe46"]
+[ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="4_dnk7n"]
 
 [node name="Options" type="Control" unique_id=555513973 node_paths=PackedStringArray("focus_control")]
 process_mode = 3
@@ -113,9 +114,15 @@ alignment = 1
 layout_mode = 2
 text = "RESET"
 
+[node name="ControlHoverTween" parent="Margin/VBox/HBox/Reset" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("4_dnk7n")]
+root = NodePath("..")
+
 [node name="Back" type="Button" parent="Margin/VBox/HBox" unique_id=1709515213]
 layout_mode = 2
 text = "BACK"
+
+[node name="ControlHoverTween" parent="Margin/VBox/HBox/Back" unique_id=1565967636 node_paths=PackedStringArray("root") instance=ExtResource("4_dnk7n")]
+root = NodePath("..")
 
 [connection signal="item_selected" from="Margin/VBox/Options/Languages" to="." method="_language_changed"]
 [connection signal="toggled" from="Margin/VBox/Options/FullscreenValue" to="." method="_fullscreen"]
