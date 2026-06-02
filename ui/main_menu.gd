@@ -1,8 +1,8 @@
 extends Control
 
 
-## Display the project name in the game title field.
-@export var use_project_name := true
+const LEVEL := preload("res://levels/tutorial_a.tscn")
+
 ## The scene to go after pressing the new game button.
 @export var new_game_scene: PackedScene
 ## The parent node to spawn dynamic nodes.
@@ -25,14 +25,6 @@ func _ready() -> void:
 	
 	AudioManager.play(sound, sound_volume, sound_bus)
 	
-	if use_project_name:
-		var project_name: String = ProjectSettings.get_setting_with_override(&"application/config/name")
-		
-		if project_name:
-			%Title.text = project_name
-		else:
-			push_error("The project doesn't have a valid name.")
-	
 	%Version.text = "v%s" % ProjectSettings.get_setting_with_override(&"application/config/version")
 	
 	if is_instance_valid(focus_control):
@@ -41,10 +33,7 @@ func _ready() -> void:
 
 ## Handles the logic when the new game button is pressed. Override to provide custom behavior.
 func _new_game() -> void:
-	if new_game_scene:
-		get_tree().change_scene_to_packed(new_game_scene)
-	else:
-		push_warning("New game logic not implemented!")
+	get_tree().change_scene_to_packed(LEVEL)
 
 
 ## Handles the logic when the load game button is pressed. Override to provide custom behavior.

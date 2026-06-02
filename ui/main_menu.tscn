@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="1_c5kpb"]
 [ext_resource type="Script" uid="uid://dskveuvscr36x" path="res://ui/main_menu.gd" id="1_ecucs"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_gaqaa"]
+[ext_resource type="Texture2D" uid="uid://d11x54l08m421" path="res://splash_screen.png" id="4_arv2f"]
 [ext_resource type="Texture2D" uid="uid://cjqf0n6ycdypk" path="res://assets/ui/play_normal.png" id="4_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_rmr83"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_ei257"]
@@ -24,7 +25,7 @@ grow_vertical = 2
 theme = ExtResource("1_gaqaa")
 script = ExtResource("1_ecucs")
 root = NodePath("UI/Root")
-focus_control = NodePath("UI/Root/Margin/VBox/VBox/NewGame")
+focus_control = NodePath("UI/Root/Margin/VBox/NewGame")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1593758440]
 
@@ -41,53 +42,54 @@ theme = ExtResource("1_gaqaa")
 layout_mode = 1
 color = Color(0, 0, 0, 0.25098)
 
-[node name="Margin" type="MarginContainer" parent="UI/Root" unique_id=227655473]
-unique_name_in_owner = true
+[node name="TitleScreen" type="TextureRect" parent="UI/Root" unique_id=864742384]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 32
-theme_override_constants/margin_top = 32
-theme_override_constants/margin_right = 32
-theme_override_constants/margin_bottom = 32
+texture = ExtResource("4_arv2f")
+expand_mode = 1
 
-[node name="VBox" type="VBoxContainer" parent="UI/Root/Margin" unique_id=1125191389]
-layout_mode = 2
-
-[node name="Title" type="Label" parent="UI/Root/Margin/VBox" unique_id=1689275402]
+[node name="Margin" type="MarginContainer" parent="UI/Root" unique_id=227655473]
 unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "[Game Title]"
-horizontal_alignment = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
 
-[node name="VBox" type="VBoxContainer" parent="UI/Root/Margin/VBox" unique_id=1951096955]
+[node name="VBox" type="VBoxContainer" parent="UI/Root/Margin" unique_id=1951096955]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="NewGame" type="TextureButton" parent="UI/Root/Margin/VBox/VBox" unique_id=1025570377]
+[node name="NewGame" type="TextureButton" parent="UI/Root/Margin/VBox" unique_id=1025570377]
 unique_name_in_owner = true
 layout_mode = 2
 texture_normal = ExtResource("4_p8ri8")
 texture_pressed = ExtResource("5_ubpvv")
 stretch_mode = 3
 
-[node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=82619897]
+[node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox" unique_id=82619897]
 unique_name_in_owner = true
 layout_mode = 2
 text = "LOAD_GAME"
 
-[node name="Options" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=2121327632]
+[node name="Options" type="Button" parent="UI/Root/Margin/VBox" unique_id=2121327632]
 unique_name_in_owner = true
 layout_mode = 2
 text = "OPTIONS"
 
-[node name="Quit" type="Button" parent="UI/Root/Margin/VBox/VBox" unique_id=903234449]
+[node name="Quit" type="Button" parent="UI/Root/Margin/VBox" unique_id=903234449]
 unique_name_in_owner = true
 layout_mode = 2
 text = "QUIT"
