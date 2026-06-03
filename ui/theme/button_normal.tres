@@ -1,8 +1,10 @@
-[gd_resource type="StyleBoxFlat" format=3 uid="uid://cpwqw1cgao8pr"]
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://cpwqw1cgao8pr"]
+
+[ext_resource type="Texture2D" uid="uid://cokhk3gg1a54y" path="res://assets/ui/button.png" id="1_e480k"]
 
 [resource]
-content_margin_left = 4.0
-content_margin_top = 4.0
-content_margin_right = 4.0
-content_margin_bottom = 4.0
-bg_color = Color(0.08, 0.08, 0.08, 1)
+texture = ExtResource("1_e480k")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0

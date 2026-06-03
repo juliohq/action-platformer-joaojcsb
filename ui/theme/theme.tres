@@ -1,22 +1,19 @@
 [gd_resource type="Theme" format=3 uid="uid://cm0anid37hw1i"]
 
-[ext_resource type="StyleBox" uid="uid://c5y0efaaervoh" path="res://ui/theme/button_disabled.tres" id="1_tnfku"]
-[ext_resource type="StyleBox" uid="uid://bsdm8iqy4dg7i" path="res://ui/theme/button_focus.tres" id="2_qdp42"]
-[ext_resource type="StyleBox" uid="uid://deg7y7vgxy1h2" path="res://ui/theme/button_hovered.tres" id="3_nekg7"]
 [ext_resource type="StyleBox" uid="uid://cpwqw1cgao8pr" path="res://ui/theme/button_normal.tres" id="4_mpa1d"]
-[ext_resource type="StyleBox" uid="uid://b7uka510r0bvk" path="res://ui/theme/button_pressed.tres" id="5_mislo"]
 [ext_resource type="FontFile" uid="uid://c0c3124ffeeao" path="res://assets/fonts/pixel_art/m6x11.ttf" id="6_1apww"]
 
 [resource]
 default_font = ExtResource("6_1apww")
-Button/styles/disabled = ExtResource("1_tnfku")
-Button/styles/focus = ExtResource("2_qdp42")
-Button/styles/hover = ExtResource("3_nekg7")
+Button/colors/font_color = Color(0.4745098, 0.23137255, 0.33333334, 1)
+Button/styles/disabled = ExtResource("4_mpa1d")
+Button/styles/focus = ExtResource("4_mpa1d")
+Button/styles/hover = ExtResource("4_mpa1d")
 Button/styles/normal = ExtResource("4_mpa1d")
-Button/styles/pressed = ExtResource("5_mislo")
-CheckButton/styles/disabled = ExtResource("1_tnfku")
-CheckButton/styles/focus = ExtResource("2_qdp42")
-CheckButton/styles/hover = ExtResource("3_nekg7")
-CheckButton/styles/hover_pressed = ExtResource("5_mislo")
+Button/styles/pressed = ExtResource("4_mpa1d")
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
 CheckButton/styles/normal = ExtResource("4_mpa1d")
-CheckButton/styles/pressed = ExtResource("5_mislo")
+CheckButton/styles/pressed = null

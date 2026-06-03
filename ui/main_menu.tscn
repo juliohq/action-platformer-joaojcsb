@@ -4,10 +4,9 @@
 [ext_resource type="Script" uid="uid://dskveuvscr36x" path="res://ui/main_menu.gd" id="1_ecucs"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_gaqaa"]
 [ext_resource type="Texture2D" uid="uid://d11x54l08m421" path="res://splash_screen.png" id="4_arv2f"]
-[ext_resource type="Texture2D" uid="uid://cjqf0n6ycdypk" path="res://assets/ui/play_normal.png" id="4_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_rmr83"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_ei257"]
-[ext_resource type="Texture2D" uid="uid://cws4ul2n0c6ck" path="res://assets/ui/play_pressed.png" id="5_ubpvv"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="6_arv2f"]
 [ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="7_5klac"]
 
@@ -16,7 +15,7 @@ script = ExtResource("5_ei257")
 stream = ExtResource("6_p8ri8")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
-[node name="MainMenu" type="Control" unique_id=212698053 node_paths=PackedStringArray("root", "focus_control")]
+[node name="MainMenu" type="Control" unique_id=212698053 node_paths=PackedStringArray("root")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +25,6 @@ grow_vertical = 2
 theme = ExtResource("1_gaqaa")
 script = ExtResource("1_ecucs")
 root = NodePath("UI/Root")
-focus_control = NodePath("UI/Root/Margin/VBox/NewGame")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1593758440]
 
@@ -59,7 +57,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 164.0
+offset_top = 136.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 4
@@ -73,12 +71,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 3
 alignment = 1
 
-[node name="NewGame" type="TextureButton" parent="UI/Root/Margin/VBox" unique_id=1025570377]
+[node name="NewGame" type="Button" parent="UI/Root/Margin/VBox" unique_id=1794734581]
 unique_name_in_owner = true
 layout_mode = 2
-texture_normal = ExtResource("4_p8ri8")
-texture_pressed = ExtResource("5_ubpvv")
-stretch_mode = 3
+text = "NEW_GAME"
 
 [node name="ControlHoverTween" parent="UI/Root/Margin/VBox/NewGame" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
 root = NodePath("..")
@@ -113,6 +109,7 @@ layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "v0.0.0"
+label_settings = ExtResource("6_arv2f")
 
 [node name="Music" parent="." unique_id=525561170 instance=ExtResource("4_rmr83")]
 stream = SubResource("Resource_ubpvv")
