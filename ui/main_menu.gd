@@ -3,8 +3,6 @@ extends Control
 
 const LEVEL := preload("res://levels/tutorial_a.tscn")
 
-## The scene to go after pressing the new game button.
-@export var new_game_scene: PackedScene
 ## The parent node to spawn dynamic nodes.
 @export var root: Node
 ## A sound to be played once.
