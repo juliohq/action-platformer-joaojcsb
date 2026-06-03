@@ -1,7 +1,7 @@
 extends Control
 
 
-const LEVEL := preload("res://levels/tutorial_a.tscn")
+const PROLOGUE := preload("res://ui/prologue.tscn")
 
 ## The parent node to spawn dynamic nodes.
 @export var root: Node
@@ -31,7 +31,7 @@ func _ready() -> void:
 
 ## Handles the logic when the new game button is pressed. Override to provide custom behavior.
 func _new_game() -> void:
-	get_tree().change_scene_to_packed(LEVEL)
+	get_tree().change_scene_to_packed(PROLOGUE)
 
 
 ## Handles the logic when the load game button is pressed. Override to provide custom behavior.

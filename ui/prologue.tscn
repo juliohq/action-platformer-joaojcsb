@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://beyu3pvot6dx8"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_mjnhf"]
+[ext_resource type="Script" uid="uid://benrx16xmxr" path="res://ui/prologue.gd" id="2_uibyg"]
+
+[node name="Prologue" type="Control" unique_id=1408075729]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mjnhf")
+script = ExtResource("2_uibyg")
+
+[node name="Background" type="ColorRect" parent="." unique_id=236993079]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1615906622]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="Label" parent="Center" unique_id=1167953857]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(350, 0)
+layout_mode = 2
+text = "Finn é um jovem gato que reprovou no teste para conquistar o Estilingue Elemental, a lendária arma carregada pelos guardiões de Purrington. Envergonhado, mas não derrotado, ele recebe uma última chance dos anciões da cidade para provar seu valor e tentar o teste novamente. "
+horizontal_alignment = 1
+autowrap_mode = 3
