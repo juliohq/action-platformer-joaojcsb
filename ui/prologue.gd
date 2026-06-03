@@ -16,7 +16,10 @@ func _ready() -> void:
 	tween.tween_property(%Text, "modulate:a", 1.0, TRANS_DURATION)
 	tween.tween_property(%Text, "modulate:a", 0.0,
 			TRANS_DURATION).set_delay(TEXT_DURATION)
-	tween.tween_callback(_finished)
+	
+	await tween.finished
+	await get_tree().process_frame
+	_finished()
 
 
 func _input(event: InputEvent) -> void:
