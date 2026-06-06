@@ -4,7 +4,7 @@ extends CharacterBody2D
 ## The enemy default health.
 @export_range(1, 10, 1, "or_greater", "suffix:HP") var max_health := 1
 ## How fast the character will move along the X axis.
-@export_range(1, 100, 1, "or_greater", "suffix:px/s") var speed := 64
+@export_range(1, 100, 1, "or_greater", "suffix:px/s") var speed := 80
 @export_category("Nodes")
 @export var sprite: Sprite2D
 
