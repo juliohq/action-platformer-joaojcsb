@@ -1,7 +1,8 @@
 extends Node
 
 
-@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s") var idle_time := 4.0
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var idle_time := 5.0
 @export var top_left: Marker2D
 @export var bottom_left: Marker2D
 @export var top_right: Marker2D
