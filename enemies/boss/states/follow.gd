@@ -9,6 +9,7 @@ const TIME_LEFT := 3.0
 @export var hit: BaseState
 
 var time_left := 0.0
+var tween: Tween
 
 
 func on_enter() -> void:
@@ -17,6 +18,16 @@ func on_enter() -> void:
 	
 	if state_machine._previous_state != hit:
 		time_left = TIME_LEFT
+	
+	# Blink
+	tween = Tweens.blink(pivot, 0.5)
+
+
+func on_exit() -> void:
+	if tween:
+		tween.kill()
+	
+	pivot.modulate = Color.WHITE
 
 
 func on_physics_process(delta: float) -> void:
