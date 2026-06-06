@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6ndva41x3tiv"]
+
+[ext_resource type="Script" uid="uid://vfw5kmmgmni5" path="res://scenes/button_audio.gd" id="1_gfp60"]
+[ext_resource type="AudioStream" uid="uid://dscdi6phhaxqu" path="res://assets/audio/menu_option.wav" id="2_jytn5"]
+[ext_resource type="AudioStream" uid="uid://b7wua8tl86y58" path="res://assets/audio/menu_option_select.wav" id="3_o5cte"]
+
+[node name="ButtonAudio" type="Node" unique_id=406248917]
+script = ExtResource("1_gfp60")
+hover_audio = ExtResource("2_jytn5")
+press_audio = ExtResource("3_o5cte")

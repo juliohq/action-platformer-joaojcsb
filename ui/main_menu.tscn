@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://d11x54l08m421" path="res://splash_screen.png" id="4_arv2f"]
 [ext_resource type="PackedScene" uid="uid://ddt86d6h1b0bc" path="res://autoloads/music_stream_player.tscn" id="4_rmr83"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="5_ei257"]
+[ext_resource type="PackedScene" uid="uid://6ndva41x3tiv" path="res://scenes/button_audio.tscn" id="6_5klac"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="6_arv2f"]
 [ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="7_5klac"]
@@ -79,6 +80,8 @@ text = "NEW_GAME"
 [node name="ControlHoverTween" parent="UI/Root/Margin/VBox/NewGame" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
 root = NodePath("..")
 
+[node name="ButtonAudio" parent="UI/Root/Margin/VBox/NewGame" unique_id=406248917 instance=ExtResource("6_5klac")]
+
 [node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox" unique_id=82619897]
 unique_name_in_owner = true
 layout_mode = 2
@@ -86,6 +89,8 @@ text = "LOAD_GAME"
 
 [node name="ControlHoverTween" parent="UI/Root/Margin/VBox/LoadGame" unique_id=634286395 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
 root = NodePath("..")
+
+[node name="ButtonAudio" parent="UI/Root/Margin/VBox/LoadGame" unique_id=734872424 instance=ExtResource("6_5klac")]
 
 [node name="Options" type="Button" parent="UI/Root/Margin/VBox" unique_id=2121327632]
 unique_name_in_owner = true
@@ -95,6 +100,8 @@ text = "OPTIONS"
 [node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Options" unique_id=1231646147 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
 root = NodePath("..")
 
+[node name="ButtonAudio" parent="UI/Root/Margin/VBox/Options" unique_id=1839163523 instance=ExtResource("6_5klac")]
+
 [node name="Quit" type="Button" parent="UI/Root/Margin/VBox" unique_id=903234449]
 unique_name_in_owner = true
 layout_mode = 2
@@ -102,6 +109,8 @@ text = "QUIT"
 
 [node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Quit" unique_id=1371712617 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
 root = NodePath("..")
+
+[node name="ButtonAudio" parent="UI/Root/Margin/VBox/Quit" unique_id=1190005516 instance=ExtResource("6_5klac")]
 
 [node name="Version" type="Label" parent="UI/Root/Margin" unique_id=572056627]
 unique_name_in_owner = true
