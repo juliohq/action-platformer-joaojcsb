@@ -11,7 +11,7 @@ script = ExtResource("4_vhwuo")
 stream = ExtResource("5_p0ijk")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
-[node name="BossTest" unique_id=1054854771 instance=ExtResource("1_eoj6o")]
+[node name="Boss" unique_id=1054854771 instance=ExtResource("1_eoj6o")]
 metadata/_edit_vertical_guides_ = [-240.0, 240.0]
 metadata/_edit_horizontal_guides_ = [-96.0, 176.0]
 
