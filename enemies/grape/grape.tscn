@@ -193,9 +193,9 @@ audio = NodePath("../../Jump")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Hit" type="Node" parent="StateMachine" unique_id=305459217 node_paths=PackedStringArray("idle", "root", "animator")]
+[node name="Hit" type="Node" parent="StateMachine" unique_id=305459217 node_paths=PackedStringArray("state", "root", "animator")]
 script = ExtResource("10_qkwqw")
-idle = NodePath("../Idle")
+state = NodePath("../Idle")
 audio = ExtResource("12_ru4uc")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
