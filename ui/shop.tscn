@@ -3,6 +3,8 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_1slnd"]
 [ext_resource type="Script" uid="uid://jnkv12ab0vjr" path="res://ui/shop.gd" id="1_foe6g"]
 [ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="2_2v8nf"]
+[ext_resource type="PackedScene" uid="uid://6ndva41x3tiv" path="res://scenes/button_audio.tscn" id="4_e4u7y"]
+[ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="5_t603m"]
 
 [node name="Shop" type="Control" unique_id=1642795089]
 process_mode = 3
@@ -66,3 +68,8 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Sair"
+
+[node name="ControlHoverTween" parent="Margin/VBox/Exit" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("5_t603m")]
+root = NodePath("..")
+
+[node name="ButtonAudio" parent="Margin/VBox/Exit" unique_id=406248917 instance=ExtResource("4_e4u7y")]
