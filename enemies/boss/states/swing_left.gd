@@ -7,6 +7,7 @@ const TIME_LEFT := 0.5
 @export var fly_left: BaseState
 @export var pivot: Node2D
 @export var hit: BaseState
+@export var audio: AudioStreamPlayer
 
 var time_left := 0.0
 
@@ -19,6 +20,10 @@ func on_enter() -> void:
 
 
 func on_physics_process(delta: float) -> void:
+	# Audio
+	if not audio.playing:
+		audio.play()
+	
 	# Flip sprite
 	if root.direction.x > 0.0:
 		pivot.scale.x = -1 if root.sprite_faces_left else 1

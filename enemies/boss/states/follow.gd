@@ -6,6 +6,7 @@ const TIME_LEFT := 3.0
 @export var dive: BaseState
 @export var pivot: Node2D
 @export var hit: BaseState
+@export var audio: AudioStreamPlayer
 
 var time_left := 0.0
 var tween: Tween
@@ -30,6 +31,10 @@ func on_exit() -> void:
 
 func on_physics_process(delta: float) -> void:
 	animator.play("FLY_B")
+	
+	# Audio
+	if not audio.playing:
+		audio.play()
 	
 	# Flip sprite
 	if root.direction.x > 0.0:

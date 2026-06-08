@@ -7,12 +7,14 @@ const SWOOP_END := -1.0
 
 @export var follow: BaseState
 @export var pivot: Node2D
+@export var audio: AudioStreamPlayer
 
 var y := SWOOP_START
 
 
 func on_enter() -> void:
 	root.current_speed = root.charge_speed
+	audio.play()
 	y = SWOOP_START
 
 

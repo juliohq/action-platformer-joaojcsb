@@ -18,6 +18,11 @@
 [ext_resource type="Script" uid="uid://dsv2bn33pd22g" path="res://enemies/boss/states/swoop_right.gd" id="16_thi7d"]
 [ext_resource type="Script" uid="uid://bts04ppvkpxey" path="res://enemies/boss/states/follow.gd" id="16_vtwti"]
 [ext_resource type="Script" uid="uid://bowjcp7do4rcb" path="res://enemies/boss/states/dive.gd" id="17_vtwti"]
+[ext_resource type="AudioStream" uid="uid://0xbmf55awere" path="res://assets/audio/boss_move.wav" id="19_1bvvi"]
+[ext_resource type="AudioStream" uid="uid://dlra8lpbwnk5w" path="res://assets/audio/boss_follow.wav" id="19_2onrd"]
+[ext_resource type="AudioStream" uid="uid://3ep1ghu2fnd5" path="res://assets/audio/boss_attack_1.wav" id="20_wuvvm"]
+[ext_resource type="AudioStream" uid="uid://dx6qvcf5t3p5q" path="res://assets/audio/boss_attack_2.wav" id="21_o1no1"]
+[ext_resource type="AudioStream" uid="uid://cbycmdf2w7fpi" path="res://assets/audio/boss_attack_glide.wav" id="22_u7h5g"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
 radius = 8.0
@@ -645,35 +650,39 @@ pivot = NodePath("../../Pivot")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwingLeft" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("charge_left", "fly_left", "pivot", "hit", "root", "animator")]
+[node name="SwingLeft" type="Node" parent="StateMachine" unique_id=550778227 node_paths=PackedStringArray("charge_left", "fly_left", "pivot", "hit", "audio", "root", "animator")]
 script = ExtResource("9_2tiri")
 charge_left = NodePath("../ChargeLeft")
 fly_left = NodePath("../FlyLeft")
 pivot = NodePath("../../Pivot")
 hit = NodePath("../Hit")
+audio = NodePath("../../Walk")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="ChargeLeft" type="Node" parent="StateMachine" unique_id=982021607 node_paths=PackedStringArray("next_state", "pivot", "root", "animator")]
+[node name="ChargeLeft" type="Node" parent="StateMachine" unique_id=982021607 node_paths=PackedStringArray("next_state", "pivot", "audio", "root", "animator")]
 script = ExtResource("10_b0wi3")
 next_state = NodePath("../SwingRight")
 pivot = NodePath("../../Pivot")
+audio = NodePath("../../Attack1")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwingRight" type="Node" parent="StateMachine" unique_id=1362818909 node_paths=PackedStringArray("charge_right", "fly_right", "pivot", "hit", "root", "animator")]
+[node name="SwingRight" type="Node" parent="StateMachine" unique_id=1362818909 node_paths=PackedStringArray("charge_right", "fly_right", "pivot", "hit", "audio", "root", "animator")]
 script = ExtResource("10_o8os0")
 charge_right = NodePath("../ChargeRight")
 fly_right = NodePath("../FlyRight")
 pivot = NodePath("../../Pivot")
 hit = NodePath("../Hit")
+audio = NodePath("../../Walk")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="ChargeRight" type="Node" parent="StateMachine" unique_id=1865556123 node_paths=PackedStringArray("next_state", "pivot", "root", "animator")]
+[node name="ChargeRight" type="Node" parent="StateMachine" unique_id=1865556123 node_paths=PackedStringArray("next_state", "pivot", "audio", "root", "animator")]
 script = ExtResource("12_02fuc")
 next_state = NodePath("../SwingLeft")
 pivot = NodePath("../../Pivot")
+audio = NodePath("../../Attack1")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
@@ -686,10 +695,11 @@ hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwoopLeft" type="Node" parent="StateMachine" unique_id=2058820546 node_paths=PackedStringArray("follow", "pivot", "root", "animator")]
+[node name="SwoopLeft" type="Node" parent="StateMachine" unique_id=2058820546 node_paths=PackedStringArray("follow", "pivot", "audio", "root", "animator")]
 script = ExtResource("14_m37od")
 follow = NodePath("../Follow")
 pivot = NodePath("../../Pivot")
+audio = NodePath("../../Swoop")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
@@ -702,28 +712,31 @@ hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwoopRight" type="Node" parent="StateMachine" unique_id=675263846 node_paths=PackedStringArray("follow", "pivot", "root", "animator")]
+[node name="SwoopRight" type="Node" parent="StateMachine" unique_id=675263846 node_paths=PackedStringArray("follow", "pivot", "audio", "root", "animator")]
 script = ExtResource("16_thi7d")
 follow = NodePath("../Follow")
 pivot = NodePath("../../Pivot")
+audio = NodePath("../../Swoop")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Follow" type="Node" parent="StateMachine" unique_id=24882117 node_paths=PackedStringArray("dive", "pivot", "hit", "root", "animator")]
+[node name="Follow" type="Node" parent="StateMachine" unique_id=24882117 node_paths=PackedStringArray("dive", "pivot", "hit", "audio", "root", "animator")]
 script = ExtResource("16_vtwti")
 dive = NodePath("../Dive")
 pivot = NodePath("../../Pivot")
 hit = NodePath("../Hit")
+audio = NodePath("../../Follow")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Dive" type="Node" parent="StateMachine" unique_id=2046594153 node_paths=PackedStringArray("fly_left", "fly_right", "pivot", "collision", "hit", "root", "animator")]
+[node name="Dive" type="Node" parent="StateMachine" unique_id=2046594153 node_paths=PackedStringArray("fly_left", "fly_right", "pivot", "collision", "hit", "audio", "root", "animator")]
 script = ExtResource("17_vtwti")
 fly_left = NodePath("../FlyLeft")
 fly_right = NodePath("../FlyRight")
 pivot = NodePath("../../Pivot")
 collision = NodePath("../../Collision")
 hit = NodePath("../Hit")
+audio = NodePath("../../Swoop")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
@@ -731,3 +744,23 @@ animator = NodePath("../../Animator")
 script = ExtResource("11_b5n78")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
+
+[node name="Walk" type="AudioStreamPlayer" parent="." unique_id=144534248]
+stream = ExtResource("19_1bvvi")
+bus = &"Sounds"
+
+[node name="Attack1" type="AudioStreamPlayer" parent="." unique_id=914138198]
+stream = ExtResource("20_wuvvm")
+bus = &"Sounds"
+
+[node name="Swoop" type="AudioStreamPlayer" parent="." unique_id=1639770090]
+stream = ExtResource("22_u7h5g")
+bus = &"Sounds"
+
+[node name="Follow" type="AudioStreamPlayer" parent="." unique_id=148923772]
+stream = ExtResource("19_2onrd")
+bus = &"Sounds"
+
+[node name="Dive" type="AudioStreamPlayer" parent="." unique_id=1911238998]
+stream = ExtResource("21_o1no1")
+bus = &"Sounds"

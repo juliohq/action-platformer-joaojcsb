@@ -9,6 +9,7 @@ const FLY_THRESHOLD := 0
 @export var pivot: Node2D
 @export var collision: CollisionShape2D
 @export var hit: BaseState
+@export var audio: AudioStreamPlayer
 
 var time_left := 0.0
 
@@ -17,6 +18,7 @@ func on_enter() -> void:
 	root.current_speed = root.charge_speed
 	
 	animator.play("DIVE")
+	audio.play()
 	
 	if time_left > 0.0:
 		animator.seek(animator.current_animation_length)

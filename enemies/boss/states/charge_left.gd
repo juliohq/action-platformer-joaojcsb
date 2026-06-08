@@ -3,6 +3,7 @@ extends BaseState
 
 @export var next_state: BaseState
 @export var pivot: Node2D
+@export var audio: AudioStreamPlayer
 
 
 func on_enter() -> void:
@@ -32,3 +33,4 @@ func on_physics_process(_delta: float) -> void:
 				state_machine.current_state = next_state
 		else:
 			animator.play(animation)
+			audio.play()
