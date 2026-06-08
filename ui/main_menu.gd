@@ -23,7 +23,7 @@ func _ready() -> void:
 	
 	AudioManager.play(sound, sound_volume, sound_bus)
 	
-	%Version.text = "v%s" % ProjectSettings.get_setting_with_override(&"application/config/version")
+	%Version.text = ProjectSettings.get_setting_with_override(&"application/config/version")
 	
 	if is_instance_valid(focus_control):
 		focus_control.grab_focus()
