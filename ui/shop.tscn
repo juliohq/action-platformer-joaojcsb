@@ -69,7 +69,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 text = "Sair"
 
-[node name="ControlHoverTween" parent="Margin/VBox/Exit" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("5_t603m")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/Exit" unique_id=505721675 instance=ExtResource("5_t603m")]
 
 [node name="ButtonAudio" parent="Margin/VBox/Exit" unique_id=406248917 instance=ExtResource("4_e4u7y")]
