@@ -8,7 +8,6 @@ const FLY_THRESHOLD := 0
 @export var fly_right: BaseState
 @export var pivot: Node2D
 @export var collision: CollisionShape2D
-@export var hit_box: CollisionShape2D
 @export var hit: BaseState
 
 var time_left := 0.0
@@ -16,7 +15,6 @@ var time_left := 0.0
 
 func on_enter() -> void:
 	root.current_speed = root.charge_speed
-	hit_box.disabled = false
 	
 	animator.play("DIVE")
 	

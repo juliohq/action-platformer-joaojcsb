@@ -6,7 +6,6 @@ const TIME_LEFT := 1.0
 @export var swoop_left: BaseState
 @export var pivot: Node2D
 @export var collision: CollisionShape2D
-@export var hit_box: CollisionShape2D
 @export var hit: BaseState
 
 var time_left := 0.0
@@ -15,7 +14,6 @@ var time_left := 0.0
 func on_enter() -> void:
 	root.current_speed = root.movement_speed
 	collision.disabled = true
-	hit_box.disabled = true
 	root.gravity_enabled = false
 	
 	if state_machine._previous_state != hit:

@@ -7,14 +7,12 @@ const SWOOP_END := -1.0
 
 @export var follow: BaseState
 @export var pivot: Node2D
-@export var hit_box: CollisionShape2D
 
 var y := SWOOP_START
 
 
 func on_enter() -> void:
 	root.current_speed = root.charge_speed
-	hit_box.disabled = false
 	y = SWOOP_START
 
 

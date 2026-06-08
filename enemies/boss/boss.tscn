@@ -677,58 +677,52 @@ pivot = NodePath("../../Pivot")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="FlyLeft" type="Node" parent="StateMachine" unique_id=1008526332 node_paths=PackedStringArray("swoop_left", "pivot", "collision", "hit_box", "hit", "root", "animator")]
+[node name="FlyLeft" type="Node" parent="StateMachine" unique_id=1008526332 node_paths=PackedStringArray("swoop_left", "pivot", "collision", "hit", "root", "animator")]
 script = ExtResource("13_02fuc")
 swoop_left = NodePath("../SwoopLeft")
 pivot = NodePath("../../Pivot")
 collision = NodePath("../../Collision")
-hit_box = NodePath("../../HitBox/Collision")
 hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwoopLeft" type="Node" parent="StateMachine" unique_id=2058820546 node_paths=PackedStringArray("follow", "pivot", "hit_box", "root", "animator")]
+[node name="SwoopLeft" type="Node" parent="StateMachine" unique_id=2058820546 node_paths=PackedStringArray("follow", "pivot", "root", "animator")]
 script = ExtResource("14_m37od")
 follow = NodePath("../Follow")
 pivot = NodePath("../../Pivot")
-hit_box = NodePath("../../HitBox/Collision")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="FlyRight" type="Node" parent="StateMachine" unique_id=1209307404 node_paths=PackedStringArray("swoop_right", "pivot", "collision", "hit_box", "hit", "root", "animator")]
+[node name="FlyRight" type="Node" parent="StateMachine" unique_id=1209307404 node_paths=PackedStringArray("swoop_right", "pivot", "collision", "hit", "root", "animator")]
 script = ExtResource("15_p1sap")
 swoop_right = NodePath("../SwoopRight")
 pivot = NodePath("../../Pivot")
 collision = NodePath("../../Collision")
-hit_box = NodePath("../../HitBox/Collision")
 hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="SwoopRight" type="Node" parent="StateMachine" unique_id=675263846 node_paths=PackedStringArray("follow", "pivot", "hit_box", "root", "animator")]
+[node name="SwoopRight" type="Node" parent="StateMachine" unique_id=675263846 node_paths=PackedStringArray("follow", "pivot", "root", "animator")]
 script = ExtResource("16_thi7d")
 follow = NodePath("../Follow")
 pivot = NodePath("../../Pivot")
-hit_box = NodePath("../../HitBox/Collision")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Follow" type="Node" parent="StateMachine" unique_id=24882117 node_paths=PackedStringArray("dive", "pivot", "hit_box", "hit", "root", "animator")]
+[node name="Follow" type="Node" parent="StateMachine" unique_id=24882117 node_paths=PackedStringArray("dive", "pivot", "hit", "root", "animator")]
 script = ExtResource("16_vtwti")
 dive = NodePath("../Dive")
 pivot = NodePath("../../Pivot")
-hit_box = NodePath("../../HitBox/Collision")
 hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
 
-[node name="Dive" type="Node" parent="StateMachine" unique_id=2046594153 node_paths=PackedStringArray("fly_left", "fly_right", "pivot", "collision", "hit_box", "hit", "root", "animator")]
+[node name="Dive" type="Node" parent="StateMachine" unique_id=2046594153 node_paths=PackedStringArray("fly_left", "fly_right", "pivot", "collision", "hit", "root", "animator")]
 script = ExtResource("17_vtwti")
 fly_left = NodePath("../FlyLeft")
 fly_right = NodePath("../FlyRight")
 pivot = NodePath("../../Pivot")
 collision = NodePath("../../Collision")
-hit_box = NodePath("../../HitBox/Collision")
 hit = NodePath("../Hit")
 root = NodePath("../..")
 animator = NodePath("../../Animator")
