@@ -82,7 +82,11 @@ top_right = NodePath("../References/EagleTopRight")
 bottom_right = NodePath("../References/EagleBottomRight")
 
 [node name="UI" parent="." index="1" unique_id=114827551]
-level_indicator = false
+level_indicator = true
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_glam7")
+play_after = 2.5
+
+[node name="Audio" parent="." index="3" unique_id=1212503331]
+enabled = true

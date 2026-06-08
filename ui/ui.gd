@@ -6,7 +6,7 @@ const GAME_OVER := preload("res://ui/game_over.tscn")
 const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
 const SHOP := preload("res://ui/shop.tscn")
 
-@export var level_indicator := true
+@export var level_indicator := false
 @export_range(0, 10, 1, "or_greater") var level := 0
 @export_range(1, 10, 1, "or_greater") var map := 1
 
