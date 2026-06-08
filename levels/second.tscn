@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2yeta50a11w" path="res://scenes/teleport.tscn" id="7_1hb53"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1hb53"]
-size = Vector2(96, 32)
+size = Vector2(32, 32)
 
 [sub_resource type="Resource" id="Resource_7p336"]
 script = ExtResource("3_k7yc0")
@@ -179,7 +179,7 @@ position = Vector2(-224, 480)
 position = Vector2(-144, 480)
 
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_1hb53")]
-position = Vector2(848, 512)
+position = Vector2(-304, 464)
 scene_path = "uid://rcvxl8x61445"
 
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=92257102]
