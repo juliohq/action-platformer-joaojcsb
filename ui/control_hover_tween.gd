@@ -1,8 +1,10 @@
 extends Node
 
 
-## The parent control to be animated.
-@export var root: Control
+## Tween on focus events.
+@export var focus_enabled := true
+## Tween on mouse events.
+@export var mouse_enabled := true
 ## The ease type to be used.
 @export var ease_type := Tween.EaseType.EASE_IN_OUT
 ## The transition type to be used.
@@ -19,15 +21,23 @@ var rotation_amount := 0.08726
 ## The amount of scale.
 @export var scale_amount := Vector2(1.1, 1.1)
 
+## The current tween used.
 var tween: Tween
+
+@onready var parent: Control = get_parent()
 
 
 func _ready() -> void:
-	root.mouse_entered.connect(_mouse_entered)
-	root.mouse_exited.connect(_mouse_exited)
+	if focus_enabled:
+		parent.focus_entered.connect(_mouse_entered)
+		parent.focus_exited.connect(_mouse_exited)
+	
+	if mouse_enabled:
+		parent.mouse_entered.connect(_mouse_entered)
+		parent.mouse_exited.connect(_mouse_exited)
 	
 	if from_center:
-		root.pivot_offset_ratio = Vector2.ONE * 0.5
+		parent.pivot_offset_ratio = Vector2.ONE * 0.5
 
 
 func _mouse_entered() -> void:
@@ -40,14 +50,14 @@ func _mouse_entered() -> void:
 		if randf() < 0.5:
 			final_rotation = -rotation_amount
 	
-	tween.tween_property(root, "rotation", final_rotation, duration)
-	tween.tween_property(root, "scale", scale_amount, duration)
+	tween.tween_property(parent, "rotation", final_rotation, duration)
+	tween.tween_property(parent, "scale", scale_amount, duration)
 
 
 func _mouse_exited() -> void:
 	reset_tween()
-	tween.tween_property(root, "rotation", 0.0, duration)
-	tween.tween_property(root, "scale", Vector2.ONE, duration)
+	tween.tween_property(parent, "rotation", 0.0, duration)
+	tween.tween_property(parent, "scale", Vector2.ONE, duration)
 
 
 func reset_tween() -> void:

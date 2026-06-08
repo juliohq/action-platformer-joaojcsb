@@ -55,8 +55,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "RESUME"
 
-[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Resume" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("4_foqgb")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Resume" unique_id=505721675 instance=ExtResource("4_foqgb")]
 
 [node name="ButtonAudio" parent="Margin/VBox/Buttons/Resume" unique_id=406248917 instance=ExtResource("5_iri2v")]
 
@@ -65,8 +64,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "OPTIONS"
 
-[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Options" unique_id=1228156279 node_paths=PackedStringArray("root") instance=ExtResource("4_foqgb")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Options" unique_id=1228156279 instance=ExtResource("4_foqgb")]
 
 [node name="ButtonAudio" parent="Margin/VBox/Buttons/Options" unique_id=1215068802 instance=ExtResource("5_iri2v")]
 
@@ -75,8 +73,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "MAIN_MENU"
 
-[node name="ControlHoverTween" parent="Margin/VBox/Buttons/MainMenu" unique_id=1523025997 node_paths=PackedStringArray("root") instance=ExtResource("4_foqgb")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/MainMenu" unique_id=1523025997 instance=ExtResource("4_foqgb")]
 
 [node name="ButtonAudio" parent="Margin/VBox/Buttons/MainMenu" unique_id=1368538406 instance=ExtResource("5_iri2v")]
 
@@ -85,8 +82,7 @@ unique_name_in_owner = true
 layout_mode = 2
 text = "QUIT"
 
-[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Quit" unique_id=353192473 node_paths=PackedStringArray("root") instance=ExtResource("4_foqgb")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Quit" unique_id=353192473 instance=ExtResource("4_foqgb")]
 
 [node name="ButtonAudio" parent="Margin/VBox/Buttons/Quit" unique_id=2089501495 instance=ExtResource("5_iri2v")]
 

@@ -1,6 +1,10 @@
 extends Node
 
 
+## Play audio on focus events.
+@export var focus_enabled := true
+## Play audio on mouse events.
+@export var mouse_enabled := true
 @export var hover_audio: AudioStream
 @export var press_audio: AudioStream
 
@@ -8,7 +12,12 @@ extends Node
 
 
 func _ready() -> void:
-	parent.mouse_entered.connect(_mouse_entered)
+	if focus_enabled:
+		parent.focus_entered.connect(_mouse_entered)
+	
+	if mouse_enabled:
+		parent.mouse_entered.connect(_mouse_entered)
+	
 	parent.pressed.connect(_pressed)
 
 

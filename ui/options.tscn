@@ -16,7 +16,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_ohe46")
 script = ExtResource("1_kx1he")
-focus_control = NodePath("Margin/VBox/Options/Languages")
+focus_control = NodePath("Margin/VBox/HBox/Back")
 
 [node name="Background" parent="." unique_id=1654896986 instance=ExtResource("1_3566s")]
 layout_mode = 1
@@ -115,8 +115,7 @@ alignment = 1
 layout_mode = 2
 text = "RESET"
 
-[node name="ControlHoverTween" parent="Margin/VBox/HBox/Reset" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("4_dnk7n")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/HBox/Reset" unique_id=505721675 instance=ExtResource("4_dnk7n")]
 
 [node name="ButtonAudio" parent="Margin/VBox/HBox/Reset" unique_id=406248917 instance=ExtResource("5_04syq")]
 
@@ -124,8 +123,7 @@ root = NodePath("..")
 layout_mode = 2
 text = "BACK"
 
-[node name="ControlHoverTween" parent="Margin/VBox/HBox/Back" unique_id=1565967636 node_paths=PackedStringArray("root") instance=ExtResource("4_dnk7n")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="Margin/VBox/HBox/Back" unique_id=1565967636 instance=ExtResource("4_dnk7n")]
 
 [node name="ButtonAudio" parent="Margin/VBox/HBox/Back" unique_id=1175553857 instance=ExtResource("5_04syq")]
 

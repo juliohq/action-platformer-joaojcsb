@@ -11,12 +11,14 @@
 [ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="7_5klac"]
 
+[sub_resource type="ButtonGroup" id="ButtonGroup_5klac"]
+
 [sub_resource type="Resource" id="Resource_ubpvv"]
 script = ExtResource("5_ei257")
 stream = ExtResource("6_p8ri8")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
-[node name="MainMenu" type="Control" unique_id=212698053 node_paths=PackedStringArray("root")]
+[node name="MainMenu" type="Control" unique_id=212698053 node_paths=PackedStringArray("root", "focus_control")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +28,7 @@ grow_vertical = 2
 theme = ExtResource("1_gaqaa")
 script = ExtResource("1_ecucs")
 root = NodePath("UI/Root")
+focus_control = NodePath("UI/Root/Margin/VBox/NewGame")
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1593758440]
 
@@ -75,40 +78,44 @@ alignment = 1
 [node name="NewGame" type="Button" parent="UI/Root/Margin/VBox" unique_id=1794734581]
 unique_name_in_owner = true
 layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5klac")
 text = "NEW_GAME"
 
-[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/NewGame" unique_id=505721675 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/NewGame" unique_id=505721675 instance=ExtResource("7_5klac")]
 
 [node name="ButtonAudio" parent="UI/Root/Margin/VBox/NewGame" unique_id=406248917 instance=ExtResource("6_5klac")]
 
 [node name="LoadGame" type="Button" parent="UI/Root/Margin/VBox" unique_id=82619897]
 unique_name_in_owner = true
 layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5klac")
 text = "LOAD_GAME"
 
-[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/LoadGame" unique_id=634286395 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/LoadGame" unique_id=634286395 instance=ExtResource("7_5klac")]
 
 [node name="ButtonAudio" parent="UI/Root/Margin/VBox/LoadGame" unique_id=734872424 instance=ExtResource("6_5klac")]
 
 [node name="Options" type="Button" parent="UI/Root/Margin/VBox" unique_id=2121327632]
 unique_name_in_owner = true
 layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5klac")
 text = "OPTIONS"
 
-[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Options" unique_id=1231646147 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Options" unique_id=1231646147 instance=ExtResource("7_5klac")]
 
 [node name="ButtonAudio" parent="UI/Root/Margin/VBox/Options" unique_id=1839163523 instance=ExtResource("6_5klac")]
 
 [node name="Quit" type="Button" parent="UI/Root/Margin/VBox" unique_id=903234449]
 unique_name_in_owner = true
 layout_mode = 2
+toggle_mode = true
+button_group = SubResource("ButtonGroup_5klac")
 text = "QUIT"
 
-[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Quit" unique_id=1371712617 node_paths=PackedStringArray("root") instance=ExtResource("7_5klac")]
-root = NodePath("..")
+[node name="ControlHoverTween" parent="UI/Root/Margin/VBox/Quit" unique_id=1371712617 instance=ExtResource("7_5klac")]
 
 [node name="ButtonAudio" parent="UI/Root/Margin/VBox/Quit" unique_id=1190005516 instance=ExtResource("6_5klac")]
 
