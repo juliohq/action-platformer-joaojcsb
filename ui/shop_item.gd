@@ -9,12 +9,26 @@ var item := {}
 
 
 func _ready() -> void:
-	%Buy.pressed.connect(_buy)
+	focus_entered.connect(_focus_entered)
+	focus_exited.connect(_focus_exited)
 	
-	%Name.text = item.name
+	%Name.text = "%s ($ %3d)" % [item.name, item.cost]
 	%Description.text = item.description
-	%Buy.text = "Comprar ($ %3d)" % item.cost
 
 
 func _buy() -> void:
 	purchased.emit(item)
+
+
+func _gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		accept_event()
+		_buy()
+
+
+func _focus_entered() -> void:
+	modulate = Color(1.5, 1.5, 1.5)
+
+
+func _focus_exited() -> void:
+	modulate = Color.WHITE

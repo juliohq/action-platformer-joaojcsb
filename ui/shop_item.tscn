@@ -4,8 +4,10 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_x4syg"]
 [ext_resource type="Script" uid="uid://l0pytq3pxh76" path="res://ui/shop_item.gd" id="2_7kxbi"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_lcuxd"]
+[ext_resource type="PackedScene" uid="uid://6ndva41x3tiv" path="res://scenes/button_audio.tscn" id="6_72up7"]
 
 [node name="ShopItem" type="PanelContainer" unique_id=1785370839]
+focus_mode = 2
 theme = ExtResource("1_x4syg")
 theme_override_styles/panel = ExtResource("1_mgmnk")
 script = ExtResource("2_7kxbi")
@@ -20,22 +22,18 @@ theme_override_constants/margin_bottom = 2
 [node name="VBox" type="VBoxContainer" parent="Margin" unique_id=1344225596]
 layout_mode = 2
 
-[node name="HBox" type="HBoxContainer" parent="Margin/VBox" unique_id=945005233]
-layout_mode = 2
-
-[node name="Name" type="Label" parent="Margin/VBox/HBox" unique_id=175497162]
+[node name="Name" type="Label" parent="Margin/VBox" unique_id=175497162]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 label_settings = ExtResource("4_lcuxd")
-
-[node name="Buy" type="Button" parent="Margin/VBox/HBox" unique_id=635071703]
-unique_name_in_owner = true
-layout_mode = 2
-text = "Comprar"
 
 [node name="Description" type="Label" parent="Margin/VBox" unique_id=1884840095]
 unique_name_in_owner = true
 layout_mode = 2
 label_settings = ExtResource("4_lcuxd")
 autowrap_mode = 3
+
+[node name="ButtonAudio" parent="." unique_id=406248917 instance=ExtResource("6_72up7")]
+mouse_enabled = false
+press_enabled = false

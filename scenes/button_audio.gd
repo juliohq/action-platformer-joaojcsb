@@ -5,10 +5,12 @@ extends Node
 @export var focus_enabled := true
 ## Play audio on mouse events.
 @export var mouse_enabled := true
+## Play audio on pressed.
+@export var press_enabled := true
 @export var hover_audio: AudioStream
 @export var press_audio: AudioStream
 
-@onready var parent: Button = get_parent()
+@onready var parent: Control = get_parent()
 
 
 func _ready() -> void:
@@ -18,7 +20,8 @@ func _ready() -> void:
 	if mouse_enabled:
 		parent.mouse_entered.connect(_mouse_entered)
 	
-	parent.pressed.connect(_pressed)
+	if press_enabled:
+		parent.pressed.connect(_pressed)
 
 
 func _mouse_entered() -> void:

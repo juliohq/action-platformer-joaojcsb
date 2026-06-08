@@ -53,6 +53,7 @@ size_flags_vertical = 3
 
 [node name="Scroll" type="ScrollContainer" parent="Margin/VBox/Margin" unique_id=1202552152]
 layout_mode = 2
+follow_focus = true
 vertical_scroll_mode = 3
 scroll_hint_mode = 1
 

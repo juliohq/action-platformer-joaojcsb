@@ -55,6 +55,9 @@ func _ready() -> void:
 		shop_item.purchased.connect(_purchased)
 		%Items.add_child(shop_item)
 	
+	var control: Control = %Items.get_child(0)
+	control.grab_focus()
+	
 	update()
 
 
