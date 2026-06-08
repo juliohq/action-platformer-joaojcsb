@@ -4,11 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://r820y2lx8x7e" path="res://enemies/boss/boss.tscn" id="2_v32xx"]
 [ext_resource type="PackedScene" uid="uid://cvyvvnj0cj0y2" path="res://scenes/eagle_spawner.tscn" id="3_eoj6o"]
 [ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="4_vhwuo"]
-[ext_resource type="AudioStream" uid="uid://sbs2tndfxc63" path="res://assets/music/level_1.ogg" id="5_p0ijk"]
+[ext_resource type="AudioStream" uid="uid://crgcwjduw7ni1" path="res://assets/music/boss.ogg" id="5_3er13"]
 
-[sub_resource type="Resource" id="Resource_7p336"]
+[sub_resource type="Resource" id="Resource_glam7"]
 script = ExtResource("4_vhwuo")
-stream = ExtResource("5_p0ijk")
+stream = ExtResource("5_3er13")
 metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="Boss" unique_id=1054854771 instance=ExtResource("1_eoj6o")]
@@ -85,4 +85,4 @@ bottom_right = NodePath("../References/EagleBottomRight")
 level_indicator = false
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
-stream = SubResource("Resource_7p336")
+stream = SubResource("Resource_glam7")
