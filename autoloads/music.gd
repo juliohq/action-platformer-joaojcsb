@@ -4,6 +4,7 @@ extends AudioStreamPlayer
 ## Plays the given [code]music[/code] resource.
 func play_music(music: MusicStream) -> void:
 	if not music:
+		stream = null
 		return
 	
 	if not music.stream:

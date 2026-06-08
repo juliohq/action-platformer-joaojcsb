@@ -129,3 +129,4 @@ label_settings = ExtResource("6_arv2f")
 
 [node name="Music" parent="." unique_id=525561170 instance=ExtResource("4_rmr83")]
 stream = SubResource("Resource_ubpvv")
+stop_on_exit = true

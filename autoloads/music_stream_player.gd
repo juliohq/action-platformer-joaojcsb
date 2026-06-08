@@ -4,6 +4,7 @@ extends Node
 @export var stream: MusicStream
 @export var autoplay := true
 @export_range(0, 600, 0.01, "or_greater") var play_after := 0.0
+@export var stop_on_exit := false
 
 
 func _ready() -> void:
@@ -12,6 +13,11 @@ func _ready() -> void:
 			await get_tree().create_timer(play_after, false).timeout
 		
 		play()
+
+
+func _exit_tree() -> void:
+	if stop_on_exit:
+		Music.play_music(null)
 
 
 ## Plays the music stream associated with this player.
