@@ -2,21 +2,29 @@ extends Node2D
 
 
 @export var animator: AnimationPlayer
-@export var player_detector: Area2D
+@export var action: Area2D
 @export var open_audio: AudioStreamPlayer
 @export var slingshot_audio: AudioStreamPlayer
 
 
 func _ready() -> void:
 	if Globals.tutorial < Globals.Tutorial.SHOOT:
-		player_detector.body_entered.connect(_player_entered, CONNECT_ONE_SHOT)
+		action.used.connect(_used, CONNECT_ONE_SHOT)
 
 
-func _player_entered(_body: Node2D) -> void:
-	animator.play("OPEN")
+func _used() -> void:
 	open_audio.play()
+	animator.play("OPEN")
+	action.hide()
 	await animator.animation_finished
-	
+	action.show()
+	action.used.connect(get_slingshot, CONNECT_ONE_SHOT)
+
+
+func get_slingshot() -> void:
+	animator.play("GET_SLINGSHOT")
+	action.hide()
+	await animator.animation_finished
 	# Slingshot audio
 	slingshot_audio.play()
 	

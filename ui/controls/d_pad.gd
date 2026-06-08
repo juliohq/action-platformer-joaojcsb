@@ -5,6 +5,7 @@ enum Mode {
 	HORIZONTAL,
 	VERTICAL,
 	DUAL,
+	UP,
 }
 
 @export var mode := Mode.HORIZONTAL
@@ -18,3 +19,5 @@ func _ready() -> void:
 			%Animator.play("HORIZONTAL")
 		Mode.DUAL:
 			%Animator.play("DUAL")
+		Mode.UP:
+			%Animator.play("UP")

@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://tte6yrbms788"]
+
+[ext_resource type="Script" uid="uid://bytoh6xr7b5jo" path="res://scenes/action.gd" id="1_6sgko"]
+[ext_resource type="PackedScene" uid="uid://bdp4jtgaeiiex" path="res://ui/controls/keyboard.tscn" id="2_3jgle"]
+[ext_resource type="PackedScene" uid="uid://bgoo66n8ocuqv" path="res://ui/controls/d_pad.tscn" id="3_3jgle"]
+
+[node name="Action" type="Area2D" unique_id=295301201 node_paths=PackedStringArray("pivot")]
+collision_layer = 0
+script = ExtResource("1_6sgko")
+pivot = NodePath("Pivot")
+
+[node name="Pivot" type="Node2D" parent="." unique_id=1543152043]
+
+[node name="KeyboardQ" parent="Pivot" unique_id=1808728134 instance=ExtResource("2_3jgle")]
+position = Vector2(-16, 0)
+region_enabled = true
+region_rect = Rect2(34, 50, 12, 10)
+
+[node name="DPad" parent="Pivot" unique_id=231084556 instance=ExtResource("3_3jgle")]
+position = Vector2(16, 0)
+mode = 3

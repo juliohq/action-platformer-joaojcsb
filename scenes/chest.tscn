@@ -5,6 +5,24 @@
 [ext_resource type="PackedScene" uid="uid://dmf3nj3vlshkx" path="res://scenes/slingshot.tscn" id="3_gqd3d"]
 [ext_resource type="AudioStream" uid="uid://bodtikahu0w7k" path="res://assets/audio/chest_open.wav" id="4_yue2o"]
 [ext_resource type="AudioStream" uid="uid://cs2hrqynt01dc" path="res://assets/audio/slingshot.wav" id="5_yhylo"]
+[ext_resource type="PackedScene" uid="uid://tte6yrbms788" path="res://scenes/action.tscn" id="6_w02o5"]
+
+[sub_resource type="Animation" id="Animation_w02o5"]
+resource_name = "GET_SLINGSHOT"
+length = 1.0001
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Slingshot:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
 
 [sub_resource type="Animation" id="Animation_oii8l"]
 resource_name = "IDLE"
@@ -23,10 +41,34 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0), Vector2i(4, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Slingshot:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -8)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Slingshot:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05)]
+}
 
 [sub_resource type="Animation" id="Animation_gqd3d"]
 resource_name = "OPEN"
-length = 4.0
+length = 0.50001
 step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -47,10 +89,10 @@ tracks/1/path = NodePath("Slingshot:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5, 3, 4),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1e-05, 1e-05), Vector2(1, 1), Vector2(1, 1), Vector2(1e-05, 1e-05)]
+"values": [Vector2(1e-05, 1e-05), Vector2(1, 1)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -106,6 +148,7 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sy5e1"]
 _data = {
+&"GET_SLINGSHOT": SubResource("Animation_w02o5"),
 &"IDLE": SubResource("Animation_oii8l"),
 &"OPEN": SubResource("Animation_gqd3d"),
 &"RESET": SubResource("Animation_sy5e1")
@@ -114,10 +157,10 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_oii8l"]
 radius = 16.0
 
-[node name="Chest" type="Node2D" unique_id=1858812518 node_paths=PackedStringArray("animator", "player_detector", "open_audio", "slingshot_audio")]
+[node name="Chest" type="Node2D" unique_id=1858812518 node_paths=PackedStringArray("animator", "action", "open_audio", "slingshot_audio")]
 script = ExtResource("1_sy5e1")
 animator = NodePath("Animator")
-player_detector = NodePath("PlayerDetector")
+action = NodePath("Action")
 open_audio = NodePath("Open")
 slingshot_audio = NodePath("GetSlingshot")
 
@@ -132,13 +175,6 @@ vframes = 8
 libraries/ = SubResource("AnimationLibrary_sy5e1")
 autoplay = &"IDLE"
 
-[node name="PlayerDetector" type="Area2D" parent="." unique_id=679447069]
-position = Vector2(0, -8)
-collision_layer = 0
-
-[node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=863576598]
-shape = SubResource("CircleShape2D_oii8l")
-
 [node name="Slingshot" parent="." unique_id=1833899032 instance=ExtResource("3_gqd3d")]
 position = Vector2(0, -8)
 scale = Vector2(1e-05, 1e-05)
@@ -150,3 +186,14 @@ bus = &"Sounds"
 [node name="GetSlingshot" type="AudioStreamPlayer" parent="." unique_id=1147124766]
 stream = ExtResource("5_yhylo")
 bus = &"Sounds"
+
+[node name="Action" parent="." unique_id=295301201 instance=ExtResource("6_w02o5")]
+position = Vector2(0, -8)
+
+[node name="Pivot" parent="Action" index="0" unique_id=1543152043]
+position = Vector2(0, -32)
+
+[node name="Collision" type="CollisionShape2D" parent="Action" unique_id=327290184]
+shape = SubResource("CircleShape2D_oii8l")
+
+[editable path="Action"]
