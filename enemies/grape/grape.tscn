@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cvvw260c07t3" path="res://assets/sprites/grape/grape.png" id="2_yomaf"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="4_65vc3"]
 [ext_resource type="PackedScene" uid="uid://dhsagarn1puuu" path="res://scenes/grape_fireball.tscn" id="4_ru4uc"]
-[ext_resource type="PackedScene" uid="uid://c3ke3l5bltbjl" path="res://scenes/surface_detector.tscn" id="5_mwmim"]
 [ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="6_wci4i"]
 [ext_resource type="PackedScene" uid="uid://kdfa6aginscu" path="res://scenes/red_orb.tscn" id="8_mwmim"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="8_rfd56"]
@@ -149,31 +148,6 @@ collision_layer = 0
 [node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=1082939082]
 position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_8qcrn")
-
-[node name="SurfaceDetector" parent="." unique_id=31137626 node_paths=PackedStringArray("left", "right", "ground_left", "ground_right") instance=ExtResource("5_mwmim")]
-visible = false
-left = NodePath("Left")
-right = NodePath("Right")
-ground_left = NodePath("GroundLeft")
-ground_right = NodePath("GroundRight")
-
-[node name="Left" type="RayCast2D" parent="SurfaceDetector" unique_id=251897372]
-target_position = Vector2(-32, 0)
-collision_mask = 2
-
-[node name="Right" type="RayCast2D" parent="SurfaceDetector" unique_id=1771102934]
-target_position = Vector2(32, 0)
-collision_mask = 2
-
-[node name="GroundLeft" type="RayCast2D" parent="SurfaceDetector" unique_id=1451372453]
-position = Vector2(-16, 0)
-target_position = Vector2(0, 16)
-collision_mask = 2
-
-[node name="GroundRight" type="RayCast2D" parent="SurfaceDetector" unique_id=988281008]
-position = Vector2(16, 0)
-target_position = Vector2(0, 16)
-collision_mask = 2
 
 [node name="LootRedOrb" parent="." unique_id=1730885191 instance=ExtResource("6_wci4i")]
 position = Vector2(0, -8)
