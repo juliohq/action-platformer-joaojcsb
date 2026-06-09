@@ -9,8 +9,8 @@
 [ext_resource type="Script" uid="uid://bqn1lsp0rwngq" path="res://enemies/enemy/states/idle.gd" id="6_u8tuc"]
 [ext_resource type="Script" uid="uid://dp2xdvy458dxr" path="res://enemies/enemy/states/walk.gd" id="7_f76jb"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvtch"]
+size = Vector2(16, 16)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8uprq"]
 radius = 12.0
@@ -28,7 +28,7 @@ hit_box = NodePath("HitBox")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_wa0eo")
+shape = SubResource("RectangleShape2D_dvtch")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 

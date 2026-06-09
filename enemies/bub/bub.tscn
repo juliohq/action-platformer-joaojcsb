@@ -16,8 +16,8 @@
 [ext_resource type="AudioStream" uid="uid://dhtkbw844j3eb" path="res://assets/audio/bub_walk.wav" id="14_bajw6"]
 [ext_resource type="PackedScene" uid="uid://b0mwowfwljxir" path="res://scenes/pause_until_visible.tscn" id="15_k1pc0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k1pc0"]
+size = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_rpvw6"]
 resource_name = "HIT"
@@ -238,7 +238,7 @@ hframes = 2
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 visible = false
 position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_wa0eo")
+shape = SubResource("RectangleShape2D_k1pc0")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 libraries/ = SubResource("AnimationLibrary_6dppi")

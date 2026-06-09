@@ -22,8 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://p0i8l0cfnojw" path="res://assets/audio/ice_dude_spinning.wav" id="16_nhwxd"]
 [ext_resource type="AudioStream" uid="uid://dke6vw7gxbnp8" path="res://assets/audio/ice_dude_hit.wav" id="18_cdp8d"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wa0eo"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eprai"]
+size = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_v1ni5"]
 resource_name = "ATTACK"
@@ -412,7 +412,7 @@ hframes = 30
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=1309838317]
 visible = false
 position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_wa0eo")
+shape = SubResource("RectangleShape2D_eprai")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=626560035]
 libraries/ = SubResource("AnimationLibrary_ngp6l")
