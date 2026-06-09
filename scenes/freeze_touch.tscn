@@ -51,7 +51,7 @@ _data = {
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dr0af"]
-radius = 8.0
+radius = 6.0
 
 [node name="FreezeTouch" type="Node2D" unique_id=799644650 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_ws7j3")

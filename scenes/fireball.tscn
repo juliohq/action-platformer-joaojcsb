@@ -11,7 +11,7 @@
 radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_86oub"]
-radius = 8.0
+radius = 6.0
 
 [node name="Fireball" type="Node2D" unique_id=725092710 node_paths=PackedStringArray("sprite", "hit_box")]
 script = ExtResource("1_52nqi")
