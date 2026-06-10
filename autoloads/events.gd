@@ -41,6 +41,12 @@ signal player_hit(effect: Node2D)
 signal player_invincible(time: float)
 ## Emitted when the player enters the shop.
 signal shop_entered()
+## Emitted when a power has been changed.
+signal power_changed()
+## Emitted when a power has been purchased from the shop.
+signal power_purchased()
+## Emitted when a power has been used.
+signal power_used()
 ## Emitted when boss health has changed.
 signal boss_health_changed(health: int, max_health: int)
 ## Emitted when the eagle spawner has started.

@@ -39,6 +39,7 @@ func update() -> void:
 	handle_tutorial(%BlueOrb, Globals.Tutorial.CHANGE_ORB)
 	handle_tutorial(%AttackA, Globals.Tutorial.SHOOT)
 	handle_tutorial(%AttackB, Globals.Tutorial.SKILL_TWO)
+	handle_tutorial(%Power, Globals.Tutorial.POWERS)
 
 
 func handle_tutorial(control: Control, tutorial: Globals.Tutorial) -> void:

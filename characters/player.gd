@@ -92,6 +92,40 @@ func _unhandled_input(event: InputEvent) -> void:
 		
 		var orb_name: String = Globals.Orb.keys()[Globals.orb]
 		prints("[player] orb changed:", orb_name.capitalize())
+	elif event.is_action_pressed(&"change_power"):
+		if Globals.power == Globals.Power.IMMUNITY:
+			if Globals.power_paralyze <= 0:
+				return
+		elif Globals.power_immunity <= 0:
+			return
+		
+		get_viewport().set_input_as_handled()
+		Globals.power = ((Globals.power + 1) % 2) as Globals.Power
+		Events.power_changed.emit()
+		
+		var power_name: String = Globals.Power.keys()[Globals.power]
+		prints("[player] power changed:", power_name.capitalize())
+	elif event.is_action_pressed(&"power"):
+		if Globals.power == Globals.Power.IMMUNITY:
+			if Globals.power_immunity <= 0:
+				return
+		elif Globals.power_paralyze <= 0:
+			return
+		
+		get_viewport().set_input_as_handled()
+		
+		# Power effect
+		if Globals.power == Globals.Power.IMMUNITY:
+			Globals.power_immunity -= 1
+			Events.player_invincible.emit(8.0)
+		else:
+			Globals.power_paralyze -= 1
+			Globals.enemy_paralyze = 20.0
+		
+		Events.power_used.emit()
+		
+		var power_name: String = Globals.Power.keys()[Globals.power]
+		prints("[player] power used:", power_name.capitalize())
 
 
 func _physics_process(delta: float) -> void:

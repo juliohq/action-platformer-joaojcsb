@@ -24,12 +24,19 @@ enum Tutorial {
 	SKILL_TWO,
 	# Knows how to heal
 	HEAL,
+	# Powers bought from shop
+	POWERS,
 }
 
 enum Upgrade {
 	HEALTH,
 	EXTRA_FIRE_ORB,
 	EXTRA_ICE_ORB,
+	IMMUNITY,
+	PARALYZE,
+}
+
+enum Power {
 	IMMUNITY,
 	PARALYZE,
 }
@@ -55,6 +62,10 @@ const LIFE_COST := 1
 const FIRE_GRENADE_COST := 2
 ## How many orbs the attack will cost.
 const GIANT_ICE_ORB_COST := 2
+## How much power of immunity type the player can have.
+const MAX_POWER_IMMUNITY := 2
+## How much power of paralyze type the player can have.
+const MAX_POWER_PARALYZE := 2
 
 ## The current language code.
 var language := "en"
@@ -84,11 +95,17 @@ var default_blue_orbs := BLUE_ORBS
 var blue_orbs := default_blue_orbs
 ## How many blue orbs the player has at max.
 var max_blue_orbs := default_blue_orbs
+## The current power.
+var power := Power.IMMUNITY
+## How much power immunity the player has.
+var power_immunity := 0
+## How much power paralyze the player has.
+var power_paralyze := 0
 ## How long enemies will be paralyzed.
 var enemy_paralyze := 0.0
 
 # Tutorial toggles
-var tutorial := Tutorial.HEAL
+var tutorial := Tutorial.POWERS
 
 
 func _ready() -> void:
@@ -221,6 +238,9 @@ func reset() -> void:
 	max_red_orbs = default_red_orbs
 	blue_orbs = default_blue_orbs
 	max_blue_orbs = default_blue_orbs
+	power = Power.IMMUNITY
+	power_immunity = 0
+	power_paralyze = 0
 
 
 func _process(delta: float) -> void:

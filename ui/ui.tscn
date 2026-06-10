@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/attack.tscn" id="8_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://x3tvfobiys7q" path="res://assets/ui/level_ui.png" id="9_ay4pc"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="10_bi8hs"]
+[ext_resource type="PackedScene" uid="uid://cjovd74won1qt" path="res://ui/power.tscn" id="12_x7jpl"]
 
 [sub_resource type="Animation" id="Animation_ay4pc"]
 resource_name = "LEVEL"
@@ -156,17 +157,23 @@ theme_override_constants/margin_bottom = 4
 
 [node name="HBox" type="HBoxContainer" parent="Main/Borderless/Top/Base/Margin" unique_id=506808532]
 layout_mode = 2
-theme_override_constants/separation = 16
 
 [node name="HealthBar" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=2135712761 instance=ExtResource("4_obcwv")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="Coins" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=465799691 instance=ExtResource("4_pa1oa")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="OrbSelector" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=385832756 instance=ExtResource("6_bo1jx")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Power" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1141754180 instance=ExtResource("12_x7jpl")]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
@@ -174,19 +181,23 @@ size_flags_horizontal = 3
 [node name="RedOrb" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1733355768 instance=ExtResource("3_vkava")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="BlueOrb" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1785923407 instance=ExtResource("3_vkava")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 type = 1
 
 [node name="AttackA" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=373654465 instance=ExtResource("8_ay4pc")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="AttackB" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1894051662 instance=ExtResource("8_ay4pc")]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
 attack = 1
 
 [node name="Fade" parent="." unique_id=12204861 instance=ExtResource("3_wl5ax")]

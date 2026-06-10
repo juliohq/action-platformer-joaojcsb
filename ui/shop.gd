@@ -96,6 +96,12 @@ func _purchased(item: Dictionary) -> void:
 		Globals.Upgrade.EXTRA_ICE_ORB:
 			if false:
 				return
+		Globals.Upgrade.IMMUNITY:
+			if Globals.power_immunity >= Globals.MAX_POWER_IMMUNITY:
+				return
+		Globals.Upgrade.PARALYZE:
+			if Globals.power_paralyze >= Globals.MAX_POWER_PARALYZE:
+				return
 	
 	print(item)
 	
@@ -138,9 +144,11 @@ func _purchased(item: Dictionary) -> void:
 			Globals.blue_orbs += 1
 			Events.orb_added.emit()
 		Globals.Upgrade.IMMUNITY:
-			Events.player_invincible.emit(8.0)
+			Globals.power_immunity += 1
+			Events.power_purchased.emit()
 		Globals.Upgrade.PARALYZE:
-			Globals.enemy_paralyze = 20.0
+			Globals.power_paralyze += 1
+			Events.power_purchased.emit()
 
 
 func update() -> void:
