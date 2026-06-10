@@ -44,3 +44,4 @@ limit_right = 240
 
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_7p336")
+stop_on_exit = true
