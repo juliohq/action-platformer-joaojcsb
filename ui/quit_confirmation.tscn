@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://dh186u0f8poan" path="res://ui/quit_confirmation.gd" id="1_r2prd"]
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_x4orh"]
 [ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="4_0fxcx"]
+[ext_resource type="StyleBox" uid="uid://cvkfrhiocoolr" path="res://ui/theme/panel.tres" id="4_qbinm"]
+[ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="5_b6orn"]
 [ext_resource type="PackedScene" uid="uid://6ndva41x3tiv" path="res://scenes/button_audio.tscn" id="5_i2f02"]
 
 [node name="QuitConfirmation" type="Control" unique_id=1934372341 node_paths=PackedStringArray("focus_control")]
@@ -31,6 +33,7 @@ grow_vertical = 2
 
 [node name="Base" type="PanelContainer" parent="Center" unique_id=382168868]
 layout_mode = 2
+theme_override_styles/panel = ExtResource("4_qbinm")
 
 [node name="Margin" type="MarginContainer" parent="Center/Base" unique_id=477577611]
 layout_mode = 2
@@ -46,6 +49,7 @@ theme_override_constants/separation = 24
 [node name="Message" type="Label" parent="Center/Base/Margin/VBox" unique_id=1034261352]
 layout_mode = 2
 text = "QUIT_CONFIRMATION"
+label_settings = ExtResource("5_b6orn")
 horizontal_alignment = 1
 
 [node name="HBox" type="HBoxContainer" parent="Center/Base/Margin/VBox" unique_id=532644081]
