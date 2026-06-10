@@ -25,9 +25,9 @@ var jump_buffering := 0.2
 var coyote_buffering := 0.1
 ## How often you can shoot per second.
 @export_range(1, 10, 1, "or_greater", "suffix:units/s") var fire_rate := 2
-## How often you can use the strong power.
+## How often you can use the strong attack.
 @export_range(0.1, 10.0, 0.01, "or_greater", "suffix:s")
-var strong_power_duration := 10.0
+var strong_attack_duration := 10.0
 ## How often you can shoot per second.
 @export_range(0.0, 10.0, 0.01, "or_greater", "suffix:s")
 var invincibility := 2.0
@@ -52,8 +52,8 @@ var coyote_buffer := 0.0
 
 ## The current cooldown.
 var cooldown := 0.0
-## The current strong power cooldown.
-var strong_power_cooldown := 0.0
+## The current strong attack cooldown.
+var strong_attack_cooldown := 0.0
 
 ## Invincibility time left.
 var invincibility_left := 0.0
@@ -118,14 +118,15 @@ func _physics_process(delta: float) -> void:
 	cooldown = move_toward(cooldown, 0.0, delta)
 	update_cooldown_bar()
 	
-	if strong_power_cooldown > 0.0:
-		strong_power_cooldown -= delta
+	if strong_attack_cooldown > 0.0:
+		strong_attack_cooldown -= delta
 		
-		if strong_power_cooldown <= 0.0:
-			strong_power_cooldown = 0.0
-			Events.strong_power_ready.emit()
+		if strong_attack_cooldown <= 0.0:
+			strong_attack_cooldown = 0.0
+			Events.strong_attack_ready.emit()
 	
-	Events.strong_power_cooldown.emit(strong_power_duration - strong_power_cooldown, strong_power_duration)
+	var cooldown_left := strong_attack_duration - strong_attack_cooldown
+	Events.strong_attack_cooldown.emit(cooldown_left, strong_attack_duration)
 	
 	# Invincibility frames
 	if invincibility_left > 0.0:
@@ -308,7 +309,7 @@ func can_shoot() -> bool:
 	if attack == Globals.Attack.A:
 		return true
 	
-	if strong_power_cooldown <= 0.0:
+	if strong_attack_cooldown <= 0.0:
 		if Globals.orb == Globals.Orb.RED:
 			if Globals.red_orbs >= Globals.FIRE_GRENADE_COST:
 				return true
@@ -335,14 +336,14 @@ func shoot() -> void:
 			Events.skill_one_used.emit()
 		else:
 			bullet = FIRE_GRENADE.instantiate()
-			strong_power_cooldown += strong_power_duration
-			Events.strong_power_used.emit()
+			strong_attack_cooldown += strong_attack_duration
+			Events.strong_attack_used.emit()
 	elif attack == Globals.Attack.A:
 		bullet = FREEZE_TOUCH.instantiate()
 	else:
 		bullet = GIANT_ICE_ORB.instantiate()
-		strong_power_cooldown += strong_power_duration
-		Events.strong_power_used.emit()
+		strong_attack_cooldown += strong_attack_duration
+		Events.strong_attack_used.emit()
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x

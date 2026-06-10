@@ -23,12 +23,12 @@ signal orb_added()
 signal orb_dropped(orb)
 ## Emitted when orbs were consumed.
 signal orb_consumed()
-## Emitted when the strong power is used.
-signal strong_power_used()
-## Emitted when the strong power is ready to be used.
-signal strong_power_ready()
-## Emitted when the strong power cooldown changed.
-signal strong_power_cooldown(value, max_value)
+## Emitted when the strong attack is used.
+signal strong_attack_used()
+## Emitted when the strong attack is ready to be used.
+signal strong_attack_ready()
+## Emitted when the strong attack cooldown changed.
+signal strong_attack_cooldown(value, max_value)
 ## Emitted when the game is paused.
 signal game_paused()
 ## Emitted when the game is resumed.

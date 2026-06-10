@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bciush7d0mdcn" path="res://ui/coins.tscn" id="4_pa1oa"]
 [ext_resource type="PackedScene" uid="uid://bufopgo74ospp" path="res://ui/boss_health_bar.tscn" id="5_hrmpd"]
 [ext_resource type="PackedScene" uid="uid://yevle2dgfxvl" path="res://ui/orb_selector.tscn" id="6_bo1jx"]
-[ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/power.tscn" id="8_ay4pc"]
+[ext_resource type="PackedScene" uid="uid://ctmdpq50rss8g" path="res://ui/attack.tscn" id="8_ay4pc"]
 [ext_resource type="Texture2D" uid="uid://x3tvfobiys7q" path="res://assets/ui/level_ui.png" id="9_ay4pc"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="10_bi8hs"]
 
@@ -180,11 +180,11 @@ unique_name_in_owner = true
 layout_mode = 2
 type = 1
 
-[node name="PowerA" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=373654465 instance=ExtResource("8_ay4pc")]
+[node name="AttackA" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=373654465 instance=ExtResource("8_ay4pc")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="PowerB" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1894051662 instance=ExtResource("8_ay4pc")]
+[node name="AttackB" parent="Main/Borderless/Top/Base/Margin/HBox" unique_id=1894051662 instance=ExtResource("8_ay4pc")]
 unique_name_in_owner = true
 layout_mode = 2
 attack = 1

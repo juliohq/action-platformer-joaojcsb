@@ -55,14 +55,14 @@ func update() -> void:
 		%BlueOrb.modulate = Color.TRANSPARENT
 	
 	if Globals.tutorial >= Globals.Tutorial.SHOOT:
-		%PowerA.modulate = Color.WHITE
+		%AttackA.modulate = Color.WHITE
 	else:
-		%PowerA.modulate = Color.TRANSPARENT
+		%AttackA.modulate = Color.TRANSPARENT
 	
 	if Globals.tutorial >= Globals.Tutorial.SKILL_TWO:
-		%PowerB.modulate = Color.WHITE
+		%AttackB.modulate = Color.WHITE
 	else:
-		%PowerB.modulate = Color.TRANSPARENT
+		%AttackB.modulate = Color.TRANSPARENT
 
 
 func _input(event: InputEvent) -> void:

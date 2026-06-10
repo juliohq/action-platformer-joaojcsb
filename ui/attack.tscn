@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ctmdpq50rss8g"]
 
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_p5ps0"]
-[ext_resource type="Script" uid="uid://dewcmxa4qsnoa" path="res://ui/power.gd" id="2_p5ps0"]
+[ext_resource type="Script" uid="uid://dewcmxa4qsnoa" path="res://ui/attack.gd" id="2_p5ps0"]
 [ext_resource type="Texture2D" uid="uid://gep8f0byh3nj" path="res://assets/ui/blue_orb/0.png" id="3_goequ"]
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="4_440sx"]
 [ext_resource type="PackedScene" uid="uid://b0hf6nxfqvvit" path="res://scenes/cooldown_bar.tscn" id="5_gn316"]
 
-[node name="Power" type="MarginContainer" unique_id=2135712761]
+[node name="Attack" type="MarginContainer" unique_id=2135712761]
 offset_right = 33.0
 offset_bottom = 14.0
 theme = ExtResource("1_p5ps0")
@@ -29,7 +29,7 @@ layout_mode = 2
 text = "Lv x"
 label_settings = ExtResource("4_440sx")
 
-[node name="Power" type="TextureRect" parent="VBox/HBox" unique_id=1733355768]
+[node name="Attack" type="TextureRect" parent="VBox/HBox" unique_id=1733355768]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
