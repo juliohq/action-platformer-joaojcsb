@@ -93,7 +93,9 @@ func hit(damage: int, _knockback_direction: float) -> void:
 	
 	if health > 0:
 		prints("[boss]", name, "hit:", "%d/%d" % [health, max_health])
-		state_machine.current_state = hit_state
+		
+		if state_machine.current_state != hit_state:
+			state_machine.current_state = hit_state
 	else:
 		# Death logic here
 		die()
