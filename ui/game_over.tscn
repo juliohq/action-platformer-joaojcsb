@@ -5,6 +5,8 @@
 [ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_y1rcl"]
 [ext_resource type="Texture2D" uid="uid://tnk2tlpbtufw" path="res://assets/ui/game_over.png" id="4_akjlf"]
 [ext_resource type="AudioStream" uid="uid://dd6f2ag3k6n0e" path="res://assets/audio/game_over.wav" id="4_xjda6"]
+[ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="5_55k1u"]
+[ext_resource type="PackedScene" uid="uid://6ndva41x3tiv" path="res://scenes/button_audio.tscn" id="5_k8651"]
 
 [node name="GameOver" type="Control" unique_id=946583267 node_paths=PackedStringArray("focus_control")]
 process_mode = 3
@@ -51,13 +53,25 @@ alignment = 1
 layout_mode = 2
 text = "PLAY_AGAIN"
 
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/PlayAgain" unique_id=505721675 instance=ExtResource("5_55k1u")]
+
+[node name="ButtonAudio" parent="Margin/VBox/Buttons/PlayAgain" unique_id=406248917 instance=ExtResource("5_k8651")]
+
 [node name="MainMenu" type="Button" parent="Margin/VBox/Buttons" unique_id=143985310]
 layout_mode = 2
 text = "MAIN_MENU"
 
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/MainMenu" unique_id=870700040 instance=ExtResource("5_55k1u")]
+
+[node name="ButtonAudio" parent="Margin/VBox/Buttons/MainMenu" unique_id=1339043305 instance=ExtResource("5_k8651")]
+
 [node name="Quit" type="Button" parent="Margin/VBox/Buttons" unique_id=27531493]
 layout_mode = 2
 text = "QUIT"
+
+[node name="ControlHoverTween" parent="Margin/VBox/Buttons/Quit" unique_id=1467725130 instance=ExtResource("5_55k1u")]
+
+[node name="ButtonAudio" parent="Margin/VBox/Buttons/Quit" unique_id=1472522859 instance=ExtResource("5_k8651")]
 
 [node name="Audio" type="AudioStreamPlayer" parent="." unique_id=658620490]
 stream = ExtResource("4_xjda6")
