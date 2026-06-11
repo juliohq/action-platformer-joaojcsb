@@ -32,37 +32,20 @@ func _ready() -> void:
 func update() -> void:
 	%Level.text = "%d-%d" % [level, map]
 	
-	if Globals.tutorial >= Globals.Tutorial.BASIC:
-		%HealthBar.modulate = Color.WHITE
-		%Coins.modulate = Color.WHITE
+	handle_tutorial(%HealthBar, Globals.Tutorial.BASIC)
+	handle_tutorial(%Coins, Globals.Tutorial.BASIC)
+	handle_tutorial(%OrbSelector, Globals.Tutorial.CHANGE_ORB)
+	handle_tutorial(%RedOrb, Globals.Tutorial.SHOOT)
+	handle_tutorial(%BlueOrb, Globals.Tutorial.CHANGE_ORB)
+	handle_tutorial(%AttackA, Globals.Tutorial.SHOOT)
+	handle_tutorial(%AttackB, Globals.Tutorial.SKILL_TWO)
+
+
+func handle_tutorial(control: Control, tutorial: Globals.Tutorial) -> void:
+	if Globals.tutorial >= tutorial:
+		control.modulate = Color.WHITE
 	else:
-		%HealthBar.modulate = Color.TRANSPARENT
-		%Coins.modulate = Color.TRANSPARENT
-	
-	if Globals.tutorial >= Globals.Tutorial.CHANGE_ORB:
-		%OrbSelector.modulate = Color.WHITE
-	else:
-		%OrbSelector.modulate = Color.TRANSPARENT
-	
-	if Globals.tutorial >= Globals.Tutorial.SHOOT:
-		%RedOrb.modulate = Color.WHITE
-	else:
-		%RedOrb.modulate = Color.TRANSPARENT
-	
-	if Globals.tutorial >= Globals.Tutorial.CHANGE_ORB:
-		%BlueOrb.modulate = Color.WHITE
-	else:
-		%BlueOrb.modulate = Color.TRANSPARENT
-	
-	if Globals.tutorial >= Globals.Tutorial.SHOOT:
-		%AttackA.modulate = Color.WHITE
-	else:
-		%AttackA.modulate = Color.TRANSPARENT
-	
-	if Globals.tutorial >= Globals.Tutorial.SKILL_TWO:
-		%AttackB.modulate = Color.WHITE
-	else:
-		%AttackB.modulate = Color.TRANSPARENT
+		control.modulate = Color.TRANSPARENT
 
 
 func _input(event: InputEvent) -> void:
