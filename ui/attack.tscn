@@ -13,15 +13,16 @@ theme = ExtResource("1_p5ps0")
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_bottom = -4
 script = ExtResource("2_p5ps0")
 
 [node name="VBox" type="VBoxContainer" parent="." unique_id=892086847]
 layout_mode = 2
-theme_override_constants/separation = 1
+theme_override_constants/separation = 0
 
 [node name="HBox" type="HBoxContainer" parent="VBox" unique_id=1564280413]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Level" type="Label" parent="VBox/HBox" unique_id=1404627578]
 unique_name_in_owner = true
