@@ -36,8 +36,7 @@ func on_physics_process(delta: float) -> void:
 	
 	# Goal
 	var target: Node2D = root.dive_height
-	var target_position: Vector2 = Vector2(root.global_position.x, target.global_position.y)
-	var distance: float = target_position.distance_to(root.global_position)
+	var distance: float = absf(target.global_position.y - root.global_position.y)
 	
 	if distance > root.GOAL_DISTANCE:
 		root.direction = Vector2.DOWN
