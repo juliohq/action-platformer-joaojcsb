@@ -12,4 +12,4 @@ func on_enter() -> void:
 
 
 func on_physics_process(_delta: float) -> void:
-	root.velocity = Vector2()
+	root.direction = 0.0
