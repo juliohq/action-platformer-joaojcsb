@@ -110,9 +110,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		prints("[player] power changed:", power_name.capitalize())
 	elif event.is_action_pressed(&"power"):
 		if Globals.power == Globals.Power.IMMUNITY:
-			if Globals.power_immunity <= 0:
+			if Globals.power_immunity <= 0 or invincibility_left > 0.0:
 				return
-		elif Globals.power_paralyze <= 0:
+		elif Globals.power_paralyze <= 0 or Globals.enemy_paralyze > 0.0:
 			return
 		
 		get_viewport().set_input_as_handled()
