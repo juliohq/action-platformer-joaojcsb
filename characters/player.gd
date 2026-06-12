@@ -12,6 +12,8 @@ const GIANT_ICE_ORB := preload("res://scenes/giant_ice_orb.tscn")
 
 const SLINGSHOT_AUDIO := preload("res://assets/audio/player_slingshot.wav")
 const SLOT_CHANGED_AUDIO := preload("res://assets/audio/player_slot_changed.wav")
+const POWER_CHANGED_AUDIO := preload("res://assets/audio/power_change.wav")
+const POWER_USED_AUDIO := preload("res://assets/audio/power_use.wav")
 
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
@@ -102,6 +104,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		Globals.power = ((Globals.power + 1) % 2) as Globals.Power
 		Events.power_changed.emit()
+		AudioManager.play(POWER_CHANGED_AUDIO, 1.0, &"Sounds")
 		
 		var power_name: String = Globals.Power.keys()[Globals.power]
 		prints("[player] power changed:", power_name.capitalize())
@@ -123,6 +126,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			Globals.enemy_paralyze = 20.0
 		
 		Events.power_used.emit()
+		AudioManager.play(POWER_USED_AUDIO, 1.0, &"Sounds")
 		
 		var power_name: String = Globals.Power.keys()[Globals.power]
 		prints("[player] power used:", power_name.capitalize())
