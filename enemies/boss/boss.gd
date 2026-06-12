@@ -60,7 +60,12 @@ func _physics_process(delta: float) -> void:
 	
 	# Freeze time
 	if Globals.enemy_paralyze > 0.0:
-		_freeze()
+		# Play hit animation even when frozen
+		if state_machine.current_state == hit_state:
+			animator.speed_scale = 1.0
+			sprite.modulate = Color.WHITE
+		else:
+			_freeze()
 	elif freeze_time > 0.0:
 		freeze_time -= delta
 		
