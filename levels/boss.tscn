@@ -57,16 +57,16 @@ position = Vector2(0, -24)
 position = Vector2(0, 120)
 
 [node name="EagleTopLeft" type="Marker2D" parent="World/References" parent_id_path=PackedInt32Array(1546537546) index="8" unique_id=1336149771]
-position = Vector2(-256, 8)
+position = Vector2(-256, 0)
 
 [node name="EagleBottomLeft" type="Marker2D" parent="World/References" parent_id_path=PackedInt32Array(1546537546) index="9" unique_id=1531511728]
-position = Vector2(-256, 88)
+position = Vector2(-256, 80)
 
 [node name="EagleTopRight" type="Marker2D" parent="World/References" parent_id_path=PackedInt32Array(1546537546) index="10" unique_id=1499867934]
-position = Vector2(256, 8)
+position = Vector2(256, 0)
 
 [node name="EagleBottomRight" type="Marker2D" parent="World/References" parent_id_path=PackedInt32Array(1546537546) index="11" unique_id=1163827838]
-position = Vector2(256, 88)
+position = Vector2(256, 80)
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
 position = Vector2(-224, 112)
