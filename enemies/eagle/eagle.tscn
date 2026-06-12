@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bps1cwjayqu0m" path="res://scenes/offscreen_deleter.tscn" id="4_ptyq0"]
 [ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="5_0civ8"]
 [ext_resource type="AudioStream" uid="uid://phqry6gljj6d" path="res://assets/audio/eagle.wav" id="6_lrs8l"]
+[ext_resource type="AudioStream" uid="uid://ts78ipxdkql" path="res://assets/audio/eagle_wings.wav" id="7_v7186"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ptyq0"]
 radius = 12.0
@@ -52,11 +53,13 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_1on4c"]
 radius = 12.0
 
-[node name="Eagle" type="CharacterBody2D" unique_id=1558781066 node_paths=PackedStringArray("sprite")]
+[node name="Eagle" type="CharacterBody2D" unique_id=1558781066 node_paths=PackedStringArray("sprite", "audio", "wings")]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_1on4c")
 sprite = NodePath("Sprite")
+audio = NodePath("Audio")
+wings = NodePath("Wings")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=1045872944]
 texture = ExtResource("1_pm2qq")
@@ -81,3 +84,8 @@ parent = NodePath("..")
 [node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("5_0civ8")]
 audio = ExtResource("6_lrs8l")
 audio_volume = 0.5
+
+[node name="Wings" type="AudioStreamPlayer" parent="." unique_id=1359048060]
+stream = ExtResource("7_v7186")
+volume_db = -6.0
+bus = &"Sounds"

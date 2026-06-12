@@ -7,6 +7,8 @@ extends CharacterBody2D
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var speed := 80
 @export_category("Nodes")
 @export var sprite: Sprite2D
+@export var audio: Node
+@export var wings: AudioStreamPlayer
 
 ## The direction the eagles are flying to.
 var direction := 0.0
@@ -15,6 +17,8 @@ var health := max_health
 
 
 func _ready() -> void:
+	audio.finished.connect(_audio_finished)
+	
 	health = max_health
 	add_to_group("eagles")
 
@@ -36,3 +40,7 @@ func hit(damage: int, _knockback_direction: float) -> void:
 	
 	if health <= 0:
 		queue_free()
+
+
+func _audio_finished() -> void:
+	wings.play()

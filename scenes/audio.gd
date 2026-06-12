@@ -1,6 +1,9 @@
 extends Node
 
 
+## Emitted when the audio has finished playing.
+signal finished()
+
 enum Bus {
 	AUDIO,
 	MUSIC,
@@ -15,4 +18,5 @@ enum Bus {
 func _ready() -> void:
 	if enabled:
 		var bus_name := "Sounds" if bus == Bus.AUDIO else "Music"
-		AudioManager.play(audio, audio_volume, bus_name)
+		await AudioManager.play(audio, audio_volume, bus_name)
+		finished.emit()

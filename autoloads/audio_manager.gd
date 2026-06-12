@@ -5,7 +5,8 @@ func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
 
-func play(stream: AudioStream, volume := 1.0, bus := &"Master", max_polyphony := 8) -> void:
+func play(stream: AudioStream, volume := 1.0, bus := &"Master",
+		max_polyphony := 8) -> void:
 	var sound_count := 0
 	
 	for child: AudioStreamPlayer in get_children():
@@ -20,3 +21,4 @@ func play(stream: AudioStream, volume := 1.0, bus := &"Master", max_polyphony :=
 	sound.volume_linear = volume
 	sound.bus = bus
 	add_child(sound)
+	await sound.tree_exited
