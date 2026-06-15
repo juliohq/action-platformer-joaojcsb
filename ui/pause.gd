@@ -63,6 +63,7 @@ func _options() -> void:
 	var options := preload("res://ui/options.tscn").instantiate()
 	%Margin.hide()
 	options.tree_exited.connect(%Margin.show)
+	options.tree_exited.connect(%Options.grab_focus)
 	add_child(options)
 
 
