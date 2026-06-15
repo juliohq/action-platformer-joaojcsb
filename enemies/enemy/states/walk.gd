@@ -43,7 +43,9 @@ func on_physics_process(delta: float) -> void:
 
 func follow_player() -> void:
 	for player: Node2D in player_detector.get_overlapping_bodies():
-		if absf(player.global_position.x - root.global_position.x) >= PLAYER_DISTANCE:
+		var distance := absf(player.global_position.x - root.global_position.x)
+		
+		if distance >= PLAYER_DISTANCE:
 			root.direction = signf(player.global_position.x - root.global_position.x)
 		
 		return
