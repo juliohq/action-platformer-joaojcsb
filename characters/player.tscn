@@ -30,8 +30,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_h076o"]
 radius = 16.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_24ibb"]
-radius = 8.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qk7w8"]
+size = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_svrv0"]
 resource_name = "DEATH"
@@ -600,7 +600,7 @@ vframes = 4
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=596819665]
 position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_24ibb")
+shape = SubResource("RectangleShape2D_qk7w8")
 
 [node name="Animator" type="AnimationPlayer" parent="." unique_id=2044165746]
 libraries/ = SubResource("AnimationLibrary_j31ep")
