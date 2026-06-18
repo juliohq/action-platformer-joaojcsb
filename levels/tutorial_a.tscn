@@ -84,7 +84,7 @@ offset_top = -32.0
 offset_right = 88.0
 offset_bottom = -9.0
 theme = ExtResource("6_xrdcv")
-text = "Para mover o jogador use:"
+text = "TUTORIAL_PLAYER_MOVE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -109,7 +109,7 @@ offset_left = 155.0
 offset_right = 336.0
 offset_bottom = 23.0
 theme = ExtResource("6_xrdcv")
-text = "Para pular use:"
+text = "TUTORIAL_PLAYER_JUMP"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -136,7 +136,7 @@ offset_left = 625.0
 offset_right = 816.0
 offset_bottom = 23.0
 theme = ExtResource("6_xrdcv")
-text = "Para destruir as caixas use:"
+text = "TUTORIAL_MELEE"
 horizontal_alignment = 1
 vertical_alignment = 1
 

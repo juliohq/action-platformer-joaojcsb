@@ -12,7 +12,7 @@ func _ready() -> void:
 	focus_entered.connect(_focus_entered)
 	focus_exited.connect(_focus_exited)
 	
-	%Name.text = "%s ($ %3d)" % [item.name, item.cost]
+	%Name.text = "%s ($ %3d)" % [tr(item.name), item.cost]
 	%Description.text = item.description
 
 

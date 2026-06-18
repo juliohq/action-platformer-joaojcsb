@@ -211,7 +211,8 @@ cheat_coins={
 
 [internationalization]
 
-locale/translations=PackedStringArray("res://locales/locales.en.translation")
+locale/translations=PackedStringArray("res://locales/locales.en.translation", "res://locales/locales.pt.translation")
+locale/translation_add_builtin_strings_to_pot=true
 
 [layer_names]
 

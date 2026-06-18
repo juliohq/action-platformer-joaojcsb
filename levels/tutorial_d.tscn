@@ -42,7 +42,7 @@ offset_top = -80.0
 offset_right = -71.0
 offset_bottom = -66.0
 theme = ExtResource("3_eqccq")
-text = "Ataque Lv 1"
+text = "TUTORIAL_ATTACK_1"
 horizontal_alignment = 1
 
 [node name="KeyboardI" parent="World/Prompts/ChestOpenPrompts" index="1" unique_id=1808728134 instance=ExtResource("3_xc6he")]
@@ -57,12 +57,12 @@ position = Vector2(-120, -16)
 metadata/_edit_lock_ = true
 
 [node name="ChangeOrb" type="Label" parent="World/Prompts/ChangeOrbPrompts" index="0" unique_id=1450586947]
-offset_left = -56.0
+offset_left = -72.0
 offset_top = -80.0
-offset_right = 41.0
+offset_right = 61.0
 offset_bottom = -66.0
 theme = ExtResource("3_eqccq")
-text = "Mudar orb"
+text = "TUTORIAL_CHANGE_ORB"
 horizontal_alignment = 1
 
 [node name="KeyboardAlt" parent="World/Prompts/ChangeOrbPrompts" index="1" unique_id=1611938039 instance=ExtResource("3_xc6he")]

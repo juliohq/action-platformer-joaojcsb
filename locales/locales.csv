@@ -1,34 +1,48 @@
-,en
-NEW_GAME,New Game
-LOAD_GAME,Load Game
-HOW_TO_PLAY,How to Play
-OPTIONS,Options
-CREDITS,Credits
-QUIT,Quit
-QUIT_CONFIRMATION,Are you sure you want to leave?
-DIFFICULTY_SELECTION,Difficulty Selection
-DIFFICULTY_EASY,Easy
-DIFFICULTY_MEDIUM,Medium
-DIFFICULTY_HARD,Hard
-GAME_PAUSED,Game Paused
-RESUME,Resume
-RESTART,Restart
-SAVE_GAME,Save Game
-MAIN_MENU,Main Menu
-INVENTORY,Inventory
-CLOSE,Close
-LOADING,Loading...
-LANGUAGE,Language:
-DIFFICULTY,Difficulty:
-FULLSCREEN,Fullscreen:
-GENERAL,General:
-MUSIC,Music:
-SOUNDS,Sounds:
-RESET,Reset
-PREVIOUS,Previous
-BACK,Back
-NEXT,Next
-PLAY_AGAIN,Play Again
-GAME_OVER,Game Over
-GAME_FINISHED,Game Finished
-LABEL_ORB,Orb:
+,en,pt
+NEW_GAME,New Game,Novo Jogo
+LOAD_GAME,Load Game,Carregar Jogo
+OPTIONS,Options,Opções
+CREDITS,Credits,Créditos
+QUIT,Quit,Sair
+LABEL_EXIT,Exit,Sair
+QUIT_CONFIRMATION,Are you sure you want to leave?,Tem certeza que quer sair?
+PROLOGUE,"Finn is a young cat who failed the test to obtain the Elemental Sling, the legendary weapon wielded by the guardians of Purrington. Ashamed, but not defeated, he receives one last chance from the city elders to prove his worth and attempt the test again.","Finn é um jovem gato que reprovou no teste para conquistar o Estilingue Elemental, a lendária arma carregada pelos guardiões de Purrington. Envergonhado, mas não derrotado, ele recebe uma última chance dos anciões da cidade para provar seu valor e tentar o teste novamente."
+TUTORIAL_PLAYER_MOVE,"To move the player, use:",Para mover o jogador use:
+TUTORIAL_PLAYER_JUMP,"To jump, use:",Para pular use:
+TUTORIAL_MELEE,"To destroy the boxes, use:",Para destruir as caixas use:
+TUTORIAL_ATTACK_1,Attack Lv 1,Ataque Lv 1
+TUTORIAL_CHANGE_ORB,Change orb,Mudar orb
+TUTORIAL_ATTACK_2,Attack Lv 2,Ataque Lv 2
+TUTORIAL_PROCEED,Continue,Prosseguir
+TUTORIAL_HEAL,To heal (-1 orb):,Para curar (-1 orb):
+GAME_PAUSED,Game Paused,Jogo Pausado
+RESUME,Resume,Continuar
+RESTART,Restart,Reiniciar
+SAVE_GAME,Save Game,Salvar Jogo
+MAIN_MENU,Main Menu,Menu Principal
+CLOSE,Close,Fechar
+LOADING,Loading...,Carregando...
+LANGUAGE,Language:,Idioma:
+FULLSCREEN,Fullscreen:,Tela Cheia:
+GENERAL,General:,Geral:
+MUSIC,Music:,Música:
+SOUNDS,Sounds:,Sons:
+RESET,Reset,Restaurar
+PREVIOUS,Previous,Anterior
+BACK,Back,Voltar
+NEXT,Next,Próximo
+PLAY_AGAIN,Play Again,Jogar Novamente
+GAME_OVER,Game Over,Fim de Jogo
+GAME_FINISHED,Game Finished,Jogo Terminado
+LABEL_ORB,Orb:,Orb:
+LABEL_SHOP,Shop,Loja
+SHOP_HEALTH,HP +1,HP +1
+SHOP_HEALTH_DESCRIPTION,Permanently increases your HP by 1. (Permanent upgrade),Aumenta seu HP em 1 (upgrade permanente)
+SHOP_EXTRA_FIRE_ORB,Extra Fire Orb +1,Extra Fire Orb +1
+SHOP_EXTRA_FIRE_ORB_DESCRIPTION,Gain 1 additional Fire Orb slot. (Permanent upgrade),Aumenta suas orbs de fogo em 1 (upgrade permanente)
+SHOP_EXTRA_ICE_ORB,Extra Ice Orb +1,Extra Ice Orb +1
+SHOP_EXTRA_ICE_ORB_DESCRIPTION,Gain 1 additional Ice Orb slot. (Permanent upgrade),Aumenta suas orbs de gelo em 1 (upgrade permanente)
+SHOP_IMMUNITY,Immunity,Imunidade
+SHOP_IMMUNITY_DESCRIPTION,Grants immunity for 8 seconds. (Temporary Ability),Voce fica imune por 8 segundos (upgrade temporario)
+SHOP_PARALYZE,Paralyze,Paralise
+SHOP_PARALYZE_DESCRIPTION,Paralyzes enemies for 20 seconds. (Temporary Ability),Paraliza os inimigos por 20 segundos (upgrade temporario)
