@@ -561,12 +561,13 @@ _data = {
 &"SHOOT": SubResource("Animation_h076o")
 }
 
-[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "pivot", "state_machine", "jump_state", "hit_state", "death_state", "fall_death", "cooldown_bar")]
+[node name="Player" type="CharacterBody2D" unique_id=2136620420 node_paths=PackedStringArray("sprite", "hit_box", "animator", "clamp_component", "pivot", "state_machine", "jump_state", "hit_state", "death_state", "fall_death", "cooldown_bar")]
 collision_mask = 2
 script = ExtResource("2_03c6q")
 sprite = NodePath("Sprite")
 hit_box = NodePath("Sprite/HitBox")
 animator = NodePath("Animator")
+clamp_component = NodePath("Clamp")
 pivot = NodePath("Sprite/Pivot")
 state_machine = NodePath("StateMachine")
 jump_state = NodePath("StateMachine/Jump")

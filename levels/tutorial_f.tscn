@@ -54,8 +54,9 @@ position = Vector2(416, -8)
 position = Vector2(-16, 80)
 
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("3_dhnkc")]
-position = Vector2(-296, 0)
+position = Vector2(-304, 0)
 scene_path = "uid://d3emagiip7vi6"
+offset = -100.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]
@@ -71,7 +72,7 @@ region_rect = Rect2(2, 455, 29, 41)
 shape = SubResource("RectangleShape2D_2w70r")
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
-position = Vector2(664, 0)
+position = Vector2(696, 8)
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
 limit_right = 704

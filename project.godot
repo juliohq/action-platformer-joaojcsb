@@ -22,6 +22,7 @@ Events="*res://autoloads/events.gd"
 Globals="*res://autoloads/globals.gd"
 AudioManager="*res://autoloads/audio_manager.gd"
 Music="*res://autoloads/music.tscn"
+Transition="*uid://c358c44kwj2r4"
 
 [debug]
 

@@ -78,6 +78,7 @@ position = Vector2(1360, 64)
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("7_gki17")]
 position = Vector2(-304, 17)
 scene_path = "uid://bntugtun3sucl"
+offset = -100.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]
@@ -93,7 +94,7 @@ region_rect = Rect2(2, 455, 29, 41)
 shape = SubResource("RectangleShape2D_2w70r")
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
-position = Vector2(1496, 48)
+position = Vector2(1512, 56)
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
 limit_right = 1520

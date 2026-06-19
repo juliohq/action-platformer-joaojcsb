@@ -104,6 +104,9 @@ var power_paralyze := 0
 ## How long enemies will be paralyzed.
 var enemy_paralyze := 0.0
 
+## The amount the player needs to walk.
+var teleport_offset := 0.0
+
 # Tutorial toggles
 var tutorial := Tutorial.POWERS
 
@@ -241,6 +244,8 @@ func reset() -> void:
 	power = Power.IMMUNITY
 	power_immunity = 0
 	power_paralyze = 0
+	
+	teleport_offset = 0.0
 
 
 func _process(delta: float) -> void:

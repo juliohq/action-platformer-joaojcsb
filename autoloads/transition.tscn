@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c358c44kwj2r4"]
+
+[ext_resource type="Script" uid="uid://btmdhyr0uh8l8" path="res://autoloads/transition.gd" id="1_q7auc"]
+
+[node name="Transition" type="CanvasLayer" unique_id=1705187761]
+layer = 2
+visible = false
+script = ExtResource("1_q7auc")
+
+[node name="Transition" type="ColorRect" parent="." unique_id=12204861]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0, 0, 0, 1)

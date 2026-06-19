@@ -30,12 +30,13 @@ position = Vector2(0, 112)
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("11_3lpsr")]
 position = Vector2(224, 96)
 scene_path = "uid://rqjrj8e0yrhi"
+offset = 100.0
 
 [node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="0" unique_id=1714512685]
 shape = SubResource("RectangleShape2D_4ytgj")
 
 [node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
-position = Vector2(-224, 112)
+position = Vector2(-232, 104)
 
 [node name="Camera" parent="World/Player" index="11" unique_id=785309888]
 limit_left = -240

@@ -4,6 +4,8 @@ extends Area2D
 @export_flags("Areas", "Bodies") var types := 2
 @export_file("*.tscn") var scene_path := ""
 @export var audio: AudioStream
+@export_range(-1, 1, 1, "or_greater", "or_less", "suffix:px")
+var offset := 0.0
 
 var _cached_scene: PackedScene
 
@@ -22,4 +24,5 @@ func _ready() -> void:
 
 func _teleport() -> void:
 	AudioManager.play(audio, 1.0, &"Sounds")
-	get_tree().change_scene_to_packed(_cached_scene)
+	Globals.teleport_offset = offset
+	Transition.start(scene_path)

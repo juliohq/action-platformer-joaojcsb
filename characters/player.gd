@@ -37,6 +37,7 @@ var invincibility := 2.0
 @export var sprite: Sprite2D
 @export var hit_box: Area2D
 @export var animator: AnimationPlayer
+@export var clamp_component: Node
 @export var pivot: Node2D
 @export var state_machine: FiniteStateMachine
 @export var jump_state: BaseState
@@ -133,6 +134,37 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _physics_process(delta: float) -> void:
+	# Walk while teleporting
+	var was_teleporting := not is_equal_approx(Globals.teleport_offset, 0.0)
+	
+	Globals.teleport_offset = move_toward(Globals.teleport_offset,
+				0.0, movement_speed * delta)
+	
+	if not is_equal_approx(Globals.teleport_offset, 0.0):
+		state_machine.process_mode = Node.PROCESS_MODE_DISABLED
+		clamp_component.process_mode = Node.PROCESS_MODE_DISABLED
+		
+		# Animation
+		direction = signf(Globals.teleport_offset)
+		sprite.modulate = Color.WHITE
+		animator.play(&"RUN")
+		
+		# Gravity logic
+		if is_on_floor():
+			velocity.y = 0.0
+		else:
+			velocity.y += gravity * delta
+		
+		# Movement
+		velocity.x = direction * movement_speed
+		move_and_slide()
+		return
+	
+	if was_teleporting:
+		state_machine.process_mode = Node.PROCESS_MODE_INHERIT
+		clamp_component.process_mode = Node.PROCESS_MODE_INHERIT
+		state_machine.change_state("Idle")
+	
 	# Flip sprite logic
 	if freeze_time <= 0.0:
 		if direction < 0.0:

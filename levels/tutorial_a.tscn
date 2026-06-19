@@ -158,6 +158,7 @@ position = Vector2(824, 112)
 position = Vector2(880, 112)
 scene_path = "uid://bu73e7772wg54"
 audio = ExtResource("14_j5lyd")
+offset = 100.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]
