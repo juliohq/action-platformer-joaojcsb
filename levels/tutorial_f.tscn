@@ -55,8 +55,8 @@ position = Vector2(-16, 80)
 
 [node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("3_dhnkc")]
 position = Vector2(-304, 0)
-scene_path = "uid://d3emagiip7vi6"
-offset = 100.0
+scene_path = "uid://b45824i4l8csm"
+offset = -75.0
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]

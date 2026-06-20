@@ -1,0 +1,102 @@
+[gd_scene format=4 uid="uid://b45824i4l8csm"]
+
+[ext_resource type="PackedScene" uid="uid://bb5xgb1r1rlhp" path="res://scenes/level.tscn" id="1_e2hs3"]
+[ext_resource type="Texture2D" uid="uid://drpjys4qofmf0" path="res://assets/backgrounds/forest_background.png" id="2_e2hs3"]
+[ext_resource type="Texture2D" uid="uid://d4naqb6xxq3fh" path="res://assets/backgrounds/forest_back.png" id="3_jscnr"]
+[ext_resource type="Texture2D" uid="uid://nh2gopw7b8f8" path="res://assets/backgrounds/forest_front.png" id="4_gohk5"]
+[ext_resource type="Texture2D" uid="uid://cfk5yue1fcxsh" path="res://assets/backgrounds/forest_ground.png" id="5_46brr"]
+[ext_resource type="PackedScene" uid="uid://bv2yeta50a11w" path="res://scenes/teleport.tscn" id="6_ru4a8"]
+[ext_resource type="Texture2D" uid="uid://c07l1geqq0ysa" path="res://assets/tilesets/tileset_castle.png" id="7_021s1"]
+[ext_resource type="Script" uid="uid://du0gulx4m28k4" path="res://autoloads/music_stream.gd" id="8_5hu8b"]
+[ext_resource type="AudioStream" uid="uid://caelpyhl66nqs" path="res://assets/music/tutorial.ogg" id="9_o50ne"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2w70r"]
+size = Vector2(32, 32)
+
+[sub_resource type="Resource" id="Resource_7p336"]
+script = ExtResource("8_5hu8b")
+stream = ExtResource("9_o50ne")
+metadata/_custom_type_script = "uid://du0gulx4m28k4"
+
+[node name="TutorialG" unique_id=1054854771 instance=ExtResource("1_e2hs3")]
+metadata/_edit_vertical_guides_ = [-240.0, 240.0]
+metadata/_edit_horizontal_guides_ = [-136.0, 136.0]
+
+[node name="ForestBackground" type="Parallax2D" parent="World/Background" parent_id_path=PackedInt32Array(880495963) index="0" unique_id=802064767]
+repeat_size = Vector2(480, 0)
+limit_begin = Vector2(0, 0)
+limit_end = Vector2(10000000, 264)
+
+[node name="ForestBackground" type="Sprite2D" parent="World/Background/ForestBackground" index="0" unique_id=1048821940]
+scale = Vector2(1.5, 1.578)
+texture = ExtResource("2_e2hs3")
+centered = false
+
+[node name="ForestBack" type="Parallax2D" parent="World/Background" parent_id_path=PackedInt32Array(880495963) index="1" unique_id=1824848443]
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(480, 0)
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 264)
+
+[node name="ForestBack" type="Sprite2D" parent="World/Background/ForestBack" index="0" unique_id=827168453]
+scale = Vector2(1.5, 1.467)
+texture = ExtResource("3_jscnr")
+centered = false
+
+[node name="ForestFront" type="Parallax2D" parent="World/Background" parent_id_path=PackedInt32Array(880495963) index="2" unique_id=883649912]
+scroll_scale = Vector2(0.75, 0.75)
+repeat_size = Vector2(480, 0)
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 264)
+
+[node name="ForestFront" type="Sprite2D" parent="World/Background/ForestFront" index="0" unique_id=614767364]
+scale = Vector2(1.5, 1.467)
+texture = ExtResource("4_gohk5")
+centered = false
+
+[node name="ForestGround" type="Parallax2D" parent="World/Background" parent_id_path=PackedInt32Array(880495963) index="3" unique_id=1689245877]
+repeat_size = Vector2(480, 0)
+limit_begin = Vector2(-10000000, 0)
+limit_end = Vector2(10000000, 264)
+
+[node name="ForestGround" type="Sprite2D" parent="World/Background/ForestGround" index="0" unique_id=156651467]
+scale = Vector2(1.5, 1.467)
+texture = ExtResource("5_46brr")
+centered = false
+
+[node name="Foreground" parent="World" parent_id_path=PackedInt32Array(574016881) index="1" unique_id=1717989281]
+tile_map_data = PackedByteArray("AADw/wAAAAAAAAAAAADw/wEAAAAFAAEAAADw/wIAAAAFAAEAAADw/wMAAAAFAAEAAADw/wQAAAAFAAEAAADw/wUAAAAFAAEAAADw/wYAAAAFAAEAAADw/wcAAAAFAAEAAADw/wgAAAAAAAIAAADx/wAAAAAEAAIAAADx/wEAAAAGAAIAAADx/wIAAAABAAEAAADx/wMAAAAGAAIAAADx/wQAAAABAAEAAADx/wUAAAAHAAIAAADx/wYAAAAHAAIAAADx/wcAAAABAAEAAADx/wgAAAABAAIAAADy/wAAAAABAAAAAADy/wEAAAAHAAEAAADy/wIAAAAHAAEAAADy/wMAAAABAAEAAADy/wQAAAAGAAIAAADy/wUAAAAHAAEAAADy/wYAAAAHAAEAAADy/wcAAAAGAAIAAADy/wgAAAABAAIAAADz/wAAAAAEAAIAAADz/wEAAAAHAAIAAADz/wIAAAAHAAEAAADz/wMAAAAHAAIAAADz/wQAAAAHAAEAAADz/wUAAAAHAAEAAADz/wYAAAABAAEAAADz/wcAAAAGAAIAAADz/wgAAAABAAIAAAD0/wAAAAAEAAIAAAD0/wEAAAAHAAEAAAD0/wIAAAAHAAEAAAD0/wMAAAAGAAEAAAD0/wQAAAAGAAEAAAD0/wUAAAAHAAEAAAD0/wYAAAABAAEAAAD0/wcAAAAHAAEAAAD0/wgAAAAEAAAAAAD1/wAAAAABAAAAAAD1/wEAAAABAAEAAAD1/wIAAAABAAEAAAD1/wMAAAAHAAIAAAD1/wQAAAAGAAEAAAD1/wUAAAAHAAEAAAD1/wYAAAAGAAIAAAD1/wcAAAAHAAEAAAD1/wgAAAABAAIAAAD2/wAAAAAEAAIAAAD2/wEAAAAGAAEAAAD2/wIAAAAHAAIAAAD2/wMAAAAGAAIAAAD2/wQAAAABAAEAAAD2/wUAAAAGAAEAAAD2/wYAAAABAAEAAAD2/wcAAAAHAAEAAAD2/wgAAAAEAAAAAAD3/wAAAAAEAAIAAAD3/wEAAAABAAEAAAD3/wIAAAABAAEAAAD3/wMAAAABAAEAAAD3/wQAAAAGAAIAAAD3/wUAAAAGAAEAAAD3/wYAAAAGAAEAAAD3/wcAAAAHAAEAAAD3/wgAAAAEAAAAAAD4/wAAAAAEAAIAAAD4/wEAAAAGAAIAAAD4/wIAAAAHAAEAAAD4/wMAAAAHAAEAAAD4/wQAAAAGAAIAAAD4/wUAAAAHAAEAAAD4/wYAAAAHAAIAAAD4/wcAAAAHAAIAAAD4/wgAAAABAAIAAAD5/wAAAAABAAAAAAD5/wEAAAABAAEAAAD5/wIAAAAHAAIAAAD5/wMAAAAGAAEAAAD5/wQAAAAGAAEAAAD5/wUAAAAHAAIAAAD5/wYAAAAHAAEAAAD5/wcAAAAGAAEAAAD5/wgAAAAEAAAAAAD6/wAAAAAEAAIAAAD6/wEAAAABAAEAAAD6/wIAAAAGAAIAAAD6/wMAAAABAAEAAAD6/wQAAAAGAAIAAAD6/wUAAAAHAAIAAAD6/wYAAAAHAAEAAAD6/wcAAAAGAAIAAAD6/wgAAAABAAIAAAD7/wAAAAACAAAAAAD7/wEAAAACAAEAAAD7/wIAAAADAAIAAAD7/wMAAAAHAAEAAAD7/wQAAAABAAEAAAD7/wUAAAAHAAIAAAD7/wYAAAAGAAEAAAD7/wcAAAAGAAEAAAD7/wgAAAABAAIAAAD8/wIAAAACAAAAAAD8/wMAAAADAAIAAAD8/wQAAAAGAAEAAAD8/wUAAAAGAAIAAAD8/wYAAAAHAAIAAAD8/wcAAAAHAAIAAAD8/wgAAAABAAIAAAD9/wMAAAACAAAAAAD9/wQAAAADAAIAAAD9/wUAAAAHAAEAAAD9/wYAAAAGAAEAAAD9/wcAAAAGAAIAAAD9/wgAAAABAAIAAAD+/wQAAAACAAAAAAD+/wUAAAADAAIAAAD+/wYAAAAHAAEAAAD+/wcAAAAHAAIAAAD+/wgAAAAEAAAAAAD//wUAAAABAAAAAAD//wYAAAAGAAEAAAD//wcAAAABAAEAAAD//wgAAAAEAAAAAAAAAAUAAAAEAAIAAAAAAAYAAAAHAAIAAAAAAAcAAAAGAAIAAAAAAAgAAAAEAAAAAAABAAUAAAAEAAIAAAABAAYAAAABAAEAAAABAAcAAAAHAAIAAAABAAgAAAABAAIAAAACAAUAAAABAAAAAAACAAYAAAAGAAIAAAACAAcAAAAHAAIAAAACAAgAAAAEAAAAAAADAAAAAAABAAAAAAADAAEAAAAEAAAAAAADAAUAAAAEAAIAAAADAAYAAAABAAEAAAADAAcAAAAHAAIAAAADAAgAAAABAAIAAAAEAAAAAAAEAAIAAAAEAAEAAAAEAAAAAAAEAAUAAAABAAAAAAAEAAYAAAAHAAIAAAAEAAcAAAABAAEAAAAEAAgAAAAEAAAAAAAFAAAAAAABAAAAAAAFAAEAAAAEAAAAAAAFAAUAAAAEAAIAAAAFAAYAAAAHAAIAAAAFAAcAAAAGAAEAAAAFAAgAAAABAAIAAAAGAAAAAAABAAAAAAAGAAEAAAABAAIAAAAGAAUAAAABAAAAAAAGAAYAAAAHAAEAAAAGAAcAAAAHAAEAAAAGAAgAAAABAAIAAAAHAAAAAAAEAAIAAAAHAAEAAAAEAAAAAAAHAAUAAAABAAAAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAAEAAAAAAAIAAAAAAAEAAIAAAAIAAEAAAAEAAAAAAAIAAUAAAABAAAAAAAIAAYAAAAGAAIAAAAIAAcAAAAHAAEAAAAIAAgAAAAEAAAAAAAJAAAAAAAEAAIAAAAJAAEAAAAEAAAAAAAJAAUAAAABAAAAAAAJAAYAAAAHAAIAAAAJAAcAAAAGAAIAAAAJAAgAAAABAAIAAAAKAAAAAAABAAAAAAAKAAEAAAABAAIAAAAKAAUAAAAEAAIAAAAKAAYAAAAGAAIAAAAKAAcAAAAGAAIAAAAKAAgAAAABAAIAAAALAAAAAAABAAAAAAALAAEAAAABAAIAAAALAAUAAAABAAAAAAALAAYAAAAHAAEAAAALAAcAAAABAAEAAAALAAgAAAAEAAAAAAAMAAAAAAAEAAIAAAAMAAEAAAAEAAAAAAAMAAUAAAABAAAAAAAMAAYAAAABAAEAAAAMAAcAAAAHAAIAAAAMAAgAAAABAAIAAAANAAAAAAABAAAAAAANAAEAAQAAAAIAAAANAAUAAQAAAAIAAAANAAYAAQAAAAMAAAANAAcAAQAAAAMAAAANAAgAAQAAAAUAAAAOAAAAAAABAAAAAAAOAAEAAQABAAIAAAAOAAUAAQABAAIAAAAOAAYAAQABAAMAAAAOAAcAAQABAAMAAAAOAAgAAQABAAUAAAAPAAAAAAACAAAAAAAPAAEAAQAEAAIAAAAPAAUAAQAEAAIAAAAPAAYAAQAEAAQAAAAPAAcAAQAEAAQAAAAPAAgAAQAEAAUAAAACAAEAAAAEAAAAAAACAAAAAAAEAAIAAAABAAEAAAAAAAIAAAABAAAAAAAAAAAAAAD0////AAADAAQAAAD0//7/AAADAAQAAAD0//3/AAADAAQAAAD0//z/AAADAAQAAAD0//v/AAADAAQAAAD0//r/AAADAAQAAAD0//n/AAADAAQAAAD0//j/AAADAAQAAAD0//f/AAADAAQAAAD5//f/AAADAAQAAAD5//j/AAADAAQAAAD5//n/AAADAAQAAAD5//r/AAADAAQAAAD5//v/AAADAAQAAAD5//z/AAADAAQAAAD5//3/AAADAAQAAAD5//7/AAADAAQAAAD5////AAADAAQAAAAHAP//AAADAAQAAAAHAP7/AAADAAQAAAAHAP3/AAADAAQAAAAHAPz/AAAFAAMAAAAGAPz/AAAEAAMAAAAFAPz/AAAEAAMAAAAEAPz/AAAEAAMAAAADAPz/AAADAAUAAAADAPv/AAADAAQAAAADAPr/AAADAAQAAAADAPn/AAADAAQAAAADAPj/AAADAAQAAAADAPf/AAADAAQAAAAJAP//AQABACUAAAANAAIAAQAAAAUAAAAOAAIAAQABAAUAAAAPAAIAAQAEAAUAAAA=")
+
+[node name="Teleport" parent="World/Teleports" parent_id_path=PackedInt32Array(1154683583) index="0" unique_id=831645943 instance=ExtResource("6_ru4a8")]
+position = Vector2(224, -16)
+scene_path = "uid://d3emagiip7vi6"
+offset = 100.0
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]
+visible = false
+position = Vector2(0, 16)
+texture = ExtResource("7_021s1")
+centered = false
+offset = Vector2(-15, -41)
+region_enabled = true
+region_rect = Rect2(2, 455, 29, 41)
+
+[node name="Collision" type="CollisionShape2D" parent="World/Teleports/Teleport" index="1" unique_id=652184097]
+shape = SubResource("RectangleShape2D_2w70r")
+
+[node name="Player" parent="World" parent_id_path=PackedInt32Array(574016881) index="8" unique_id=2136620420]
+position = Vector2(232, 72)
+
+[node name="Camera" parent="World/Player" index="11" unique_id=785309888]
+limit_left = -240
+limit_top = -132
+limit_right = 240
+limit_bottom = 132
+drag_vertical_enabled = true
+drag_top_margin = 1.0
+drag_bottom_margin = 1.0
+
+[node name="Music" parent="." index="2" unique_id=1966762641]
+stream = SubResource("Resource_7p336")
+stop_on_exit = true
