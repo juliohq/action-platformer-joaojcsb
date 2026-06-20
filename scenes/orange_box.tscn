@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmo5yjhyu75od"]
+
+[ext_resource type="Script" uid="uid://b5wrak2xwg03m" path="res://scenes/box.gd" id="1_37ja5"]
+[ext_resource type="PackedScene" uid="uid://hn01wslqn77j" path="res://scenes/orange_box_destruction.tscn" id="2_0uirk"]
+[ext_resource type="Texture2D" uid="uid://drvu8bnwql7km" path="res://assets/sprites/orange_box/orange_box_idle.png" id="2_37ja5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_on5l8"]
+size = Vector2(20, 15)
+
+[node name="OrangeBox" type="StaticBody2D" unique_id=1281484916]
+collision_layer = 18
+collision_mask = 0
+script = ExtResource("1_37ja5")
+particles_scene = ExtResource("2_0uirk")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=2111742614]
+position = Vector2(0, -8)
+texture = ExtResource("2_37ja5")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=1507338302]
+position = Vector2(0, -8)
+shape = SubResource("RectangleShape2D_on5l8")

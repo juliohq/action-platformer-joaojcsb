@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://hn01wslqn77j"]
+
+[ext_resource type="Texture2D" uid="uid://bqmqrl3p4kcka" path="res://assets/sprites/orange_box/orange_box_pieces_1.png" id="1_gsmnc"]
+[ext_resource type="Script" uid="uid://bj67x57ws3wpk" path="res://scenes/box_destruction.gd" id="2_lpqnq"]
+[ext_resource type="PackedScene" uid="uid://dqfetyge4l1lx" path="res://scenes/audio.tscn" id="3_loe6n"]
+[ext_resource type="AudioStream" uid="uid://botans13ef6cn" path="res://assets/audio/box_broken.wav" id="4_24wso"]
+
+[sub_resource type="Gradient" id="Gradient_34j0s"]
+offsets = PackedFloat32Array(0, 0.7066116, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="OrangeBoxDestruction" type="CPUParticles2D" unique_id=1840020020]
+texture = ExtResource("1_gsmnc")
+lifetime = 0.5
+explosiveness = 0.95
+emission_shape = 2
+emission_sphere_radius = 8.0
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 80.0
+initial_velocity_max = 80.0
+angle_max = 720.0
+color_ramp = SubResource("Gradient_34j0s")
+script = ExtResource("2_lpqnq")
+
+[node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("3_loe6n")]
+audio = ExtResource("4_24wso")

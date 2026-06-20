@@ -85,7 +85,8 @@ libraries/ = SubResource("AnimationLibrary_co5bh")
 parent = NodePath("..")
 
 [node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_q2ded")]
-collision_mask = 8
+collision_mask = 24
+hit_test = &"attack_b"
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=1334675608]
 shape = SubResource("CircleShape2D_y25gk")

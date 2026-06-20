@@ -72,7 +72,7 @@ autoplay = &"HIT"
 audio = ExtResource("3_1sxqs")
 
 [node name="AoEHitBox" parent="." unique_id=1755339269 instance=ExtResource("4_m7obe")]
-collision_mask = 8
+collision_mask = 24
 
 [node name="Collision" type="CollisionShape2D" parent="AoEHitBox" unique_id=123618871]
 shape = SubResource("CircleShape2D_m7obe")

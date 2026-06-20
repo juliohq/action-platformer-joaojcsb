@@ -9,6 +9,7 @@ signal hit(body: Node2D)
 @export var on_enter := true
 ## How much health this hitbox will take from enemies.
 @export_range(0, 10, 1, "or_greater", "suffix:HP") var attack := 1
+@export var hit_test := &""
 
 
 func _ready() -> void:
@@ -18,6 +19,10 @@ func _ready() -> void:
 
 func _hit(body: Node2D) -> void:
 	if body.has_method("hit"):
+		if body.has_method("test_hit"):
+			if not body.test_hit(hit_test):
+				return
+		
 		hit.emit(body)
 		body.hit(attack, signf(body.global_position.x - global_position.x))
 

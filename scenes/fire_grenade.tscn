@@ -74,8 +74,9 @@ rect = Rect2(-8, -8, 16, 16)
 parent = NodePath("..")
 
 [node name="HitBox" parent="." unique_id=1755339269 instance=ExtResource("4_e0j61")]
-collision_mask = 8
+collision_mask = 24
 attack = 0
+hit_test = &"attack_b"
 
 [node name="Collision" type="CollisionShape2D" parent="HitBox" unique_id=39689981]
 shape = SubResource("CircleShape2D_y25gk")
