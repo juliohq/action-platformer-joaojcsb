@@ -41,6 +41,8 @@ const NOT_ENOUGH_COINS := preload("res://assets/audio/not_enough_coins.wav")
 const EXTRA_ORB := preload("res://assets/audio/extra_orb.wav")
 const TEMPORARY_UPGRADE := preload("res://assets/audio/temporary_upgrade.wav")
 
+const ANIMATION_DURATION := 0.4
+
 
 func _ready() -> void:
 	%Exit.pressed.connect(_exit)
@@ -59,6 +61,17 @@ func _ready() -> void:
 	control.grab_focus()
 	
 	update()
+	
+	# Animation
+	%Background.modulate = Color.TRANSPARENT
+	%Margin.offset_transform_position_ratio = Vector2(0, -1)
+	
+	var tween := Tweens.tween_empty(self, Tween.EASE_OUT,
+			Tween.TRANS_QUAD).set_parallel()
+	tween.tween_property(%Background, "modulate", Color.WHITE,
+			ANIMATION_DURATION)
+	tween.tween_property(%Margin, "offset_transform_position_ratio", Vector2(),
+			ANIMATION_DURATION)
 
 
 func _exit_tree() -> void:
@@ -68,7 +81,7 @@ func _exit_tree() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		get_viewport().set_input_as_handled()
-		queue_free()
+		_exit()
 	elif OS.is_debug_build():
 		if event.is_action_pressed(&"cheat_coins"):
 			Globals.coins += 1000
@@ -77,7 +90,17 @@ func _input(event: InputEvent) -> void:
 
 
 func _exit() -> void:
-	queue_free()
+	%Items.process_mode = Node.PROCESS_MODE_DISABLED
+	%Exit.process_mode = Node.PROCESS_MODE_DISABLED
+	
+	# Animation
+	var tween := Tweens.tween_empty(self, Tween.EASE_OUT,
+			Tween.TRANS_QUAD).set_parallel()
+	tween.tween_property(%Background, "modulate", Color.TRANSPARENT,
+			ANIMATION_DURATION)
+	tween.tween_property(%Margin, "offset_transform_position_ratio",
+			Vector2(0, -1), ANIMATION_DURATION)
+	tween.chain().tween_callback(queue_free)
 
 
 func _purchased(item: Dictionary) -> void:
