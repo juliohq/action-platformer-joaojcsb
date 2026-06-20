@@ -55,6 +55,10 @@ func _mouse_entered() -> void:
 
 
 func _mouse_exited() -> void:
+	# Prevent animation when parent still has focus
+	if parent.has_focus():
+		return
+	
 	reset_tween()
 	tween.tween_property(parent, "rotation", 0.0, duration)
 	tween.tween_property(parent, "scale", Vector2.ONE, duration)
