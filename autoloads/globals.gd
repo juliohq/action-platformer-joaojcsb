@@ -20,8 +20,6 @@ enum Tutorial {
 	SHOOT,
 	# Knows how to change orbs
 	CHANGE_ORB,
-	# Knows how to shoot skill level 2
-	SKILL_TWO,
 	# Knows how to heal
 	HEAL,
 	# Powers bought from shop

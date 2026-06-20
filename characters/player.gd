@@ -351,10 +351,6 @@ func spawn_orb(scene: PackedScene) -> void:
 
 
 func try_shoot(attack_type: Globals.Attack) -> void:
-	if Globals.tutorial < Globals.Tutorial.SKILL_TWO:
-		if attack_type == Globals.Attack.B:
-			return
-	
 	if cooldown > 0.0:
 		return
 	

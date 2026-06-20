@@ -3,7 +3,6 @@ extends CanvasLayer
 
 const PAUSE := preload("res://ui/pause.tscn")
 const GAME_OVER := preload("res://ui/game_over.tscn")
-const SKILL_TWO_PROMPTS := preload("res://ui/controls/skill_two_prompts.tscn")
 const SHOP := preload("res://ui/shop.tscn")
 
 @export var level_indicator := false
@@ -15,7 +14,6 @@ func _ready() -> void:
 	Events.chest_opened.connect(update)
 	Events.skill_one_used.connect(update)
 	Events.game_over.connect(_game_over)
-	Events.orb_added.connect(_orb_added)
 	Events.shop_entered.connect(_shop_entered)
 	
 	update()
@@ -38,7 +36,6 @@ func update() -> void:
 	handle_tutorial(%RedOrb, Globals.Tutorial.SHOOT)
 	handle_tutorial(%BlueOrb, Globals.Tutorial.CHANGE_ORB)
 	handle_tutorial(%AttackA, Globals.Tutorial.SHOOT)
-	handle_tutorial(%AttackB, Globals.Tutorial.SKILL_TWO)
 	handle_tutorial(%Power, Globals.Tutorial.POWERS)
 
 
@@ -62,16 +59,6 @@ func _input(event: InputEvent) -> void:
 
 func _game_over() -> void:
 	add_child(GAME_OVER.instantiate())
-
-
-func _orb_added() -> void:
-	if Globals.tutorial != Globals.Tutorial.CHANGE_ORB:
-		return
-	
-	if Globals.red_orbs >= Globals.FIRE_GRENADE_COST:
-		Globals.tutorial = Globals.Tutorial.SKILL_TWO
-		update()
-		add_child(SKILL_TWO_PROMPTS.instantiate())
 
 
 func _shop_entered() -> void:
