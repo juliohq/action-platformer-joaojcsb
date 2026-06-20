@@ -10,6 +10,7 @@
 [ext_resource type="LabelSettings" uid="uid://oahvn10qi86c" path="res://ui/theme/label_settings.tres" id="6_arv2f"]
 [ext_resource type="AudioStream" uid="uid://cprhdn1rhikuh" path="res://assets/music/main_menu.ogg" id="6_p8ri8"]
 [ext_resource type="PackedScene" uid="uid://bsmnsgq2my6at" path="res://ui/control_hover_tween.tscn" id="7_5klac"]
+[ext_resource type="PackedScene" uid="uid://rkhyu6n3h5h0" path="res://ui/fade.tscn" id="8_lsdqh"]
 
 [sub_resource type="ButtonGroup" id="ButtonGroup_5klac"]
 
@@ -126,6 +127,8 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "v0.0.0"
 label_settings = ExtResource("6_arv2f")
+
+[node name="Fade" parent="UI" unique_id=12204861 instance=ExtResource("8_lsdqh")]
 
 [node name="Music" parent="." unique_id=525561170 instance=ExtResource("4_rmr83")]
 stream = SubResource("Resource_ubpvv")
