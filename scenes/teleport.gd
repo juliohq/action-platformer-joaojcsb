@@ -6,6 +6,10 @@ extends Area2D
 @export var audio: AudioStream
 @export_range(-1, 1, 1, "or_greater", "or_less", "suffix:px")
 var offset := 0.0
+@export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
+var out_duration := 0.5
+@export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
+var in_duration := 0.5
 
 var _cached_scene: PackedScene
 
@@ -25,4 +29,4 @@ func _ready() -> void:
 func _teleport() -> void:
 	AudioManager.play(audio, 1.0, &"Sounds")
 	Globals.teleport_offset = offset
-	Transition.start(scene_path)
+	Transition.start(scene_path, out_duration, in_duration)

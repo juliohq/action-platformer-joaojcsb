@@ -19,7 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://caelpyhl66nqs" path="res://assets/music/tutorial.ogg" id="14_p251x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2w70r"]
-size = Vector2(32, 32)
+size = Vector2(48, 32)
 
 [sub_resource type="Resource" id="Resource_7p336"]
 script = ExtResource("8_mc1ca")
@@ -158,7 +158,9 @@ position = Vector2(824, 112)
 position = Vector2(880, 112)
 scene_path = "uid://bu73e7772wg54"
 audio = ExtResource("14_j5lyd")
-offset = 100.0
+offset = 75.0
+out_duration = 0.18000000000000002
+in_duration = 0.25
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="World/Teleports/Teleport" index="0" unique_id=283244837]

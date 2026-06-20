@@ -1,13 +1,11 @@
 extends CanvasLayer
 
 
-const DURATION := 0.5
-
 ## The current tween.
 var tween: Tween
 
 
-func start(scene_path: String) -> void:
+func start(scene_path: String, out_duration: float, in_duration: float) -> void:
 	# Setup
 	show()
 	%Transition.modulate = Color.TRANSPARENT
@@ -17,9 +15,9 @@ func start(scene_path: String) -> void:
 		tween.kill()
 	
 	tween = create_tween()
-	tween.tween_property(%Transition, "modulate", Color.WHITE, DURATION)
+	tween.tween_property(%Transition, "modulate", Color.WHITE, out_duration)
 	tween.tween_callback(next_scene.bind(scene_path))
-	tween.tween_property(%Transition, "modulate", Color.TRANSPARENT, DURATION)
+	tween.tween_property(%Transition, "modulate", Color.TRANSPARENT, in_duration)
 	tween.tween_callback(hide)
 
 
