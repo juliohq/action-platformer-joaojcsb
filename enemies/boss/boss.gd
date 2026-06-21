@@ -5,7 +5,7 @@ const GOAL_DISTANCE := 8
 const ATTACK_B_HEALTH := 50
 
 ## The enemy default health.
-@export_range(1, 10, 1, "or_greater", "suffix:HP") var max_health := 100
+@export_range(1, 10, 1, "or_greater", "suffix:HP") var max_health := 80
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How fast the character will move along the X axis.
