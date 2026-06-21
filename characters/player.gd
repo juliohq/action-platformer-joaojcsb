@@ -25,8 +25,18 @@ var jump_buffering := 0.2
 ## How long a jump will be accepted after falling a cliff.
 @export_range(0.01, 1.0, 0.01, "or_greater", "suffix:s")
 var coyote_buffering := 0.1
-## How often you can shoot per second.
-@export_range(1, 10, 1, "or_greater", "suffix:units/s") var fire_rate := 2
+## How often you can shoot.
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var cooldown_fireball := 1.5
+## How often you can shoot.
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var cooldown_fire_grenade := 0.5
+## How often you can shoot.
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var cooldown_freeze_touch := 0.5
+## How often you can shoot.
+@export_range(0.01, 10.0, 0.01, "or_greater", "suffix:s")
+var cooldown_giant_ice_orb := 0.5
 ## How often you can use the strong attack.
 @export_range(0.1, 10.0, 0.01, "or_greater", "suffix:s")
 var strong_attack_duration := 10.0
@@ -55,6 +65,8 @@ var coyote_buffer := 0.0
 
 ## The current cooldown.
 var cooldown := 0.0
+## The current max cooldown.
+var max_cooldown := 1.0
 ## The current strong attack cooldown.
 var strong_attack_cooldown := 0.0
 
@@ -387,9 +399,6 @@ func can_shoot() -> bool:
 
 
 func shoot() -> void:
-	# Cooldown
-	cooldown += 1.0 / fire_rate
-	
 	# Audio
 	AudioManager.play(SLINGSHOT_AUDIO, 1.0, &"Sounds")
 	
@@ -400,16 +409,32 @@ func shoot() -> void:
 		if attack == Globals.Attack.A:
 			bullet = FIREBALL.instantiate()
 			Events.skill_one_used.emit()
+			
+			# Cooldown
+			max_cooldown = cooldown_fireball
+			cooldown += max_cooldown
 		else:
 			bullet = FIRE_GRENADE.instantiate()
 			strong_attack_cooldown += strong_attack_duration
 			Events.strong_attack_used.emit()
+			
+			# Cooldown
+			max_cooldown = cooldown_fire_grenade
+			cooldown += max_cooldown
 	elif attack == Globals.Attack.A:
 		bullet = FREEZE_TOUCH.instantiate()
+		
+		# Cooldown
+		max_cooldown = cooldown_freeze_touch
+		cooldown += max_cooldown
 	else:
 		bullet = GIANT_ICE_ORB.instantiate()
 		strong_attack_cooldown += strong_attack_duration
 		Events.strong_attack_used.emit()
+		
+		# Cooldown
+		max_cooldown = cooldown_giant_ice_orb
+		cooldown += max_cooldown
 	
 	bullet.global_position = pivot.global_position
 	bullet.direction.x = sprite.scale.x
@@ -441,7 +466,6 @@ func _unfreeze() -> void:
 
 
 func update_cooldown_bar() -> void:
-	var max_cooldown := 1.0 / fire_rate
 	cooldown_bar.update(max_cooldown - cooldown, max_cooldown)
 
 
