@@ -31,6 +31,7 @@ func _ready() -> void:
 
 ## Handles the logic when the new game button is pressed. Override to provide custom behavior.
 func _new_game() -> void:
+	Globals.reset()
 	get_tree().change_scene_to_packed(PROLOGUE)
 
 
