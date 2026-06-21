@@ -7,14 +7,13 @@ QUIT,Quit,Sair
 LABEL_EXIT,Exit,Sair
 QUIT_CONFIRMATION,Are you sure you want to leave?,Tem certeza que quer sair?
 PROLOGUE,"Finn is a young kitten who failed the trial to claim the Elemental Slingshot, the legendary weapon carried by Purrington’s guardians. Embarrassed but not defeated, Finn is given one last chance by the town elders to try again.","Finn é um jovem gato que reprovou no teste para conquistar o Estilingue Elemental, a lendária arma carregada pelos guardiões de Purrington. Envergonhado, mas não derrotado, ele recebe uma última chance dos anciões da cidade para provar seu valor e tentar o teste novamente."
-TUTORIAL_PLAYER_MOVE,1.To move Finn use:,1.Para mover o jogador use:
-TUTORIAL_PLAYER_JUMP,2.To jump use:,2.Para pular use:
-TUTORIAL_MELEE,3.To destroy the boxes use:,3.Para destruir as caixas use:
-TUTORIAL_ATTACK_1,4.Attack level 1,4.Ataque Lv 1
-TUTORIAL_CHANGE_ORB,5.Change orb,5.Mudar orb
-TUTORIAL_ATTACK_2,6.To destroy the orange boxes use Attack Level 2,6.Para destruir as caixas laranjas use o Ataque Level 2
-TUTORIAL_PROCEED,Continue,Prosseguir
-TUTORIAL_HEAL,7.To heal (-1 orb):,7.Para curar (-1 orb):
+TUTORIAL_PLAYER_MOVE,To move Finn use:,Para mover o jogador use:
+TUTORIAL_PLAYER_JUMP,To jump use:,Para pular use:
+TUTORIAL_MELEE,To destroy the boxes use:,Para destruir as caixas use:
+TUTORIAL_ATTACK_1,Attack level 1,Ataque Lv 1
+TUTORIAL_CHANGE_ORB,Change orb,Mudar orb
+TUTORIAL_ATTACK_2,To destroy the orange boxes use Attack Level 2,Para destruir as caixas laranjas use o Ataque Level 2
+TUTORIAL_HEAL,To heal (-1 orb):,Para curar (-1 orb):
 GAME_PAUSED,Game Paused,Jogo Pausado
 RESUME,Resume,Continuar
 RESTART,Restart,Reiniciar
