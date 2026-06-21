@@ -85,4 +85,5 @@ parent = NodePath("..")
 shape = SubResource("CircleShape2D_dr0af")
 
 [node name="Freeze" parent="." unique_id=141722922 node_paths=PackedStringArray("hit_box") instance=ExtResource("5_86pvt")]
+time = 2.5
 hit_box = NodePath("../HitBox")
