@@ -41,6 +41,8 @@ signal player_hit(effect: Node2D)
 signal player_invincible(time: float)
 ## Emitted when the player enters the shop.
 signal shop_entered()
+## Emitted when an item is purchased from shop.
+signal shop_item_purchased()
 ## Emitted when a power has been changed.
 signal power_changed()
 ## Emitted when a power has been purchased from the shop.

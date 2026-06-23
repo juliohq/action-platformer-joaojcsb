@@ -169,9 +169,19 @@ func _purchased(item: Dictionary) -> void:
 		Globals.Upgrade.IMMUNITY:
 			Globals.power_immunity += 1
 			Events.power_purchased.emit()
+			
+			# Tutorial
+			if Globals.tutorial == Globals.Tutorial.HEAL:
+				Globals.tutorial = Globals.Tutorial.POWERS
 		Globals.Upgrade.PARALYZE:
 			Globals.power_paralyze += 1
 			Events.power_purchased.emit()
+			
+			# Tutorial
+			if Globals.tutorial == Globals.Tutorial.HEAL:
+				Globals.tutorial = Globals.Tutorial.POWERS
+	
+	Events.shop_item_purchased.emit()
 
 
 func update() -> void:

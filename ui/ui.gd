@@ -13,6 +13,7 @@ const SHOP := preload("res://ui/shop.tscn")
 func _ready() -> void:
 	Events.chest_opened.connect(update)
 	Events.skill_one_used.connect(update)
+	Events.shop_item_purchased.connect(update)
 	Events.game_over.connect(_game_over)
 	Events.shop_entered.connect(_shop_entered)
 	
