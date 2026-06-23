@@ -43,6 +43,8 @@ const TEMPORARY_UPGRADE := preload("res://assets/audio/temporary_upgrade.wav")
 
 const ANIMATION_DURATION := 0.4
 
+var show_power_tutorial := false
+
 
 func _ready() -> void:
 	%Exit.pressed.connect(_exit)
@@ -76,6 +78,9 @@ func _ready() -> void:
 
 func _exit_tree() -> void:
 	get_tree().paused = false
+	
+	if show_power_tutorial:
+		Events.power_tutorial.emit()
 
 
 func _input(event: InputEvent) -> void:
@@ -173,6 +178,7 @@ func _purchased(item: Dictionary) -> void:
 			# Tutorial
 			if Globals.tutorial == Globals.Tutorial.HEAL:
 				Globals.tutorial = Globals.Tutorial.POWERS
+				show_power_tutorial = true
 		Globals.Upgrade.PARALYZE:
 			Globals.power_paralyze += 1
 			Events.power_purchased.emit()
@@ -180,6 +186,7 @@ func _purchased(item: Dictionary) -> void:
 			# Tutorial
 			if Globals.tutorial == Globals.Tutorial.HEAL:
 				Globals.tutorial = Globals.Tutorial.POWERS
+				show_power_tutorial = true
 	
 	Events.shop_item_purchased.emit()
 

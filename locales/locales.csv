@@ -14,6 +14,9 @@ TUTORIAL_ATTACK_1,Attack level 1,Ataque Lv 1
 TUTORIAL_CHANGE_ORB,Change orb,Mudar orb
 TUTORIAL_ATTACK_2,To destroy the orange boxes use Attack Level 2,Para destruir as caixas laranjas use o Ataque Level 2
 TUTORIAL_HEAL,To heal (-1 orb):,Para curar (-1 orb):
+TUTORIAL_POWER_USE,To use the power:,Para usar o poder:
+TUTORIAL_POWER_CHANGE,To change the power:,Para mudar o poder:
+TUTORIAL_PROCEED,Press any key or button to proceed,Pressione qualquer tecla ou botão para continuar
 GAME_PAUSED,Game Paused,Jogo Pausado
 RESUME,Resume,Continuar
 RESTART,Restart,Reiniciar

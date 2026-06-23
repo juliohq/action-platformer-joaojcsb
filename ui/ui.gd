@@ -4,6 +4,7 @@ extends CanvasLayer
 const PAUSE := preload("res://ui/pause.tscn")
 const GAME_OVER := preload("res://ui/game_over.tscn")
 const SHOP := preload("res://ui/shop.tscn")
+const POWER_TUTORIAL := preload("res://ui/power_tutorial.tscn")
 
 @export var level_indicator := false
 @export_range(0, 10, 1, "or_greater") var level := 0
@@ -14,6 +15,7 @@ func _ready() -> void:
 	Events.chest_opened.connect(update)
 	Events.skill_one_used.connect(update)
 	Events.shop_item_purchased.connect(update)
+	Events.power_tutorial.connect(_power_tutorial)
 	Events.game_over.connect(_game_over)
 	Events.shop_entered.connect(_shop_entered)
 	
@@ -65,3 +67,7 @@ func _game_over() -> void:
 
 func _shop_entered() -> void:
 	add_child(SHOP.instantiate())
+
+
+func _power_tutorial() -> void:
+	add_child(POWER_TUTORIAL.instantiate())

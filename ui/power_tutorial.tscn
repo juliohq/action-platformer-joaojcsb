@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dvur3pn3a8ekj"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_5r6u8"]
+[ext_resource type="Script" uid="uid://cxfkldtofdqw" path="res://ui/power_tutorial.gd" id="1_8i3qh"]
+[ext_resource type="PackedScene" uid="uid://cw40bayqhctq7" path="res://ui/background.tscn" id="2_oo6ts"]
+[ext_resource type="PackedScene" uid="uid://bdp4jtgaeiiex" path="res://ui/controls/keyboard.tscn" id="4_s4qm2"]
+[ext_resource type="StyleBox" uid="uid://csi7fhxpl3djq" path="res://ui/theme/energy_bar_bg.tres" id="5_3hsin"]
+[ext_resource type="StyleBox" uid="uid://dcw60lx0xr1my" path="res://ui/theme/energy_bar_fill.tres" id="6_yk05x"]
+[ext_resource type="PackedScene" uid="uid://u88ipc6psifp" path="res://ui/controls/joypad_button_rb.tscn" id="7_yk05x"]
+[ext_resource type="PackedScene" uid="uid://cbs62rfljms4g" path="res://ui/controls/joypad_button_lt.tscn" id="8_ig57f"]
+
+[node name="PowerTutorial" type="Control" unique_id=60197072]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_5r6u8")
+script = ExtResource("1_8i3qh")
+
+[node name="Background" parent="." unique_id=731263121 instance=ExtResource("2_oo6ts")]
+layout_mode = 1
+color = Color(0, 0, 0, 0.5019608)
+
+[node name="TextUse" type="Label" parent="." unique_id=824383057]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 77.0
+offset_right = 312.0
+offset_bottom = 91.0
+grow_horizontal = 2
+text = "TUTORIAL_POWER_USE"
+
+[node name="KeyboardO" parent="." unique_id=1808728134 instance=ExtResource("4_s4qm2")]
+position = Vector2(224, 112)
+region_enabled = true
+region_rect = Rect2(162, 34, 12, 10)
+
+[node name="JoypadButtonLT" parent="." unique_id=1330353486 instance=ExtResource("8_ig57f")]
+position = Vector2(264, 112)
+
+[node name="TextChange" type="Label" parent="." unique_id=967190926]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 173.5
+offset_top = 141.0
+offset_right = 322.5
+offset_bottom = 155.0
+grow_horizontal = 2
+text = "TUTORIAL_POWER_CHANGE"
+
+[node name="KeyboardT" parent="." unique_id=1077503846 instance=ExtResource("4_s4qm2")]
+position = Vector2(224, 176)
+region_enabled = true
+region_rect = Rect2(98, 34, 12, 10)
+
+[node name="JoypadButtonRB" parent="." unique_id=446376973 instance=ExtResource("7_yk05x")]
+position = Vector2(264, 176)
+
+[node name="Progress" type="ProgressBar" parent="." unique_id=1179060361]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 206.0
+offset_top = 235.0
+offset_right = 274.0
+offset_bottom = 237.0
+theme_override_styles/background = ExtResource("5_3hsin")
+theme_override_styles/fill = ExtResource("6_yk05x")
+max_value = 3.0
+show_percentage = false
+
+[node name="Proceed" type="Label" parent="." unique_id=338282828]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+offset_left = 184.0
+offset_top = 230.0
+offset_right = 296.0
+offset_bottom = 244.0
+grow_horizontal = 2
+text = "TUTORIAL_PROCEED"

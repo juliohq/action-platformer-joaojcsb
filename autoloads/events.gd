@@ -43,6 +43,8 @@ signal player_invincible(time: float)
 signal shop_entered()
 ## Emitted when an item is purchased from shop.
 signal shop_item_purchased()
+## Emitted when the power tutorial is shown.
+signal power_tutorial()
 ## Emitted when a power has been changed.
 signal power_changed()
 ## Emitted when a power has been purchased from the shop.
