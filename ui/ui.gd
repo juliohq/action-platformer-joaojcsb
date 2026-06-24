@@ -77,4 +77,6 @@ func _power_tutorial() -> void:
 
 
 func _boss_defeated() -> void:
+	# Disable pause after boss is defeated
+	set_process_input(false)
 	add_child(LEVEL_FINISHED.instantiate())
