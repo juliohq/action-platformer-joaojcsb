@@ -56,11 +56,12 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(&"ui_cancel"):
 		get_viewport().set_input_as_handled()
 		add_child(PAUSE.instantiate())
-	elif event is InputEventKey and event.is_pressed():
-		if event.physical_keycode == KEY_TAB:
-			get_viewport().set_input_as_handled()
-			var shop := preload("res://ui/shop.tscn").instantiate()
-			add_child(shop)
+	elif OS.is_debug_build():
+		if event is InputEventKey and event.is_pressed():
+			if event.physical_keycode == KEY_TAB:
+				get_viewport().set_input_as_handled()
+				var shop := preload("res://ui/shop.tscn").instantiate()
+				add_child(shop)
 
 
 func _game_over() -> void:
