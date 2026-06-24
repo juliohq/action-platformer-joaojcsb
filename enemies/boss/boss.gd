@@ -29,7 +29,6 @@ const ATTACK_B_HEALTH := 50
 @export var sprite: Sprite2D
 @export var animator: AnimationPlayer
 @export var hit_box: Area2D
-@export var loot: Node2D
 @export var state_machine: FiniteStateMachine
 @export var hit_state: BaseState
 
@@ -112,7 +111,6 @@ func hit(damage: int, _knockback_direction: float) -> void:
 
 
 func die() -> void:
-	loot.drop()
 	prints("[boss]", name, "destroyed")
 	Events.eagle_spawner_stopped.emit()
 	Events.boss_defeated.emit()

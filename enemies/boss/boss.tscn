@@ -3,8 +3,6 @@
 [ext_resource type="Script" uid="uid://cnt3ahxa3m8hx" path="res://enemies/boss/boss.gd" id="1_h4k8w"]
 [ext_resource type="Texture2D" uid="uid://cuvsn2n5ruy6k" path="res://assets/sprites/little_bird.png" id="2_1s7ui"]
 [ext_resource type="PackedScene" uid="uid://bmtpordssor20" path="res://scenes/hit_box.tscn" id="2_2tiri"]
-[ext_resource type="PackedScene" uid="uid://c3r8vkrqytjxr" path="res://scenes/loot.tscn" id="4_b5n78"]
-[ext_resource type="PackedScene" uid="uid://cpv7ml611bwqp" path="res://scenes/coin.tscn" id="5_o8os0"]
 [ext_resource type="Script" uid="uid://cgyspffsce7rr" path="res://addons/finite_state_machine/scripts/finite_state_machine.gd" id="6_b0wi3"]
 [ext_resource type="Script" uid="uid://xyspqaukmvrb" path="res://enemies/boss/states/idle.gd" id="8_2tiri"]
 [ext_resource type="Script" uid="uid://r6eqfeaut8d7" path="res://enemies/boss/states/swing_left.gd" id="9_2tiri"]
@@ -587,7 +585,7 @@ radius = 12.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_1s7ui"]
 radius = 96.0
 
-[node name="Boss" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "loot", "state_machine", "hit_state")]
+[node name="Boss" type="CharacterBody2D" unique_id=2003408289 node_paths=PackedStringArray("sprite", "animator", "hit_box", "state_machine", "hit_state")]
 collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_h4k8w")
@@ -595,7 +593,6 @@ sprite_faces_left = false
 sprite = NodePath("Pivot/Sprite")
 animator = NodePath("Animator")
 hit_box = NodePath("HitBox")
-loot = NodePath("Loot")
 state_machine = NodePath("StateMachine")
 hit_state = NodePath("StateMachine/Hit")
 
@@ -628,11 +625,6 @@ collision_layer = 0
 
 [node name="Collision" type="CollisionShape2D" parent="PlayerDetector" unique_id=779727723]
 shape = SubResource("CircleShape2D_1s7ui")
-
-[node name="Loot" parent="." unique_id=1730885191 instance=ExtResource("4_b5n78")]
-position = Vector2(0, -8)
-scene = ExtResource("5_o8os0")
-max_count = 5
 
 [node name="StateMachine" type="Node" parent="." unique_id=2038685419 node_paths=PackedStringArray("current_state", "animation_player")]
 script = ExtResource("6_b0wi3")
