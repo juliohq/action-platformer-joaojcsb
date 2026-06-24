@@ -33,6 +33,8 @@ const ATTACK_B_HEALTH := 50
 @export var state_machine: FiniteStateMachine
 @export var hit_state: BaseState
 
+## The boss is engaged into combat.
+var engaged := false
 ## The health of the enemy.
 var health := max_health
 ## The current boss speed.
@@ -93,6 +95,9 @@ func _physics_process(delta: float) -> void:
 
 
 func hit(damage: int, _knockback_direction: float) -> void:
+	if not engaged:
+		return
+	
 	health -= damage
 	Events.boss_health_changed.emit(health, max_health)
 	
@@ -137,4 +142,5 @@ func _unfreeze() -> void:
 
 
 func join_fight() -> void:
+	engaged = true
 	Events.boss_health_changed.emit(health, max_health)
