@@ -5,6 +5,7 @@ const PAUSE := preload("res://ui/pause.tscn")
 const GAME_OVER := preload("res://ui/game_over.tscn")
 const SHOP := preload("res://ui/shop.tscn")
 const POWER_TUTORIAL := preload("res://ui/power_tutorial.tscn")
+const LEVEL_FINISHED := preload("res://ui/level_finished.tscn")
 
 @export var level_indicator := false
 @export_range(0, 10, 1, "or_greater") var level := 0
@@ -18,6 +19,7 @@ func _ready() -> void:
 	Events.power_tutorial.connect(_power_tutorial)
 	Events.game_over.connect(_game_over)
 	Events.shop_entered.connect(_shop_entered)
+	Events.boss_defeated.connect(_boss_defeated)
 	
 	update()
 	show()
@@ -71,3 +73,7 @@ func _shop_entered() -> void:
 
 func _power_tutorial() -> void:
 	add_child(POWER_TUTORIAL.instantiate())
+
+
+func _boss_defeated() -> void:
+	add_child(LEVEL_FINISHED.instantiate())

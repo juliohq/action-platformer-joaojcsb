@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://cbojxmtc7epaq"]
+
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="1_8f4yn"]
+[ext_resource type="Script" uid="uid://bmmqj1utwlap" path="res://ui/level_finished.gd" id="2_3c0wh"]
+[ext_resource type="Texture2D" uid="uid://bc3hrk0ke85i0" path="res://assets/ui/level_finished.png" id="3_k6vnw"]
+[ext_resource type="AudioStream" uid="uid://ceglx36m5m4m0" path="res://assets/audio/level_finished.wav" id="7_8f4yn"]
+
+[node name="LevelFinished" type="Control" unique_id=946583267 node_paths=PackedStringArray("audio")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_8f4yn")
+script = ExtResource("2_3c0wh")
+audio = NodePath("Audio")
+
+[node name="Center" type="CenterContainer" parent="." unique_id=1553046777]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LevelFinished" type="TextureRect" parent="Center" unique_id=2078355074]
+layout_mode = 2
+texture = ExtResource("3_k6vnw")
+
+[node name="Audio" type="AudioStreamPlayer" parent="." unique_id=658620490]
+stream = ExtResource("7_8f4yn")
+autoplay = true
+bus = &"Sounds"

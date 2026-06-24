@@ -5,6 +5,10 @@ extends CanvasLayer
 var tween: Tween
 
 
+func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+
 func start(scene_path: String, out_duration: float, in_duration: float) -> void:
 	# Setup
 	show()
