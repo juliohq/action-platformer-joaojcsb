@@ -255,6 +255,11 @@ func jump() -> void:
 	# Jump
 	if is_on_floor() and jump_buffer > 0.0:
 		jump_buffer = 0.0
+		
+		# Fix: prevent full jump after release
+		if not Input.is_action_pressed(&"jump"):
+			return
+		
 		jump_now()
 		move_and_slide()
 
