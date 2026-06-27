@@ -6,7 +6,7 @@ extends Node2D
 @export var change_health := false
 @export_range(1, 10, 1, "or_greater", "suffix:HP") var health := 2
 @export var change_orbs := false
-@export_range(1, 10, 1, "or_greater") var orbs := 5
+@export_range(1, 10, 1, "or_greater") var orbs := 3
 @export_category("Nodes")
 @export var world: Node2D
 @export var background: TileMapLayer
@@ -26,20 +26,17 @@ func _enter_tree() -> void:
 	prints("[level] max health set to", max_health)
 	
 	# Update max orbs
-	var max_red_orbs := Globals.default_red_orbs
-	var max_blue_orbs := Globals.default_blue_orbs
-	
 	if change_orbs:
-		max_red_orbs = orbs
-		max_blue_orbs = orbs
-	
-	Globals.red_orbs = mini(Globals.red_orbs, max_red_orbs)
-	Globals.max_red_orbs = max_red_orbs
-	
-	Globals.blue_orbs = mini(Globals.blue_orbs, max_blue_orbs)
-	Globals.max_blue_orbs = max_blue_orbs
-	
-	prints("[level] max orbs set to", max_red_orbs)
+		var max_red_orbs := orbs
+		var max_blue_orbs := orbs
+		
+		Globals.red_orbs = mini(Globals.red_orbs, max_red_orbs)
+		Globals.max_red_orbs = max_red_orbs
+		
+		Globals.blue_orbs = mini(Globals.blue_orbs, max_blue_orbs)
+		Globals.max_blue_orbs = max_blue_orbs
+		
+		prints("[level] max orbs set to", max_red_orbs)
 	
 	# Tutorial stage
 	if change_tutorial_stage:
@@ -54,3 +51,18 @@ func _ready() -> void:
 	Events.loot_dropped.connect(world.add_child, CONNECT_DEFERRED)
 	Events.player_hit.connect(world.add_child)
 	Events.eagle_spawned.connect(world.add_child)
+	Events.boss_defeated.connect(_boss_defeated)
+
+
+func _boss_defeated() -> void:
+	# Reset extra orbs when boss is defeated
+	var max_red_orbs := Globals.default_red_orbs
+	var max_blue_orbs := Globals.default_blue_orbs
+	
+	Globals.red_orbs = mini(Globals.red_orbs, max_red_orbs)
+	Globals.max_red_orbs = max_red_orbs
+	
+	Globals.blue_orbs = mini(Globals.blue_orbs, max_blue_orbs)
+	Globals.max_blue_orbs = max_blue_orbs
+	
+	prints("[level] max orbs set to", max_red_orbs)

@@ -18,7 +18,6 @@ metadata/_custom_type_script = "uid://du0gulx4m28k4"
 
 [node name="TutorialB" unique_id=1054854771 instance=ExtResource("1_y5vmr")]
 change_orbs = true
-orbs = 3
 metadata/_edit_vertical_guides_ = [-320.0, 320.0]
 metadata/_edit_horizontal_guides_ = [-176.0, 176.0]
 
