@@ -73,7 +73,7 @@ func _shop_entered() -> void:
 
 
 func _power_tutorial() -> void:
-	add_child(POWER_TUTORIAL.instantiate())
+	add_child.call_deferred(POWER_TUTORIAL.instantiate())
 
 
 func _boss_defeated() -> void:
