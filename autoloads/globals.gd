@@ -123,6 +123,21 @@ func _unhandled_input(event: InputEvent) -> void:
 		elif event.is_action_pressed(&"cheat_coins"):
 			coins += 1000
 			Events.coins_changed.emit()
+		elif event.is_action_pressed(&"cheat_red_orb"):
+			if orb == Globals.Orb.RED:
+				if Globals.red_orbs >= Globals.default_red_orbs:
+					Globals.max_red_orbs += 1
+				else:
+					Globals.red_orbs += 1
+			
+			Events.orb_added.emit()
+		elif event.is_action_pressed(&"cheat_blue_orb"):
+			if Globals.blue_orbs >= Globals.default_blue_orbs:
+				Globals.max_blue_orbs += 1
+			else:
+				Globals.blue_orbs += 1
+			
+			Events.orb_added.emit()
 
 
 ## Saves the game state to the given file path.
