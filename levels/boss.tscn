@@ -89,6 +89,7 @@ level_indicator = true
 [node name="Music" parent="." index="2" unique_id=1966762641]
 stream = SubResource("Resource_glam7")
 play_after = 2.5
+boss = true
 
 [node name="Audio" parent="." index="3" unique_id=1212503331]
 enabled = true
