@@ -376,13 +376,29 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 	if can_shoot():
 		if attack == Globals.Attack.B:
 			if Globals.orb == Globals.Orb.RED:
-				Globals.red_orbs -= Globals.FIRE_GRENADE_COST
+				remove_red_orbs(Globals.FIRE_GRENADE_COST)
 			else:
-				Globals.blue_orbs -= Globals.GIANT_ICE_ORB_COST
+				remove_blue_orbs(Globals.GIANT_ICE_ORB_COST)
 			
 			Events.orb_consumed.emit()
 		
 		state_machine.change_state("Attack")
+
+
+func remove_red_orbs(count: int) -> void:
+	for i in count:
+		if Globals.max_red_orbs > Globals.default_red_orbs:
+			Globals.max_red_orbs -= 1
+		else:
+			Globals.red_orbs -= 1
+
+
+func remove_blue_orbs(count: int) -> void:
+	for i in count:
+		if Globals.max_blue_orbs > Globals.default_blue_orbs:
+			Globals.max_blue_orbs -= 1
+		else:
+			Globals.blue_orbs -= 1
 
 
 func can_shoot() -> bool:
