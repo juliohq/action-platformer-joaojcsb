@@ -22,7 +22,6 @@ script = ExtResource("1_8i3qh")
 
 [node name="Background" parent="." unique_id=731263121 instance=ExtResource("2_oo6ts")]
 layout_mode = 1
-color = Color(0, 0, 0, 0.5019608)
 
 [node name="TextUse" type="Label" parent="." unique_id=824383057]
 layout_mode = 1
