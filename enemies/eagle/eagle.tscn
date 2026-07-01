@@ -83,7 +83,7 @@ parent = NodePath("..")
 
 [node name="Audio" parent="." unique_id=1212503331 instance=ExtResource("5_0civ8")]
 audio = ExtResource("6_lrs8l")
-audio_volume = 0.5
+audio_volume = 0.1
 
 [node name="Wings" type="AudioStreamPlayer" parent="." unique_id=1359048060]
 stream = ExtResource("7_v7186")
