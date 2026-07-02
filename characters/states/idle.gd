@@ -5,7 +5,7 @@ func on_enter() -> void:
 	animator.play(&"IDLE")
 
 
-func on_physics_process(_delta: float) -> void:
+func on_physics_process(delta: float) -> void:
 	if root.is_on_floor():
 		if Input.is_action_just_pressed("melee"):
 			change_state("Melee")
@@ -14,11 +14,7 @@ func on_physics_process(_delta: float) -> void:
 			if root.heal():
 				change_state("Heal")
 				return
-		elif Input.is_action_just_pressed("attack_1"):
-			root.try_shoot(Globals.Attack.A)
-			return
-		elif Input.is_action_just_pressed("attack_2"):
-			root.try_shoot(Globals.Attack.B)
+		elif root.handle_attack(delta):
 			return
 		
 		# Movement

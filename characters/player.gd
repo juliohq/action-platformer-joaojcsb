@@ -367,6 +367,17 @@ func spawn_orb(scene: PackedScene) -> void:
 	Events.orb_dropped.emit(orb)
 
 
+func handle_attack() -> bool:
+	if Input.is_action_just_pressed("attack_1"):
+		try_shoot(Globals.Attack.A)
+		return true
+	elif Input.is_action_just_pressed("attack_2"):
+		try_shoot(Globals.Attack.B)
+		return true
+	
+	return false
+
+
 func try_shoot(attack_type: Globals.Attack) -> void:
 	if cooldown > 0.0:
 		return
