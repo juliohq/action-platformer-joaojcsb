@@ -15,6 +15,8 @@ const SLOT_CHANGED_AUDIO := preload("res://assets/audio/player_slot_changed.wav"
 const POWER_CHANGED_AUDIO := preload("res://assets/audio/power_change.wav")
 const POWER_USED_AUDIO := preload("res://assets/audio/power_use.wav")
 
+const ATTACK_2_HOLD := 1.0
+
 ## How fast the character will move along the X axis.
 @export_range(1, 100, 1, "or_greater", "suffix:px/s") var movement_speed := 128
 ## How high the character will jump.
@@ -76,6 +78,9 @@ var invincibility_left := 0.0
 var attack := Globals.Attack.A
 ## The enemy will be freezed for this long.
 var freeze_time := 0.0
+
+## The time left before attack 2 is used.
+var attack_2_time_left := 0.0
 
 @onready var gravity = ProjectSettings.get_setting_with_override(&"physics/2d/default_gravity")
 
@@ -196,9 +201,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		coyote_buffer = 0.0
 	
-	# Cooldown
-	cooldown = move_toward(cooldown, 0.0, delta)
-	update_cooldown_bar()
+	if attack_2_time_left > 0.0:
+		# Attack 2 hold
+		cooldown_bar.update(ATTACK_2_HOLD - attack_2_time_left, ATTACK_2_HOLD)
+	else:
+		# Cooldown
+		cooldown = move_toward(cooldown, 0.0, delta)
+		update_cooldown_bar()
 	
 	if strong_attack_cooldown > 0.0:
 		strong_attack_cooldown -= delta
@@ -367,20 +376,44 @@ func spawn_orb(scene: PackedScene) -> void:
 	Events.orb_dropped.emit(orb)
 
 
-func handle_attack() -> bool:
+func handle_attack(delta: float) -> bool:
 	if Input.is_action_just_pressed("attack_1"):
 		try_shoot(Globals.Attack.A)
 		return true
-	elif Input.is_action_just_pressed("attack_2"):
-		try_shoot(Globals.Attack.B)
+	
+	# Hold
+	if Input.is_action_just_pressed("attack_2_hold") and can_shoot_attack_b():
+		attack_2_time_left = ATTACK_2_HOLD
+		return false
+	
+	if Input.is_action_pressed("attack_2_hold") and can_shoot_attack_b():
+		if attack_2_time_left > 0.0:
+			attack_2_time_left -= delta
+			
+			if attack_2_time_left <= 0.0:
+				if try_shoot(Globals.Attack.B):
+					print("[player] attack B held")
+					return true
+		
+		return false
+	
+	if Input.is_action_just_released("attack_2_hold"):
+		attack_2_time_left = 0.0
+		return true
+	
+	# Press
+	if Input.is_action_just_pressed("attack_2_press"):
+		if try_shoot(Globals.Attack.B):
+			print("[player] attack B pressed")
+		
 		return true
 	
 	return false
 
 
-func try_shoot(attack_type: Globals.Attack) -> void:
+func try_shoot(attack_type: Globals.Attack) -> bool:
 	if cooldown > 0.0:
-		return
+		return false
 	
 	attack = attack_type
 	
@@ -394,6 +427,9 @@ func try_shoot(attack_type: Globals.Attack) -> void:
 			Events.orb_consumed.emit()
 		
 		state_machine.change_state("Attack")
+		return true
+	
+	return false
 
 
 func remove_red_orbs(count: int) -> void:
@@ -419,6 +455,10 @@ func can_shoot() -> bool:
 	if attack == Globals.Attack.A:
 		return true
 	
+	return can_shoot_attack_b()
+
+
+func can_shoot_attack_b() -> bool:
 	if strong_attack_cooldown <= 0.0:
 		if Globals.orb == Globals.Orb.RED:
 			if Globals.red_orbs >= Globals.FIRE_GRENADE_COST:
