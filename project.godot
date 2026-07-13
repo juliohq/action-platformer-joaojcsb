@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Action Platformer"
+config/name="Slingcat"
 config/version="Alpha v0.1"
 run/main_scene="uid://ckrfgn41n262p"
 config/features=PackedStringArray("4.7", "GL Compatibility")
