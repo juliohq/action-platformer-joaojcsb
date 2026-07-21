@@ -32,7 +32,10 @@ func _input(event: InputEvent) -> void:
 	elif event.is_action_pressed("attack_1"):
 		get_viewport().set_input_as_handled()
 		_finished()
-	elif event.is_action_pressed("attack_2"):
+	elif event.is_action_pressed("attack_2_hold"):
+		get_viewport().set_input_as_handled()
+		_finished()
+	elif event.is_action_pressed("attack_2_press"):
 		get_viewport().set_input_as_handled()
 		_finished()
 
