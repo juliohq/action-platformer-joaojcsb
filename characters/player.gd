@@ -453,7 +453,9 @@ func can_shoot() -> bool:
 		return false
 	
 	if attack == Globals.Attack.A:
-		return true
+		if Globals.orb == Globals.Orb.RED:
+			return Globals.red_orbs > 0
+		return Globals.blue_orbs > 0
 	
 	return can_shoot_attack_b()
 
