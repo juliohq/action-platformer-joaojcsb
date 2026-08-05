@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://c05nihqhw7jdr"]
+
+[ext_resource type="Script" uid="uid://x0qie4c6al21" path="res://ui/intro.gd" id="1_1cctr"]
+[ext_resource type="VideoStream" uid="uid://ca4a2ppjgfyhu" path="res://logo.ogv" id="1_4v4r4"]
+[ext_resource type="PackedScene" uid="uid://ckrfgn41n262p" path="res://ui/main_menu.tscn" id="2_scu43"]
+[ext_resource type="VideoStream" uid="uid://d3kdvgbutt0t2" path="res://slingcat.ogv" id="3_8k8jw"]
+
+[node name="Intro" type="MarginContainer" unique_id=695203270]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1cctr")
+main_menu = ExtResource("2_scu43")
+
+[node name="Logo" type="VideoStreamPlayer" parent="." unique_id=1599346518]
+visible = false
+layout_mode = 2
+stream = ExtResource("1_4v4r4")
+expand = true
+
+[node name="Slingcat" type="VideoStreamPlayer" parent="." unique_id=1677144128]
+visible = false
+layout_mode = 2
+stream = ExtResource("3_8k8jw")
+expand = true
