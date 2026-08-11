@@ -5,15 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://llp2t34oc8rh" path="res://scenes/collectible.tscn" id="3_frsn5"]
 [ext_resource type="AudioStream" uid="uid://dexbielrixug6" path="res://assets/audio/pickup_orb.wav" id="4_8ji51"]
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ji51"]
+friction = 0.0
+bounce = 1.0
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktqa0"]
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jigkk"]
 radius = 4.0
 
-[node name="RedOrb" type="CharacterBody2D" unique_id=177147229 node_paths=PackedStringArray("vanish", "collectible")]
+[node name="RedOrb" type="RigidBody2D" unique_id=555637897 node_paths=PackedStringArray("vanish", "collectible")]
 collision_layer = 4
-collision_mask = 2
+collision_mask = 34
+physics_material_override = SubResource("PhysicsMaterial_8ji51")
+lock_rotation = true
 script = ExtResource("1_jigkk")
 vanish = NodePath("Vanish")
 collectible = NodePath("Collectible")

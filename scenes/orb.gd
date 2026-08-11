@@ -1,8 +1,10 @@
-extends CharacterBody2D
+extends RigidBody2D
 
+
+const HORIZONTAL_IMPULSE := 100
+const VERTICAL_IMPULSE := 300
 
 @export var orb := Globals.Orb.RED
-@export_range(0.1, 10.0, 0.1, "or_greater", "suffix:px/s²") var gravity := 980
 @export var auto_vanish := true
 @export_category("Nodes")
 @export var vanish: Timer
@@ -14,17 +16,9 @@ func _ready() -> void:
 		vanish.timeout.connect(queue_free)
 	
 	collectible.picked_up.connect(_picked_up)
-
-
-func _physics_process(delta: float) -> void:
-	# Gravity
-	if is_on_floor():
-		velocity.y = 0.0
-	else:
-		velocity.y += gravity * delta
 	
-	# Movement
-	move_and_slide()
+	apply_impulse(Vector2(Math.random_sign() * HORIZONTAL_IMPULSE,
+			-VERTICAL_IMPULSE))
 
 
 func _picked_up() -> void:
