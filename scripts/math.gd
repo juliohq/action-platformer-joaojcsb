@@ -4,6 +4,12 @@ class_name Math
 const SQUARE_POINT_COUNT := 4
 
 
+static func random_sign() -> float:
+	if randf() > 0.5:
+		return 1.0
+	return -1.0
+
+
 static func random_direction() -> Vector2:
 	return Vector2.from_angle(TAU * randf())
 
@@ -40,6 +46,11 @@ static func square(size: float) -> PackedVector2Array:
 			index += 1
 	
 	return points
+
+
+static func circle_aabb(offset: Vector2, radius: float) -> Rect2:
+	var diameter := radius * 2.0
+	return Rect2(offset.x - radius, offset.y - radius, diameter, diameter)
 
 
 static func polygon_aabb(polygon: PackedVector2Array) -> Rect2:
