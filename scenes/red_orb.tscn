@@ -26,7 +26,6 @@ shape = SubResource("CircleShape2D_ktqa0")
 
 [node name="Vanish" type="Timer" parent="." unique_id=1867767362]
 wait_time = 5.0
-autostart = true
 
 [node name="Collectible" parent="." unique_id=263136481 instance=ExtResource("3_frsn5")]
 audio = ExtResource("4_8ji51")
