@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Slingcat"
 config/version="Alpha v0.1"
-run/main_scene="uid://c05nihqhw7jdr"
+run/main_scene="uid://d3emagiip7vi6"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
