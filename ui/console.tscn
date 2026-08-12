@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://1ygdag72qv1i"]
+
+[ext_resource type="Script" uid="uid://b4ut7duu3xc3a" path="res://ui/console.gd" id="1_72wq2"]
+[ext_resource type="StyleBox" uid="uid://bqm20bvf32r81" path="res://ui/theme/black_panel.tres" id="1_ieuql"]
+[ext_resource type="Theme" uid="uid://cm0anid37hw1i" path="res://ui/theme/theme.tres" id="2_lqavu"]
+
+[node name="Console" type="CanvasLayer" unique_id=260312995]
+layer = 2
+script = ExtResource("1_72wq2")
+
+[node name="VBox" type="VBoxContainer" parent="." unique_id=1579697949]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_lqavu")
+theme_override_constants/separation = 0
+
+[node name="Base" type="PanelContainer" parent="VBox" unique_id=799338041]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("1_ieuql")
+
+[node name="Margin" type="MarginContainer" parent="VBox/Base" unique_id=892739852]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/Base/Margin" unique_id=28354814]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="Grid" type="GridContainer" parent="VBox/Base/Margin/Scroll" unique_id=2117325750]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 2
+
+[node name="Spacer" type="Control" parent="VBox" unique_id=1374593796]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
