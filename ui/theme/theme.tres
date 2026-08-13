@@ -1,10 +1,10 @@
 [gd_resource type="Theme" format=3 uid="uid://cm0anid37hw1i"]
 
+[ext_resource type="FontFile" uid="uid://c0c3124ffeeao" path="res://assets/fonts/m6x11.ttf" id="2_cni3f"]
 [ext_resource type="StyleBox" uid="uid://cpwqw1cgao8pr" path="res://ui/theme/button_normal.tres" id="4_mpa1d"]
-[ext_resource type="FontFile" uid="uid://c0c3124ffeeao" path="res://assets/fonts/m6x11.ttf" id="6_1apww"]
 
 [resource]
-default_font = ExtResource("6_1apww")
+default_font = ExtResource("2_cni3f")
 Button/colors/font_color = Color(0.4745098, 0.23137255, 0.33333334, 1)
 Button/colors/font_focus_color = Color(0.4745098, 0.23137255, 0.33333334, 1)
 Button/colors/font_hover_color = Color(0.4745098, 0.23137255, 0.33333334, 1)
