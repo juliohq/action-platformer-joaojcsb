@@ -1,7 +1,7 @@
 [gd_resource type="Theme" format=3 uid="uid://cm0anid37hw1i"]
 
 [ext_resource type="StyleBox" uid="uid://cpwqw1cgao8pr" path="res://ui/theme/button_normal.tres" id="4_mpa1d"]
-[ext_resource type="FontFile" uid="uid://c0c3124ffeeao" path="res://assets/fonts/pixel_art/m6x11.ttf" id="6_1apww"]
+[ext_resource type="FontFile" uid="uid://c0c3124ffeeao" path="res://assets/fonts/m6x11.ttf" id="6_1apww"]
 
 [resource]
 default_font = ExtResource("6_1apww")
