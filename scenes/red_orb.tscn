@@ -6,8 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://dexbielrixug6" path="res://assets/audio/pickup_orb.wav" id="4_8ji51"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8ji51"]
-friction = 0.0
-bounce = 1.0
+friction = 0.1
+bounce = 0.5
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ktqa0"]
 radius = 4.0
